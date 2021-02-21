@@ -1,24 +1,30 @@
-* {
-    box-sizing: border-box;
-  }
 
+* {
+  box-sizing: border-box;
+}
 
   [class*="col-"] {
     float: left;
     padding: 15px;
+    box-sizing: border-box;
   }
   [class*="colblock-"] {
     float: left;
-    padding: 15px;
+    padding: 1%;
     border: 3px solid rgb(0, 0, 0);
     margin: 1%;
+    box-sizing: border-box;
   }
   [class*="mcol-"] {
     float: left;
     padding: 15px;
+    box-sizing: border-box;
   }
-
-.col-1 {width: 8.33%;}
+.emptycol{
+  float : left;
+  width:8.33%
+}
+.col-1 {width: 8.33%}
 .col-2 {width: 16.66%;}
 .col-3 {width: 25%;}
 .col-4 {width: 33.33%;}
@@ -31,20 +37,20 @@
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
 
-.mcol-1 {margin-left: 8.33%;}
-.mcol-2 {margin-left: 16.66%;}
-.mcol-3 {margin-left: 25%;}
-.mcol-4 {margin-left: 33.33%;}
-.mcol-5 {margin-left: 41.66%;}
-.mcol-6 {margin-left: 50%;}
-.mcol-7 {margin-left: 58.33%;}
-.mcol-8 {margin-left: 66.66%;}
-.mcol-9 {margin-left: 75%;}
-.mcol-10 {margin-left: 83.33%;}
-.mcol-11 {margin-left: 91.66%;}
-.mcol-12 {margin-left: 100%;}
+.mcol-1 {margin-left: 8.33vw}
+.mcol-2 {margin-left: 16.66vw;}
+.mcol-3 {margin-left: 25vw;}
+.mcol-4 {margin-left: 33.33vw;}
+.mcol-5 {margin-left: 41.66vw;}
+.mcol-6 {margin-left: 50vw;}
+.mcol-7 {margin-left: 58.33vw;}
+.mcol-8 {margin-left: 66.66vw;}
+.mcol-9 {margin-left: 75vw;}
+.mcol-10 {margin-left: 83.33vw;}
+.mcol-11 {margin-left: 91.66vw;}
+.mcol-12 {margin-left: 100vw;}
 
-.colblock-1 {width: 6.33%;}
+.colblock-1 {width: 6.33%}
 .colblock-2 {width: 14.66%;}
 .colblock-3 {width: 23%;}
 .colblock-4 {width: 31.33%;}
@@ -57,16 +63,30 @@
 .colblock-11 {width: 89.66%;}
 .colblock-12 {width: 98%;}
 
-[class="processorBlock"] {
+[class*="processorBlock-"] {
+    float: left;
+    
+    border: 3px solid rgb(0, 0, 0);
+    
+  }
+
+  .processorBlock-pre {width:22.67244%; margin:1.54655%;}
+  .processorBlock-post {width:46.79%; margin: 3.19%;}
+  .quotecontainer {
+    width:64.66%; 
+    margin-left: 8.33%;
+    float: left;
+    padding: 15px;
+  }
+
+  .additionalSourceBlock {
     float: left;
     padding: 1px;
-    width: 22.3271398111%;
-    border: 3px solid rgb(0, 0, 0);
-    margin: 1.54655%;
-    position: relative;
-
+    border: 3px solid rgb(0, 0, 0);    
+    margin:10px;
+    width: 31%; 
+    text-align: center;
   }
-  
 
   
 p.small {font-size: 12px}
@@ -78,3 +98,7 @@ p.quotesender {font-size: 12px;
 
 h1.big {font-size: 20}
 h1.medium {font-size:16px}
+h1.small {font-size:12px}
+
+
+
