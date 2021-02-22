@@ -1,5 +1,6 @@
 @import 'reset.css';
-@import 'base.css';
 @import 'columns.css';
+@import 'container.css';
+@import 'text.css';
 @import 'threecol.css';
 @import 'twocol.css';
