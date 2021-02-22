@@ -56,7 +56,7 @@ ul {
 }
 
 .intro{
-    padding-top:50px;
+    margin-top:50px;
     width:100%;
     height:200px;
     display: inline-block;
@@ -87,4 +87,194 @@ ul {
     border-style: solid;
     max-width:25%;
     position:absolute;
+}
+
+.devQuote{
+    margin-top:50px;
+    width:100%;
+    height:50px;
+    display: inline-block;
+    border-style: solid;
+}
+
+.quote{
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+
+.quoteName{
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+
+.featureArticle{
+    width:100%;
+    height:600px;
+    margin-top:50px;
+}
+
+.featureTitle{
+    margin:0;
+}
+
+.featureBlock{
+    width:100%;
+    height:30%;
+    margin-bottom:10px;
+    overflow:hidden;
+}
+
+.feature{
+    width:32%;
+    height:97%;
+    padding:0;
+    margin:0;
+    display: inline-table;
+    border-style: solid;
+}
+
+.indvFeatureTitle{
+    margin:0px;
+    padding:0px;
+}
+
+.indvFeatureText{
+    margin:0px;
+    padding:0px;
+}
+
+.userReview{
+    width:80%;
+    height:150px;
+    padding-left:10%;
+    padding-right:10%;
+    display: inline-block;
+    margin-top:50px;
+    overflow: hidden;
+}
+
+.reviewText{
+    float:left;
+    width:80%;
+    text-align:center;
+}
+
+.reviewImageBlock{
+    float:right;
+    width:20%;
+    height:100%;
+}
+
+.reviewImage{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position: center;
+}
+
+.compare{
+    width:100%;
+    height:200px;
+    margin-top:50px;
+    display:inline-block;
+}
+
+table{
+    table-layout: fixed;
+    width:100%;
+    border: 1px solid black;
+}
+
+th{
+    border:1px solid black;
+    text-align:center;
+}
+
+td{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.alternatives{
+    width:100%;
+    height:300px;
+    margin-top:50px;
+    display:inline-block;
+}
+
+.alternativeUL{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.alternativeList{
+    width:100%;
+    height:200px;
+    display:inline-block;
+}
+
+.alternativeLI{
+    width:33%;
+    display:inline-block;
+}
+
+.alternativeLI img{
+    width:100%;
+    height:200px; /* Bad implementation, but stuck on it.*/
+    object-fit:contain;
+    object-position: center;
+}
+
+.tryOut{
+    margin-top:50px;
+    width:70%;
+    margin-left:15%;
+    margin-right:15%;
+    height:300px;
+    display:inline-block;
+}
+
+.tryOutText{
+    width: 50%;
+    float:left;
+}
+
+.tryOutText ul{
+    width:100%;
+    display:list-item;
+    list-style-type: disc;
+    margin-top: 1em;
+    margin-bottom: 1 em;
+}
+
+.tryOutText ul li{
+    width:100%;
+    padding:0;
+}
+
+.tryOutLinks{
+    display:inline-block;
+}
+
+.tryOutLinks a{
+    width: 50%;
+    border: 1px solid black;
+}
+
+.tryOutImage{
+    float:right;
+    width:50%;
+    height:100%;
+}
+
+.tryOutImage img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position: center;
 }
