@@ -1,12 +1,199 @@
 
-* {
-  box-sizing: border-box;
+/*Nav element*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #FFF;
 }
+
+li {
+  float: left;
+  width:20%;
+  padding-top:5px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center; 
+  text-decoration: none;
+  color:#000
+}
+
+.navBarName{
+  float: left;
+  width:33%;
+  height:32px;
+  padding: 0;
+  margin:0;
+  border:0;
+}
+
+.navBarSelect{
+  color:#000;
+  float: right;
+  width:66%;
+  height:32px;
+  padding: 0;
+  margin:0;
+  border:0;
+}
+.projectName{
+  width: 100%;
+  height: 100%;
+  text-align: center; 
+  padding:0;
+  margin:0;   
+  padding-top:5px;
+}
+
+.nav{
+  border-style: solid;
+  height:32px;
+  padding:0;
+  margin:0;  
+}
+
+/*intro*/
+
+.intro{
+  padding-top:50px;
+  width:100%;
+  height:350px;
+  display: inline-block;
+}
+
+.introBlock{
+  margin:1%;
+  padding:0;
+  float:right;
+  width:56.33%;
+  height:100%;
+  overflow:auto
+}
+
+.introImage{
+  float:left;
+  width:39.66%;
+  height:100%;
+  object-fit:scale-down;
+  margin: 1%;
+}
+
+/*text*/
+
+.titles{
+  margin:0;
+  padding:0;
+  font-size: 20px;
+}
+
+/*quote*/
+
+.quote{
+  padding-top:50px;
+  width:100%;
+  height: 200px;
+  display: inline-block;
+}
+
+.quoteBlock{
+  margin-left:9.33%;
+  margin-right: 1%;
+  padding:0;
+  float:left;
+  width:64.66%;
+  height:100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.quoteImage{
+  margin-left:1%;
+  margin-right:9.33%;
+  padding:0;
+  float: right;
+  width: 14.66%;
+  object-fit:scale-down;
+  height: 100%;
+  
+}
+/*Processorblocks*/
+
+.allProcessors{
+  padding-top:50px;
+  width:100%;
+  height:300px;
+  display: inline-block;
+}
+
+.allPreProcessors {
+  width: 49.5%;
+  height: 100%;
+  margin: 1%;
+  padding-left: 7.33%;
+  padding-right: 7.33%;
+  border: 2px solid black;
+  float: left;
+  
+  
+}
+
+.preProcessorBlock {
+  width:100%;
+  height:100%;
+  
+}
+
+.allPostProcessors{
+  width: 14.16%;
+  height: 100%;
+  margin: 1%;
+  padding-left: 8.33%;
+  padding-right: 8.33%;
+  border: 2px solid black;
+  float: right;
+}
+
+.preProcessorContainer {
+  width:28.7%; 
+  margin:2%;
+  float: left;
+  border: 2px solid black;
+  position: relative;
+  object-fit:scale-down;
+  
+}
+
+.postProcessorContainer {
+  width:100%;
+  float: left;
+  border: 2px solid black;
+}
+
+
+
+[class*="processorBlock-"] {
+  float: left;    
+  border: 3px solid rgb(0, 0, 0);    
+}
+
+.processorBlock-pre {width:22.67244%; margin:1.54655%;}
+.processorBlock-post {width:46.79%; margin: 3.19%;}
+
+
+/**/
+
+/* * {
+  box-sizing: border-box;
+} */
 
   [class*="col-"] {
     float: left;
     padding: 15px;
-    box-sizing: border-box;
+    
   }
   [class*="colblock-"] {
     float: left;
@@ -20,10 +207,7 @@
     padding: 15px;
     box-sizing: border-box;
   }
-.emptycol{
-  float : left;
-  width:8.33%
-}
+
 .col-1 {width: 8.33%}
 .col-2 {width: 16.66%;}
 .col-3 {width: 25%;}
@@ -64,10 +248,8 @@
 .colblock-12 {width: 98%;}
 
 [class*="processorBlock-"] {
-    float: left;
-    
-    border: 3px solid rgb(0, 0, 0);
-    
+    float: left;    
+    border: 3px solid rgb(0, 0, 0);    
   }
 
   .processorBlock-pre {width:22.67244%; margin:1.54655%;}
@@ -91,7 +273,7 @@
   
 p.small {font-size: 12px}
 p.medium {font-size: 16px}
-p.quote {font-size: 20px; 
+p.quotetext {font-size: 20px; 
     text-align: center;}
 p.quotesender {font-size: 12px; 
     text-align: center;}
