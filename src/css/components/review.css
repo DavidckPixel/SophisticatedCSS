@@ -1,0 +1,29 @@
+
+.userReview{
+    width:80%;
+    height:150px;
+    padding-left:10%;
+    padding-right:10%;
+    display: inline-block;
+    margin-top:50px;
+    overflow: hidden;
+}
+
+.reviewText{
+    float:left;
+    width:80%;
+    text-align:center;
+}
+
+.reviewImageBlock{
+    float:right;
+    width:20%;
+    height:100%;
+}
+
+.reviewImage{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position: center;
+}

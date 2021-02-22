@@ -1,0 +1,56 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #FFF;
+  }
+  
+  li {
+    float: left;
+    width:20%;
+    padding-top:5px;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center; 
+    text-decoration: none;
+    color:#000
+  }
+   
+
+.navBarName{
+    float: left;
+    width:33%;
+    height:32px;
+    padding: 0;
+    margin:0;
+    border:0;
+}
+
+.navBarSelect{
+    color:#000;
+    float: right;
+    width:66%;
+    height:32px;
+    padding: 0;
+    margin:0;
+    border:0;
+  }
+.projectName{
+    width: 100%;
+    height: 100%;
+    text-align: center; 
+    padding:0;
+    margin:0;   
+    padding-top:5px;
+}
+
+.nav{
+    border-style: solid;
+    height:32px;
+    padding:0;
+    margin:0;  
+}

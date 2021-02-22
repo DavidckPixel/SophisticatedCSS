@@ -1,0 +1,77 @@
+
+.featureArticle{
+    width:100%;
+    height:600px;
+    margin-top:50px;
+}
+
+.featureTitle{
+    margin:0;
+}
+
+.featureBlock{
+    width:100%;
+    height:30%;
+    margin-bottom:10px;
+    overflow:hidden;
+}
+
+.feature{
+    width:32%;
+    height:97%;
+    padding:0;
+    margin:0;
+    display: inline-table;
+    border-style: solid;
+}
+
+.indvFeatureTitle{
+    margin:0px;
+    padding:0px;
+}
+
+.indvFeatureText{
+    margin:0px;
+    padding:0px;
+}
+
+.alternatives{
+    width:100%;
+    height:300px;
+    margin-top:50px;
+    display:inline-block;
+}
+
+.alternativeUL{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.alternativeList{
+    width:100%;
+    height:200px;
+    display:inline-block;
+}
+
+.alternativeLI{
+    width:33%;
+    display:inline-block;
+}
+
+.alternativeLI img{
+    width:100%;
+    height:200px; /* Bad implementation, but stuck on it.*/
+    object-fit:contain;
+    object-position: center;
+}
+
+.additionalSourceBlock {
+    float: left;
+    padding: 1px;
+    border: 3px solid rgb(0, 0, 0);
+    margin: 10px;
+    width: 31%;
+    text-align: center;
+}
