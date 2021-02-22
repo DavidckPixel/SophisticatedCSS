@@ -8,29 +8,41 @@
     <link rel="stylesheet" href= "../../src/css/temp.css" />
 </head>
 <body>
-<nav></nav>
+    <nav class="nav">
+        <section class="navBarName">  
+            <h1 class="projectName">SophisticatedCSS</h1>
+        </section>
+        <section class="navBarSelect">
+            <ul>
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="../../src/html/sass.html">Sass</a></li>
+                <li><a href="../../src/html/less.html">Less</a></li>
+                <li><a href="../../src/html/stylus.html">Stylus</a></li>
+                <li><a href="../../src/html/postcss.html">PostCSS</a></li>
+            </ul>
+        </section>
+    </nav>
 <article>    
-    <section id="header">
-        <img src="../../src/Image/1200px-UULogo.png"
-            alt="A picture for the home page"
-            class = "col-5">    
-        <section class="col-7">
+    <section class="intro">
+        <img class="introImage"
+            src="../../src/Image/1200px-UULogo.png"
+            alt="A picture for the home page">    
+        <section class="introBlock">
             <h1 class = "big">Improve your CSS</h1>
-            <p class = "medium">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""</p>
-        
+            <p class = "medium">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>        
         </section>
     </section>
-    <section id="firstQuote">
-        <section class="quotecontainer">
-            <p class="quote"> "Test de quotes, test de quotes, test de quotes" </p>
+
+    <section class="quote">
+        <section class="quoteBlock">
+            <p class="quotetext"> "Test de quotes, test de quotes, test de quotes" </p>
             <p class="quotesender"> van Laura</p>
-        </section>
-        <section>
-        <img src="../../src/Image/1200px-UULogo.png"
-        alt="A picture for the first quote"    
-        class="col-2">
-        </section>
+        </section>        
+        <img class="quoteImage"
+        src="../../src/Image/1200px-UULogo.png"
+        alt="A picture for the first quote">        
     </section>
+    
     <section id="preProcessors", class="col-12">
         <h1 class="big">Pre-Processors</h1>
         <p class="medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
@@ -49,50 +61,42 @@
             <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         </section>
     </section>
-    <section id="allProcessors">
-        <section class="colblock-8", id="pre">
+
+    <section class="allProcessors">
+        <section class="allPreProcessors">
             <h1 class="medium", style="text-align: center;"> Pre-Processors </h1>
-            <section class="emptycol">
-                <p></p>
-            </section>
-            <section style="text-align: center;">
-                
+            <section class="preProcessorBlock">                
+                <a href="../../src/html/sass.html">
                 <img src="../../src/Image/1200px-Sass_Logo_Color.svg.png"
-                    alt="A clickable logo of SASS" 
-                    width="100%"                    
-                    class="processorBlock-pre"
+                    alt="A clickable logo of SASS"        
+                    class="preProcessorContainer"
                     >
-                
+                </a>
+                    <a href="../../src/html/less.html">
                 <img src="../../src/Image/newLessLogo.png"
-                    alt="A clickable logo of LESS"                     
-                    width="100%"
-                    class="processorBlock-pre"
+                    alt="A clickable logo of LESS"
+                    class="preProcessorContainer"
                     >
-                    
-                <img src="../../src/Image/newStylusLogo.png"
-                    alt="A clickable logo of Stylus"
-                    width="100%"
-                    class="processorBlock-pre"
-                    >
+                </a>
+                <a href="../../src/html/stylus.html">
+                    <img src="../../src/Image/newStylusLogo.png"
+                        alt="A clickable logo of Stylus"
+                        class="preProcessorContainer"
+                        >
+                </a>
             </section>
-            <section class="emptycol">
-                <p></p>
-            </section>
+
         </section>
-        <section class="colblock-4", id="post">
+        <section class="allPostProcessors">
             <h1 class="medium", style="text-align: center;"> Post-Processors </h1>
             <section style="text-align: center;">
-                <section class="emptycol">
-                    <p></p>
-                </section>
-                <img src="../../src/Image/newPostCsslogo.png"
-                    alt="A clickable logo of SASS" 
-                    width="100%"                    
-                    class="processorBlock-post"
+                <a href="../../src/html/postcss.html">
+                    <img src="../../src/Image/newPostCsslogo.png"
+                        alt="A clickable logo of PostCSS"
+                        class="postProcessorContainer"
                     >
-                    <section class="emptycol">
-                        <p></p>
-                    </section>
+                </a>
+
             </section>
         </section>
     </section>
