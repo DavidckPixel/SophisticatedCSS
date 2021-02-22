@@ -1,0 +1,9 @@
+{
+    "css.lint.compatibleVendorPrefixes": "warning",
+    "css.lint.duplicateProperties": "error",
+    "css.lint.float": "warning",
+    "css.lint.idSelector": "error",
+    "css.lint.important": "error",
+    "css.lint.universalSelector": "error",
+    "css.lint.zeroUnits": "warning"
+}
