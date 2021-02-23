@@ -2,7 +2,7 @@
 
 .tryOut{    
     width:calc(100%);
-    height:300px;
+    height:auto;
     display:inline-block;
 }
 
@@ -12,7 +12,6 @@
     display:inline-block; /*links must be on the same line*/
     width:47%;
 }
-
 
 /*CSS for the image in the tryOut section*/
 .tryOut img{ 
@@ -58,4 +57,22 @@ when 2 sections are both defined with the .two-col class, It will but the 2 sect
 .rightOutline {
     padding-right: calc(100% /12 * 2);
     width: calc(100% / 12 * 6 - 2.4% - (100% /12 * 2) );
+}
+
+@media (max-width:600px){
+    .two-col img{
+        display:none;
+    }
+
+    .two-col{
+        width:100%;
+    }
+
+    .leftOutline{
+        padding-left:0;
+    }
+
+    .rightOutline{
+        padding-right:0;
+    }
 }

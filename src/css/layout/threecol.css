@@ -2,7 +2,7 @@
 
 .featureArticle{
     width:100%;
-    height:600px;
+    height:auto;
     
 }
 
@@ -22,11 +22,10 @@
     margin-left:1%;
     margin-right:1%;
     min-height:150px; /* Needs a miniumum height so all blocks are somewhat consistent*/
-    display: inline-table;
+    display: inline-block;
     float:left;
     border-style: solid;
     border-width: 2px;
-    
 }
 
 .feature h1{
@@ -42,6 +41,25 @@
     height:200px; /* Bad implementation, but stuck on it.*/
     object-fit:contain;
     object-position: center;
+}
+
+@media (max-width: 600px){
+    .feature{
+        width:97.5%;
+        margin-bottom:5px;
+        border: 2px solid black;
+    }
+
+    .exampleBlock{
+        width:100%;
+        display:inline-flex;
+    }
+
+    .exampleBlock .feature{
+        width:49%;
+        display:inline-block;
+        float:none;
+    }
 }
 
 /*
