@@ -51,3 +51,20 @@ h1.small {
 h1.center {
     text-align: center;
 }
+
+@media (max-width: 600px){
+    p.quoteText {
+        margin:0;
+        padding:0;
+        font-size: 20px;
+        
+    }
+    
+    p.quoteSender {
+        margin:0;
+        padding:0;
+        font-size: 12px;
+        
+        
+    }
+}
