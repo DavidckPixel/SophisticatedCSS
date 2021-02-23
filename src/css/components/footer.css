@@ -1,5 +1,5 @@
 .footer {
-    margin-top: 50px;
+    margin-top: 20px;
     height:auto;
     display: inline-block;
 }
@@ -31,21 +31,35 @@
 
 @media(max-width:600px){
     .footer img{
-        width:20%;
+        width:calc(100% / 12 * 3 - 2%);
         height:20%;
+        margin-right: 1%;
         float:right;
         object-fit:scale-down;
         object-position: center;
     }
 
-    .footer text{
-        width:50%;
+    .footer .footerText{
+        width:calc(100% / 12 * 9 - 2%);
         height:20%;
         float:left;
+        margin-bottom: 10px;
     }
 
     .footer .contributor{
-        width:100%;
-        text-align:center;
+        width:calc(100% / 12 * 9 - 2%);
+        display: inline-block;
+        margin-bottom: 0;
+        margin-top:0;
+    }
+
+    .footer .contributor h1{
+        float: left;
+        width: calc(100% / 12 * 6 - 2%);
+    }
+
+    .footer .contributor p{
+        float: left;
+        width: calc(100% / 12 * 6 - 2%);
     }
 }

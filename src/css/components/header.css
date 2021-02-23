@@ -42,7 +42,10 @@ ul {
 }
 
 .nav{
-    border-style: solid; /* give the headerbar a border around it;*/
+    margin: 1%;
+    width: calc(100% - 2% - 4px);
+    border-style: solid;
+    border-width: 2px solid black;/* give the headerbar a border around it;*/
     height:auto;
 }
 
