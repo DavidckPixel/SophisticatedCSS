@@ -1,15 +1,16 @@
 
-/*Processorblocks*/
+/*Processorblocks: a 8/5 ratio between the block width the preprocessors and the block with the postprocessors. The containers per processor are 2/12 of the original width of the page, calculated*/
 
 .allProcessors {
-    padding-top: 50px;
+    padding-top: 30px;
     width: 100%;
-    height: 300px;
+    height: auto;
     display: inline-block;
+    
 }
 
 .allPreProcessors {
-    width: 49.5%;
+    width: calc(100% / 12 * 8 - 2% - 14.66% - 4px);
     height: 100%;
     margin: 1%;
     padding-left: 7.33%;
@@ -24,41 +25,33 @@
 }
 
 .allPostProcessors {
-    width: 14.16%;
+    width: calc(100% / 12 * 4 - 2% - 14.66% - 4px);
     height: 100%;
     margin: 1%;
-    padding-left: 8.33%;
-    padding-right: 8.33%;
+    padding-left: 7.33%;
+    padding-right: 7.33%;
     border: 2px solid black;
     float: right;
+    
 }
 
 .preProcessorContainer {
-    width: 28.7%;
+    width: calc(100% / 3 - 4% - 4px);
     margin: 2%;
     float: left;
     border: 2px solid black;
-    position: relative;
-    object-fit: scale-down;
+    
 }
 
 .postProcessorContainer {
-    width: 100%;
+    width: calc(100% - 10% - 4px);
+    margin: 5%;
     float: left;
     border: 2px solid black;
 }
 
-[class*="processorBlock-"] {
-    float: left;
-    border: 3px solid rgb(0, 0, 0);
+.allPostProcessors .processorText {
+    margin-left: -30%;
+    margin-right: -30%;
 }
 
-.processorBlock-pre {
-    width: 22.67244%;
-    margin: 1.54655%;
-}
-
-.processorBlock-post {
-    width: 46.79%;
-    margin: 3.19%;
-}

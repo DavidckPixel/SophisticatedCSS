@@ -8,61 +8,62 @@
     <link rel="stylesheet" href= "../../src/css/sophisticated.css" />
 </head>
 <body>
-    <nav class="nav">
+    <nav class="nav container">
         <section class="navBarName">  
             <h1 class="projectName">SophisticatedCSS</h1>
         </section>
         <section class="navBarSelect">
             <ul>
-                <li><a class="active" href="#home">Home</a></li>
-                <li><a href="../../src/html/sass.html">Sass</a></li>
-                <li><a href="../../src/html/less.html">Less</a></li>
-                <li><a href="../../src/html/stylus.html">Stylus</a></li>
-                <li><a href="../../src/html/postcss.html">PostCSS</a></li>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="sass.html">Sass</a></li>
+                <li><a href="less.html">Less</a></li>
+                <li><a href="stylus.html">Stylus</a></li>
+                <li><a href="postcss.html">PostCSS</a></li>
             </ul>
         </section>
     </nav>
 <article>    
-    <section class="intro">
-        <img class="introImage"
-            src="../../src/Image/1200px-UULogo.png"
-            alt="A picture for the home page">    
+    <section class="introHome container">
+        <img
+            src="../../src/Image/placeholder.png"
+            alt="A placeholder image!">   
         <section class="introBlock">
             <h1 class = "big">Improve your CSS</h1>
             <p class = "medium">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>        
         </section>
     </section>
 
-    <section class="quote">
-        <section class="quoteBlock">
-            <p class="quotetext"> "Test de quotes, test de quotes, test de quotes" </p>
-            <p class="quotesender"> van Laura</p>
+    <section class="userReview container";>
+        <section class="reviewText">
+            <p class="quoteText"> "Test de quotes, test de quotes, test de quotes" </p>
+            <p class="quoteSender"> van Laura</p>
         </section>        
-        <img class="quoteImage"
+        <img 
         src="../../src/Image/1200px-UULogo.png"
-        alt="A picture for the first quote">        
+        alt="A picture for the second quote">
     </section>
     
-    <section id="preProcessors", class="col-12">
+    <section class="container one-col">
         <h1 class="big">Pre-Processors</h1>
         <p class="medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
     </section>
-    <section id="preProcessorBlocks">
-        <section id="when", class="colblock-4">
+
+    <section class="container ">
+        <section class="feature">
             <h1 class="medium">When</h1>
             <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         </section>
-        <section id="how", class="colblock-4">
+        <section class="feature">
             <h1 class="medium">How</h1>
             <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         </section>
-        <section id="why", class="colblock-4">
+        <section class="feature">
             <h1 class="medium">Why</h1>
             <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         </section>
     </section>
 
-    <section class="allProcessors">
+    <section class="allProcessors container">
         <section class="allPreProcessors">
             <h1 class="medium", style="text-align: center;"> Pre-Processors </h1>
             <section class="preProcessorBlock">                
@@ -88,43 +89,42 @@
 
         </section>
         <section class="allPostProcessors">
-            <h1 class="medium", style="text-align: center;"> Post-Processors </h1>
+            <h1 class="medium center processorText"> Post-Processors </h1>
             <section style="text-align: center;">
                 <a href="../../src/html/postcss.html">
                     <img src="../../src/Image/newPostCsslogo.png"
                         alt="A clickable logo of PostCSS"
-                        class="postProcessorContainer"
-                    >
+                        class="postProcessorContainer">
                 </a>
 
             </section>
         </section>
     </section>
-    <section id="secondQuote";>
-        <section class="quotecontainer">
-            <p class="quote"> "Test de 2nd quotes, test de 2nd quotes, test de 2nd quotes" </p>
-            <p class="quotesender"> van Laura</p>
-        </section>
-        <section>
-        <img src="../../src/Image/1200px-UULogo.png"
-        alt="A picture for the second quote"    
-        class="col-2">
-        </section>
+    <section class="userReview container";>
+        <section class="reviewText">
+            <p class="quoteText"> "Test de 2nd quotes, test de 2nd quotes, test de 2nd quotes" </p>
+            <p class="quoteSender"> van Laura</p>
+        </section>        
+        <img 
+        src="../../src/Image/1200px-UULogo.png"
+        alt="A picture for the second quote">        
     </section>
-    <section id="riskDiscussion", class="col-12">
-        <h1 class="big">Risks and Discussion</h1>
-        <section id="vendorLockIn", class="col-6">
+    
+    <section class="container">
+        <h1 class="big inSpring">Risks and Discussion</h1>
+        <section class="two-col">
             <h1 class="medium">Vendor Lock-in</h1>
             <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         </section>
-        <section id="distanceDeveloper", class="col-6">
+        <section class="two-col">
             <h1 class="medium">Distance from developer</h1>
             <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
         </section>
     </section>
-    <section id="additionalSources", class="col-12">
-        <h1 class="big">Additional Sources</h1>
-        <section class="col-12">
+
+    <section class="container">
+        <h1 class="big inSpring">Additional Sources</h1>
+        <section >
             <section class="additionalSourceBlock">
                 <a href="https://www.w3schools.com/html/html_elements.asp", >This is a temporary link</a>
             </section>
@@ -136,32 +136,28 @@
             </section>            
         </section>        
     </section>
-    <footer class="col-12">
-        <h1 class="medium">Sophisticated CSS</h1>
-        <section class="col-4">
+
+    <footer class="footer container">        
+        <section class="footerText">
+            <h1 class="medium">Sophisticated CSS</h1>
             <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </section>
-        <img src="../../src/Image/1200px-UULogo.png"
-        alt="UU Logo"    
-        class="col-1">
-        <section class="col-1">
-            <p></p>
-        </section>
-        <section class="col-2">
+        <img 
+        src="../../src/Image/1200px-UULogo.png"
+        alt="UU Logo">
+        <section class="contributor">
             <h1 class = "small">Laura Holtus</h1>
             <p class = "small">123456</p>
         </section>
-        <section class="col-2">
+        <section class="contributor">
             <h1 class = "small">David Koymans</h1>
             <p class = "small">123456</p>
         </section>
-        <section class="col-2">
+        <section class="contributor">
             <h1 class = "small">Jasper Weyne</h1>
             <p class = "small">123456</p>
         </section>
     </footer>
-
-
 </article>
 </body>
 </html>
