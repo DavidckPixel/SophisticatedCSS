@@ -1,5 +1,7 @@
+/* Block of Text which takes on full screen and centers all the text  */
 
-.devQuote{
+
+.quote{     /* was called devQuote */
     margin-top:50px;
     width:100%;
     height:50px;
@@ -7,15 +9,13 @@
     border-style: solid;
 }
 
-.quote{
+.quote h1{  /* was called quote*/
     margin:0;
-    padding:0;
     text-align:center;
 }
 
-.quoteName{
+.quote p{  /* was called quote name*/
     margin:0;
-    padding:0;
     text-align:center;
 }
 

@@ -1,16 +1,16 @@
 
-table{
+.compare table{
     table-layout: fixed;
     width:100%;
     border: 1px solid black;
 }
 
-th{
+.compare th{
     border:1px solid black;
     text-align:center;
 }
 
-td{
+.compare td{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;

@@ -1,28 +1,26 @@
 
+/* 33/66% screen division first half being picture second half being text */
+
 .intro{
     margin-top:50px;
-    width:100%;
     height:200px;
     display: inline-block;
 }
 
-.introBlock{
-    margin:0;
-    padding:0;
-    float:right;
+.intro .introBlock{
     width:66%;
     height:100%;
     overflow: hidden;
+    display: inline-block;
 }
 
-.introImage{
-    float:left;
+.intro img{
     width:33%;
     height:100%;
     object-fit:contain;
 }
 
-.introTitle{
+.intro h1{
     margin:0;
     padding:0;
 }
@@ -30,5 +28,8 @@
 .introLink{
     border-style: solid;
     max-width:25%;
-    position:absolute;
+}
+
+.introLink p{
+    text-align:center;
 }

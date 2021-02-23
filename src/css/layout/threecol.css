@@ -1,3 +1,4 @@
+/* general information for the Feature list for Info-pages */
 
 .featureArticle{
     width:100%;
@@ -9,35 +10,40 @@
     margin:0;
 }
 
+/*3 column structure, NEEDS TO BE RENAMED, Screen is split into 3 blocks called features*/
+
 .featureBlock{
-    width:100%;
-    height:30%;
-    margin-bottom:10px;
+    margin-bottom:10px;     /* if blocks stack, there will always be a 10px gab between them*/
     overflow:hidden;
 }
 
 .feature{
-    width:32%;
-    height:97%;
-    padding:0;
+    width:32%;    /* 3 column, so al colums have a width of 32*/
     margin:0;
+    min-height:150px; /* Needs a miniumum height so all blocks are somewhat consistent*/
     display: inline-table;
     border-style: solid;
 }
 
-.indvFeatureTitle{
-    margin:0px;
-    padding:0px;
+.feature h1{
+    margin:0;
 }
 
-.indvFeatureText{
-    margin:0px;
-    padding:0px;
+.feature p{
+    margin:0;
 }
 
+.feature img{
+    width:100%;
+    height:200px; /* Bad implementation, but stuck on it.*/
+    object-fit:contain;
+    object-position: center;
+}
+
+/*
 .alternatives{
     width:100%;
-    height:300px;
+    height:200px;
     margin-top:50px;
     display:inline-block;
 }
@@ -58,14 +64,7 @@
 .alternativeLI{
     width:33%;
     display:inline-block;
-}
-
-.alternativeLI img{
-    width:100%;
-    height:200px; /* Bad implementation, but stuck on it.*/
-    object-fit:contain;
-    object-position: center;
-}
+} */
 
 .additionalSourceBlock {
     float: left;

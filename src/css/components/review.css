@@ -1,29 +1,30 @@
+/*User review block, block uses only 80% of the screen, then from that 80% -> 80% is contributed to the review
+While the remaining 20% if given to the image */
 
 .userReview{
     width:80%;
     height:150px;
     padding-left:10%;
     padding-right:10%;
-    display: inline-block;
     margin-top:50px;
     overflow: hidden;
+    display:inline-block;
 }
 
 .reviewText{
-    float:left;
-    width:80%;
+    width:79%;
     text-align:center;
+    float:left;
 }
 
-.reviewImageBlock{
-    float:right;
+.reviewText h1{
+    margin:0;
+}
+
+.userReview img{
     width:20%;
-    height:100%;
-}
-
-.reviewImage{
-    width:100%;
     height:100%;
     object-fit:contain;
     object-position: center;
+    float:right;
 }

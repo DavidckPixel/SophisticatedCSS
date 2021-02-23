@@ -1,3 +1,4 @@
+/* tryOut class, selects 70% of the screen in the middle */
 
 .tryOut{
     margin-top:50px;
@@ -8,12 +9,23 @@
     display:inline-block;
 }
 
-.tryOutText{
-    width: 50%;
-    float:left;
+/* all links in tryout class must be in blocks and 50% of the blocks width; */
+.tryOut a{
+    border: 1px solid black;
+    display:inline-block; /*links must be on the same line*/
+    width:47%;
 }
 
-.tryOutText ul{
+
+/*CSS for the image in the tryOut section*/
+.tryOut img{ 
+    display:inline-block;
+    width:100%;
+    object-fit:contain;
+    object-position: center;
+}
+
+.tryOut ul{
     width:100%;
     display:list-item;
     list-style-type: disc;
@@ -21,29 +33,14 @@
     margin-bottom: 1 em;
 }
 
-.tryOutText ul li{
+.tryOut ul li{
     width:100%;
     padding:0;
 }
 
-.tryOutLinks{
+/*part of a two-column, give it the width of 50% of the current block, and make it inline with other blocks 
+when 2 sections are both defined with the .two-col class, It will but the 2 sections right down the middle of eachother*/
+.two-col{
+    width:49%;
     display:inline-block;
-}
-
-.tryOutLinks a{
-    width: 50%;
-    border: 1px solid black;
-}
-
-.tryOutImage{
-    float:right;
-    width:50%;
-    height:100%;
-}
-
-.tryOutImage img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    object-position: center;
 }
