@@ -43,5 +43,18 @@ ul {
 
 .nav{
     border-style: solid; /* give the headerbar a border around it;*/
-    height:32px;
+    height:auto;
+}
+
+@media (max-width:600px){
+  .nav .navBarName{
+    width:100%;
+    display:block;
+  }
+
+  .nav .navBarSelect{
+    color:#000;
+    width:100%;
+    display:block;
+  }
 }
