@@ -10,36 +10,51 @@ ul {
   
   li {
     width:19%;
-    padding-top:5px;
     display:inline-block;
+    text-align: center;
+    
   }
   
   li a {
+    
     color: black;
     text-align: center; 
     text-decoration: none;
     font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    
   }
    
   /*We disect the navbar into 2 parts: side title | navigator, we give the side title 33% of the screen and the navigator the remaining 66% 
   Both blocks are inlined so they fit on the same page*/
 
 .nav .navBarName{
-    width:33%;
+    width:calc(33% - 2px - 2%);
     display:inline-block;
-    
+    margin-right: 1%;
+    border-right: 2px solid black;
+    height: 100%;
+    min-height:25px;
+    padding-top: 0;
 }
 
 .nav .navBarSelect{
     color:#000;
-    width:66%;
+    width:calc(66% - 2px - 2%);
     display:inline-block;
+    border-left: 2px solid black;
+    margin-left: 1%;
+    margin-top:0;
+    margin-bottom: 0;
+    height:100%;
+    min-height:25px;
+    
   }
 
 .nav .navBarName h1{
     text-align: center; /* text is aligned center block*/
     margin:0;   
-    padding-top:5px;
+    
 }
 
 .nav{
@@ -53,7 +68,7 @@ ul {
 @media (max-width:600px){
   .nav .navBarName{
     width:100%;
-    display:block;
+    display:block;    
   }
 
   .nav .navBarSelect{

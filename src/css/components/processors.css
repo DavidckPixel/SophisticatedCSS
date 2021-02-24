@@ -9,13 +9,13 @@
 }
 
 .allPreProcessors {
-    width: calc(100% / 12 * 8 - 2% - 14.66% - 4px);
+    width: calc(100% / 12 * 8 - 2% - 14.66% - 2px);
     height: 100%;
     margin: 1%;
     padding-left: 7.33%;
-    padding-right: 7.33%;
-    border: 2px solid black;
+    padding-right: 7.33%;    
     float: left;
+    border-right: 2px solid white;
 }
 
 .preProcessorBlock {
@@ -24,13 +24,13 @@
 }
 
 .allPostProcessors {
-    width: calc(100% / 12 * 4 - 2% - 14.66% - 4px);
+    width: calc(100% / 12 * 4 - 2% - 14.66% - 2px);
     height: 100%;
     margin: 1%;
     padding-left: 7.33%;
-    padding-right: 7.33%;
-    border: 2px solid black;
+    padding-right: 7.33%;    
     float: right;
+    border-left: 2px solid white;
     
 }
 
@@ -81,12 +81,12 @@
 
 @media (max-width: 600px){
     .allPreProcessors {
-        width: calc(100% - 2% - 4px);
+        width: calc(100% - 2%);
         /* width: calc(100% / 12 * 12 - 2% - 100% / 12 * 6 - 2% - 4px); */
         height: 210px;
         margin: 1%;
         padding: 0;
-        border: 2px solid black;
+        border-right: none;
         float:none;
         display: inline-block;
 
@@ -103,12 +103,12 @@
     }
     
     .allPostProcessors {
-        width: calc(100% / 12 * 12 - 2% - (100% / 12 * 6 - 2%) - 4px);
+        width: calc(100% / 12 * 12 - 2% - (100% / 12 * 6 - 2%));
         height: 210px;
         margin: 1%;
         padding-left: calc(100% / 12 * 3 - 1%);
         padding-right: calc(100% / 12 * 3 - 1%);
-        border: 2px solid black;
+        border-left:none;
         float: left;
         
     }
