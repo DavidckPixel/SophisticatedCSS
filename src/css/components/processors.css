@@ -38,15 +38,40 @@
     width: calc(100% / 3 - 4%);
     margin: 2%;
     float: left;
+}
+
+.preProcessorContainer img{
+    display: block;
+    width: calc(100% - 20%);
+    margin-left: 10%;
+    margin-right:10%;
+    margin-bottom: 0;
+    margin-top:0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    float: left;
+}
+
+
+
+.postProcessorContainer {
+    width: calc(100% - 10%);
+    margin:5%;    
+    float: left;
     
     
 }
 
-.postProcessorContainer {
-    width: calc(100% - 10%);
-    margin: 5%;
+.postProcessorContainer img{
+    display: block;
+    width: calc(100% - 20%);
+    margin-left: 10%;
+    margin-right:10%;
+    margin-bottom: 0;
+    margin-top:0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
     float: left;
-    
 }
 
 .allPostProcessors .processorText {
@@ -93,6 +118,7 @@
         
         width: calc(100% / 12 * 6 - 2%);
         margin: 1%;
+        margin-top: 5%;
         float:none;
         display: inline-block;
         
@@ -102,6 +128,7 @@
     .postProcessorContainer {
         width: calc(100% - 2%);
         margin: 1%;
+        margin-top: 10%;
         float: left;
         
     }
