@@ -67,12 +67,14 @@ ul {
 @media (max-width:600px){
   .nav .navBarName{
     width:100%;
-    display:block;    
+    display:block;
+    border-right: none;
   }
 
   .nav .navBarSelect{
     color:#000;
     width:100%;
     display:block;
+    border-left:none;
   }
 }

@@ -84,7 +84,7 @@
 }
 
 @media (max-width: 600px){
-    .featureArticle .feature{
+    .feature{
         width:calc(100% / 12 * 12 - 2% - 4px);
         margin-bottom:5px;
         height:auto;
