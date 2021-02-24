@@ -8,11 +8,12 @@
 
 /* all links in tryout class must be in blocks and 50% of the blocks width; */
 .tryOut a{
-    border: 2px solid black;
+    
     display:inline-block; /*links must be on the same line*/
     font-family: 'Quicksand', sans-serif;
-    width:calc(100% / 12 * 6 - 4px - 2%);
+    width:calc(100% / 12 * 6 - 2%);
     font-size: 12px;
+    
 }
 
 /*CSS for the image in the tryOut section*/

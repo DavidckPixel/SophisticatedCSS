@@ -13,6 +13,7 @@ p.medium {
     font-size: 16px;
     font-family: 'Quicksand', sans-serif;
     color: white;
+    text-decoration-line: none;
 }
 
 p.quoteText {
@@ -52,6 +53,7 @@ h1.medium {
     font-size: 16px;
     font-family: 'Fira Code', monospace;
     color: white;
+    text-decoration: none;
 }
 
 h1.small {

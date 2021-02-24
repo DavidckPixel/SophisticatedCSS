@@ -1,4 +1,15 @@
 .blackBlock{
     background-color: black;
-    
+    border-radius: 15px;
+    border:none;
+    box-shadow: 0 0 8px 1px rgb(36, 34, 34);
+    background-image:linear-gradient(315deg, black 30%, rgba(97, 90, 90, 0.507) 100%);
+}
+
+.blackBlockSmall {
+    background-color: black;
+    border-radius: 5px;
+    border:none;
+    box-shadow: 0 0 8px 1px rgb(36, 34, 34);
+    background-image:linear-gradient(315deg, black 30%, rgba(97, 90, 90, 0.507) 100%);
 }

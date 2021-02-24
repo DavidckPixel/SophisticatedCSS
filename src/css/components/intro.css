@@ -33,8 +33,7 @@
     padding:0;
 }
 
-.introLink{
-    border-style: solid;
+.introLink{    
     max-width:25%;
     margin-top:10px;
     font-family: 'Quicksand', sans-serif;

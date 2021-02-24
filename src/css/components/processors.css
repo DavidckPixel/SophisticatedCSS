@@ -35,18 +35,18 @@
 }
 
 .preProcessorContainer {
-    width: calc(100% / 3 - 4% - 4px);
+    width: calc(100% / 3 - 4%);
     margin: 2%;
     float: left;
-    border: 2px solid black;
+    
     
 }
 
 .postProcessorContainer {
-    width: calc(100% - 10% - 4px);
+    width: calc(100% - 10%);
     margin: 5%;
     float: left;
-    border: 2px solid black;
+    
 }
 
 .allPostProcessors .processorText {
@@ -91,19 +91,19 @@
     
     .preProcessorContainer {
         
-        width: calc(100% / 12 * 6 - 2% - 4px);
+        width: calc(100% / 12 * 6 - 2%);
         margin: 1%;
         float:none;
         display: inline-block;
-        border: 2px solid black;
+        
         
     }
     
     .postProcessorContainer {
-        width: calc(100% - 2% - 4px);
+        width: calc(100% - 2%);
         margin: 1%;
         float: left;
-        border: 2px solid black;
+        
     }
     
     .allPostProcessors .processorText {
