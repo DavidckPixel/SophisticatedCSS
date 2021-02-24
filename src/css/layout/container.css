@@ -2,7 +2,11 @@
     width: 100%;
     max-width: 960px;
     margin-bottom: 2rem;
-    
+}
+
+body{
+    background-blend-mode: normal;
+    background-image:linear-gradient(to right,#3f003f 0%, #46008b 100%)
 }
 
 @media (min-width: 768px) {
