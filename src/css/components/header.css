@@ -19,6 +19,7 @@ ul {
     color: black;
     text-align: center; 
     text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
   }
    
   /*We disect the navbar into 2 parts: side title | navigator, we give the side title 33% of the screen and the navigator the remaining 66% 
@@ -27,6 +28,7 @@ ul {
 .nav .navBarName{
     width:33%;
     display:inline-block;
+    
 }
 
 .nav .navBarSelect{

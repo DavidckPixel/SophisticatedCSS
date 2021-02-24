@@ -2,33 +2,40 @@
 p.small {
     margin:0;
     padding:0;
-    font-size: 12px
+    font-size: 12px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 p.medium {
     margin:0;
     padding:0;
-    font-size: 16px
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 p.quoteText {
     margin:0;
     padding:0;
+    font-family: 'Quicksand', sans-serif;
     font-size: 20px;
     text-align: center;
+    
 }
 
 p.quoteSender {
     margin:0;
     padding:0;
+    font-family: 'Quicksand', sans-serif;
     font-size: 12px;
     text-align: center;
+    
 }
 
 h1.big {
     margin:0;
     padding:0;
     font-size: 20px;
+    font-family: 'Fira Code', monospace;
 }
 
 h1.inSpring {
@@ -39,32 +46,28 @@ h1.inSpring {
 h1.medium {
     margin:0;
     padding:0;
-    font-size: 16px
+    font-size: 16px;
+    font-family: 'Fira Code', monospace;
 }
 
 h1.small {
     margin:0;
     padding:0;
-    font-size: 12px
+    font-size: 12px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 h1.center {
     text-align: center;
 }
 
+.sophisticated {
+    margin:0;
+    padding:0;
+    font-size: 16px;
+    font-family: 'Lobster', cursive;
+}
+
 @media (max-width: 600px){
-    p.quoteText {
-        margin:0;
-        padding:0;
-        font-size: 20px;
-        
-    }
     
-    p.quoteSender {
-        margin:0;
-        padding:0;
-        font-size: 12px;
-        
-        
-    }
 }
