@@ -4,6 +4,7 @@
     width:calc(100%);
     height:auto;
     display:inline-block;
+    margin-bottom:10px;
 }
 
 /* all links in tryout class must be in blocks and 50% of the blocks width; */

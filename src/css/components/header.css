@@ -58,11 +58,10 @@ ul {
 }
 
 .nav{
-    margin: 1%;
-    width: calc(100% - 2% - 4px);
-    border-style: solid;
-    border-width: 2px solid black;/* give the headerbar a border around it;*/
+    margin-top:10px;
+    width: 100%;
     height:auto;
+    margin-bottom:10px;
 }
 
 @media (max-width:600px){

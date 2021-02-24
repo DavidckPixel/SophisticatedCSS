@@ -2,7 +2,6 @@
 /* 33/66% screen division first half being picture second half being text */
 
 .intro{
-    margin-top:50px;
     margin-bottom:10px;
     height:200px;
     display: inline-block;
