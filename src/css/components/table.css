@@ -18,10 +18,12 @@
     text-overflow: ellipsis;
     color:white;
     padding-right:20px;
+    height:50px;
 }
 
 .compare{
     width:100%;
     height:auto;
     display:inline-block;
+    margin-bottom:10px;
 }
