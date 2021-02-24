@@ -4,6 +4,13 @@
     margin-bottom: 2rem;
 }
 
+.white {
+    width: 100%;
+    background-color: white;
+    margin-left: 0;
+    margin-right: 0;
+}
+
 body{
     background-blend-mode: normal;
     background-image:linear-gradient(to right,#3f003f 0%, #46008b 100%)

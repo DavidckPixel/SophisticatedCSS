@@ -4,6 +4,7 @@ p.small {
     padding:0;
     font-size: 12px;
     font-family: 'Quicksand', sans-serif;
+    color:white;
 }
 
 p.medium {
@@ -11,6 +12,7 @@ p.medium {
     padding:0;
     font-size: 16px;
     font-family: 'Quicksand', sans-serif;
+    color: white;
 }
 
 p.quoteText {
@@ -36,6 +38,7 @@ h1.big {
     padding:0;
     font-size: 20px;
     font-family: 'Fira Code', monospace;
+    color: white;
 }
 
 h1.inSpring {
@@ -48,6 +51,7 @@ h1.medium {
     padding:0;
     font-size: 16px;
     font-family: 'Fira Code', monospace;
+    color: white;
 }
 
 h1.small {
@@ -66,6 +70,11 @@ h1.center {
     padding:0;
     font-size: 16px;
     font-family: 'Lobster', cursive;
+    color:black;
+}
+
+p.black{
+    color:black;
 }
 
 @media (max-width: 600px){
