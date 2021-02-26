@@ -4,7 +4,6 @@
 .quote{     /* was called devQuote */
     width:100%;
     height:auto;
-    display: inline-block;
     background-color:white;
     
 }

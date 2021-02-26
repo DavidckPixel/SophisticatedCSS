@@ -101,7 +101,6 @@
 
     .exampleBlock .feature{
         width:49%;
-        display:inline-block;
         float:none;
         min-height:150px;
     }

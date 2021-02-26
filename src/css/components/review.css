@@ -5,7 +5,6 @@ While the remaining 20% if given to the image */
     width:100%;
     height:auto;
     overflow: hidden;
-    display:inline-block;
     
 }
 
@@ -38,7 +37,6 @@ While the remaining 20% if given to the image */
         width:100%;
         height:auto;
         overflow: hidden;
-        display:inline-block;
     }
     
     .reviewText{
