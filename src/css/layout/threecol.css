@@ -48,33 +48,6 @@
     float: left;
 }
 
-/*
-.alternatives{
-    width:100%;
-    height:200px;
-    margin-top:50px;
-    display:inline-block;
-}
-
-.alternativeUL{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-.alternativeList{
-    width:100%;
-    height:200px;
-    display:inline-block;
-}
-
-.alternativeLI{
-    width:33%;
-    display:inline-block;
-} */
-
-/*needs other name*/
 .additionalSourceBlock {
     float: left;
     padding: 1px;

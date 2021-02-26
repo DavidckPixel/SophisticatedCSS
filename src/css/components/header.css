@@ -14,16 +14,7 @@ ul {
     text-align: center;
     
   }
-  
-  li a {
-    
-    color: black;
-    text-align: center; 
-    text-decoration: none;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 16px;
-    
-  }
+
    
   /*We disect the navbar into 2 parts: side title | navigator, we give the side title 33% of the screen and the navigator the remaining 66% 
   Both blocks are inlined so they fit on the same page*/

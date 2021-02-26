@@ -5,8 +5,7 @@ While the remaining 20% if given to the image */
     width:100%;
     height:auto;
     overflow: hidden;
-    display:inline-block;
-    
+    display:inline-block;    
 }
 
 .reviewText{
@@ -15,10 +14,6 @@ While the remaining 20% if given to the image */
     margin-right: 1%;
     text-align: center;
     float:left;
-}
-
-.reviewText h1{
-    margin:0;
 }
 
 .userReview img{
@@ -30,6 +25,12 @@ While the remaining 20% if given to the image */
     object-position: center;
     border-radius:50%;
     float:left;
+}
+
+.quote{     /* was called devQuote */
+    width:100%;
+    height:auto;
+    display: inline-block;
 }
 
 @media (max-width: 600px){
@@ -47,10 +48,6 @@ While the remaining 20% if given to the image */
         margin-right: 1%;        
         float:left;
         
-    }
-    
-    .reviewText h1{
-        margin:0;
     }
     
     .userReview img{
