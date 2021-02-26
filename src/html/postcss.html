@@ -33,16 +33,9 @@
             <h1 class="big">A tool for transforming CSS with JavaScript</h1>
             <p class="medium">PostCSS was launched in 2013 by Andrey Sitnik, who also created autofixer. PostCSS was developed as a method to use JavaScript for CSS processing. PostCSS on it’s own is just an API, but when it’s used with one or more of it’s vast number of plugins, it has powerful abilities. It uses the Node.js framework, which makes it’s abilities easily modified and customized. Because PostCSS is an API, it allows users to create their own custom plugins and tools for features they might need. PostCSS isn’t a preprocessor per se, some people regard it as one, but other regard it as a postprocessor, or something else entirely. PostCSS will read your CSS with special additional syntax and will process it and return normal CSS code.</p>
             <a href="https://postcss.org/">
-            <section class="introLink blackBlockSmall two-col">
+            <section class="introLink blackBlockSmall">
                 <p class="medium">
                     Website
-                </p>
-            </section>
-        </a>
-        <a href="#link">
-            <section class="introLink blackBlockSmall two-col">
-                <p class="medium">
-                    Try it!
                 </p>
             </section>
         </a>
@@ -93,7 +86,7 @@
                 <p class="small code">
                     <strong>// CSS input</strong><br>
                     body {<br>
-                    &nbsp;color: lch(53 105 40);<br>
+                    &emsp;color: lch(53 105 40);<br>
                     }
                 </p>
                 </section>
@@ -101,7 +94,7 @@
                     <p class="small code">
                         <strong>// PostCSS</strong><br>
                         body {<br>
-                        &nbsp;color: rgb(250, 0, 4);<br>
+                        &emsp;color: rgb(250, 0, 4);<br>
                         }
                     </p>
                 </section>
@@ -116,7 +109,7 @@
                 <p class="small code">
                     <strong>// CSS input</strong><br>
                     .name {<br>
-                    &nbsp;color: gray;<br>
+                    &emsp;color: gray;<br>
                     }
                 </p>
                 </section>
@@ -124,7 +117,7 @@
                     <p class="small code">
                         <strong>// PostCSS output</strong><br>
                         .Logo__name__SVK0g {<br>
-                        &nbsp;color: gray;<br>
+                        &emsp;color: gray;<br>
                         }
                     </p>
                 </section>
@@ -206,7 +199,7 @@
             </section>
         </a>        
     </nav>
-    <article class="tryOut container" id="link">
+    <article class="tryOut container">
         <section class="two-col leftOutline">
             <h2 class="medium">Try this preprocessor</h2>
             <p class="small">To start using PostCSS, choose a build tool that has an extension for PostCSS. Possible build tools include (but aren’t limited to) Gulp, Webpack, Parcel, CSS-in-JS and npm Scripts. On the PostCSS github page you can find a list of build tools, and which extension you need for them. </p>
