@@ -9,7 +9,7 @@ ul {
   }
   
   li {
-    width:19%;
+    width:24%;
     display:inline-block;
     text-align: center;    
   }
@@ -32,7 +32,6 @@ ul {
     width: 66.6667%;
     float: left;
     display:inline-block;
-    border-left: 2px solid black;
     padding-left: 1%;
     margin-top:0;
     margin-bottom: 0;
