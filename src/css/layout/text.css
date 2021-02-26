@@ -22,7 +22,7 @@ p.code {
     text-decoration-line: none;
 }
 
-p.quoteText {
+.quoteText {
     margin:0;
     padding:0;
     font-family: 'Quicksand', sans-serif;
@@ -31,12 +31,14 @@ p.quoteText {
     
 }
 
-p.quoteSender {
+.quoteSender {
     margin:0;
     padding:0;
     font-family: 'Quicksand', sans-serif;
     font-size: 16px;
     text-align: center;
+    font-style: normal;
+    display: block;
     
 }
 

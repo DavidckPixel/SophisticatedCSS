@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head> 
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sophisticated CSS - Less</title>
-    <link rel="stylesheet" href= "../../src/css/sophisticated.css" />
+    <link rel="stylesheet" href="../../src/css/sophisticated.css" />
     <meta name="keyword" content="CSS, Preprocessor, less, tutorial">
-    <meta name="discription" content="Information page for pre processor less">
+    <meta name="description" content="Information page for pre processor less">
 </head>
+
 <body>
     <header class="nav white">
         <div class="container">
@@ -25,290 +27,279 @@
             </nav>
         </div>
     </header>
-    <article class="intro container">
-        <img
-            src="../../src/Image/LessFinal.png"
-            alt="An Image of the Logo of Less">
-        <section class="introBlock">
-            <h1 class="big">Leaner Style Sheets</h1>
-            <p class="medium">
-                Less is a dynamic preprocessor style sheet languege that can be compiled into Cascading Style Sheets and run on the client-side or server-side.
-                “Less” adds certain features and functionalities to CSS, such as variables, mixins, operations, and functions. These features let you develop an effective design layout that is both minimal and flexible. 
-                Moreover, the “Less” CSS preprocessor codes are compatible across a range of web browsers.
-            </p>
-            <a href="http://lesscss.org/#">
-            <section class="introLink blackBlockSmall two-col">
+    <article>
+        <div class="intro container">
+            <img src="../../src/Image/LessFinal.png" alt="An Image of the Logo of Less">
+            <div class="introBlock">
+                <h1 class="big">Leaner Style Sheets</h1>
                 <p class="medium">
-                    Website
+                    Less is a dynamic preprocessor style sheet languege that can be compiled into Cascading Style Sheets
+                    and run on the client-side or server-side. “Less” adds certain features and functionalities to CSS,
+                    such as variables, mixins, operations, and functions. These features let you develop an effective
+                    design layout that is both minimal and flexible. Moreover, the “Less” CSS preprocessor codes are
+                    compatible across a range of web browsers.
                 </p>
-            </section>
-            </a>
-            <a href="#link">
-                <section class="introLink blackBlockSmall two-col">
-                    <p class="medium">
-                        Try it!
-                    </p>
-                </section>
-            </a>
-        </section>
-    </article>
-
-    <section class="quote white">
-        <div class="container">
-            <h2>"It's CSS, with just a little more."</h2>
-            <p>Less Developers</p>
+                <a href="http://lesscss.org/#">
+                    <div class="introLink blackBlockSmall two-col">
+                        <p class="medium">Website</p>
+                    </div>
+                </a>
+                <a href="#link">
+                    <div class="introLink blackBlockSmall two-col">
+                        <p class="medium">Try it!</p>
+                    </div>
+                </a>
+            </div>
         </div>
-    </section>
-    <article class="featureArticle container">
-        <h2 class="featureTitle inSpring big">Features</h2>
-        <section class="featureBlock">
-            <section class="feature">
-                <h3 class="medium">Variables</h3>
-                <p class="small">
-                    It's not uncommon to see the same value repeated dozens if not hundreds of times across your stylesheets.
-                    Variables make your code easier to maintain by giving you a way to control those values from a single location.
-                    Less-variables are defined with @[name]
-                </p>
-            </section>
-            <section class="exampleBlock">
-                <section class="feature blackBlock">
-                    <p class = "small code">
-                        <strong>// CSS</strong><br>
-                        a, <br>
-                        .link {<br>
-                            &emsp;color: #428bca;<br>
-                        }
-                      </p>
-                </section>
-                <section class="feature blackBlock">
-                    <p class="small code">
-                        <strong>// LESS</strong><br>
-                        @link-color:        #428bca;  <br>
-                        <br>
-                        a,<br>
-                        .link {<br>
-                            &emsp;color: @link-color;<br>
-                        }
-                    </p>
-                </section>
-            </section>
+
+        <section class="userReview white">
+            <blockquote class="container">
+                <p class="quoteText">"It's CSS, with just a little more."</p>
+                <cite class="quoteSender">Less Developers</cite>
+            </blockquote>
         </section>
-        <section class="featureBlock">
-            <section class="feature">
-                <h3 class="medium">Extending</h3>
-                <p class="small">
-                    Extend is a Less pseudo-class which merges the selector it is put on with ones that match what it references.
-                    A selector can contain multiple extend clauses, but all extends must be at the end of the selector.
-                </p>
-            </section>
-            <section class="exampleBlock">
-                <section class="feature blackBlock">
-                    <p class="small code">
-                        <strong>// CSS</strong><br>
-                        nav ul {<br>
-                            &emsp;background: blue;<br>
-                          }<br>
-                          .inline,<br>
-                          nav ul {<br>
-                            &emsp;color: red;<br>
-                          }<br>
+        <section class="featureArticle container">
+            <h2 class="featureTitle inSpring big">Features</h2>
+            <section class="featureBlock">
+                <div class="feature">
+                    <h3 class="medium">Variables</h3>
+                    <p class="small">
+                        It's not uncommon to see the same value repeated dozens if not hundreds of times across your
+                        stylesheets. Variables make your code easier to maintain by giving you a way to control those
+                        values from a single location. Less-variables are defined with @[name]
                     </p>
-                </section>
-                <section class="feature blackBlock">
-                    <p class="small code">
-                        <strong>// LESS</strong><br>
-                        nav ul {<br>
+                </div>
+                <div class="exampleBlock">
+                    <div class="feature blackBlock">
+                        <p class="small code">
+                            <strong>// CSS</strong><br>
+                            a, <br>
+                            .link {<br>
+                            &emsp;color: #428bca;<br>
+                            }
+                        </p>
+                    </div>
+                    <div class="feature blackBlock">
+                        <p class="small code">
+                            <strong>// LESS</strong><br>
+                            @link-color: #428bca; <br>
+                            <br>
+                            a,<br>
+                            .link {<br>
+                            &emsp;color: @link-color;<br>
+                            }
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="featureBlock">
+                <div class="feature">
+                    <h3 class="medium">Extending</h3>
+                    <p class="small">
+                        Extend is a Less pseudo-class which merges the selector it is put on with ones that match what
+                        it references. A selector can contain multiple extend clauses, but all extends must be at the
+                        end of the selector.
+                    </p>
+                </div>
+                <div class="exampleBlock">
+                    <div class="feature blackBlock">
+                        <p class="small code">
+                            <strong>// CSS</strong><br>
+                            nav ul {<br>
+                            &emsp;background: blue;<br>
+                            }<br>
+                            .inline,<br>
+                            nav ul {<br>
+                            &emsp;color: red;<br>
+                            }<br>
+                        </p>
+                    </div>
+                    <div class="feature blackBlock">
+                        <p class="small code">
+                            <strong>// LESS</strong><br>
+                            nav ul {<br>
                             &emsp; &:extend(.inline);<br>
                             &emsp; background: blue;<br>
-                          }<br>
-                          .inline {<br>
+                            }<br>
+                            .inline {<br>
                             &emsp;color: red;<br>
-                          }
+                            }
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="featureBlock">
+                <div class="feature">
+                    <h3 class="medium">Merge</h3>
+                    <p class="small">
+                        The merge feature allows for aggregating values from multiple properties into a comma or space
+                        separated list under a single property. merge is useful for properties such as background and
+                        transform.
                     </p>
-                </section>
-            </section>
-        </section>
-        <section class="featureBlock">
-            <section class="feature">
-                <h3 class="medium">Merge</h3>
-                <p class="small">
-                    The merge feature allows for aggregating values from multiple properties into a comma or space separated list under a single property.
-                     merge is useful for properties such as background and transform.
-                </p>
-            </section>
-            <section class="exampleBlock">
-                <section class="feature blackBlock">
-                    <p class="small code">
-                        <strong>// CSS</strong><br>
-                        .myclass {<br>
+                </div>
+                <div class="exampleBlock">
+                    <div class="feature blackBlock">
+                        <p class="small code">
+                            <strong>// CSS</strong><br>
+                            .myclass {<br>
                             &emsp;box-shadow: inset 0 0 10px #555, 0 0 20px black;<br>
-                          }
-                    </p>
-                </section>
-                <section class="feature blackBlock">
-                    <p class="small code">
-                        <strong>// LESS</strong><br>
-                        .mixin() {<br>
+                            }
+                        </p>
+                    </div>
+                    <div class="feature blackBlock">
+                        <p class="small code">
+                            <strong>// LESS</strong><br>
+                            .mixin() {<br>
                             &emsp;box-shadow+: inset 0 0 10px #555;<br>
-                          }<br>
-                          .myclass {<br>
+                            }<br>
+                            .myclass {<br>
                             &emsp;.mixin();<br>
                             &emsp;box-shadow+: 0 0 20px black;<br>
-                          }
+                            }
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="featureBlock">
+                <div class="feature">
+                    <h3 class="medium">Functions</h3>
+                    <p class="small">
+                        Less also comes with an array of extra build in functions, such as If and Bool functions.
+                        But also some more complex math functions
                     </p>
-                </section>
-            </section>
-        </section>
-        <section class="featureBlock">
-            <section class="feature">
-                <h3 class="medium">Functions</h3>
-                <p class="small">
-                    Less also comes with an array of extra build in functions, such as If and Bool functions.
-                    But also some more complex math functions
-                </p>
-            </section>
-            <section class="exampleBlock">
-                <section class="feature blackBlock">
-                    <p class="small code">
-                        <strong>// CSS</strong><br>
-                        div {<br>
+                </div>
+                <div class="exampleBlock">
+                    <div class="feature blackBlock">
+                        <p class="small code">
+                            <strong>// CSS</strong><br>
+                            div {<br>
                             &emsp;margin: 0;<br>
-                            &emsp;color:  black;<br>
-                        }
-                    </p>
-                </section>
-                <section class="feature blackBlock">
-                    <p class="small code">
-                        <strong>// LESS</strong><br>
-                        @some: foo;<br>
-                        <br>
-                        div {<br>
+                            &emsp;color: black;<br>
+                            }
+                        </p>
+                    </div>
+                    <div class="feature blackBlock">
+                        <p class="small code">
+                            <strong>// LESS</strong><br>
+                            @some: foo;<br>
+                            <br>
+                            div {<br>
                             &emsp;margin: if((2 > 1), 0, 3px);<br>
-                            &emsp;color:  if((iscolor(@some)), @some, black);<br>
-                        }
+                            &emsp;color: if((iscolor(@some)), @some, black);<br>
+                            }
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="userReview white">
+            <blockquote class="container">
+                <section class="reviewText">
+                    <p class="quoteText">"Less will always be my preprocessor of choice, its complexity yet elegance is
+                        amazing!"
                     </p>
+                    <cite class="quoteSender">~Peter Keygen</cite>
                 </section>
-            </section>
+                <img src="../../src/Image/-1.png" alt="An Image of Peter Keygen, who said this about Less">
+            </blockquote>
         </section>
-    </article>
-    <article class="userReview white">
-        <div class="container">
-            <section class="reviewText">
-                <p class="quoteText">"Less will always be my preprocessor of choice, its complexity yet elegance is amazing!"
+        <section class="compare container">
+            <table class="blackBlock">
+                <thead>
+                    <tr>
+                        <th>Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Feature Rich</td>
+                        <td>Complex</td>
+                    </tr>
+                    <tr>
+                        <td>Backwards compatible</td>
+                        <td>Uses scripts</td>
+                    </tr>
+                    <tr>
+                        <td>Server & client sided</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <nav class="featureBlock container">
+            <h2 class="inSpring big">Alternatives</h2>
+            <a href="../../src/html/sass.html" class="feature">
+                <img src="../../src/Image/SassFinal.png" alt="A clickable sass logo">
+                <div class="blackBlockLabel">
+                    <p class="medium">Sass</p>
+                </div>
+            </a>
+            <a href="../../src/html/stylus.html" class="feature">
+                <img src="../../src/Image/StylusFinalGreen.png" alt="A clickable Stylus Logo">
+                <div class="blackBlockLabel">
+                    <p class="medium">Stylus</p>
+                </div>
+            </a>
+            <a href="../../src/html/postcss.html" class="feature">
+                <img src="../../src/Image/PostCSSFinal.png" alt="A clickable postcss logo">
+                <div class="blackBlockLabel">
+                    <p class="medium">PostCSS</p>
+                </div>
+            </a>
+        </nav>
+        <section class="tryOut container" id="link">
+            <div class="two-col leftOutline">
+                <h2 class="big inSpring">Try this preprocessor</h2>
+                <p class="small">
+                    Less can either be pre-compiled, or compiled in the browser. You can download sass from the Github
+                    page or by running <i>npm install less -g</i> in the commandline. Once u have it installed, you use
+                    it through the following ways:
                 </p>
-                <p class="quoteSender">~Peter Keygen</p>
-            </section>
-            <img
-            src="../../src/Image/-1.png"
-            alt="An Image of Peter Keygen, who said this about Less">
-        </div>
-    </article>
-    <article class="compare container">
-        <table class="blackBlock">
-            <thead>
-                <tr>
-                    <th>Pros</th>
-                    <th>Cons</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Feature Rich</td>
-                    <td>Complex</td>
-                </tr>
-                <tr>
-                    <td>Backwards compatible</td>
-                    <td>Uses scripts</td>
-                </tr>
-                <tr>
-                    <td>Server & client sided</td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-    </article>
-    <nav class="featureBlock container">
-        <h2 class="inSpring big">Alternatives</h2>
-        <a href="../../src/html/sass.html" class="feature">
-            <img
-            src="../../src/Image/SassFinal.png"
-            alt="A clickable sass logo">
-            <section class ="blackBlockLabel">
-                <p class ="medium">Sass</p>
-            </section>
-        </a>
-        <a href="../../src/html/stylus.html" class="feature">
-            <img
-            src="../../src/Image/StylusFinalGreen.png"
-            alt="A clickable Stylus Logo">
-            <section class ="blackBlockLabel">
-                <p class ="medium">Stylus</p>
-            </section>
-        </a>
-        <a href="../../src/html/postcss.html" class="feature">
-            <img
-            src="../../src/Image/PostCSSFinal.png"
-            alt="A clickable postcss logo">
-            <section class ="blackBlockLabel">
-                <p class ="medium">PostCSS</p>
-            </section>
-        </a>
-    </nav>
-    <article class="tryOut container" id="link">
-        <section class="two-col leftOutline">
-            <h2 class="big inSpring">Try this preprocessor</h2>
-            <p class="small">
-                Less can either be pre-compiled, or compiled in the browser.
-                You can download sass from the Github page or by running <i>npm install less -g</i> in the commandline.
-                Once u have it installed, you use it through the following ways:
-            </p>
-            <ul>
-                <li>Add <i>[script src="less.js"]</i> to HTML</li>
-                <li>Use <i>lessc [flags] [source] [destination]</i> to convert</li>
-                <li>Some flags are: <i>--silent, --version, --no-color</i></li>
-            </ul>
-            <section c>
-                <a class= "blackBlockSmall" 
-                href="http://lesscss.org/#">
-                <p class="small">Site</p></a>
-                <a class="blackBlockSmall"
-                href="https://github.com/less">
-                <p class="small">Github</p></a>
-            </section>
-        </section>
-        <section class="two-col rightOutline">
-            <img
-            src="../../src/Image/coding.jpg"
-            alt="A picture of a laptop with code on it">
+                <ul>
+                    <li>Add <i>[script src="less.js"]</i> to HTML</li>
+                    <li>Use <i>lessc [flags] [source] [destination]</i> to convert</li>
+                    <li>Some flags are: <i>--silent, --version, --no-color</i></li>
+                </ul>
+                <div>
+                    <a class="blackBlockSmall" href="http://lesscss.org/#">
+                        <p class="small">Site</p>
+                    </a>
+                    <a class="blackBlockSmall" href="https://github.com/less">
+                        <p class="small">Github</p>
+                    </a>
+                </div>
+            </div>
+            <div class="two-col rightOutline">
+                <img src="../../src/Image/coding.jpg" alt="A picture of a laptop with code on it">
+            </div>
         </section>
     </article>
     <footer class="footer white">
         <div class="container">
             <section class="footerText">
                 <h2 class="sophisticated">SophisticatedCSS</h2>
-                <p class="small black">SophisticatedCSS is the first assignment for the course webtechnology at the University in Utrecht</p>
+                <p class="small black">SophisticatedCSS is the first assignment for the course webtechnology at the
+                    University in Utrecht</p>
                 <p class="small black topMargin">
-                    <a href="https://github.com/DavidckPixel/SophisticatedCSS">Github</a> | 
-                    <a href="https://www.uu.nl">UU</a> | 
+                    <a href="https://github.com/DavidckPixel/SophisticatedCSS">Github</a> |
+                    <a href="https://www.uu.nl">UU</a> |
                     <a href="http://www.cs.uu.nl/education/vak/INFOB2WT">Webtechnology</a>
                 </p>
             </section>
-            <img 
-            src="../../src/Image/1200px-UULogo.png"
-            alt="UU Logo">
+            <img src="../../src/Image/1200px-UULogo.png" alt="UU Logo">
             <section class="contributor">
-                <h4 class = "small black">Laura Holtus</h4>
-                <p class = "small black">123456</p>
+                <h4 class="small black">Laura Holtus</h4>
+                <p class="small black">123456</p>
             </section>
             <section class="contributor">
-                <h4 class = "small black">David Koymans</h4>
-                <p class = "small black">123456</p>
+                <h4 class="small black">David Koymans</h4>
+                <p class="small black">123456</p>
             </section>
             <section class="contributor">
-                <h4 class = "small black">Jasper Weyne</h4>
-                <p class = "small black">123456</p>
+                <h4 class="small black">Jasper Weyne</h4>
+                <p class="small black">123456</p>
             </section>
         </div>
     </footer>
 </body>
-
