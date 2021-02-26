@@ -3,7 +3,7 @@
 
 .intro{
     margin-bottom:10px;
-    height:250px;
+    height: auto;
 }
 
 .intro .introBlock{
@@ -43,7 +43,7 @@
 
 .introHome{
     margin-top:50px;
-    height:200px;
+    height:auto;
 }
 
 .introHome .introBlock{
