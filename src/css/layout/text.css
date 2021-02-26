@@ -16,6 +16,15 @@ p.medium {
     text-decoration-line: none;
 }
 
+p.code {
+    margin:0;
+    padding:0;
+    font-size: 12px;
+    font-family: 'Fira Code', monospace;
+    color: white;
+    text-decoration-line: none;
+}
+
 p.quoteText {
     margin:0;
     padding:0;
