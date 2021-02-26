@@ -101,23 +101,13 @@ p.black{
     color:black;
 }
 
-.compare th{
-    text-align:center;
-    background-color:white;
-    border-radius:15px;
+table th{
     font-size: 21px;
     font-family: 'Fira Code', monospace; 
 
 }
 
-.compare td{
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis; 
-    color:white;
-    padding-right:20px;
-    padding-left: 10px;
-    height:35px;
+table td{
     font-size: 16px;
     font-family: 'Fira Code', monospace; 
 }
@@ -133,16 +123,12 @@ li a {
   }
 
 .quote h2{  /* was called quote*/
-    margin:0;
-    text-align:center;
     font-family: 'Quicksand', sans-serif;
     font-size:26px;
-    margin-top:45px;
+    font-weight: normal;
 }
 
 .quote p{  /* was called quote name*/
-    margin:0;
-    text-align:center;
     font-family: 'Quicksand', sans-serif;
     font-size:16px;
 }
