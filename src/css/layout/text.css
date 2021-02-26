@@ -101,23 +101,13 @@ p.black{
     color:black;
 }
 
-.compare th{
-    text-align:center;
-    background-color:white;
-    border-radius:15px;
+table th{
     font-size: 21px;
     font-family: 'Fira Code', monospace; 
 
 }
 
-.compare td{
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis; 
-    color:white;
-    padding-right:20px;
-    padding-left: 10px;
-    height:35px;
+table td{
     font-size: 16px;
     font-family: 'Fira Code', monospace; 
 }
