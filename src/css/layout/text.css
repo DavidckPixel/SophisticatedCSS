@@ -123,16 +123,12 @@ li a {
   }
 
 .quote h2{  /* was called quote*/
-    margin:0;
-    text-align:center;
     font-family: 'Quicksand', sans-serif;
     font-size:26px;
-    margin-top:45px;
+    font-weight: normal;
 }
 
 .quote p{  /* was called quote name*/
-    margin:0;
-    text-align:center;
     font-family: 'Quicksand', sans-serif;
     font-size:16px;
 }
