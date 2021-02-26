@@ -61,46 +61,72 @@
         <h2 class="featureTitle inSpring big">Features</h2>
         <section class="featureBlock">
             <section class="feature">
-                <h3 class="medium">Custamizable</h3>
-                <p class="small">Create own custum plug-ins for any features you might need</p>
+                <h3 class="medium">Increase code readability</h3>
+                <p class="small">Automatically add vendor prefixes using the autoprefixer plugin.</p>
             </section>
             <section class="feature blackBlock">
                 <p class="small code">
-                    <strong>// CSS</strong><br></p>
+                    <strong>// CSS input</strong><br>
+                    :fullscreen {<br>
+                    }
+                </p>
                 </section>
                 <section class="feature blackBlock">
                     <p class="small code">
-                        <strong>// PostCSS</strong><br></p>
+                        <strong>// PostCSS output</strong><br>
+                        :-webkit-full-screen {<br>
+                        }<br>
+                        :-ms-fullscreen {<br>
+                        }<br>
+                        :fullscreen {<br>
+                        }
+                    </p>
                 </section>
             </section>
         </section>
         <section class="featureBlock">
             <section class="feature">
-                <h3 class="medium">Options</h3>
-                <p class="small">There are many different plugins available, with various different functions</p>
+                <h3 class="medium">Use tomorrow’s CSS today!</h3>
+                <p class="small">Use modern CSS features that may not be supported yet, the PostCSS Preset Env plugin can automatically polyfill these features.</p>
             </section>
             <section class="feature blackBlock">
                 <p class="small code">
-                    <strong>// CSS</strong><br></p>
+                    <strong>// CSS input</strong><br>
+                    body {<br>
+                    &nbsp;color: lch(53 105 40);<br>
+                    }
+                </p>
                 </section>
                 <section class="feature blackBlock">
                     <p class="small code">
-                        <strong>// PostCSS</strong><br></p>
+                        <strong>// PostCSS</strong><br>
+                        body {<br>
+                        &nbsp;color: rgb(250, 0, 4);<br>
+                        }
+                    </p>
                 </section>
             </section>
         </section>
         <section class="featureBlock">
             <section class="feature">
-                <h3 class="medium">Futuristic</h3>
-                <p class="small">PostCSS can convert CSS to other versions of itself, use features of future CSS versions that are not yet supported by all browsers.</p>
+                <h3 class="medium">The end of global CSS</h3>
+                <p class="small">Don't worry about naming your CSS classes, the CSS Modules plugin allows you to just use whatever name makes the most sense.</p>
             </section>
             <section class="feature blackBlock">
                 <p class="small code">
-                    <strong>// CSS</strong><br></p>
+                    <strong>// CSS input</strong><br>
+                    .name {<br>
+                    &nbsp;color: gray;<br>
+                    }
+                </p>
                 </section>
                 <section class="feature blackBlock">
                     <p class="small code">
-                        <strong>// PostCSS</strong><br></p>
+                        <strong>// PostCSS output</strong><br>
+                        .Logo__name__SVK0g {<br>
+                        &nbsp;color: gray;<br>
+                        }
+                    </p>
                 </section>
             </section>
         </section>
