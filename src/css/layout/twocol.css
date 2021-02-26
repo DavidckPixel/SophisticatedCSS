@@ -10,9 +10,9 @@
 .tryOut a{
     display:inline-block;
     font-family: 'Quicksand', sans-serif;
-    width:calc(100% / 12 * 6 - 2%);
+    width:calc(100% / 12 * 6 - 5%);
     font-size: 12px;
-    
+    margin:5px;
 }
 
 /*CSS for the image in the tryOut section*/

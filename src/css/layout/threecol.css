@@ -14,6 +14,7 @@
 .featureBlock{
     margin-bottom:10px;     /* if blocks stack, there will always be a 10px gab between them*/
     overflow:hidden;
+    height:auto;
 }
 
 .feature{
@@ -42,6 +43,15 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     float: left;
+}
+
+a.feature:hover{
+    scale:110%;
+    overflow:visible;
+}
+
+a.feature{
+    margin-bottom:20px;
 }
 
 .additionalSourceBlock {
@@ -76,5 +86,13 @@
 
     .additionalSourceBlock{
         width: calc(100% / 12 * 12 - 2% - 4px - 2px);
+    }
+
+    .featureBlock{
+        height:auto;
+    }
+
+    a.feature:hover{
+        scale:100%;
     }
 }
