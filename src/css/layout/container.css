@@ -1,7 +1,6 @@
 .container {
     width: 100%;
     max-width: 960px;
-    margin-bottom:30px;
     margin:0 auto;
 }
 
@@ -15,6 +14,7 @@
 .white {
     width: 100%;
     background-color: white;
+    color: black;
 }
 
 body{
@@ -22,14 +22,22 @@ body{
     background-image:linear-gradient(to right,rgb(63, 0, 0) 0%, #46008b 100%);
 }
 
+.white .container {
+    margin: 30px auto;
+}
+
+.container, .white {
+    margin-bottom:30px;
+}
+
 @media (min-width: 768px) {
-    .container {
+    .container, .white {
         margin-bottom: 4rem;        
     }
 }
 
 @media (max-width: 600px) {
-    .container {
+    .container, .white {
         margin-bottom: 2rem;        
     }
 }
