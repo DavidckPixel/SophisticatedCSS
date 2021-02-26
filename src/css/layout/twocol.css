@@ -3,14 +3,11 @@
 .tryOut{    
     width:calc(100%);
     height:auto;
-    display:inline-block;
     margin-bottom:10px;
 }
 
 /* all links in tryout class must be in blocks and 50% of the blocks width; */
 .tryOut a{
-    
-    display:inline-block; /*links must be on the same line*/
     font-family: 'Quicksand', sans-serif;
     width:calc(100% / 12 * 6 - 2%);
     font-size: 12px;
@@ -73,12 +70,10 @@ when 2 sections are both defined with the .two-col class, It will but the 2 sect
 
 .leftOutline {
     padding-left: calc(100% /12 * 2);
-    width: calc(100% / 12 * 6 - 2.4% - (100% /12 * 2));
 }
 
 .rightOutline {
     padding-right: calc(100% /12 * 2);
-    width: calc(100% / 12 * 6 - 2.4% - (100% /12 * 2) );
 }
 
 @media (max-width:600px){

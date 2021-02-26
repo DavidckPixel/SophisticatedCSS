@@ -4,7 +4,6 @@
 .intro{
     margin-bottom:10px;
     height:250px;
-    display: inline-block;
 }
 
 .intro .introBlock{
@@ -45,7 +44,6 @@
 .introHome{
     margin-top:50px;
     height:200px;
-    display: inline-block;
 }
 
 .introHome .introBlock{
