@@ -47,49 +47,156 @@
         <h1 class="featureTitle inSpring big">Features</h1>
         <section class="featureBlock">
             <section class="feature">
-                <h1 class="medium">Feature 1</h1>
-                <p class="small">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut </p>
+                <h1 class="medium">Flexible syntax</h1>
+                <p class="small">Semi-colons, colons, and braces are optional</p>
             </section>
             <section class="exampleBlock">
                 <section class="feature blackBlock">
                     <h1 class="medium">CSS</h1>
-                    <p class = "code">Example Code</p>
+                    <p class = "code">
+                        <br>
+                        body { <br>
+                            &emsp;font: 14px/1.5 Helvetica, arial, sans-serif; <br>
+                      } <br>
+                      body button, <br>
+                      body button.button, <br>
+                      body input[type='button'], <br>
+                      body input[type='submit'] { <br>
+                        &emsp;border-radius: 5px; <br>
+                      }</p>
                 </section>
                 <section class="feature blackBlock">
                     <h1 class="medium">Stylus</h1>
-                    <p class="code">Example Code</p>
+                    <p class="code">
+                        <br>
+                        body<br>
+                        &emsp;font 14px/1.5 Helvetica, arial, sans-serif<br>
+                        &emsp;button<br>
+                        &emsp;button.button<br>
+                        &emsp;input[type='button']<br>
+                        &emsp;input[type='submit']<br>
+                        &emsp;border-radius 5px</p>
                 </section>
             </section>
         </section>
         <section class="featureBlock">
             <section class="feature">
-                <h1 class="medium">Feature 2</h1>
-                <p class="small">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut </p>
+                <h1 class="medium">Nesting</h1>
+                <p class="small">When writing HTML you've probably noticed that it has a clear nested and visual hierarchy. CSS, on the other hand, doesn't.<br>
+                    <br>
+                    Stylus will let you nest your CSS selectors in a way that follows the same visual hierarchy of your HTML.</p>
             </section>
             <section class="exampleBlock">
                 <section class="feature blackBlock">
                     <h1 class="medium">CSS</h1>
-                    <p class="code">Example Code</p>
+                    <p class="code">
+                        <br>
+                        body {<br>
+                            &emsp;font: 14px/1.5 Helvetica, arial, sans-serif;<br>
+                      }<br>
+                      body #logo {<br>
+                        &emsp;border-radius: 5px;<br>
+                      }</p>
                 </section>
                 <section class="feature blackBlock">
                     <h1 class="medium">Stylus</h1>
-                    <p class="code">Example Code</p>
+                    <p class="code">
+                        <br>
+                        body {<br>
+                            &emsp;font: 14px/1.5 Helvetica, arial, sans-serif;<br>
+                            &emsp;#logo {<br>
+                                &emsp;&emsp;border-radius: 5px;<br>
+                                &emsp;}<br>
+                      }</p>
                 </section>
             </section>
         </section>
         <section class="featureBlock">
             <section class="feature">
-                <h1 class="medium">Feature 3</h1>
-                <p class="small">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut </p>
+                <h1 class="medium">Mixins</h1>
+                <p class="small">Stylus mixins allow you to define reusable functionality by defining in-language functions which can be called from within blocks</p>
             </section>
             <section class="exampleBlock">
                 <section class="feature blackBlock">
                     <h1 class="medium">CSS</h1>
-                    <p class = "code">Example Code</p>
+                    <p class = "code">
+                        <br>
+                        button {<br>
+                            &emsp;-webkit-border-radius: 5px;<br>
+                            &emsp;-moz-border-radius: 5px;<br>
+                            &emsp;border-radius: 5px;<br>
+                      }</p>
                 </section>
                 <section class="feature blackBlock">
                     <h1 class="medium">Stylus</h1>
-                    <p class = "code">Example Code</p>
+                    <p class = "code">
+                        <br>
+                        border-radius(val)<br>
+                        &emsp;-webkit-border-radius: val<br>
+                        &emsp;-moz-border-radius: val<br>
+                        &emsp;border-radius: val<br>
+                        <br>
+                      button {<br>
+                        &emsp;border-radius(5px);<br>
+                      }</p>
+                </section>
+            </section>
+        </section>
+        <section class="featureBlock">
+            <section class="feature">
+                <h1 class="medium">Variables</h1>
+                <p class="small">Stylus variables behave as you would expect in any other language, and may optionally be prefixed by the “$” character:</p>
+            </section>
+            <section class="exampleBlock">
+                <section class="feature blackBlock">
+                    <h1 class="medium">CSS</h1>
+                    <p class = "code">
+                        <br>
+                        #prompt {<br>
+                            &emsp;position: absolute;<br>
+                            &emsp;top: 150px;<br>
+                            &emsp;left: 50%;<br>
+                            &emsp;width: 200px;<br>
+                            &emsp;margin-left: -100px;<br>
+                      }</p>
+                </section>
+                <section class="feature blackBlock">
+                    <h1 class="medium">Stylus</h1>
+                    <p class = "code">
+                        <br>
+                        #prompt<br>
+                        &emsp;position: absolute<br>
+                        &emsp;top: 150px<br>
+                        &emsp;left: 50%<br>
+                        &emsp;width: w = 200px<br>
+                        &emsp;margin-left: -(w / 2)
+                    </p>
+                </section>
+            </section>
+        </section>
+        <section class="featureBlock">
+            <section class="feature">
+                <h1 class="medium">Functions</h1>
+                <p class="small">"Stylus functions may be defined in the same manner as mixins, however their usage differs as they return values.</p>
+            </section>
+            <section class="exampleBlock">
+                <section class="feature blackBlock">
+                    <h1 class="medium">CSS</h1>
+                    <p class = "code">
+                        <br>body {<br>
+                        &emsp;foo: 6;<br>
+                      }</p>
+                </section>
+                <section class="feature blackBlock">
+                    <h1 class="medium">Stylus</h1>
+                    <p class = "code">
+                        <br>
+                        sum(nums...)<br>
+                        &emsp;n = 0<br>
+                        &emsp;n += num for num in nums<br>
+                        body<br>
+                        &emsp;foo: sum(1, 2, 3)<br>
+                    </p>
                 </section>
             </section>
         </section>
