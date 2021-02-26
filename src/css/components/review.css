@@ -27,7 +27,9 @@ While the remaining 20% if given to the image */
     float:left;
 }
 
-.quote{     /* was called devQuote */
+/*Dev quote block, block uses full width of the screen*/
+
+.quote{
     width:100%;
     height:auto;
     display: inline-block;
