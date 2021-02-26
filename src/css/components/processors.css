@@ -8,9 +8,8 @@
 }
 
 .allPreProcessors {
-    width: calc(100% / 12 * 8 - 2% - 14.66% - 2px);
+    width: calc(100% / 12 * 8);
     height: 100%;
-    margin: 1%;
     padding-left: 7.33%;
     padding-right: 7.33%;    
     float: left;
@@ -23,13 +22,11 @@
 }
 
 .allPostProcessors {
-    width: calc(100% / 12 * 4 - 2% - 14.66% - 2px);
+    width: calc(100% / 12 * 4);
     height: 100%;
-    margin: 1%;
     padding-left: 7.33%;
     padding-right: 7.33%;    
-    float: right;
-    border-left: 2px solid white;
+    float: left;
     
 }
 
@@ -39,7 +36,7 @@
     float: left;
 }
 
-.preProcessorContainer img{
+.preProcessorContainer img, .postProcessorContainer img{
     display: block;
     width: calc(100% - 20%);
     margin-left: 10%;
@@ -50,8 +47,6 @@
     border-top-right-radius: 5px;
     float: left;
 }
-
-
 
 .postProcessorContainer {
     width: calc(100% - 10%);
@@ -69,7 +64,7 @@
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     float: left;
-}
+
 
 .allPostProcessors .processorText {
     margin-left: -30%;
@@ -79,7 +74,6 @@
 @media (max-width: 600px){
     .allPreProcessors {
         width: calc(100% - 2%);
-        /* width: calc(100% / 12 * 12 - 2% - 100% / 12 * 6 - 2% - 4px); */
         height: 210px;
         margin: 1%;
         padding: 0;
@@ -92,7 +86,7 @@
     .preProcessorBlock {
         width: 98%;
         height: auto;
-        max-height: 200px;
+        max-height:220px;
         display: inline-block;
         overflow-x: auto;
         white-space:nowrap;
@@ -100,7 +94,7 @@
     }
     
     .allPostProcessors {
-        width: calc(100% / 12 * 12 - 2% - (100% / 12 * 6 - 2%));
+        width: calc(100% - 2%);
         height: 210px;
         margin: 1%;
         padding-left: calc(100% / 12 * 3 - 1%);
