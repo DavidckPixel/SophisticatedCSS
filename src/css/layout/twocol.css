@@ -8,6 +8,7 @@
 
 /* all links in tryout class must be in blocks and 50% of the blocks width; */
 .tryOut a{
+    display:inline-block;
     font-family: 'Quicksand', sans-serif;
     width:calc(100% / 12 * 6 - 2%);
     font-size: 12px;
@@ -15,12 +16,13 @@
 }
 
 /*CSS for the image in the tryOut section*/
-.tryOut img{ 
+/* .tryOut img{ 
     display:inline-block;
     width:100%;
     object-fit:contain;
+    border-radius: 15px;
     object-position: center;
-}
+} */
 
 .tryOut ul{
     width:100%;
@@ -55,17 +57,20 @@
 
 /*part of a two-column, give it the width of 50% of the current block, and make it inline with other blocks 
 when 2 sections are both defined with the .two-col class, It will but the 2 sections right down the middle of eachother*/
+
 .two-col{
     width: calc(100% / 12 * 6 - 2.4%);
     margin-left: 1%;
     margin-right: 1%;
-    display:inline-block;
+    float:left;
+       
 }
 
 .two-col img {    
-    object-fit:contain;
-    padding-top: 40px;
+    object-fit:contain;    
     max-height: 200px;
+    border-radius: 15px;
+    vertical-align: bottom;
 }
 
 .leftOutline {
@@ -93,7 +98,6 @@ when 2 sections are both defined with the .two-col class, It will but the 2 sect
     }
 
     .rightOutline{
-        
         padding-right:0;
         width: calc(100% - 2%);
     }
