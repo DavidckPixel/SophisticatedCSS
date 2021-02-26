@@ -36,6 +36,7 @@ ul {
     height: 100%;
     min-height:25px;
     padding-top: 0;
+    text-align: center; /* text is aligned center block*/
 }
 
 .nav .navBarSelect{
@@ -50,12 +51,6 @@ ul {
     min-height:25px;
     
   }
-
-.nav .navBarName h1{
-    text-align: center; /* text is aligned center block*/
-    margin:0;   
-    
-}
 
 .nav{
     margin-top:10px;

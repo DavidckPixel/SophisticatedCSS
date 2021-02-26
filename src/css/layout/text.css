@@ -43,7 +43,7 @@ p.quoteSender {
     
 }
 
-h1.big {
+h2.big, h1.big{
     margin:0;
     padding:0;
     font-size: 20px;
@@ -51,12 +51,12 @@ h1.big {
     color: white;
 }
 
-h1.inSpring {
+h2.inSpring{
     padding-left: 1%;
     padding-right: 1%
 }
 
-h1.medium {
+h3.medium{
     margin:0;
     padding:0;
     font-size: 16px;
@@ -65,14 +65,14 @@ h1.medium {
     text-decoration: none;
 }
 
-h1.small {
+h4.small {
     margin:0;
     padding:0;
     font-size: 12px;
     font-family: 'Quicksand', sans-serif;
 }
 
-h1.center {
+.center{
     text-align: center;
 }
 
@@ -84,7 +84,7 @@ h1.center {
     color:black;
 }
 
-p.black{
+.black{
     color:black;
 }
 
