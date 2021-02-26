@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head> 
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sophisticated CSS - Home</title>
-    <link rel="stylesheet" href= "../../src/css/sophisticated.css" />
+    <link rel="stylesheet" href="../../src/css/sophisticated.css" />
     <meta name="keyword" content="CSS, Preprocessor, sophisticatedCSS, tutorial, compare, information">
-    <meta name="discription" content="This is the homepage for the Sophisticated CSS site, It introduces the topic and portrays general information about pre-processors">
+    <meta name="discription"
+        content="This is the homepage for the Sophisticated CSS site, It introduces the topic and portrays general information about pre-processors">
 </head>
+
 <body>
-    
+
     <header class="nav white">
         <div class="container">
             <div class="navBarName">
@@ -26,165 +29,181 @@
             </nav>
         </div>
     </header>
-<article>    
-    <section class="introHome container">
-        <img
-            src="../../src/Image/css3.jpg"
-            alt="A placeholder image!">   
-        <section class="introBlock">
-            <h1 class = "big">Improve your CSS</h1>
-            <p class = "medium">Tired of writing repeatitive CSS, that easily breaks and becomes cluttered quickly? Switch to writing sophisticated CSS using preprocessors! CSS preprocessors are scripting languages that extend the default capabilities of CSS. They make it easy to automate repetitive tasks, reduce the number of errors and code bloat, create reusable code snippets, and ensure backward compatibility. There are many CSS preprocessors to choose from, find out more about them below!</p>        
-        </section>
-    </section>
-
-    <section class="userReview white">
-        <div class="container">
-            <section class="reviewText">
-                <p class="quoteText"> "Of course, one can develop a whole project without any CSS Pre-processor, but when a projects gets bigger and bigger — a CSS Pre-processor will increase your productivity." </p>
-                <p class="quoteSender"> Lili Ouaknin Felsen</p>
-            </section>        
-            <img 
-            src="../../src/Image/LilQuakninFelsen.jpeg"
-            alt="A picture of Lil Quaknin Felsen, who said this about preprocessors">
+    <article>
+        <div class="introHome container">
+            <img src="../../src/Image/css3.jpg" alt="A placeholder image!">
+            <div class="introBlock">
+                <h1 class="big">Improve your CSS</h1>
+                <p class="medium">Tired of writing repeatitive CSS, that easily breaks and becomes cluttered quickly?
+                    Switch to writing sophisticated CSS using preprocessors! CSS preprocessors are scripting languages
+                    that extend the default capabilities of CSS. They make it easy to automate repetitive tasks, reduce
+                    the number of errors and code bloat, create reusable code snippets, and ensure backward
+                    compatibility. There are many CSS preprocessors to choose from, find out more about them below!</p>
+            </div>
         </div>
-    </section>
-    
-    <section class="container one-col">
-        <h2 class="big">Pre-Processors</h2>
-        <p class="medium">CSS preprocessors add new syntax options that make your CSS more powerful. These features make the CSS structure more readable. This means that maintaining code will also be easier and in the long run it will be easier to edit. There are many CSS preprocessors to choose from. Most CSS preprocessors will add some features that don't exist in pure CSS, such as mixin, nesting selector, inheritance selector, and so on. These features make the CSS structure more readable and easier to maintain.</p>
-    </section>
 
-    <section class="container ">
-        <section class="feature">
-            <h3 class="medium">When</h3>
-            <p class="small">First introduced in 2006, Sass (Syntactically Awesome Style Sheets – a nice play on the official name of CSS) is considered to be the pioneer of CSS preprocessors. Less (Leaner Style Sheets) first appeared in 2009. It was influenced by Sass, but had its own influence on the later introduced SCSS format. Another CSS preprocessor called Stylus appeared on the market in 2010. PostCSS was initially released in 2013.</p>
+        <section class="userReview white">
+            <blockquote class="container">
+                <div class="reviewText">
+                    <p class="quoteText"> "Of course, one can develop a whole project without any CSS Pre-processor, but
+                        when a projects gets bigger and bigger — a CSS Pre-processor will increase your productivity."
+                    </p>
+                    <cite class="quoteSender"> Lili Ouaknin Felsen</cite>
+                </div>
+                <img src="../../src/Image/LilQuakninFelsen.jpeg"
+                    alt="A picture of Lil Quaknin Felsen, who said this about preprocessors">
+            </blockquote>
         </section>
-        <section class="feature">
-            <h3 class="medium">How</h3>
-            <p class="small">CSS preprocessors are scripting languages that extend the default capabilities of CSS. They enable us to use logic in our CSS code, such as variables, nesting, inheritance, mixins, functions, and mathematical operations. Each CSS preprocessor has its own syntax that they compile into regular CSS so that browsers can render it on the client side. Each of them has some advanced features unique to them and their own ecosystem (tools, frameworks, libraries) as well.</p>
-        </section>
-        <section class="feature">
-            <h3 class="medium">Why</h3>
-            <p class="small">The reason we're using CSS preprocessors is to add extra functionalities that CSS wouldn't otherwise have. For example, you could have nesting or inheritance selectors, as well as mixins (reusable declaration bundles). The handy additional features let you be more efficient in your daily work and provide you extra scalability.</p>
-        </section>
-    </section>
 
-    <section class="allProcessors container">
-        <section class="allPreProcessors">
-            <h3 class="medium", style="text-align: center;"> Pre-Processors </h3>
-            <section class="preProcessorBlock">                
-                <a href="../../src/html/sass.html" class="preProcessorContainer">
-                    <img src="../../src/Image/SassFinal.png"
-                        alt="A clickable logo of SASS"        
-                        >
-                    <section class ="blackBlockLabel">
-                        <p class ="medium">Sass</p>
-                    </section>
-                </a>
-                <a href="../../src/html/less.html" class="preProcessorContainer">
-                    <img src="../../src/Image/LessFinal.png"
-                        alt="A clickable logo of Less"        
-                        >
-                    <section class ="blackBlockLabel">
-                        <p class ="medium">Less</p>
-                    </section>
-                </a>
-                <a href="../../src/html/less.html" class="preProcessorContainer">
-                    <img src="../../src/Image/StylusFinalGreen.png"
-                        alt="A clickable logo of Stylus"        
-                        >
-                    <section class ="blackBlockLabel">
-                        <p class ="medium">Stylus</p>
-                    </section>
-                </a>
+        <section class="container one-col">
+            <h2 class="big">Pre-Processors</h2>
+            <p class="medium">CSS preprocessors add new syntax options that make your CSS more powerful. These features
+                make the CSS structure more readable. This means that maintaining code will also be easier and in the
+                long run it will be easier to edit. There are many CSS preprocessors to choose from. Most CSS
+                preprocessors will add some features that don't exist in pure CSS, such as mixin, nesting selector,
+                inheritance selector, and so on. These features make the CSS structure more readable and easier to
+                maintain.</p>
+        </section>
+
+        <div class="container ">
+            <section class="feature">
+                <h3 class="medium">When</h3>
+                <p class="small">First introduced in 2006, Sass (Syntactically Awesome Style Sheets – a nice play on the
+                    official name of CSS) is considered to be the pioneer of CSS preprocessors. Less (Leaner Style
+                    Sheets) first appeared in 2009. It was influenced by Sass, but had its own influence on the later
+                    introduced SCSS format. Another CSS preprocessor called Stylus appeared on the market in 2010.
+                    PostCSS was initially released in 2013.</p>
             </section>
-
-        </section>
-        <section class="allPostProcessors">
-            <h3 class="medium center processorText"> Post-Processors </h3>
-            <section>
-                <a href="../../src/html/less.html" class="postProcessorContainer">
-                    <img src="../../src/Image/PostCSSFinal.png"
-                        alt="A clickable logo of PostCSS"        
-                        >
-                    <section class ="blackBlockLabel">
-                        <p class ="medium">PostCSS</p>
-                    </section>
-                </a>
+            <section class="feature">
+                <h3 class="medium">How</h3>
+                <p class="small">CSS preprocessors are scripting languages that extend the default capabilities of CSS.
+                    They enable us to use logic in our CSS code, such as variables, nesting, inheritance, mixins,
+                    functions, and mathematical operations. Each CSS preprocessor has its own syntax that they compile
+                    into regular CSS so that browsers can render it on the client side. Each of them has some advanced
+                    features unique to them and their own ecosystem (tools, frameworks, libraries) as well.</p>
             </section>
-        </section>
-    </section>
-    <section class="userReview white">
-        <div class="container">
-            <section class="reviewText">
-                <p class="quoteText"> "For those who have adopted them, there has been acknowledgment of the fact that preprocessors add depth to what CSS can be used for" </p>
-                <p class="quoteSender"> Rishabh Saxena</p>
-            </section>        
-            <img 
-            src="../../src/Image/RishabhSaxena.jpeg"
-            alt="A picture of Rishabh Saxena, who said this about preprocessors">
+            <section class="feature">
+                <h3 class="medium">Why</h3>
+                <p class="small">The reason we're using CSS preprocessors is to add extra functionalities that CSS
+                    wouldn't otherwise have. For example, you could have nesting or inheritance selectors, as well as
+                    mixins (reusable declaration bundles). The handy additional features let you be more efficient in
+                    your daily work and provide you extra scalability.</p>
+            </section>
         </div>
-    </section>
-    
-    <section class="container">
-        <h2 class="big inSpring">Risks and Discussion</h2>
-        <section class="two-col">
-            <h3 class="medium">Vendor Lock-in</h3>
-            <p class="small">By using a preprocessor, your stylesheets will be written in a non-standard language, unsupported by browsers. This means that you're depending on the continued support for your preprocessor language of choice. In practice, these preprocessors are open source and the lifetime of a project usually is smaller than the lifetime of a preprocessor, but it's a factor to consider.</p>
+
+        <div class="allProcessors container">
+            <section class="allPreProcessors">
+                <h3 class="medium" style="text-align: center;"> Pre-Processors </h3>
+                <div class="preProcessorBlock">
+                    <a href="../../src/html/sass.html" class="preProcessorContainer">
+                        <img src="../../src/Image/SassFinal.png" alt="A clickable logo of SASS">
+                        <div class="blackBlockLabel">
+                            <p class="medium">Sass</p>
+                        </div>
+                    </a>
+                    <a href="../../src/html/less.html" class="preProcessorContainer">
+                        <img src="../../src/Image/LessFinal.png" alt="A clickable logo of Less">
+                        <div class="blackBlockLabel">
+                            <p class="medium">Less</p>
+                        </div>
+                    </a>
+                    <a href="../../src/html/less.html" class="preProcessorContainer">
+                        <img src="../../src/Image/StylusFinalGreen.png" alt="A clickable logo of Stylus">
+                        <div class="blackBlockLabel">
+                            <p class="medium">Stylus</p>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+            <section class="allPostProcessors">
+                <h3 class="medium center processorText"> Post-Processors </h3>
+                <div>
+                    <a href="../../src/html/less.html" class="postProcessorContainer">
+                        <img src="../../src/Image/PostCSSFinal.png" alt="A clickable logo of PostCSS">
+                        <div class="blackBlockLabel">
+                            <p class="medium">PostCSS</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+        <section class="userReview white">
+            <blockquote class="container">
+                <section class="reviewText">
+                    <p class="quoteText"> "For those who have adopted them, there has been acknowledgment of the fact
+                        that preprocessors add depth to what CSS can be used for" </p>
+                    <cite class="quoteSender"> Rishabh Saxena</cite>
+                </section>
+                <img src="../../src/Image/RishabhSaxena.jpeg"
+                    alt="A picture of Rishabh Saxena, who said this about preprocessors">
+            </blockquote>
         </section>
-        <section class="two-col">
-            <h3 class="medium">Distance from developer</h3>
-            <p class="small">Since the stylesheets for the preprocessor language differ from the stylesheets that are received and used by the user, additional complexity is introduced when debugging the code. Any visual bugs where the difference in browser stylesheets and developer stylesheets are involved, require a thourough understanding of how the preprocessor functions.</p>
-        </section>
-    </section>
 
-    <section class="container">
-        <h2 class="big inSpring">Additional Sources</h2>
-        <section >
-            <a class="additionalSourceBlock blackBlockSmall"
-            href="https://developer.mozilla.org/en-US/docs/Glossary/CSS_preprocessor">
-                <p class="medium">MDN Topic</p>
-            </a>
-
-            <a class="additionalSourceBlock blackBlockSmall"
-            href="https://www.w3schools.com/css/default.asp">
-                <p class="medium">CSS on W3schools</p>
-            </a>
-            <a class="additionalSourceBlock blackBlockSmall"
-            href="https://csspre.com/compare/">
-            <p class="medium">Additional Information</p>
-            </a>          
-        </section>        
-    </section>
-
-    <footer class="footer white">
-        <div class="container">
-            <section class="footerText">
-                <h2 class="sophisticated">SophisticatedCSS</h2>
-                <p class="small black">SophisticatedCSS is the first assignment for the course webtechnology at the University in Utrecht.</p>
-                <p class="small black topMargin">
-                    <a href="https://github.com/DavidckPixel/SophisticatedCSS">Github</a> | 
-                    <a href="https://www.uu.nl">UU</a> | 
-                    <a href="http://www.cs.uu.nl/education/vak/INFOB2WT">Webtechnology</a>
+        <section class="container">
+            <h2 class="big inSpring">Risks and Discussion</h2>
+            <section class="two-col">
+                <h3 class="medium">Vendor Lock-in</h3>
+                <p class="small">By using a preprocessor, your stylesheets will be written in a non-standard language,
+                    unsupported by browsers. This means that you're depending on the continued support for your
+                    preprocessor language of choice. In practice, these preprocessors are open source and the lifetime
+                    of a project usually is smaller than the lifetime of a preprocessor, but it's a factor to consider.
                 </p>
             </section>
-            <img 
-            src="../../src/Image/1200px-UULogo.png"
-            alt="UU Logo">
-            <section class="contributor">
-                <h4 class = "small black">Laura Holtus</h4>
-                <p class = "small black">1810057</p>
+            <section class="two-col">
+                <h3 class="medium">Distance from developer</h3>
+                <p class="small">Since the stylesheets for the preprocessor language differ from the stylesheets that
+                    are received and used by the user, additional complexity is introduced when debugging the code. Any
+                    visual bugs where the difference in browser stylesheets and developer stylesheets are involved,
+                    require a thourough understanding of how the preprocessor functions.</p>
             </section>
-            <section class="contributor">
-                <h4 class = "small black">David Koymans</h4>
-                <p class = "small black">6561829</p>
-            </section>
-            <section class="contributor">
-                <h4 class = "small black">Jasper Weyne</h4>
-                <p class = "small black">5960134</p>
-            </section>
-        </div>
-    </footer>
-</article>
+        </section>
+
+        <section class="container">
+            <h2 class="big inSpring">Additional Sources</h2>
+            <div>
+                <a class="additionalSourceBlock blackBlockSmall"
+                    href="https://developer.mozilla.org/en-US/docs/Glossary/CSS_preprocessor">
+                    <p class="medium">MDN Topic</p>
+                </a>
+
+                <a class="additionalSourceBlock blackBlockSmall" href="https://www.w3schools.com/css/default.asp">
+                    <p class="medium">CSS on W3schools</p>
+                </a>
+                <a class="additionalSourceBlock blackBlockSmall" href="https://csspre.com/compare/">
+                    <p class="medium">Additional Information</p>
+                </a>
+            </div>
+        </section>
+
+        <footer class="footer white">
+            <div class="container">
+                <section class="footerText">
+                    <h2 class="sophisticated">SophisticatedCSS</h2>
+                    <p class="small black">SophisticatedCSS is the first assignment for the course webtechnology at the
+                        University in Utrecht.</p>
+                    <p class="small black topMargin">
+                        <a href="https://github.com/DavidckPixel/SophisticatedCSS">Github</a> |
+                        <a href="https://www.uu.nl">UU</a> |
+                        <a href="http://www.cs.uu.nl/education/vak/INFOB2WT">Webtechnology</a>
+                    </p>
+                </section>
+                <img src="../../src/Image/1200px-UULogo.png" alt="UU Logo">
+                <section class="contributor">
+                    <h4 class="small black">Laura Holtus</h4>
+                    <p class="small black">1810057</p>
+                </section>
+                <section class="contributor">
+                    <h4 class="small black">David Koymans</h4>
+                    <p class="small black">6561829</p>
+                </section>
+                <section class="contributor">
+                    <h4 class="small black">Jasper Weyne</h4>
+                    <p class="small black">5960134</p>
+                </section>
+            </div>
+        </footer>
+    </article>
 </body>
+
 </html>
