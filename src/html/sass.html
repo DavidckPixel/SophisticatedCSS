@@ -28,7 +28,11 @@
             alt="An Image of the Logo of Sass">
         <section class="introBlock">
             <h1 class="big">Syntatcically Awesome Style Sheet</h1>
-            <p class="medium">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+            <p class="medium">
+                Sass is a community driven stylesheet language that’s compiled to CSS. 
+                It allows you to use variables, nested rules, mixins, functions, and more, all with a fully CSS-compatible syntax. 
+                Sass helps keep large stylesheets well-organized and makes it easy to share design within and across projects
+            </p>
             <a href="https://sass-lang.com/">
             <section class="introLink blackBlockSmall">
                 <p class="medium">
@@ -40,66 +44,123 @@
     </article>
 
     <section class="quote container">
-        <h1>"Deze pre-processor is de allerbeste"</h1>
-        <p>Makers van de preprocessor</p>          
+        <h1>"Sass is the most mature, stable, and powerful <br> professional grade CSS extension language in the world. "</h1>
+        <p>Sass Developers</p>          
     </section>
     <article class="featureArticle container">
         <h1 class="featureTitle inSpring big">Features</h1>
         <section class="featureBlock">
             <section class="feature">
-                <h1 class="medium">Feature 1</h1>
-                <p class="small">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut </p>
+                <h1 class="medium">Variables</h1>
+                <p class="small">
+                    Think of variables as a way to store information that you want to reuse throughout your stylesheet. 
+                    You can store things like colors, font stacks, or any CSS value you think you'll want to reuse. 
+                    Sass uses the $ symbol to make something a variable. Here's an example:
+                </p>
             </section>
             <section class="exampleBlock">
                 <section class="feature blackBlock">
-                    <h1 class="medium">// CSS</h1>
-                    <p class = "small">Example Code</p>
+                    <h1 class="medium">CSS</h1>
+                    <p class = "small">
+                        <br>
+                        body {<br>
+                        &emsp; font: 100% Helvetica, sans-serif;<br>
+                        &emsp; color: #333;<br>
+                        }
+                      </p>
                 </section>
                 <section class="feature blackBlock">
-                    <h1 class="medium">// SASS</h1>
-                    <p class="small">Example Code</p>
+                    <h1 class="medium">SASS</h1>
+                    <p class="small">
+                        <br>
+                        $font-stack:    Helvetica, sans-serif;<br>
+                        $primary-color: #333;<br>
+                        <br>
+                        body {<br>
+                            &emsp; font: 100% $font-stack;<br>
+                            &emsp; color: $primary-color;<br>
+                        }
+                    </p>
                 </section>
             </section>
         </section>
         <section class="featureBlock">
             <section class="feature">
-                <h1 class="medium">Feature 2</h1>
-                <p class="small">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut </p>
+                <h1 class="medium">Nesting</h1>
+                <p class="small">
+                    When writing HTML you've probably noticed that it has a clear nested and visual hierarchy. CSS, on the other hand, doesn't.<br>
+                    <br>
+                    Sass will let you nest your CSS selectors in a way that follows the same visual hierarchy of your HTML.
+                </p>
             </section>
             <section class="exampleBlock">
                 <section class="feature blackBlock">
-                    <h1 class="medium">// CSS</h1>
-                    <p class="small">Example Code</p>
+                    <h1 class="medium">CSS</h1>
+                    <p class="small">
+                        <br>
+                        nav ul {                    <br>
+                            &emsp; margin: 0;                    <br>
+                            &emsp; padding: 0;                    <br>
+                            &emsp; list-style: none;                    <br>
+                          }                    <br>
+                          nav li {                    <br>
+                            &emsp; display: inline-block;                    <br>
+                          }
+                    </p>
                 </section>
                 <section class="feature blackBlock">
-                    <h1 class="medium">// SASS</h1>
-                    <p class="small">Example Code</p>
+                    <h1 class="medium">SASS</h1>
+                    <p class="small">
+                        <br>
+                        nav {<br>
+                            &emsp;ul {<br>
+                                &emsp;&emsp;margin: 0;<br>
+                                &emsp;&emsp;padding: 0;<br>
+                                &emsp;&emsp;list-style: none;<br>
+                                &emsp;}<br>
+                            &emsp;li { display: inline-block; }<br>
+                        }
+                    </p>
                 </section>
             </section>
         </section>
         <section class="featureBlock">
             <section class="feature">
-                <h1 class="medium">Feature 3</h1>
-                <p class="small">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut </p>
+                <h1 class="medium">Operators</h1>
+                <p class="small">
+                    Doing math in your CSS is very helpful. Sass has a handful of standard math operators like +, -, *, /, and %. 
+                    <br><br>In our example we're going to do some simple math to calculate widths for an aside & article.
+                </p>
             </section>
             <section class="exampleBlock">
                 <section class="feature blackBlock">
-                    <h1 class="medium">// CSS</h1>
-                    <p class = "small">Example Code</p>
+                    <h1 class="medium">CSS</h1>
+                    <p class = "small">
+                        <br>
+                        article[role="main"] {<br>
+                            &emsp;float: left;<br>
+                            &emsp;width: 62.5%;<br>
+                          }
+                    </p>
                 </section>
                 <section class="feature blackBlock">
-                    <h1 class="medium">// SASS</h1>
-                    <p class = "small">Example Code</p>
+                    <h1 class="medium">SASS</h1>
+                    <p class = "small">
+                        <br>
+                        article[role="main"] {<br>
+                            &emsp;float: left;<br>
+                            &emsp;width: 600px / 960px * 100%;<br>
+                          }
+                    </p>
                 </section>
             </section>
         </section>
     </article>
     <article class="userReview container white">
         <section class="reviewText">
-            <p class="quoteText">"Deze pre-processor doet ongeveer hetzelfde als alle andere pre-Processors,
-                maar deze is de beste, omdat ik aan deze gewend ben!"
+            <p class="quoteText">"I love using Sass, it does everything that I need it to do and more! its community is always willing to help out!"
             </p>
-            <p class="quoteSender">random gebruiker preprocessor</p>
+            <p class="quoteSender">~Derik Jansen</p>
         </section>
         <img
         src="../../src/Image/-1.png"
@@ -112,16 +173,16 @@
                 <th>Cons</th>
             </tr>
             <tr>
-                <td>test</td>
-                <td>test</td>
+                <td>Many Features</td>
+                <td>Most applications are paid</td>
             </tr>
             <tr>
-                <td>test</td>
-                <td>test</td>
+                <td>Easy to use</td>
+                <td>Not as advanced</td>
             </tr>
             <tr>
-                <td>test</td>
-                <td>test</td>
+                <td>Large community</td>
+                <td></td>
             </tr>
         </table>
     </article>
@@ -155,25 +216,29 @@
     <article class="tryOut container">
         <section class="two-col leftOutline">
             <h1 class="medium">Try this preprocessor</h1>
-            <p class="small">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut</p>
+            <p class="small">
+                Sass can be used from the command line, or by using third party applications. 
+                You can download sass from the Github page or by running <i>npm install -g sass</i> in the commandline.
+                Once u have it installed, you use it through the following steps:
+            </p>
             <ul>
-                <li>Lorem impsum</li>
-                <li>Lorem impsum</li>
-                <li>Lorem impsum</li>
+                <li>* <i>sass input.scss output.css</i> to convert a sass to css file</li>
+                <li>* add the <i>--watch</i> flag to automaticly convert it</li>
+                <li>* folder paths can also be used to convert entire folders</li>
             </ul>
             <section>
                 <a class= "blackBlockSmall" 
-                href="http://">
-                <p class="small">Link to site</p></a>
+                href="https://sass-lang.com/">
+                <p class="small">Site</p></a>
                 <a class="blackBlockSmall"
-                href="http://">
-                <p class="small">Download</p></a>
+                href="https://github.com/sass">
+                <p class="small">Github</p></a>
             </section>
         </section>
         <section class="two-col rightOutline">
             <img
-            src="../../src/Image/placeholder.png"
-            alt="A placeholder image!">
+            src="../../src/Image/coding.jpg"
+            alt="A decorative image about a person coding">
         </section>
     </article>
     <footer class="footer container white">        
