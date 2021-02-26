@@ -40,10 +40,14 @@
     display:list-item;
     width:100%;
     padding:0;
+<<<<<<< Updated upstream
     padding-top:1px;
     padding-bottom: 1px;
     font-size: 12px;
     font-family: 'Quicksand', sans-serif;
+=======
+    font-size:12px;
+>>>>>>> Stashed changes
     color: white;
     list-style-type: circle;
     
