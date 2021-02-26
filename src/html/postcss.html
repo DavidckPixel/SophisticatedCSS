@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head> 
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="discription" content="Information page for preprocessor PostCSS">
+    <meta name="description" content="Information page for preprocessor PostCSS">
     <meta name="keyword" content="CSS, Preprocessor, Postprocessor, PostCSS, tutorial">
     <title>Sophisticated CSS</title>
-    <link rel="stylesheet" href= "../../src/css/sophisticated.css" />
+    <link rel="stylesheet" href="../../src/css/sophisticated.css" />
 </head>
+
 <body>
     <header class="nav white">
         <div class="container">
@@ -25,46 +27,52 @@
             </nav>
         </div>
     </header>
-    <article class="intro container">
-        <img
-            src="../../src/Image/PostCSSFinal.png"
-            alt="An Image of the Logo of PostCSS">
-        <section class="introBlock">
-            <h1 class="big">A tool for transforming CSS with JavaScript</h1>
-            <p class="medium">PostCSS was launched in 2013 by Andrey Sitnik, who also created autofixer. PostCSS was developed as a method to use JavaScript for CSS processing. PostCSS on it’s own is just an API, but when it’s used with one or more of it’s vast number of plugins, it has powerful abilities. It uses the Node.js framework, which makes it’s abilities easily modified and customized. Because PostCSS is an API, it allows users to create their own custom plugins and tools for features they might need. PostCSS isn’t a preprocessor per se, some people regard it as one, but other regard it as a postprocessor, or something else entirely. PostCSS will read your CSS with special additional syntax and will process it and return normal CSS code.</p>
-            <a href="https://postcss.org/">
-            <section class="introLink blackBlockSmall">
-                <p class="medium">
-                    Website
-                </p>
-            </section>
-        </a>
-        </section>
-    </article>
-
-    <section class="quote white">
-        <div class="container">
-            <h2>
-                “PostCSS is a tool for transforming styles with JS plugins. These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more. PostCSS is used by industry leaders including Wikipedia, Twitter, Alibaba, and JetBrains.”
-            </h2>
-            <p>PostCSS Developers</p>
+    <article>
+        <div class="intro container">
+            <img src="../../src/Image/PostCSSFinal.png" alt="An Image of the Logo of PostCSS">
+            <div class="introBlock">
+                <h1 class="big">A tool for transforming CSS with JavaScript</h1>
+                <p class="medium">PostCSS was launched in 2013 by Andrey Sitnik, who also created autofixer. PostCSS was
+                    developed as a method to use JavaScript for CSS processing. PostCSS on it’s own is just an API, but
+                    when it’s used with one or more of it’s vast number of plugins, it has powerful abilities. It uses
+                    the Node.js framework, which makes it’s abilities easily modified and customized. Because PostCSS is
+                    an API, it allows users to create their own custom plugins and tools for features they might need.
+                    PostCSS isn’t a preprocessor per se, some people regard it as one, but other regard it as a
+                    postprocessor, or something else entirely. PostCSS will read your CSS with special additional syntax
+                    and will process it and return normal CSS code.</p>
+                <a href="https://postcss.org/">
+                    <div class="introLink blackBlockSmall">
+                        <p class="medium">Website</p>
+                    </div>
+                </a>
+            </div>
         </div>
-    </section>
-    <article class="featureArticle container">
-        <h2 class="featureTitle inSpring big">Features</h2>
-        <section class="featureBlock">
-            <section class="feature">
-                <h3 class="medium">Increase code readability</h3>
-                <p class="small">Automatically add vendor prefixes using the autoprefixer plugin.</p>
-            </section>
-            <section class="feature blackBlock">
-                <p class="small code">
-                    <strong>// CSS input</strong><br>
-                    :fullscreen {<br>
-                    }
+
+        <section class="userReview white">
+            <blockquote class="container">
+                <p class="quoteText">
+                    “PostCSS is a tool for transforming styles with JS plugins. These plugins can lint your CSS,
+                    support variables and mixins, transpile future CSS syntax, inline images, and more. PostCSS is
+                    used by industry leaders including Wikipedia, Twitter, Alibaba, and JetBrains.”
                 </p>
-                </section>
-                <section class="feature blackBlock">
+                <cite class="quoteSender">PostCSS Developers</cite>
+            </blockquote>
+        </section>
+        <section class="featureArticle container">
+            <h2 class="featureTitle inSpring big">Features</h2>
+            <section class="featureBlock">
+                <div class="feature">
+                    <h3 class="medium">Increase code readability</h3>
+                    <p class="small">Automatically add vendor prefixes using the autoprefixer plugin.</p>
+                </div>
+                <div class="feature blackBlock">
+                    <p class="small code">
+                        <strong>// CSS input</strong><br>
+                        :fullscreen {<br>
+                        }
+                    </p>
+                </div>
+                <div class="feature blackBlock">
                     <p class="small code">
                         <strong>// PostCSS output</strong><br>
                         :-webkit-full-screen {<br>
@@ -74,182 +82,180 @@
                         :fullscreen {<br>
                         }
                     </p>
-                </section>
+                </div>
             </section>
-        </section>
-        <section class="featureBlock">
-            <section class="feature">
-                <h3 class="medium">Use tomorrow’s CSS today!</h3>
-                <p class="small">Use modern CSS features that may not be supported yet, the PostCSS Preset Env plugin can automatically polyfill these features.</p>
-            </section>
-            <section class="feature blackBlock">
-                <p class="small code">
-                    <strong>// CSS input</strong><br>
-                    body {<br>
-                    &emsp;color: lch(53 105 40);<br>
-                    }
-                </p>
-                </section>
-                <section class="feature blackBlock">
+            <section class="featureBlock">
+                <div class="feature">
+                    <h3 class="medium">Use tomorrow’s CSS today!</h3>
+                    <p class="small">Use modern CSS features that may not be supported yet, the PostCSS Preset Env
+                        plugin can automatically polyfill these features.</p>
+                </div>
+                <div class="feature blackBlock">
+                    <p class="small code">
+                        <strong>// CSS input</strong><br>
+                        body {<br>
+                        &emsp;color: lch(53 105 40);<br>
+                        }
+                    </p>
+                </div>
+                <div class="feature blackBlock">
                     <p class="small code">
                         <strong>// PostCSS</strong><br>
                         body {<br>
                         &emsp;color: rgb(250, 0, 4);<br>
                         }
                     </p>
-                </section>
+                </div>
             </section>
-        </section>
-        <section class="featureBlock">
-            <section class="feature">
-                <h3 class="medium">The end of global CSS</h3>
-                <p class="small">Don't worry about naming your CSS classes, the CSS Modules plugin allows you to just use whatever name makes the most sense.</p>
-            </section>
-            <section class="feature blackBlock">
-                <p class="small code">
-                    <strong>// CSS input</strong><br>
-                    .name {<br>
-                    &emsp;color: gray;<br>
-                    }
-                </p>
-                </section>
-                <section class="feature blackBlock">
+            <section class="featureBlock">
+                <div class="feature">
+                    <h3 class="medium">The end of global CSS</h3>
+                    <p class="small">Don't worry about naming your CSS classes, the CSS Modules plugin allows you to
+                        just use whatever name makes the most sense.</p>
+                </div>
+                <div class="feature blackBlock">
+                    <p class="small code">
+                        <strong>// CSS input</strong><br>
+                        .name {<br>
+                        &emsp;color: gray;<br>
+                        }
+                    </p>
+                </div>
+                <div class="feature blackBlock">
                     <p class="small code">
                         <strong>// PostCSS output</strong><br>
                         .Logo__name__SVK0g {<br>
                         &emsp;color: gray;<br>
                         }
                     </p>
-                </section>
+                </div>
             </section>
         </section>
-    </article>
-    <article class="userReview white">
-        <div class="container">
-            <section class="reviewText">
-                <p class="quoteText">“I’m not compelled by PostCSS because I don’t love having to cobble together the processing features that I want. That also has the bad side effect of making the process of writing CSS different across projects. Plus, I don’t like the idea of preprocessing away modern features, some of which can’t really be preprocessed (e.g. custom properties cannot be preprocessed). But I did love Autoprefixer when we really needed that, which is built on PostCSS.”
+        <section class="userReview white">
+            <blockquote class="container">
+                <div class="reviewText">
+                    <p class="quoteText">“I’m not compelled by PostCSS because I don’t love having to cobble
+                        together the processing features that I want. That also has the bad side effect of making
+                        the process of writing CSS different across projects. Plus, I don’t like the idea of
+                        preprocessing away modern features, some of which can’t really be preprocessed (e.g. custom
+                        properties cannot be preprocessed). But I did love Autoprefixer when we really needed that,
+                        which is built on PostCSS.”
+                    </p>
+                    <p class="quoteSender">Chris Coyier</p>
+                </div>
+                <img src="../../src/Image/ChrisCoyier.jpeg" alt="An Image of Chris Coyier, who said this about PostCSS">
+            </blockquote>
+        </section>
+        <section class="compare container">
+            <table class="blackBlock">
+                <thead>
+                    <tr>
+                        <th>Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Can combine with Preprocessors</td>
+                        <td>Not powerful without plugins</td>
+                    </tr>
+                    <tr>
+                        <td>Very modular</td>
+                        <td>duplication of function between plugins</td>
+                    </tr>
+                    <tr>
+                        <td>integrated in many frameworks</td>
+                        <td>have to search for plugins</td>
+                    </tr>
+                    <tr>
+                        <td>Same syntax as CSS</td>
+                        <td>Plugins don't always work well together</td>
+                    </tr>
+                    <tr>
+                        <td>Use newest version of CSS</td>
+                        <td>Need to run plugins in order</td>
+                    </tr>
+                    <tr>
+                        <td>Works directly in browser</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <nav class="featureBlock container">
+            <h2 class="inSpring big">Alternatives</h2>
+            <a href="../../src/html/sass.html" class="feature">
+                <img src="../../src/Image/SassFinal.png" alt="A clickable Sass logo">
+                <div class="blackBlockLabel">
+                    <p class="medium">Sass</p>
+                </div>
+            </a>
+            <a href="../../src/html/less.html" class="feature">
+                <img src="../../src/Image/LessFinal.png" alt="A clickable Less logo">
+                <div class="blackBlockLabel">
+                    <p class="medium">Less</p>
+                </div>
+            </a>
+            <a href="../../src/html/stylus.html" class="feature">
+                <img src="../../src/Image/StylusFinalGreen.png" alt="A clickable Stylus Logo">
+                <div class="blackBlockLabel">
+                    <p class="medium">Stylus</p>
+                </div>
+            </a>
+        </nav>
+        <section class="tryOut container">
+            <div class="two-col leftOutline">
+                <h2 class="medium">Try this preprocessor</h2>
+                <p class="small">To start using PostCSS, choose a build tool that has an extension for PostCSS.
+                    Possible build tools include (but aren’t limited to) Gulp, Webpack, Parcel, CSS-in-JS and npm
+                    Scripts. On the PostCSS github page you can find a list of build tools, and which extension you need
+                    for them.
                 </p>
-                <p class="quoteSender">Chris Coyier</p>
-            </section>
-            <img
-            src="../../src/Image/ChrisCoyier.jpeg"
-            alt="An Image of Chris Coyier, who said this about PostCSS">
-        </div>
-    </article>
-    <article class="compare container">
-        <table class="blackBlock">
-            <thead>
-                <tr>
-                    <th>Pros</th>
-                    <th>Cons</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Can combine with Preprocessors</td>
-                    <td>Not powerful without plugins</td>
-                </tr>
-                <tr>
-                    <td>Very modular</td>
-                    <td>duplication of function between plugins</td>
-                </tr>
-                <tr>
-                    <td>integrated in many frameworks</td>
-                    <td>have to search for plugins</td>
-                </tr>
-                <tr>
-                    <td>Same syntax as CSS</td>
-                    <td>Plugins don't always work well together</td>
-                </tr>
-                <tr>
-                    <td>Use newest version of CSS</td>
-                    <td>Need to run plugins in order</td>
-                </tr>
-                <tr>
-                    <td>Works directly in browser</td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-    </article>
-    <nav class="featureBlock container">
-        <h2 class="inSpring big">Alternatives</h2>
-        <a href="../../src/html/sass.html" class="feature">
-            <img
-            src="../../src/Image/SassFinal.png"
-            alt="A clickable Sass logo">
-            <section class ="blackBlockLabel">
-                <p class ="medium">Sass</p>
-            </section>
-        </a>
-        <a href="../../src/html/less.html" class="feature">
-            <img
-            src="../../src/Image/LessFinal.png"
-            alt="A clickable Less logo">
-            <section class ="blackBlockLabel">
-                <p class ="medium">Less</p>
-            </section>
-        </a>
-        <a href="../../src/html/stylus.html" class="feature">
-            <img
-            src="../../src/Image/StylusFinalGreen.png"
-            alt="A clickable Stylus Logo">
-            <section class ="blackBlockLabel">
-                <p class ="medium">Stylus</p>
-            </section>
-        </a>        
-    </nav>
-    <article class="tryOut container">
-        <section class="two-col leftOutline">
-            <h2 class="medium">Try this preprocessor</h2>
-            <p class="small">To start using PostCSS, choose a build tool that has an extension for PostCSS. Possible build tools include (but aren’t limited to) Gulp, Webpack, Parcel, CSS-in-JS and npm Scripts. On the PostCSS github page you can find a list of build tools, and which extension you need for them. </p>
-            <ul>
-                <li>Choose a build tool</li>
-                <li>Find and add a PostCSS extension for it</li>
-                <li>Choose which plug-ins you want to use</li>
-                <li>Add them to your PostCSS process. </li>
-                <li>Start!</li>
-            </ul>
-            <section>
-                <a class= "blackBlockSmall" 
-                href="https://postcss.org/">
-                <p class="small">Link to site</p></a>
-                <a class="blackBlockSmall"
-                href="https://github.com/postcss/postcss#usage">
-                <p class="small">Github</p></a>
-            </section>
-        </section>
-        <section class="two-col rightOutline">
-            <img
-            src="../../src/Image/coding.jpg"
-            alt="A picture of a laptop with code on it">
+                <ul>
+                    <li>Choose a build tool</li>
+                    <li>Find and add a PostCSS extension for it</li>
+                    <li>Choose which plug-ins you want to use</li>
+                    <li>Add them to your PostCSS process. </li>
+                    <li>Start!</li>
+                </ul>
+                <div>
+                    <a class="blackBlockSmall" href="https://postcss.org/">
+                        <p class="small">Link to site</p>
+                    </a>
+                    <a class="blackBlockSmall" href="https://github.com/postcss/postcss#usage">
+                        <p class="small">Github</p>
+                    </a>
+                </div>
+            </div>
+            <div class="two-col rightOutline">
+                <img src="../../src/Image/coding.jpg" alt="A picture of a laptop with code on it">
+            </div>
         </section>
     </article>
     <footer class="footer white">
-        <div class="container">        
+        <div class="container">
             <section class="footerText">
                 <h2 class="sophisticated">SophisticatedCSS</h2>
-                <p class="small black">SophisticatedCSS is the first assignment for the course webtechnology at the University in Utrecht</p>
+                <p class="small black">SophisticatedCSS is the first assignment for the course webtechnology at the
+                    University in Utrecht</p>
                 <p class="small black topMargin">
-                    <a href="https://github.com/DavidckPixel/SophisticatedCSS">Github</a> | 
-                    <a href="https://www.uu.nl">UU</a> | 
+                    <a href="https://github.com/DavidckPixel/SophisticatedCSS">Github</a> |
+                    <a href="https://www.uu.nl">UU</a> |
                     <a href="http://www.cs.uu.nl/education/vak/INFOB2WT">Webtechnology</a>
                 </p>
             </section>
-            <img 
-            src="../../src/Image/1200px-UULogo.png"
-            alt="UU Logo">
+            <img src="../../src/Image/1200px-UULogo.png" alt="UU Logo">
             <section class="contributor">
-                <h4 class = "small black">Laura Holtus</h4>
-                <p class = "small black">1810057</p>
+                <h4 class="small black">Laura Holtus</h4>
+                <p class="small black">1810057</p>
             </section>
             <section class="contributor">
-                <h4 class = "small black">David Koymans</h4>
-                <p class = "small black">6561829</p>
+                <h4 class="small black">David Koymans</h4>
+                <p class="small black">6561829</p>
             </section>
             <section class="contributor">
-                <h4 class = "small black">Jasper Weyne</h4>
-                <p class = "small black">5960134</p>
+                <h4 class="small black">Jasper Weyne</h4>
+                <p class="small black">5960134</p>
             </section>
         </div>
     </footer>
