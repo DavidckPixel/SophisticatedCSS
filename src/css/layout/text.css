@@ -147,6 +147,14 @@ li a {
     font-size:16px;
 }
 
+p.topMargin{
+    margin-top:10px;
+}
+
+a:link{
+    text-decoration:none;
+}
+
 @media (max-width: 600px){
     
 }
