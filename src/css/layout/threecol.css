@@ -27,15 +27,7 @@
     float:left; 
 }
 
-.feature h4{
-    margin:0;
-}
-
-.feature h3{
-    margin:0;
-}
-
-.exampleBlock .feature h4{
+.exampleBlock .feature h3{
     background-color:white;
     color:black;
     border-radius:15px;
