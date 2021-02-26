@@ -10,20 +10,27 @@
     text-align:center;
     background-color:white;
     border-radius:15px;
+    font-size: 21px;
+    font-family: 'Fira Code', monospace; 
+
 }
 
 .compare td{
     overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; 
     color:white;
     padding-right:20px;
-    height:50px;
+    padding-left: 10px;
+    height:35px;
+    font-size: 16px;
+    font-family: 'Fira Code', monospace; 
+    
 }
 
 .compare{
     width:100%;
     height:auto;
     display:inline-block;
-    margin-bottom:10px;
+    
 }

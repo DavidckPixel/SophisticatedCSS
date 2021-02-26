@@ -3,7 +3,7 @@
 p.small {
     margin:0;
     padding:0;
-    font-size: 12px;
+    font-size: 16px;
     font-family: 'Quicksand', sans-serif;
     color:white;
 }
@@ -11,18 +11,14 @@ p.small {
 p.medium {
     margin:0;
     padding:0;
-    font-size: 16px;
+    font-size: 20px;
     font-family: 'Quicksand', sans-serif;
     color: white;
     text-decoration-line: none;
 }
 
-p.code {
-    margin:0;
-    padding:0;
-    font-size: 12px;
-    font-family: 'Fira Code', monospace;
-    color: white;
+p.code {      
+    font-family: 'Fira Code', monospace;    
     text-decoration-line: none;
 }
 
@@ -30,7 +26,7 @@ p.quoteText {
     margin:0;
     padding:0;
     font-family: 'Quicksand', sans-serif;
-    font-size: 20px;
+    font-size: 26px;
     text-align: center;
     
 }
@@ -39,12 +35,20 @@ p.quoteSender {
     margin:0;
     padding:0;
     font-family: 'Quicksand', sans-serif;
-    font-size: 12px;
+    font-size: 16px;
     text-align: center;
     
 }
 
 h2.big, h1.big{
+    margin:0;
+    padding:0;
+    font-size: 26px;
+    font-family: 'Fira Code', monospace;
+    color: white;
+}
+
+h2.medium, h1.medium{
     margin:0;
     padding:0;
     font-size: 20px;
@@ -60,16 +64,24 @@ h2.inSpring{
 h3.medium{
     margin:0;
     padding:0;
-    font-size: 16px;
+    font-size: 20px;
     font-family: 'Fira Code', monospace;
     color: white;
+    text-decoration: none;
+}
+
+h4.medium{
+    margin:0;
+    padding:0;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
     text-decoration: none;
 }
 
 h4.small {
     margin:0;
     padding:0;
-    font-size: 12px;
+    font-size: 16px;
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -80,7 +92,7 @@ h4.small {
 .sophisticated {
     margin:0;
     padding:0;
-    font-size: 16px;
+    font-size: 20px;
     font-family: 'Lobster', cursive;
     color:black;
 }
