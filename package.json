@@ -1,0 +1,9 @@
+{
+  "name": "sophisticated-css",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/DavidckPixel/SophisticatedCSS",
+  "dependencies": {
+    "typescript": "^4.2.3"
+  }
+}
