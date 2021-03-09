@@ -4,12 +4,12 @@
 class SelectorRenderer
 {
     /* The internal representation of the menu */
-    elements: Array<[HTMLElement, number]>;
+    elements: Array<[HTMLElement, string, number]>;
 
     /* The currenly selected menu item */
     current?: HTMLElement;
 
-    constructor(elements: Array<[HTMLElement, number]>) {
+    constructor(elements: Array<[HTMLElement, string, number]>) {
         this.elements = elements;
     }
 
@@ -31,9 +31,9 @@ class SelectorRenderer
      */
     render(rootElement: HTMLElement) {
         // Iterate over all elements in the menu
-        for (const [element, depth] of this.elements) {
+        for (const [element, title, depth] of this.elements) {
             // Build and append the node
-            let text = "&emsp;".repeat(depth) + element.title;
+            let text = "&emsp;".repeat(depth) + title;
             let node = document.createElement('button');
             node.appendChild(document.createTextNode(text));
             node.addEventListener("click", (event: MouseEvent) => {
