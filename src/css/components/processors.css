@@ -16,10 +16,10 @@
     border-right: 2px solid white;
 }
 
-.preProcessorBlock {
+/* .preProcessorBlock {
     width: 100%;
     height: 100%;
-}
+} */
 
 .allPostProcessors {
     width: calc(100% / 12 * 4);
@@ -36,7 +36,7 @@
     float: left;
 }
 
-.preProcessorContainer img, .postProcessorContainer img{
+.preProcessorContainer__img{
     display: block;
     width: calc(100% - 20%);
     margin-left: 10%;
@@ -54,7 +54,7 @@
     float: left;
 }
 
-.postProcessorContainer img{
+.postProcessorContainer__img{
     display: block;
     width: calc(100% - 20%);
     margin-left: 10%;
@@ -66,7 +66,7 @@
     float: left;
 }
 
-.allPostProcessors .processorText {
+.allPostProcessors__text {
     margin-left: -30%;
     margin-right: -30%;
 }
@@ -123,7 +123,7 @@
         
     }
     
-    .allPostProcessors .processorText {
+    .allPostProcessors__text {
         margin-left: -30%;
         margin-right: -30%;
     }
