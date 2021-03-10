@@ -7,30 +7,19 @@
     padding: 15px;
 }
 
-.blackBlockSmall {
-    background-color: black;
+.blackBlock--small {
     border-radius: 5px;
-    border:none;
-    box-shadow: 0 0 8px 1px rgb(36, 34, 34);
-    background-image:linear-gradient(315deg, black 30%, rgba(97, 90, 90, 0.507) 100%);
     padding-top: 4px;
     padding-bottom: 4px;
     height:auto;
 }
 
-.blackBlockLabel {
-    background-color: black;
+.blackBlock--label {
     border-radius: 5px;
-    border:none;
-    box-shadow: 0 0 8px 1px rgb(36, 34, 34);
-    background-image:linear-gradient(315deg, black 30%, rgba(97, 90, 90, 0.507) 100%);
     display: block;
     float:right;
     width: calc(100% - 8px);
     padding: 4px;
-    
-
-    
 }
 
 @media (max-width: 600px){
