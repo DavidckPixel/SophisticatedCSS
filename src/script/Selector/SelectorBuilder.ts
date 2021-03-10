@@ -15,23 +15,26 @@ class SelectorBuilder
      * 
      * @param rootElement 
      */
-    getTitle(rootElement: HTMLElement): string | null {
-        for (const element of rootElement.childNodes) {
-            // If node is text node, return its value
-            if (element.nodeType === Node.TEXT_NODE) {
-                return rootElement.innerText;
+    getTitle(rootNode: Node): string | null {
+        for (const node of rootNode.childNodes) {
+            // If node is text node and the text contains non-whitespace, return its value
+            if (node.nodeType === Node.TEXT_NODE && !!node.nodeValue?.trim()) {
+                return node.nodeValue?.trim();
             }
 
             // Recursively call
-            if (element instanceof HTMLElement) 
-                this.getTitle(element);
+            if (node instanceof HTMLElement) {
+                const result = this.getTitle(node);
+                if (result)
+                    return result;
+            }
         }
 
         return null;
     }
 
     /**
-     * Finds and appends elements to the element cache of a certain element.
+     * Find and append DOM elements to the element cache if they have an id assigned.
      * 
      * @param rootElement The HTML element whose children should be searched.
      * @param depth The relative depth of the searched children.
@@ -41,16 +44,19 @@ class SelectorBuilder
         for (const element of rootElement.children) {
             // Type guard for HTMLElement
             if (!(element instanceof HTMLElement)) 
-                throw new Error(`Expected e to be an HTMLElement, was ${element && element.constructor && element.constructor.name || element}`);
+                throw new Error(`Expected element to be an HTMLElement, was ${element && element.constructor && element.constructor.name || element}`);
 
-            // Detect egligable elements
-            if (element.hasAttribute("id")) {
-                let title = this.getTitle(element) ?? "Onbekend";
-                this.elements.push([element, title, depth + 1]);
+            // Detect egligable elements and add them to the elements cache
+            let id = element.getAttribute("id");
+            let childDepth = depth;
+            if (id) {
+                childDepth++;
+                let title = element.getAttribute("selectorTitle") ?? this.getTitle(element) ?? id;
+                this.elements.push([element, title, depth]);
             }
 
             // Recursively call
-            this.buildFor(element, depth);
+            this.buildFor(element, childDepth);
         }
     }
 
