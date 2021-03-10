@@ -64,22 +64,22 @@ when 2 sections are both defined with the .two-col class, It will but the 2 sect
        
 }
 
-.two-col img {    
+.two-col__image {    
     object-fit:contain;    
     max-height: 200px;
     border-radius: 15px;
 }
 
-.leftOutline {
+.two-col--leftOutline {
     padding-left: calc(100% /12 * 2);
 }
 
-.rightOutline {
+.two-col--rightOutline {
     padding-right: calc(100% /12 * 2);
 }
 
 @media (max-width:600px){
-    .two-col img{
+    .two-col__image{
         display:none;
     }
 
@@ -88,13 +88,13 @@ when 2 sections are both defined with the .two-col class, It will but the 2 sect
         margin-top:2em;
     }
 
-    .leftOutline{        
+    .two-col--leftOutline{        
         
         padding-left:0;
         width: calc(100% - 2%);
     }
 
-    .rightOutline{
+    .two-col--rightOutline{
         padding-right:0;
         width: calc(100% - 2%);
     }
