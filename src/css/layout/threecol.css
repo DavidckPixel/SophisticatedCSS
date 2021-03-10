@@ -65,9 +65,7 @@
     padding: 1px;    
     margin-left: 1%;
     margin-right:1%;
-    width: calc(100% / 12 * 4 - 2% - 4px - 2px);
-    
-    /* text-align: center; */
+    width: calc(100% / 12 * 4 - 2% - 4px - 2px);    
 }
 
 .threecol--minheight{
@@ -89,6 +87,24 @@
     transform: scale(1.1);
     overflow:visible;
 }
+
+.threecol__header{
+    margin:0;
+    padding:0;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+    color: white;
+    text-decoration: none;
+}
+
+.threecol__text{
+    margin:0;
+    padding:0;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    color:white;
+}
+
 
 /* .feature img{
     display: block;

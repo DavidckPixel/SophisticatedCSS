@@ -27,7 +27,6 @@
     padding-left: 7.33%;
     padding-right: 7.33%;    
     float: left;
-    
 }
 
 .preProcessorContainer {
@@ -66,9 +65,16 @@
     float: left;
 }
 
-.allPostProcessors .processorText{
+.allProcessors__titles{
+    margin:0;
+    padding:0;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+    color: white;
+    text-decoration: none;
     margin-left: -30%;
     margin-right: -30%;
+    text-align: center;
 }
 
 @media (max-width: 600px){
