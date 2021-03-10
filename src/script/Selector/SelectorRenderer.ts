@@ -33,9 +33,10 @@ class SelectorRenderer
         // Iterate over all elements in the menu
         for (const [element, title, depth] of this.elements) {
             // Build and append the node
-            let text = "&emsp;".repeat(depth) + title;
+            let text = "\u2003".repeat(depth) + title;
             let node = document.createElement('a');
             let id = element.getAttribute("id");
+            node.style.display = "block";
             node.appendChild(document.createTextNode(text));
             node.addEventListener("click", (event: MouseEvent) => {
                 this.setElement(element);
