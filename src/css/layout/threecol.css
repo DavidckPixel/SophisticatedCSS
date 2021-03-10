@@ -17,20 +17,20 @@
     height:auto;
 }
 
-.feature{
-    width:calc(100% /12 * 4 - 2%);    /* 3 column, so al colums have a width of 32*/
+/* .feature{
+    width:calc(100% /12 * 4 - 2%);    
     margin-left:1%;
     margin-right:1%;
-    min-height:150px; /* Needs a miniumum height so all blocks are somewhat consistent*/
+    min-height:150px; 
     display: inline-block;
     float:left; 
-}
+} */
 
-.exampleBlock .feature h4{
+/* .exampleBlock .feature h4{
     
     border-radius:15px;
     padding-left:5px;
-}
+} */
 
 .threecol {
     float: left;
@@ -38,11 +38,12 @@
     margin-left: 1%;
     margin-right:1%;
     width: calc(100% / 12 * 4 - 2% - 4px - 2px);
+    
     /* text-align: center; */
 }
 
 .threecol--minheight{
-    min-height:150px;
+    min-height:200px;
 }
 
 .threecol__image{
@@ -93,12 +94,12 @@ a.feature{
 }
 
 @media (max-width: 600px){
-    .feature{
+    /* .feature{
         width:calc(100% / 12 * 12 - 2% - 4px);
         margin-bottom:5px;
         height:auto;
         min-height:0;
-    }
+    } */
 
     .threecol{
         width:calc(100% / 12 * 12 - 2% - 4px);
@@ -113,11 +114,11 @@ a.feature{
         height:auto;
     }
 
-    .exampleBlock .feature{
+    /* .theecol--mobiletwocol{
         width:49%;
         float:none;
         min-height:150px;
-    }
+    } */
 
     .additionalSourceBlock{
         width: calc(100% / 12 * 12 - 2% - 4px - 2px);
