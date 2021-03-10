@@ -71,13 +71,13 @@ h4.small {
     text-align: center;
 }
 
-.sophisticated {
+/* .sophisticated {
     margin:0;
     padding:0;
     font-size: 20px;
     font-family: 'Lobster', cursive;
     color:black;
-}
+} */
 
 p.black{
     color:black;
@@ -94,15 +94,7 @@ table td{
     font-family: 'Fira Code', monospace; 
 }
 
-header a {
-    
-    color: black;
-    text-align: center; 
-    text-decoration: none;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 20px;
-    
-  }
+
 
 /* .quote h2{  
     font-family: 'Quicksand', sans-serif;
