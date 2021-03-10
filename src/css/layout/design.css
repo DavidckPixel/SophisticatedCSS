@@ -19,6 +19,10 @@
     overflow:visible;
 }
 
+.blackBlock--centertext{
+    text-align: center;
+}
+
 .blackBlock--label {
     border-radius: 5px;
     display: block;

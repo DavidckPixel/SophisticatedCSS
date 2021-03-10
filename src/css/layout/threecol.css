@@ -83,7 +83,7 @@ a.feature{
     margin-bottom:20px;
 } */
 
-.additionalSourceBlock {
+/* .additionalSourceBlock {
     float: left;
     padding: 1px;
     border: 2px solid rgb(0, 0, 0);
@@ -91,7 +91,7 @@ a.feature{
     margin-right:1%;
     width: calc(100% / 12 * 4 - 2% - 4px - 2px);
     text-align: center;
-}
+} */
 
 @media (max-width: 600px){
     /* .feature{
@@ -120,9 +120,9 @@ a.feature{
         min-height:150px;
     } */
 
-    .additionalSourceBlock{
+    /* .additionalSourceBlock{
         width: calc(100% / 12 * 12 - 2% - 4px - 2px);
-    }
+    } */
 
     .featureBlock{
         height:auto;
