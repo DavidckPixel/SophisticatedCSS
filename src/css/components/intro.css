@@ -23,6 +23,21 @@
     margin-left: 1%;    
     display: inline-block;
     float:right;
+    color: white;
+}
+
+.intro__header{
+    margin:0;
+    padding:0;
+    font-size: 26px;
+    font-family: 'Fira Code', monospace;
+}
+
+.intro__paragraph{
+    margin:0;
+    padding:0;
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .intro__img{
@@ -73,6 +88,21 @@
     height:100%;
     overflow: auto;
     float: right;
+    color: white;
+}
+
+.introHome__header{
+    margin:0;
+    padding:0;
+    font-size: 26px;
+    font-family: 'Fira Code', monospace;
+}
+
+.introHome__paragraph{
+    margin:0;
+    padding:0;
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .introHome__img{
