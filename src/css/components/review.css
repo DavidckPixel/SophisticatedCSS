@@ -34,6 +34,26 @@ While the remaining 20% if given to the image */
     display: inline-block;
 }
 
+.userReview__quote {
+    margin:0;
+    padding:0;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 26px;
+    text-align: center;
+    
+}
+
+.userReview__sender {
+    margin:0;
+    padding:0;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    font-style: normal;
+    display: block;
+    
+}
+
 @media (max-width: 600px){
 
     

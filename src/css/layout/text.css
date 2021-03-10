@@ -22,25 +22,7 @@ p.code {
     text-decoration-line: none;
 }
 
-.quoteText {
-    margin:0;
-    padding:0;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 26px;
-    text-align: center;
-    
-}
 
-.quoteSender {
-    margin:0;
-    padding:0;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 16px;
-    text-align: center;
-    font-style: normal;
-    display: block;
-    
-}
 
 h2.big, h1.big{
     margin:0;
