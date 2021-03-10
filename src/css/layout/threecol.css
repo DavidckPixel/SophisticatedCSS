@@ -3,18 +3,46 @@
 .featureArticle{
     width:100%;      
     height:auto;
+    color: white;
 }
 
-/* .featureTitle{
+.featureTitle{
     margin:0;
-} */
+    padding:0;
+    padding-left: 1%;
+    padding-right: 1%;
+    font-size: 26px;
+    font-family: 'Fira Code', monospace;
+    
+}
 
 /*3 column structure, NEEDS TO BE RENAMED, Screen is split into 3 blocks called features*/
 
 .featureBlock{
     margin-bottom:10px;     /* if blocks stack, there will always be a 10px gab between them*/
     overflow:hidden;
-    height:auto;
+    height:auto;    
+}
+
+.featureBlock__name{
+    margin:0;
+    padding:0;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+}
+
+.featureBlock__explanation{
+    margin:0;
+    padding:0;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;    
+}
+
+.exampleBlock__code{
+    font-family: 'Fira Code', monospace;
+    margin:0;
+    padding:0;
+    font-size: 16px;
 }
 
 /* .feature{

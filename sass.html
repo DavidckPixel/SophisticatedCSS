@@ -63,11 +63,11 @@
             </blockquote>
         </section>
         <section class="featureArticle container">
-            <h2 class="featureTitle inSpring big">Features</h2>
+            <h2 class="featureTitle">Features</h2>
             <section class="featureBlock">
                 <div class="threecol threecol--minheight">
-                    <h3 class="medium">Variables</h3>
-                    <p class="small">
+                    <h3 class="featureBlock__name">Variables</h3>
+                    <p class="featureBlock__explanation">
                         Think of variables as a way to store information that you want to reuse throughout your
                         stylesheet.
                         You can store things like colors, font stacks, or any CSS value you think you'll want to reuse.
@@ -76,7 +76,7 @@
                 </div>
                 <div class="exampleBlock">
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// CSS</strong><br>
                             body {<br>
                             &emsp; font: 100% Helvetica, sans-serif;<br>
@@ -85,7 +85,7 @@
                         </p>
                     </div>
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// Sass</strong><br>
                             $font-stack: Helvetica, sans-serif;<br>
                             $primary-color: #333;<br>
@@ -100,8 +100,8 @@
             </section>
             <section class="featureBlock">
                 <div class="threecol threecol--minheight">
-                    <h3 class="medium">Nesting</h3>
-                    <p class="small">
+                    <h3 class="featureBlock__name">Nesting</h3>
+                    <p class="featureBlock__explanation">
                         When writing HTML you've probably noticed that it has a clear nested and visual hierarchy. CSS,
                         on the other hand, doesn't.<br>
                         <br>
@@ -111,7 +111,7 @@
                 </div>
                 <div class="exampleBlock">
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// CSS</strong><br>
                             nav ul { <br>
                             &emsp; margin: 0; <br>
@@ -124,7 +124,7 @@
                         </p>
                     </div>
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// Sass</strong><br>
                             nav {<br>
                             &emsp;ul {<br>
@@ -140,8 +140,8 @@
             </section>
             <section class="featureBlock">
                 <div class="threecol threecol--minheight">
-                    <h3 class="medium">Operators</h3>
-                    <p class="small">
+                    <h3 class="featureBlock__name">Operators</h3>
+                    <p class="featureBlock__explanation">
                         Doing math in your CSS is very helpful. Sass has a handful of standard math operators like +, -,
                         *, /, and %.
                         <br><br>In our example we're going to do some simple math to calculate widths for an aside &
@@ -150,7 +150,7 @@
                 </div>
                 <div class="exampleBlock">
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// CSS</strong><br>
                             article[role="main"] {<br>
                             &emsp;float: left;<br>
@@ -159,7 +159,7 @@
                         </p>
                     </div>
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// Sass</strong><br>
                             article[role="main"] {<br>
                             &emsp;float: left;<br>

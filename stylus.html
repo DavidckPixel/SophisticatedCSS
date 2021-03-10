@@ -55,15 +55,15 @@
             </blockquote>
         </section>
         <section class="featureArticle container">
-            <h2 class="featureTitle inSpring big">Features</h2>
+            <h2 class="featureTitle">Features</h2>
             <section class="featureBlock">
                 <div class="threecol threecol--minheight">
-                    <h3 class="medium">Flexible syntax</h3>
-                    <p class="small">Semi-colons, colons, and braces are optional</p>
+                    <h3 class="featureBlock__name">Flexible syntax</h3>
+                    <p class="featureBlock__explanation">Semi-colons, colons, and braces are optional</p>
                 </div>
                 <div class="exampleBlock">
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// CSS</strong><br>
                             body { <br>
                                 &emsp;font: 14px/1.5 Helvetica, arial, sans-serif; <br>
@@ -76,7 +76,7 @@
                         }</p>
                     </div>
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// Stylus</strong><br>
                             body<br>
                             &emsp;font 14px/1.5 Helvetica, arial, sans-serif<br>
@@ -90,14 +90,14 @@
             </section>
             <section class="featureBlock">
                 <div class="threecol threecol--minheight">
-                    <h3 class="medium">Nesting</h3>
-                    <p class="small">When writing HTML you've probably noticed that it has a clear nested and visual hierarchy. CSS, on the other hand, doesn't.<br>
+                    <h3 class="featureBlock__name">Nesting</h3>
+                    <p class="featureBlock__explanation">When writing HTML you've probably noticed that it has a clear nested and visual hierarchy. CSS, on the other hand, doesn't.<br>
                         <br>
                         Stylus will let you nest your CSS selectors in a way that follows the same visual hierarchy of your HTML.</p>
                 </div>
                 <div class="exampleBlock">
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// CSS</strong><br>
                             body {<br>
                                 &emsp;font: 14px/1.5 Helvetica, arial, sans-serif;<br>
@@ -107,7 +107,7 @@
                         }</p>
                     </div>
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// Stylus</strong><br>
                             body {<br>
                                 &emsp;font: 14px/1.5 Helvetica, arial, sans-serif;<br>
@@ -120,12 +120,12 @@
             </section>
             <section class="featureBlock">
                 <div class="threecol threecol--minheight">
-                    <h3 class="medium">Mixins</h3>
-                    <p class="small">Stylus mixins allow you to define reusable functionality by defining in-language functions which can be called from within blocks</p>
+                    <h3 class="featureBlock__name">Mixins</h3>
+                    <p class="featureBlock__explanation">Stylus mixins allow you to define reusable functionality by defining in-language functions which can be called from within blocks</p>
                 </div>
                 <div class="exampleBlock">
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// CSS</strong><br>
                             button {<br>
                                 &emsp;-webkit-border-radius: 5px;<br>
@@ -134,7 +134,7 @@
                         }</p>
                     </div>
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// Stylus</strong><br>
                             border-radius(val)<br>
                             &emsp;-webkit-border-radius: val<br>
@@ -149,12 +149,12 @@
             </section>
             <section class="featureBlock">
                 <div class="threecol threecol--minheight">
-                    <h3 class="medium">Variables</h3>
-                    <p class="small">Stylus variables behave as you would expect in any other language, and may optionally be prefixed by the “$” character:</p>
+                    <h3 class="featureBlock__name">Variables</h3>
+                    <p class="featureBlock__explanation">Stylus variables behave as you would expect in any other language, and may optionally be prefixed by the “$” character:</p>
                 </div>
                 <div class="exampleBlock">
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// CSS</strong><br>
                             #prompt {<br>
                                 &emsp;position: absolute;<br>
@@ -165,7 +165,7 @@
                         }</p>
                     </div>
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// Stylus</strong><br>
                             #prompt<br>
                             &emsp;position: absolute<br>
@@ -179,18 +179,18 @@
             </section>
             <section class="featureBlock">
                 <div class="threecol threecol--minheight">
-                    <h3 class="medium">Functions</h3>
-                    <p class="small">"Stylus functions may be defined in the same manner as mixins, however their usage differs as they return values.</p>
+                    <h3 class="featureBlock__name">Functions</h3>
+                    <p class="featureBlock__explanation">"Stylus functions may be defined in the same manner as mixins, however their usage differs as they return values.</p>
                 </div>
                 <div class="exampleBlock">
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// CSS</strong><br>body {<br>
                             &emsp;foo: 6;<br>
                         }</p>
                     </div>
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// Stylus</strong><br>
                             sum(nums...)<br>
                             &emsp;n = 0<br>

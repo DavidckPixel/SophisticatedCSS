@@ -17,12 +17,10 @@ p.medium {
     text-decoration-line: none;
 }
 
-p.code {      
+/* p.code {      
     font-family: 'Fira Code', monospace;    
     text-decoration-line: none;
-}
-
-
+} */
 
 h2.big, h1.big{
     margin:0;
@@ -106,16 +104,16 @@ header a {
     
   }
 
-.quote h2{  /* was called quote*/
+/* .quote h2{  
     font-family: 'Quicksand', sans-serif;
     font-size:26px;
     font-weight: normal;
 }
 
-.quote p{  /* was called quote name*/
+.quote p{ 
     font-family: 'Quicksand', sans-serif;
     font-size:16px;
-}
+} */
 
 p.topMargin{
     margin-top:10px;

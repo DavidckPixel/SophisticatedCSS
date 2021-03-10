@@ -61,11 +61,11 @@
             </blockquote>
         </section>
         <section class="featureArticle container">
-            <h2 class="featureTitle inSpring big">Features</h2>
+            <h2 class="featureTitle">Features</h2>
             <section class="featureBlock">
                 <div class="threecol threecol--minheight">
-                    <h3 class="medium">Variables</h3>
-                    <p class="small">
+                    <h3 class="featureBlock__name">Variables</h3>
+                    <p class="featureBlock__explanation">
                         It's not uncommon to see the same value repeated dozens if not hundreds of times across your
                         stylesheets. Variables make your code easier to maintain by giving you a way to control those
                         values from a single location. Less-variables are defined with @[name]
@@ -73,7 +73,7 @@
                 </div>
                 <div class="exampleBlock">
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// CSS</strong><br>
                             a, <br>
                             .link {<br>
@@ -82,7 +82,7 @@
                         </p>
                     </div>
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// LESS</strong><br>
                             @link-color: #428bca; <br>
                             <br>
@@ -96,8 +96,8 @@
             </section>
             <section class="featureBlock">
                 <div class="threecol threecol--minheight">
-                    <h3 class="medium">Extending</h3>
-                    <p class="small">
+                    <h3 class="featureBlock__name">Extending</h3>
+                    <p class="featureBlock__explanation">
                         Extend is a Less pseudo-class which merges the selector it is put on with ones that match what
                         it references. A selector can contain multiple extend clauses, but all extends must be at the
                         end of the selector.
@@ -105,7 +105,7 @@
                 </div>
                 <div class="exampleBlock">
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// CSS</strong><br>
                             nav ul {<br>
                             &emsp;background: blue;<br>
@@ -117,7 +117,7 @@
                         </p>
                     </div>
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// LESS</strong><br>
                             nav ul {<br>
                             &emsp; &:extend(.inline);<br>
@@ -132,8 +132,8 @@
             </section>
             <section class="featureBlock">
                 <div class="threecol threecol--minheight">
-                    <h3 class="medium">Merge</h3>
-                    <p class="small">
+                    <h3 class="featureBlock__name">Merge</h3>
+                    <p class="featureBlock__explanation">
                         The merge feature allows for aggregating values from multiple properties into a comma or space
                         separated list under a single property. merge is useful for properties such as background and
                         transform.
@@ -141,7 +141,7 @@
                 </div>
                 <div class="exampleBlock">
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// CSS</strong><br>
                             .myclass {<br>
                             &emsp;box-shadow: inset 0 0 10px #555, 0 0 20px black;<br>
@@ -149,7 +149,7 @@
                         </p>
                     </div>
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// LESS</strong><br>
                             .mixin() {<br>
                             &emsp;box-shadow+: inset 0 0 10px #555;<br>
@@ -164,15 +164,15 @@
             </section>
             <section class="featureBlock">
                 <div class="threecol threecol--minheight">
-                    <h3 class="medium">Functions</h3>
-                    <p class="small">
+                    <h3 class="featureBlock__name">Functions</h3>
+                    <p class="featureBlock__explanation">
                         Less also comes with an array of extra build in functions, such as If and Bool functions.
                         But also some more complex math functions
                     </p>
                 </div>
                 <div class="exampleBlock">
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// CSS</strong><br>
                             div {<br>
                             &emsp;margin: 0;<br>
@@ -181,7 +181,7 @@
                         </p>
                     </div>
                     <div class="threecol threecol--minheight blackBlock">
-                        <p class="small code">
+                        <p class="exampleBlock__code">
                             <strong>// LESS</strong><br>
                             @some: foo;<br>
                             <br>
