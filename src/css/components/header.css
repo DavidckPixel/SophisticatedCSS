@@ -45,6 +45,8 @@ we give al the elements 24% of the page, because there are 4 elements, and displ
     width: 100%;
     height:auto;
     margin-bottom:10px;
+    background-color: white;
+    color: black;
 }
 
 @media (max-width:600px){

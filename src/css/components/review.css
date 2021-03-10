@@ -3,8 +3,8 @@ While the remaining 20% if given to the image */
 
 .userReview{
     width:100%;
-    height:auto;
-    overflow: hidden;
+    background-color: white;
+    color: black;
 }
 
 .userReview__text{
@@ -36,11 +36,6 @@ While the remaining 20% if given to the image */
 
 @media (max-width: 600px){
 
-    .userReview{
-        width:100%;
-        height:auto;
-        overflow: hidden;
-    }
     
     .userReview__text{
         width:calc(100% / 12 * 9 - 2%);

@@ -2,8 +2,8 @@
 /* 33/66% screen division first half being picture second half being text */
 
 .intro{
-    margin-bottom:10px;
-    height: auto;
+    margin-top:50px;
+    height:auto;
 }
 
 /* .intro .introBlock{
@@ -53,6 +53,7 @@
 .introHome{
     margin-top:50px;
     height:auto;
+    
 }
 
 /* .introHome .introBlock{

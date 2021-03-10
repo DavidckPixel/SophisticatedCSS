@@ -3,6 +3,7 @@
     max-width: 960px;
     margin:0 auto;
     padding: 0 15px;
+    
 }
 
 /* clearfix */
@@ -12,25 +13,31 @@
     clear: both;
 }
 
-.white {
+/* .white {
     width: 100%;
     background-color: white;
     color: black;
-}
+} */
 
 body{
     background-blend-mode: normal;
     background-image:linear-gradient(to right,rgb(63, 0, 0) 0%, #46008b 100%);
 }
 
-.white .container {
+.container--centerVertical{
     margin: 30px auto;
     padding: 15px 0;
 }
 
-.container, .white {
+/* .white .container {
+    margin: 30px auto;
+    padding: 15px 0;
+    
+} */
+
+/* .container, .white {
     margin-bottom:30px;
-}
+} */
 
 @media (min-width: 768px) {
     .container, .white {

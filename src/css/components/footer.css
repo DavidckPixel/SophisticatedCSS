@@ -1,6 +1,9 @@
 .footer {
     margin-top: 20px;
     height:auto;
+    width: 100%;
+    background-color: white;
+    color: black;
 }
 
 .footer__img {
