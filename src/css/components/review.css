@@ -7,7 +7,7 @@ While the remaining 20% if given to the image */
     overflow: hidden;
 }
 
-.reviewText{
+.userReview__text{
     width:calc(100% / 12 * 8 - 2%);
     margin-left: calc(100% / 12 * 1 + 1%);
     margin-right: 1%;
@@ -15,7 +15,7 @@ While the remaining 20% if given to the image */
     float:left;
 }
 
-.userReview img{
+.userReview__img{
     width:calc(100% / 12 * 2 - 2%);
     height:100%;
     margin-left: 1%;
@@ -42,7 +42,7 @@ While the remaining 20% if given to the image */
         overflow: hidden;
     }
     
-    .reviewText{
+    .userReview__text{
         width:calc(100% / 12 * 9 - 2%);
         margin-left: 1%;
         margin-right: 1%;        
@@ -50,7 +50,7 @@ While the remaining 20% if given to the image */
         
     }
     
-    .userReview img{
+    .userReview__img{
         width:calc(100% / 12 * 3 - 2%);
         height:100%;
         margin-left: 1%;

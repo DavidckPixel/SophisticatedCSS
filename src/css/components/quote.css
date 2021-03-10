@@ -1,16 +1,16 @@
 /* Block of Text which takes on full screen and centers all the text  */
 
 
-.quote{     /* was called devQuote */
+/* .quote{     
     width:100%;
     height:auto;
     background-color:white;
-}
+} */
 
-.quote h2, .quote p{  /* was called quote*/
+/* .quote h2, .quote p{  
     margin:0;
     text-align:center;
-}
+} */
 
 
 /*quote*/
