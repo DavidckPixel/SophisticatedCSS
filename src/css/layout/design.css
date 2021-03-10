@@ -14,6 +14,11 @@
     height:auto;
 }
 
+.blackBlock--small:hover {
+    transform: scale(1.1);
+    overflow:visible;
+}
+
 .blackBlock--label {
     border-radius: 5px;
     display: block;
