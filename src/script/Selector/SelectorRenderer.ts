@@ -34,11 +34,15 @@ class SelectorRenderer
         for (const [element, title, depth] of this.elements) {
             // Build and append the node
             let text = "&emsp;".repeat(depth) + title;
-            let node = document.createElement('button');
+            let node = document.createElement('a');
+            let id = element.getAttribute("id");
             node.appendChild(document.createTextNode(text));
             node.addEventListener("click", (event: MouseEvent) => {
                 this.setElement(element);
             });
+            if (id) {
+                node.href = "#" + id;
+            }
             rootElement.appendChild(node)
         }
     }
