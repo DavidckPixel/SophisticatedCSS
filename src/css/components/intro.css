@@ -40,6 +40,8 @@
     max-width:25%;
     margin-top:10px;
     font-family: 'Quicksand', sans-serif;
+    width:calc(100% / 12 * 6 - 5%);
+    display:inline-block;
 }
 
 .intro__p{

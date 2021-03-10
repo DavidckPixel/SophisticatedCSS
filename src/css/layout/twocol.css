@@ -1,13 +1,13 @@
 /* tryOut class, selects 70% of the screen in the middle */
 
-.tryOut{    
+/* .tryOut{    
     width:calc(100%);
     height:auto;
     margin-bottom:10px;
-}
+} */
 
 /* all links in tryout class must be in blocks and 50% of the blocks width; */
-.tryOut a{
+.two-col__link{
     display:inline-block;
     font-family: 'Quicksand', sans-serif;
     width:calc(100% / 12 * 6 - 5%);
@@ -24,34 +24,31 @@
     object-position: center;
 } */
 
-.tryOut ul{
+.two-col__list{
     width:100%;
-    
     list-style-type: disc;
     margin-top: 1em;
-    
     list-style-position: inside;
-    
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
 }
 
-.tryOut ul li{
+/* .two-col__item{
     text-align:left;
     display:list-item;
     width:100%;
     padding:0;
     padding-top:1px;
     padding-bottom: 1px;
-    font-size: 16px;
-    font-family: 'Quicksand', sans-serif;
-    color: white;
-    list-style-type: circle;
-}
+    
+} */
 
-.tryOut i{
+/* .tryOut i{
     border:1px white solid;
     padding-left:3px;
     padding-right:3px;
-}
+} */
 
 /*part of a two-column, give it the width of 50% of the current block, and make it inline with other blocks 
 when 2 sections are both defined with the .two-col class, It will but the 2 sections right down the middle of eachother*/
