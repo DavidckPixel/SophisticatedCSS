@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Lobster&family=Quicksand:wght@400;700&display=swap');
 
-p.small {
+
+/* p.small {
     margin:0;
     padding:0;
     font-size: 16px;
@@ -15,14 +15,14 @@ p.medium {
     font-family: 'Quicksand', sans-serif;
     color: white;
     text-decoration-line: none;
-}
+} */
 
 /* p.code {      
     font-family: 'Fira Code', monospace;    
     text-decoration-line: none;
 } */
 
-h2.big, h1.big{
+/* h2.big, h1.big{
     margin:0;
     padding:0;
     font-size: 26px;
@@ -69,7 +69,7 @@ h4.small {
 
 .center{
     text-align: center;
-}
+} */
 
 /* .sophisticated {
     margin:0;
@@ -79,20 +79,11 @@ h4.small {
     color:black;
 } */
 
-p.black{
+/* p.black{
     color:black;
-}
+} */
 
-table th{
-    font-size: 21px;
-    font-family: 'Fira Code', monospace; 
 
-}
-
-table td{
-    font-size: 16px;
-    font-family: 'Fira Code', monospace; 
-}
 
 
 
@@ -107,14 +98,12 @@ table td{
     font-size:16px;
 } */
 
-p.topMargin{
+/* p.topMargin{
     margin-top:10px;
-}
+} */
 
-a:link{
-    text-decoration:none;
-}
 
+/* 
 @media (max-width: 600px){
     
-}
+} */

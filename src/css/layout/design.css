@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Lobster&family=Quicksand:wght@400;700&display=swap');
+
 .blackBlock{
     background-color: black;
     border-radius: 15px;
@@ -38,6 +40,10 @@
     float:right;
     width: calc(100% - 8px);
     padding: 4px;
+}
+
+a:link{
+    text-decoration:none;
 }
 
 @media (max-width: 600px){
