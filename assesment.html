@@ -1,5 +1,38 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="src/css/sophisticated.css" />
+        <script src="src/script/quiz/Question/buildQuiz.js"></script>
+        <script src="src/script/quiz/Question/question.js"></script>
+        <script src="src/script/quiz/Question/multiplechoice.js"></script>
+        <script src="src/script/quiz/Question/open.js"></script>
+
+        
+    </head>
+
+    <body id=myBody>
+        <header class="nav" id="nav" selectorTitle="Navigation">
+            <div class="container container--centerVertical">
+                <div class="nav__home">
+                    <a href="index.html">SophisticatedCSS</a>
+                </div>
+                <nav class="nav__page">
+                    <ul class="nav__ul">
+                        <li class= "nav__li"><a href="sass.html">Sass</a></li>
+                        <li class= "nav__li"><a href="less.html">Less</a></li>
+                        <li class= "nav__li"><a href="stylus.html">Stylus</a></li>
+                        <li class= "nav__li"><a href="postcss.html">PostCSS</a></li>
+                        <li class= "nav__li"><a href="assesment.html">Quiz</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <script type="text/javascript">buildQuiz();</script>
+
+
+    </body>
 </html>
