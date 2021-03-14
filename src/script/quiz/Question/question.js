@@ -6,7 +6,7 @@ class Question {
         this.answer = answer;
         this.question = question;
         this.explenation = explenation;
-        this.selectedAnswer = undefined;
+        //this.selectedAnswer = undefined;
 
         //Create the element (acticle) that contains all of the parts of the questionBlock
         //Also create the section that holds the title
