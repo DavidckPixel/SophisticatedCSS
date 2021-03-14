@@ -1,5 +1,7 @@
 /// <reference path="./Selector/SelectorBuilder.ts" />
 /// <reference path="./Selector/SelectorRenderer.ts" />
+/// <reference path="./TextStyleRenderer.ts" />
+/// <reference path="./ColorStyleRenderer.ts" />
 
 // Get the menu nodes
 let footerMenus = document.querySelectorAll("footer .footer__contributor");
@@ -27,6 +29,9 @@ let colorStyleNode = footerMenus[2];
 // Initialize the component selector menu
 let nodes = new SelectorBuilder();
 let data = nodes.build(document.body);
-console.log(data);
-let renderer = new SelectorRenderer(data);
-renderer.render(selectorNode);
+let selector = new SelectorRenderer(data);
+let textStyle = new TextStyleRenderer(selector);
+let colorStyle = new ColorStyleRenderer(selector);
+selector.render(selectorNode);
+textStyle.render(textStyleNode);
+colorStyle.render(colorStyleNode);
