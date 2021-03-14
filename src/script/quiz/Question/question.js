@@ -13,7 +13,10 @@ class Question {
         
         this.questionBlock = document.createElement("article");
         var questionTextBlock = document.createElement("section");
-        questionTextBlock.innerHTML = "<h2>" + this.question + "</h2>";
+        var questionHeader = document.createElement('h2');
+        var questionText = document.createTextNode(this.question);
+        questionHeader.appendChild(questionText);
+        questionTextBlock.appendChild(questionHeader);
         this.questionBlock.appendChild(questionTextBlock);
 
         //We create 2 sections and both make them part of the question class, one element the undefAnswerBlock is for
@@ -33,14 +36,21 @@ class Question {
         this.defAnswerBlock = document.createElement("section");
         this.defAnswerBlock.classNAme = "answer";
         var defAnswerBlockText = document.createElement("p");
-        defAnswerBlockText.innerHTML = this.explenation;
+        var defAnswerBlockTextFill = document.createTextNode(this.explenation);
+        defAnswerBlockText.appendChild(defAnswerBlockTextFill);
+        //defAnswerBlockText.innerHTML = this.explenation;
+
         var defAnswerBlockHide = document.createElement("input");
         defAnswerBlockHide.setAttribute("type", "button");
         defAnswerBlockHide.setAttribute("value", "Hide");
         defAnswerBlockHide.setAttribute("onclick", function(){this.questionBlock.replaceChild(this.undefAnswerBlock, this.defAnswerBlock);});
+        
         var defAnswerBlockLink = document.createElement("a");
         defAnswerBlockLink.setAttribute("href", link);
-        defAnswerBlockLink.innerHTML = "Link";
+        var defAnswerBlockLinkfill = document.createTextNode("Link");
+        //defAnswerBlockLink.innerHTML = "Link";
+        defAnswerBlockLink.appendChild(defAnswerBlockLinkfill);
+
         this.defAnswerBlock.appendChild(defAnswerBlockText);
         this.defAnswerBlock.appendChild(defAnswerBlockHide);
         this.defAnseerBlock.appendChild(defAnswerBlockLink);
