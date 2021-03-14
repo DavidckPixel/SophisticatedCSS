@@ -28,7 +28,7 @@ class Question {
         var checkButton = document.createElement("input");
         checkButton.setAttribute("type", "button");
         checkButton.setAttribute("value", "Check!");
-        checkButton.setAttribute("onclick", check(this.selectedAnswer));
+        checkButton.setAttribute("onclick", this.check(this.selectedAnswer));
         this.undefAnswerBlock.appendChild(checkButton);
 
         //The DefAnswerBlock contains all the explenation text, it also contains a link and a hide button which switches this block back to the undefAnswerBlock element;
@@ -53,17 +53,22 @@ class Question {
 
         this.defAnswerBlock.appendChild(defAnswerBlockText);
         this.defAnswerBlock.appendChild(defAnswerBlockHide);
-        this.defAnseerBlock.appendChild(defAnswerBlockLink);
+        this.defAnswerBlock.appendChild(defAnswerBlockLink);
 
         //We begin by appending the undefAnswerBlock to the questionBlock first.
 
-        this.questionBlock.appendChild(undefAnswerBlock);
+        this.questionBlock.appendChild(this.undefAnswerBlock);
+
+        var body = document.querySelector("body");
+
+        body.appendChild(this.questionBlock);
+
     }
 }
 
 Question.prototype.check = function(input){
 
-    this.questionBlock.replaceChild(this.defAnswerBlock, this.undefAnswerBlock);
+    //this.questionBlock.replaceChild(this.defAnswerBlock, this.undefAnswerBlock); //gives TypeError
 
     //For now this only switches the children
     //The code here should also check if the answer was correct, and if that is the case, add an additional message to the answer stating: correct or incorrect
