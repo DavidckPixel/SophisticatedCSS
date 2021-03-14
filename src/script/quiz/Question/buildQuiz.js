@@ -3,7 +3,7 @@ function buildQuiz(){
 
     //var allQuestionsArray = JSON.parse(allQuestions);
 
-    for(var x=0; x<allQuestions.length && x<6; x++) {
+    for(var x=0; x<allQuestions.length && x<5; x++) {
         //for each question you want to build
         
         var thisQuestion = allQuestions[x];
