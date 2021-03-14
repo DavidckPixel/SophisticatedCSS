@@ -11,7 +11,7 @@ class Multiplechoice extends Question {
             var questionChoiceBlockText = document.createTextNode(thisAnswer);
             questionChoiceBlock.appendChild(questionChoiceBlockText);
             questionChoiceBlock.addEventListener("click", function(){this.selectedAnswer = x;}, false);
-            this.questionBlock.appendChild(questionChoiceBlock); 
+            this.questionBlock.insertBefore(questionChoiceBlock, this.undefAnswerBlock); 
 
         }
     }
