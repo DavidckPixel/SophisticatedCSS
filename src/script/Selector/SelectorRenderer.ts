@@ -29,7 +29,7 @@ class SelectorRenderer
      * 
      * @param rootElement The HTML element that the menu should be added to.
      */
-    render(rootElement: HTMLElement) {
+    render(rootElement: Element) {
         // Iterate over all elements in the menu
         for (const [element, title, depth] of this.elements) {
             // Build and append the node
@@ -44,7 +44,7 @@ class SelectorRenderer
             if (id) {
                 node.href = "#" + id;
             }
-            rootElement.appendChild(node)
+            rootElement.appendChild(node);
         }
     }
 }
