@@ -22,7 +22,8 @@
 }
 
 .blackBlock--stacking{
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    min-height: 110px;
 }
 
 .blackBlock--centertext{

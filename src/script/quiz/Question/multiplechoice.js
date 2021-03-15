@@ -4,6 +4,11 @@ class Multiplechoice extends Question {
         this.answers = answers;
         var questionChoices = document.createElement('div');
         questionChoices.classList.add("answerBlock");
+
+        var firstDuo = document.createElement('div');
+        firstDuo.classList.add("answerBlock__duo");
+        var secondDuo = document.createElement('div');
+        secondDuo.classList.add("answerBlock__duo");
         
 
         for (let x=0; x<this.answers.length && x < 4; x++) {
@@ -25,11 +30,19 @@ class Multiplechoice extends Question {
 
             questionChoiceBlock.addEventListener("click", this.select.bind(this, thisAnswer), false);
             //questionChoiceBlock.addEventListener("click", (function(){this.select(thisAnswer).bind(this)}).bind(this), false);
-            questionChoices.appendChild(questionChoiceBlock);
+            if(x<2)
+            {
+                firstDuo.appendChild(questionChoiceBlock);
+            }
+            else{
+                secondDuo.appendChild(questionChoiceBlock);
+            }
+            //questionChoices.appendChild(questionChoiceBlock);
             //this.questionBlock.insertBefore(questionChoiceBlock, this.undefAnswerBlock); 
 
         }
-
+        questionChoices.appendChild(firstDuo);
+        questionChoices.appendChild(secondDuo);
         this.questionOptionsBlock.insertBefore(questionChoices, this.checkBlock);
     }
 }
