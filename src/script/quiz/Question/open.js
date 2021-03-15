@@ -1,6 +1,6 @@
 class Open extends Question{
-    constructor(correctanswer, question){
-        super(correctanswer, question);
+    constructor(correctanswer, question, explanation){
+        super(correctanswer, question, explanation);
 
         var typebox = document.createElement("input");
         typebox.placeholder = "answer";

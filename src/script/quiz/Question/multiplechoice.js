@@ -1,6 +1,6 @@
 class Multiplechoice extends Question {
-    constructor(correctanswer, question, answers){
-        super(correctanswer, question);
+    constructor(correctanswer, question, answers, explanation){
+        super(correctanswer, question, explanation);
         this.answers = answers;
         for (var x=0; x<this.answers.length && x < 4; x++) {
             

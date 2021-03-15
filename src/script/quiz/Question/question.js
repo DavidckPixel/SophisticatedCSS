@@ -1,12 +1,12 @@
 class Question {
     
-    constructor(answer, question, explenation, link){
+    constructor(answer, question, explanation, link){
 
         //INITIALIZE SOME BASE VALUES
 
         this.answer = answer;
         this.question = question;
-        this.explenation = explenation;
+        this.explanation = explanation;
         //this.selectedAnswer = undefined;
 
         //Create the element (acticle) that contains all of the parts of the questionBlock
@@ -37,7 +37,7 @@ class Question {
         this.defAnswerBlock = document.createElement("section");
         this.defAnswerBlock.className = "answer";
         var defAnswerBlockText = document.createElement("p");
-        var defAnswerBlockTextFill = document.createTextNode(this.explenation);
+        var defAnswerBlockTextFill = document.createTextNode(this.explanation);
         defAnswerBlockText.appendChild(defAnswerBlockTextFill);
         //defAnswerBlockText.innerHTML = this.explenation;
 

@@ -12,13 +12,13 @@ function buildQuiz(){
         if (thisQuestion.questionType == "multiplechoice")
         {
             //if it's a multiplechoice question
-            newQuestion = new Multiplechoice(thisQuestion.correctAnswer, thisQuestion.title, thisQuestion.allAnswers);
+            newQuestion = new Multiplechoice(thisQuestion.correctAnswer, thisQuestion.title, thisQuestion.allAnswers, thisQuestion.explanation);
 
         }
         else if(thisQuestion.questionType == "open")
         {
             //if it's a open question
-            newQuestion = new Open(thisQuestion.correctAnswer, thisQuestion.title);
+            newQuestion = new Open(thisQuestion.correctAnswer, thisQuestion.title, thisQuestion.explanation);
         }
     }
 }
