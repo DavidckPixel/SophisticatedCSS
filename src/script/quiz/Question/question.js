@@ -1,4 +1,5 @@
 class Question {
+    
     constructor(answer, question, explenation, link){
 
         //INITIALIZE SOME BASE VALUES
@@ -28,13 +29,13 @@ class Question {
         var checkButton = document.createElement("input");
         checkButton.setAttribute("type", "button");
         checkButton.setAttribute("value", "Check!");
-        checkButton.setAttribute("onclick", this.check(this.selectedAnswer));
+        
         this.undefAnswerBlock.appendChild(checkButton);
 
         //The DefAnswerBlock contains all the explenation text, it also contains a link and a hide button which switches this block back to the undefAnswerBlock element;
 
         this.defAnswerBlock = document.createElement("section");
-        this.defAnswerBlock.classNAme = "answer";
+        this.defAnswerBlock.className = "answer";
         var defAnswerBlockText = document.createElement("p");
         var defAnswerBlockTextFill = document.createTextNode(this.explenation);
         defAnswerBlockText.appendChild(defAnswerBlockTextFill);
@@ -43,7 +44,7 @@ class Question {
         var defAnswerBlockHide = document.createElement("input");
         defAnswerBlockHide.setAttribute("type", "button");
         defAnswerBlockHide.setAttribute("value", "Hide");
-        defAnswerBlockHide.setAttribute("onclick", function(){this.questionBlock.replaceChild(this.undefAnswerBlock, this.defAnswerBlock);});
+        defAnswerBlockHide.addEventListener("click", this.hide, false);
         
         var defAnswerBlockLink = document.createElement("a");
         defAnswerBlockLink.setAttribute("href", link);
@@ -58,20 +59,32 @@ class Question {
         //We begin by appending the undefAnswerBlock to the questionBlock first.
 
         this.questionBlock.appendChild(this.undefAnswerBlock);
+        this.questionBlock.appendChild(this.defAnswerBlock);
+
+        this.defAnswerBlock.style.display ='none';
 
         var body = document.querySelector("body");
-
+        
         body.appendChild(this.questionBlock);
+        checkButton.addEventListener("click", this.check, false);
 
     }
 }
 
-Question.prototype.check = function(input){
+Question.prototype.check = function(){
+    this.parentElement.parentElement.lastChild.style.display = "block";
+    this.parentElement.parentElement.lastChild.previousSibling.style.display = "none";
 
-    //this.questionBlock.replaceChild(this.defAnswerBlock, this.undefAnswerBlock); //gives TypeError
+    //this.parentElement.parentElement.defAnswerBlock.
+    //this.parentElement.parentElement.replaceChild(this.parentElement.parentElement.defAnswerBlock, this.undefAnswerBlock); //gives TypeError
 
     //For now this only switches the children
     //The code here should also check if the answer was correct, and if that is the case, add an additional message to the answer stating: correct or incorrect
 
     //return (this.answer == input);
 };
+
+Question.prototype.hide = function(){    
+    this.parentElement.parentElement.lastChild.style.display = "none";
+    this.parentElement.parentElement.lastChild.previousSibling.style.display = 'block';
+}
