@@ -14,30 +14,47 @@ class Question {
         //Also create the section that holds the title
         
         this.questionBlock = document.createElement("section");
-        this.questionBlock.classList.add("container");
-        
-        var questionTextBlock = document.createElement("section");
+        this.questionBlock.classList.add("questionBlock");
+
+        var questionTitleBlock = document.createElement("div");
+        questionTitleBlock.classList.add("questionBlock__titleContainer");
+
+        var questionTextBlock = document.createElement("div");
+        questionTextBlock.classList.add("container");
+
         var questionHeader = document.createElement('h2');
+        questionHeader.classList.add("questionBlock__title")
+        
         var questionText = document.createTextNode(this.question);
         questionHeader.appendChild(questionText);
+
         questionTextBlock.appendChild(questionHeader);
-        this.questionBlock.appendChild(questionTextBlock);
+        questionTitleBlock.appendChild(questionTextBlock);
+
+        this.questionBlock.appendChild(questionTitleBlock);
 
         //We create 2 sections and both make them part of the question class, one element the undefAnswerBlock is for
         //when the user has not yet checked his answer, so it only contains a check button, that when clicked checks the answer. and switched
         //the element to the defAnswerBlock
-
-        this.undefAnswerBlock = document.createElement("section");
+        this.questionOptionsBlock = document.createElement("div");
+        this.questionOptionsBlock.classList.add("container");
+        this.undefAnswerBlock = document.createElement("div");
+        
         this.undefAnswerBlock.className = "answer";
         var checkButton = document.createElement("input");
         checkButton.setAttribute("type", "button");
         checkButton.setAttribute("value", "Check!");
         
         this.undefAnswerBlock.appendChild(checkButton);
+        
 
         //The DefAnswerBlock contains all the explenation text, it also contains a link and a hide button which switches this block back to the undefAnswerBlock element;
+        this.checkBlock = document.createElement("div")
+        this.checkBlock.classList.add("checkBlock");
+        this.checkBlock.classList.add("blackBlock");
 
-        this.defAnswerBlock = document.createElement("section");
+        this.defAnswerBlock = document.createElement("div");
+        
         this.defAnswerBlock.className = "answer";
         var defAnswerBlockText = document.createElement("p");
         var defAnswerBlockTextFill = document.createTextNode(this.explanation);
@@ -72,8 +89,9 @@ class Question {
         this.defAnswerBlock.appendChild(defAnswerBlockLink);
 
         //We begin by appending the undefAnswerBlock to the questionBlock first.
-
-        this.questionBlock.appendChild(this.undefAnswerBlock);
+        this.checkBlock.appendChild(this.undefAnswerBlock);
+        this.questionOptionsBlock.appendChild(this.checkBlock);
+        this.questionBlock.appendChild(this.questionOptionsBlock);
         //this.questionBlock.appendChild(this.defAnswerBlock);
 
         //this.defAnswerBlock.style.display ='none';

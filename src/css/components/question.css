@@ -1,0 +1,40 @@
+.questionBlock{
+    height:auto;
+}
+
+.questionBlock__titleContainer{
+    width:100%;
+    background-color: white;
+    float:left;
+}
+.questionBlock__title{
+    color: black;
+    font-size:20px;
+    font-family: 'Fira Code', monospace;
+}
+
+.checkBlock{
+    width: 33%;
+    float:left;
+}
+
+.checkBlock__explanation{
+    font-size: 16px;
+    color: white;
+}
+
+.checkBlock__button{
+
+}
+
+.answerBlock{
+    color:white;
+    width: 66%;
+    height:auto;
+    float:left;
+}
+
+.answerBlock__Text{
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+}

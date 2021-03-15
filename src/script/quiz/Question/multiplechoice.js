@@ -2,24 +2,35 @@ class Multiplechoice extends Question {
     constructor(correctanswer, question, answers, explanation){
         super(correctanswer, question, explanation);
         this.answers = answers;
+        var questionChoices = document.createElement('div');
+        questionChoices.classList.add("answerBlock");
+        
+
         for (let x=0; x<this.answers.length && x < 4; x++) {
             
             
             let thisAnswer = this.answers[x];
             //var newChoice = new MultipleChoiceChoice(thisAnswer, x, this);
-            var questionChoiceBlock = document.createElement('section');
+            var questionChoiceBlock = document.createElement('div');
             questionChoiceBlock.classList.add("blackBlock");
             questionChoiceBlock.classList.add("blackBlock--small");
             questionChoiceBlock.classList.add("blackBlock--stacking");
             questionChoiceBlock.classList.add("two-col");
+            var questionChoiceBlockText = document.createElement("p");
+            questionChoiceBlockText.classList.add("answerBlock__Text")
+            var questionChoiceBlockTextFill = document.createTextNode(thisAnswer);
+            questionChoiceBlockText.appendChild(questionChoiceBlockTextFill);
 
-            var questionChoiceBlockText = document.createTextNode(thisAnswer);
             questionChoiceBlock.appendChild(questionChoiceBlockText);
+
             questionChoiceBlock.addEventListener("click", this.select.bind(this, thisAnswer), false);
             //questionChoiceBlock.addEventListener("click", (function(){this.select(thisAnswer).bind(this)}).bind(this), false);
-            this.questionBlock.insertBefore(questionChoiceBlock, this.undefAnswerBlock); 
+            questionChoices.appendChild(questionChoiceBlock);
+            //this.questionBlock.insertBefore(questionChoiceBlock, this.undefAnswerBlock); 
 
         }
+
+        this.questionOptionsBlock.insertBefore(questionChoices, this.checkBlock);
     }
 }
 
