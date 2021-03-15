@@ -57,6 +57,7 @@ class Question {
         
         this.defAnswerBlock.className = "answer";
         var defAnswerBlockText = document.createElement("p");
+        defAnswerBlockText.classList.add("checkBlock__explanation");
         var defAnswerBlockTextFill = document.createTextNode(this.explanation);
         defAnswerBlockText.appendChild(defAnswerBlockTextFill);
         //defAnswerBlockText.innerHTML = this.explenation;
@@ -77,7 +78,10 @@ class Question {
         var defAnswerBlockHeaderTextFalse = document.createTextNode("False.. ");
         
         this.defAnswerBlockHeaderTrue.appendChild(defAnswerBlockHeaderTextTrue);
+        this.defAnswerBlockHeaderTrue.classList.add("checkBlock__explanation");
         this.defAnswerBlockHeaderFalse.appendChild(defAnswerBlockHeaderTextFalse);
+        this.defAnswerBlockHeaderFalse.classList.add("checkBlock__explanation");
+
 
         this.defAnswerBlockHeaderTrue.style.display = "none";
         this.defAnswerBlockHeaderFalse.style.display = "none";
@@ -107,12 +111,13 @@ class Question {
 
 Question.prototype.check = function(){
     this.defAnswerBlock.style.display = "block";    
-    this.questionBlock.replaceChild(this.defAnswerBlock, this.undefAnswerBlock); //gives TypeError
+    this.checkBlock.replaceChild(this.defAnswerBlock, this.undefAnswerBlock); //gives TypeError
 
     if(this.selectedAnswer == this.answer)
     {
         // console.log("right answer");
         this.defAnswerBlockHeaderTrue.style.display = "block";
+        this.defAnswerBlockHeaderFalse.style.display = "none";
         
     }
     else{
@@ -120,6 +125,7 @@ Question.prototype.check = function(){
         // console.log(this.selectedAnswer);
         // console.log("wrong answer!")
         this.defAnswerBlockHeaderFalse.style.display = "block";
+        this.defAnswerBlockHeaderTrue.style.display = "none";
     }
     //For now this only switches the children
     //The code here should also check if the answer was correct, and if that is the case, add an additional message to the answer stating: correct or incorrect
@@ -128,7 +134,5 @@ Question.prototype.check = function(){
 };
 
 Question.prototype.hide = function(){    
-    this.questionBlock.replaceChild(this.undefAnswerBlock, this.defAnswerBlock);
-    this.defAnswerBlockHeaderTrue.style.display = "none";
-    this.defAnswerBlockHeaderFalse.style.display = "none";
+    this.checkBlock.replaceChild(this.undefAnswerBlock, this.defAnswerBlock);
 }

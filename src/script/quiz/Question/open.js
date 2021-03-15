@@ -4,7 +4,8 @@ class Open extends Question{
 
         var typebox = document.createElement("input");
         typebox.placeholder = "answer";
-        this.questionBlock.insertBefore(typebox, this.undefAnswerBlock);
+        //this.questionBlock.insertBefore(typebox, this.undefAnswerBlock);
         //this.questionBlock.appendChild(typebox);
+        this.questionOptionsBlock.insertBefore(typebox, this.checkBlock);
     }
 }
