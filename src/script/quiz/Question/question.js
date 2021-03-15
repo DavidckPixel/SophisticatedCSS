@@ -8,7 +8,7 @@ class Question {
         this.answer = answer;
         this.question = question;
         this.explanation = explanation;
-        this.selectedAnswer = 4;
+        let selectedAnswer = undefined;
 
         //Create the element (acticle) that contains all of the parts of the questionBlock
         //Also create the section that holds the title
@@ -89,6 +89,15 @@ Question.prototype.check = function(){
     this.defAnswerBlock.style.display = "block";    
     this.questionBlock.replaceChild(this.defAnswerBlock, this.undefAnswerBlock); //gives TypeError
 
+    if(this.selectedAnswer == this.answer)
+    {
+        console.log("right answer");
+    }
+    else{
+        console.log(this.answer);
+        console.log(this.selectedAnswer);
+        console.log("wrong answer!")
+    }
     //For now this only switches the children
     //The code here should also check if the answer was correct, and if that is the case, add an additional message to the answer stating: correct or incorrect
 

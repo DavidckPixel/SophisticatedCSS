@@ -2,19 +2,24 @@ class Multiplechoice extends Question {
     constructor(correctanswer, question, answers, explanation){
         super(correctanswer, question, explanation);
         this.answers = answers;
-        for (var x=0; x<this.answers.length && x < 4; x++) {
+        for (let x=0; x<this.answers.length && x < 4; x++) {
             
             
-            var thisAnswer = this.answers[x];
+            let thisAnswer = this.answers[x];
             //var newChoice = new MultipleChoiceChoice(thisAnswer, x, this);
             var questionChoiceBlock = document.createElement('section');
             var questionChoiceBlockText = document.createTextNode(thisAnswer);
             questionChoiceBlock.appendChild(questionChoiceBlockText);
-            questionChoiceBlock.addEventListener("click", function(){this.selectedAnswer = x;}, false);
+            questionChoiceBlock.addEventListener("click", this.select.bind(this, thisAnswer), false);
+            //questionChoiceBlock.addEventListener("click", (function(){this.select(thisAnswer).bind(this)}).bind(this), false);
             this.questionBlock.insertBefore(questionChoiceBlock, this.undefAnswerBlock); 
 
         }
     }
+}
+
+Multiplechoice.prototype.select = function(inp){
+    this.selectedAnswer = inp; console.log("clicked"); console.log(inp);
 }
 
 
@@ -39,7 +44,7 @@ class MultipleChoiceChoice {
         
         questionChoiceBlock.appendChild(questionChoiceBlockText);
         //questionChoiceBlock.innerHTML = "<p>" + answer + "</p>";
-        questionChoiceBlock.addEventListener("click", function(){this.parentQuestion.selectedAnswer = this.id;}, false);
+        questionChoiceBlock.addEventListener("click", function(){this.selectedAnswer = this.answer;}, false);
         this.parentQuestion.questionBlock.appendChild(questionChoiceBlock); 
     }
 }
