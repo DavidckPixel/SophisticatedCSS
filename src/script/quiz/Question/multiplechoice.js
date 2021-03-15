@@ -19,7 +19,9 @@ class Multiplechoice extends Question {
 }
 
 Multiplechoice.prototype.select = function(inp){
-    this.selectedAnswer = inp; console.log("clicked"); console.log(inp);
+    this.selectedAnswer = inp; 
+    // console.log("clicked"); 
+    // console.log(inp);
 }
 
 
