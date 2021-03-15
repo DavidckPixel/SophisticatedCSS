@@ -18,7 +18,7 @@ var allQuestions =[
         "title": "What is a possible risk of using a preprocessor?",
         "correctAnswer": "Dependency on one preprocessor language",
         "explanation": "By using a preprocessor, your stylesheets will be written in a non-standard language, unsupported by browsers. This means that you're depending on the continued support for your preprocessor language of choice. In practice, these preprocessors are open source and the lifetime of a project usually is smaller than the lifetime of a preprocessor, but it's a factor to consider.",
-        "allAnswers": ["It has less functionality then normal CSS", "Code get’s overcomplicated", "Dependency on one preprocessor language", "Possibility that a browser won’t display your site correctly"]
+        "allAnswers": ["Less functionality then normal CSS", "Code get’s overcomplicated", "Dependency on one preprocessor language", "Not all browsers will display your site correctly"]
     },
     {
         "questionType": "open",

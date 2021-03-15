@@ -3,7 +3,12 @@
     max-width: 960px;
     margin:0 auto;
     padding: 0 15px;
-    
+    margin-bottom: 4rem;
+}
+
+.container--close
+{
+    margin-bottom: 10px;
 }
 
 /* clearfix */
@@ -49,11 +54,11 @@ body{
     margin-bottom:30px;
 } */
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .container, .white {
         margin-bottom: 4rem;        
     }
-}
+} */
 
 @media (max-width: 600px) {
     .container, .white {
