@@ -8,6 +8,11 @@ class Multiplechoice extends Question {
             let thisAnswer = this.answers[x];
             //var newChoice = new MultipleChoiceChoice(thisAnswer, x, this);
             var questionChoiceBlock = document.createElement('section');
+            questionChoiceBlock.classList.add("blackBlock");
+            questionChoiceBlock.classList.add("blackBlock--small");
+            questionChoiceBlock.classList.add("blackBlock--stacking");
+            questionChoiceBlock.classList.add("two-col");
+
             var questionChoiceBlockText = document.createTextNode(thisAnswer);
             questionChoiceBlock.appendChild(questionChoiceBlockText);
             questionChoiceBlock.addEventListener("click", this.select.bind(this, thisAnswer), false);
@@ -20,8 +25,7 @@ class Multiplechoice extends Question {
 
 Multiplechoice.prototype.select = function(inp){
     this.selectedAnswer = inp; 
-    // console.log("clicked"); 
-    // console.log(inp);
+    
 }
 
 
@@ -41,7 +45,7 @@ class MultipleChoiceChoice {
         //Creates the element and fills it with the answer text, an eventlistener is added to see when the user clicks on the elements
         //It when sets the parentQuestion selectedAnswer variable to the ID of the choice
 
-        var questionChoiceBlock = document.createElement('section');
+        var questionChoiceBlock = document.createElement('div');
         var questionChoiceBlockText = document.createTextNode(this.answer);
         
         questionChoiceBlock.appendChild(questionChoiceBlockText);
