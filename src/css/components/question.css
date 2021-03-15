@@ -5,10 +5,12 @@
 .questionBlock__titleContainer{
     width:100%;
     background-color: white;
-    
+    min-height: 115px;
+    margin-bottom: 10px;
 }
 .questionBlock__title{
     color: black;
+    width: 66%;
     font-size:20px;
     font-family: 'Fira Code', monospace;
     float:left;
@@ -17,7 +19,16 @@
 .checkBlock{
     width: 33%;
     float:left;
-    height: 230px;
+    min-height: 355px;
+    margin-top: -125px;
+}
+
+
+.checkBlock--center{
+    text-align:center;
+    margin-left: 33%;
+    margin-top: 140px;
+    margin-bottom: 140px;
 }
 
 .checkBlock__explanation{
@@ -27,7 +38,11 @@
 }
 
 .checkBlock__button{
-
+    width: 30%;
+    background-color: white;
+    color:black;
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .answerBlock{
@@ -37,12 +52,23 @@
     float:left;
 }
 
+
 .answerBlock__duo{
     width: 100%;
     float:left;
 }
 
 .answerBlock__Text{
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+}
+
+.answerBlock__textInput{
+    float:left;
+    padding: 5px;
+    margin-left:10px;
+    margin-top:90px;
+    margin-bottom: 90px;
     font-size: 20px;
     font-family: 'Fira Code', monospace;
 }

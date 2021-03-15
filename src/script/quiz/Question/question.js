@@ -21,6 +21,7 @@ class Question {
 
         var questionTextBlock = document.createElement("div");
         questionTextBlock.classList.add("container");
+        questionTextBlock.classList.add("container--close");
 
         var questionHeader = document.createElement('h2');
         questionHeader.classList.add("questionBlock__title")
@@ -44,6 +45,8 @@ class Question {
         var checkButton = document.createElement("input");
         checkButton.setAttribute("type", "button");
         checkButton.setAttribute("value", "Check!");
+        checkButton.classList.add("checkBlock__button");
+        checkButton.classList.add("checkBlock--center");
         
         this.undefAnswerBlock.appendChild(checkButton);
         
@@ -54,6 +57,7 @@ class Question {
         this.checkBlock.classList.add("blackBlock");
 
         this.defAnswerBlock = document.createElement("div");
+        
         
         this.defAnswerBlock.className = "answer";
         var defAnswerBlockText = document.createElement("p");
@@ -104,6 +108,7 @@ class Question {
         
         totalAssessment.appendChild(this.questionBlock);
         checkButton.addEventListener("click", this.check.bind(this), false);
+
 
     }
 }
