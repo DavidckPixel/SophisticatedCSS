@@ -3,7 +3,7 @@
  */
 class TextStyleRenderer
 {
-    /* The SelectorRenderer associated */
+    /** The SelectorRenderer associated */
     selector: SelectorRenderer;
 
     constructor(selector: SelectorRenderer) {

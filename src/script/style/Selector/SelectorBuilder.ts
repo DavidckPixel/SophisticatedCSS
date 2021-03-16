@@ -3,7 +3,7 @@
  */
 class SelectorBuilder
 {
-    /* The cache of the data being built, containing the element, title and element depth */
+    /** The cache of the data being built, containing the element, title and element depth */
     elements: Array<[HTMLElement, string, number]>;
 
     constructor() {
