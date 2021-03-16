@@ -3,7 +3,10 @@
 class Open extends Question {
     constructor(correctanswer: string, question: string, explanation: string) {
         super(correctanswer, question, explanation);
+        this.render();
+    }
 
+    render() {
         const answerBlock = document.createElement('div');
         answerBlock.classList.add("answerBlock");
 

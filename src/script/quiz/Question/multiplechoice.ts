@@ -11,6 +11,10 @@ class Multiplechoice extends Question {
         this.possibleAnswers = possibleAnswers;
         this.questionNumber = questionnumber;
         this.selectedId = undefined;
+        this.render();
+    }
+
+    render() {
         const questionChoices = document.createElement('div');
         questionChoices.classList.add("answerBlock");
 
