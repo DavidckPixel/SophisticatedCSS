@@ -72,3 +72,25 @@
     font-size: 20px;
     font-family: 'Fira Code', monospace;
 }
+
+@media (max-width: 600px) {
+    .checkBlock{
+        float:none;
+        min-height:0px;
+        margin-top: 0px;
+        height:auto;
+        width: 100%;
+        display:block;
+    }
+
+    .checkBlock--center{
+        text-align:center;
+        margin-left: 33%;
+        margin-top: 140px;
+        margin-bottom: 140px;
+    }
+
+    .answerBlock{
+        width:100%;
+    }
+}
