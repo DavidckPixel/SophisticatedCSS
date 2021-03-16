@@ -1,5 +1,7 @@
-class Open extends Question{
-    constructor(correctanswer, question, explanation){
+/// <reference path="./question.ts" />
+
+class Open extends Question {
+    constructor(correctanswer: string, question: string, explanation: string) {
         super(correctanswer, question, explanation);
 
         var answerBlock = document.createElement('div');
