@@ -78,3 +78,8 @@ function create(type: string, props?: any, ...children: Node[]): HTMLElement {
 function text(content: string): Text {
     return document.createTextNode(content);
 }
+
+function createEventObj(eventType : string, func : any, bool : boolean, el : HTMLElement) : HTMLElement {;
+    el.addEventListener(eventType,func, bool);
+    return el;
+}
