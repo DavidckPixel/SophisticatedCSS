@@ -43,6 +43,14 @@ While the remaining 20% if given to the image */
     
 }
 
+.userReview__quote--small{
+    font-size: 20px;
+}
+
+.userReview__quote--large{
+    font-size: 30px;
+}
+
 .userReview__sender {
     margin:0;
     padding:0;
@@ -51,7 +59,14 @@ While the remaining 20% if given to the image */
     text-align: center;
     font-style: normal;
     display: block;
-    
+}
+
+.userReview__sender--small{
+    font-size: 12px;
+}
+
+.userReview__sender--large{
+    font-size: 20px;
 }
 
 @media (max-width: 600px){
