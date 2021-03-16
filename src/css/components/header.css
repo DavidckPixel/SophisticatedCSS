@@ -1,5 +1,5 @@
 /* The ul, li, and a elements are used as the navigating tools for other parts of the website. 
-we give al the elements 24% of the page, because there are 4 elements, and display them as inline-blocks, next to eachother*/
+we give al the elements 19% of the page, because there are 5 elements, and display them as inline-blocks, next to eachother*/
 
   .nav__ul {
     list-style-type: none;
@@ -9,7 +9,7 @@ we give al the elements 24% of the page, because there are 4 elements, and displ
   }
   
   .nav__li {
-    width:24%;
+    width:19%;
     display:inline-block;
     text-align: center;    
   }
