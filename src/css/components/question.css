@@ -75,12 +75,12 @@
 
 @media (max-width: 600px) {
     .checkBlock{
-        float:none;
+        float:left;
         min-height:0px;
-        margin-top: 0px;
+        margin: 5px;
         height:auto;
         width: 100%;
-        display:block;
+        
     }
 
     .checkBlock--center{
@@ -92,5 +92,10 @@
 
     .answerBlock{
         width:100%;
+    }
+
+    .answerBlock__textInput{
+        width: calc(100% - 10px);
+        margin-left: 5px;
     }
 }
