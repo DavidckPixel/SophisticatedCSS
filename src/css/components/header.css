@@ -30,11 +30,11 @@ we give al the elements 19% of the page, because there are 5 elements, and displ
     font-family: 'Lobster', cursive;
 }
 
-.nav__home--small{
+.nav--small .nav__home{
   font-size: 16px;
 }
 
-.nav__home--large{
+.nav--large .nav__home{
   font-size: 26px;
 }
 
@@ -52,11 +52,11 @@ we give al the elements 19% of the page, because there are 5 elements, and displ
     font-size: 20px;
 }
 
-.nav__page--small{
+.nav--small .nav__page{
   font-size: 16px;
 }
 
-.nav__page--large{
+.nav--large .nav__page{
   font-size: 26px;
 }
 

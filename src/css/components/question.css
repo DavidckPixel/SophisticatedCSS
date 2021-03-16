@@ -16,11 +16,11 @@
     float:left;
 }
 
-.questionBlock__title--small{
+.questionBlock--small .questionBlock__title{
     font-size: 16px;
 }
 
-.questionBlock__title--large{
+.questionBlock--large .questionBlock__title{
     font-size: 26px;
 }
 
@@ -45,11 +45,11 @@
     font-family: 'Quicksand', sans-serif;
 }
 
-.checkBlock__explanation--small{
+.checkBlock--small .checkBlock__explanation{
     font-size: 12px;
 }
 
-.checkBlock__explanation--large{
+.checkBlock--large .checkBlock__explanation{
     font-size: 20px;
 }
 
@@ -61,11 +61,11 @@
     font-family: 'Quicksand', sans-serif;
 }
 
-.checkBlock__button--small{
+.checkBlock--small .checkBlock__button{
     font-size: 16px;
 }
 
-.checkBlock__button--large{
+.checkBlock--large .checkBlock__button{
     font-size: 26px;
 }
 
@@ -89,11 +89,11 @@
     float:left;
 }
 
-.answerBlock__Text--small{
+.answerBlockt--small .answerBlock__Text{
     font-size: 16px;
 }
 
-.answerBlock__Text--large{
+.answerBlock--large .answerBlock__Text{
     font-size: 26px;
 }
 
@@ -107,11 +107,11 @@
     font-family: 'Fira Code', monospace;
 }
 
-.answerBlock__textInput--small{
+.answerBlock--small .answerBlock__textInput{
     font-size: 16px;
 }
 
-.answerBlock__textInput--large{
+.answerBlock--large .answerBlock__textInput{
     font-size: 26px;
 }
 

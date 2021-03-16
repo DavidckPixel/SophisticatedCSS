@@ -77,11 +77,11 @@
     text-align: center;
 }
 
-.allPreProcessors__titles--small{
+.allProcessors--small .allProcessors__titles{
     font-size: 16px;
 }
 
-.allPreProcessors__titles--large{
+.allProcessors--large .allProcessors__titles{
     font-size: 26px;
 }
 
