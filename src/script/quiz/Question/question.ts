@@ -27,17 +27,17 @@ class Question {
         this.questionBlock = document.createElement("section");
         this.questionBlock.classList.add("questionBlock");
 
-        var questionTitleBlock = document.createElement("div");
+        const questionTitleBlock = document.createElement("div");
         questionTitleBlock.classList.add("questionBlock__titleContainer");
 
-        var questionTextBlock = document.createElement("div");
+        const questionTextBlock = document.createElement("div");
         questionTextBlock.classList.add("container");
         questionTextBlock.classList.add("container--close");
 
-        var questionHeader = document.createElement('h2');
+        const questionHeader = document.createElement('h2');
         questionHeader.classList.add("questionBlock__title")
 
-        var questionText = document.createTextNode(this.question);
+        const questionText = document.createTextNode(this.question);
         questionHeader.appendChild(questionText);
 
         questionTextBlock.appendChild(questionHeader);
@@ -53,7 +53,7 @@ class Question {
         this.undefAnswerBlock = document.createElement("div");
 
         this.undefAnswerBlock.className = "answer";
-        var checkButton = document.createElement("input");
+        const checkButton = document.createElement("input");
         checkButton.setAttribute("type", "button");
         checkButton.setAttribute("value", "Check!");
         checkButton.classList.add("checkBlock__button");
@@ -71,27 +71,27 @@ class Question {
 
 
         this.defAnswerBlock.className = "answer";
-        var defAnswerBlockText = document.createElement("p");
+        const defAnswerBlockText = document.createElement("p");
         defAnswerBlockText.classList.add("checkBlock__explanation");
-        var defAnswerBlockTextFill = document.createTextNode(this.explanation);
+        const defAnswerBlockTextFill = document.createTextNode(this.explanation);
         defAnswerBlockText.appendChild(defAnswerBlockTextFill);
         //defAnswerBlockText.innerHTML = this.explenation;
 
-        var defAnswerBlockHide = document.createElement("input");
+        const defAnswerBlockHide = document.createElement("input");
         defAnswerBlockHide.setAttribute("type", "button");
         defAnswerBlockHide.setAttribute("value", "Hide");
         defAnswerBlockHide.addEventListener("click", this.hide.bind(this), false);
 
-        var defAnswerBlockLink = document.createElement("a");
+        const defAnswerBlockLink = document.createElement("a");
         if (link)
             defAnswerBlockLink.setAttribute("href", link);
-        var defAnswerBlockLinkfill = document.createTextNode("Link");
+        const defAnswerBlockLinkfill = document.createTextNode("Link");
         //defAnswerBlockLink.innerHTML = "Link";
         defAnswerBlockLink.appendChild(defAnswerBlockLinkfill);
         this.defAnswerBlockHeaderTrue = document.createElement("h4");
         this.defAnswerBlockHeaderFalse = document.createElement("h4");
-        var defAnswerBlockHeaderTextTrue = document.createTextNode("True! ");
-        var defAnswerBlockHeaderTextFalse = document.createTextNode("False.. ");
+        const defAnswerBlockHeaderTextTrue = document.createTextNode("True! ");
+        const defAnswerBlockHeaderTextFalse = document.createTextNode("False.. ");
 
         this.defAnswerBlockHeaderTrue.appendChild(defAnswerBlockHeaderTextTrue);
         this.defAnswerBlockHeaderTrue.classList.add("checkBlock__explanation");
@@ -116,7 +116,7 @@ class Question {
 
         //this.defAnswerBlock.style.display ='none';
 
-        var totalAssessment = document.querySelector("#totalAssesment");
+        const totalAssessment = document.querySelector("#totalAssesment");
 
         totalAssessment?.appendChild(this.questionBlock);
         checkButton.addEventListener("click", this.check.bind(this), false);

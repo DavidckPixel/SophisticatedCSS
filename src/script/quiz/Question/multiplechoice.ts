@@ -11,30 +11,29 @@ class Multiplechoice extends Question {
         this.possibleAnswers = possibleAnswers;
         this.questionNumber = questionnumber;
         this.selectedId = undefined;
-        var questionChoices = document.createElement('div');
+        const questionChoices = document.createElement('div');
         questionChoices.classList.add("answerBlock");
 
-        var firstDuo = document.createElement('div');
+        const firstDuo = document.createElement('div');
         firstDuo.classList.add("answerBlock__duo");
-        var secondDuo = document.createElement('div');
+        const secondDuo = document.createElement('div');
         secondDuo.classList.add("answerBlock__duo");
 
 
         for (let x = 0; x < this.possibleAnswers.length && x < 4; x++) {
 
+            const thisAnswer = this.possibleAnswers[x];
+            const thisid = x;
 
-            let thisAnswer = this.possibleAnswers[x];
-            var thisid = x;
-
-            //var newChoice = new MultipleChoiceChoice(thisAnswer, x, this);
-            var questionChoiceBlock = document.createElement('div');
+            //const newChoice = new MultipleChoiceChoice(thisAnswer, x, this);
+            const questionChoiceBlock = document.createElement('div');
             questionChoiceBlock.classList.add("blackBlock");
             questionChoiceBlock.classList.add("blackBlock--small");
             questionChoiceBlock.classList.add("blackBlock--stacking");
             questionChoiceBlock.classList.add("two-col");
-            var questionChoiceBlockText = document.createElement("p");
+            const questionChoiceBlockText = document.createElement("p");
             questionChoiceBlockText.classList.add("answerBlock__Text")
-            var questionChoiceBlockTextFill = document.createTextNode(thisAnswer);
+            const questionChoiceBlockTextFill = document.createTextNode(thisAnswer);
             questionChoiceBlockText.appendChild(questionChoiceBlockTextFill);
 
             questionChoiceBlock.appendChild(questionChoiceBlockText);
@@ -66,9 +65,9 @@ class Multiplechoice extends Question {
     select(inp: string, id: number) {
         this.selectedAnswer = inp;
 
-        var idselected = "#Q" + this.questionNumber + "checkbox" + this.selectedId;
+        let idselected = "#Q" + this.questionNumber + "checkbox" + this.selectedId;
 
-        var checkbox = document.querySelector(idselected)
+        let checkbox = document.querySelector(idselected)
 
         if (checkbox) {
             checkbox.classList.remove("answerBlock__checkbox--selected");
