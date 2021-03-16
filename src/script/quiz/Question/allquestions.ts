@@ -1,4 +1,4 @@
-var allQuestions =[
+const allQuestions = [
     {
         "questionType": "multiplechoice",
         "title": "Which operator is not included in Sass?",

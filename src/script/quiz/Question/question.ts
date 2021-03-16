@@ -1,7 +1,18 @@
 class Question {
-    
-    
-    constructor(answer, question, explanation, link){
+
+    answer: string;
+    question: string;
+    explanation: string;
+    selectedAnswer?: string;
+    questionBlock: HTMLElement;
+    questionOptionsBlock: HTMLElement;
+    undefAnswerBlock: HTMLElement;
+    checkBlock: HTMLElement;
+    defAnswerBlock: HTMLElement;
+    defAnswerBlockHeaderTrue: HTMLElement;
+    defAnswerBlockHeaderFalse: HTMLElement;
+
+    constructor(answer: string, question: string, explanation: string, link?: string) {
 
         //INITIALIZE SOME BASE VALUES
 
@@ -12,21 +23,21 @@ class Question {
 
         //Create the element (acticle) that contains all of the parts of the questionBlock
         //Also create the section that holds the title
-        
+
         this.questionBlock = document.createElement("section");
         this.questionBlock.classList.add("questionBlock");
 
-        var questionTitleBlock = document.createElement("div");
+        const questionTitleBlock = document.createElement("div");
         questionTitleBlock.classList.add("questionBlock__titleContainer");
 
-        var questionTextBlock = document.createElement("div");
+        const questionTextBlock = document.createElement("div");
         questionTextBlock.classList.add("container");
         questionTextBlock.classList.add("container--close");
 
-        var questionHeader = document.createElement('h2');
+        const questionHeader = document.createElement('h2');
         questionHeader.classList.add("questionBlock__title")
-        
-        var questionText = document.createTextNode(this.question);
+
+        const questionText = document.createTextNode(this.question);
         questionHeader.appendChild(questionText);
 
         questionTextBlock.appendChild(questionHeader);
@@ -40,16 +51,16 @@ class Question {
         this.questionOptionsBlock = document.createElement("div");
         this.questionOptionsBlock.classList.add("container");
         this.undefAnswerBlock = document.createElement("div");
-        
+
         this.undefAnswerBlock.className = "answer";
-        var checkButton = document.createElement("input");
+        const checkButton = document.createElement("input");
         checkButton.setAttribute("type", "button");
         checkButton.setAttribute("value", "Check!");
         checkButton.classList.add("checkBlock__button");
         checkButton.classList.add("checkBlock--center");
-        
+
         this.undefAnswerBlock.appendChild(checkButton);
-        
+
 
         //The DefAnswerBlock contains all the explenation text, it also contains a link and a hide button which switches this block back to the undefAnswerBlock element;
         this.checkBlock = document.createElement("div")
@@ -57,30 +68,31 @@ class Question {
         this.checkBlock.classList.add("blackBlock");
 
         this.defAnswerBlock = document.createElement("div");
-        
-        
+
+
         this.defAnswerBlock.className = "answer";
-        var defAnswerBlockText = document.createElement("p");
+        const defAnswerBlockText = document.createElement("p");
         defAnswerBlockText.classList.add("checkBlock__explanation");
-        var defAnswerBlockTextFill = document.createTextNode(this.explanation);
+        const defAnswerBlockTextFill = document.createTextNode(this.explanation);
         defAnswerBlockText.appendChild(defAnswerBlockTextFill);
         //defAnswerBlockText.innerHTML = this.explenation;
 
-        var defAnswerBlockHide = document.createElement("input");
+        const defAnswerBlockHide = document.createElement("input");
         defAnswerBlockHide.setAttribute("type", "button");
         defAnswerBlockHide.setAttribute("value", "Hide");
         defAnswerBlockHide.addEventListener("click", this.hide.bind(this), false);
-        
-        var defAnswerBlockLink = document.createElement("a");
-        defAnswerBlockLink.setAttribute("href", link);
-        var defAnswerBlockLinkfill = document.createTextNode("Link");
+
+        const defAnswerBlockLink = document.createElement("a");
+        if (link)
+            defAnswerBlockLink.setAttribute("href", link);
+        const defAnswerBlockLinkfill = document.createTextNode("Link");
         //defAnswerBlockLink.innerHTML = "Link";
         defAnswerBlockLink.appendChild(defAnswerBlockLinkfill);
         this.defAnswerBlockHeaderTrue = document.createElement("h4");
         this.defAnswerBlockHeaderFalse = document.createElement("h4");
-        var defAnswerBlockHeaderTextTrue = document.createTextNode("True! ");
-        var defAnswerBlockHeaderTextFalse = document.createTextNode("False.. ");
-        
+        const defAnswerBlockHeaderTextTrue = document.createTextNode("True! ");
+        const defAnswerBlockHeaderTextFalse = document.createTextNode("False.. ");
+
         this.defAnswerBlockHeaderTrue.appendChild(defAnswerBlockHeaderTextTrue);
         this.defAnswerBlockHeaderTrue.classList.add("checkBlock__explanation");
         this.defAnswerBlockHeaderFalse.appendChild(defAnswerBlockHeaderTextFalse);
@@ -104,40 +116,36 @@ class Question {
 
         //this.defAnswerBlock.style.display ='none';
 
-        var totalAssessment = document.querySelector("#totalAssesment");
-        
-        totalAssessment.appendChild(this.questionBlock);
+        const totalAssessment = document.querySelector("#totalAssesment");
+
+        totalAssessment?.appendChild(this.questionBlock);
         checkButton.addEventListener("click", this.check.bind(this), false);
-
-
     }
-}
 
+    check() {
+        this.defAnswerBlock.style.display = "block";
+        this.checkBlock.replaceChild(this.defAnswerBlock, this.undefAnswerBlock); //gives TypeError
 
-Question.prototype.check = function(){
-    this.defAnswerBlock.style.display = "block";    
-    this.checkBlock.replaceChild(this.defAnswerBlock, this.undefAnswerBlock); //gives TypeError
+        if (this.selectedAnswer == this.answer) {
+            // console.log("right answer");
+            this.defAnswerBlockHeaderTrue.style.display = "block";
+            this.defAnswerBlockHeaderFalse.style.display = "none";
 
-    if(this.selectedAnswer == this.answer)
-    {
-        // console.log("right answer");
-        this.defAnswerBlockHeaderTrue.style.display = "block";
-        this.defAnswerBlockHeaderFalse.style.display = "none";
-        
+        }
+        else {
+            // console.log(this.answer);
+            // console.log(this.selectedAnswer);
+            // console.log("wrong answer!")
+            this.defAnswerBlockHeaderFalse.style.display = "block";
+            this.defAnswerBlockHeaderTrue.style.display = "none";
+        }
+        //For now this only switches the children
+        //The code here should also check if the answer was correct, and if that is the case, add an additional message to the answer stating: correct or incorrect
+
+        //return (this.answer == input);
     }
-    else{
-        // console.log(this.answer);
-        // console.log(this.selectedAnswer);
-        // console.log("wrong answer!")
-        this.defAnswerBlockHeaderFalse.style.display = "block";
-        this.defAnswerBlockHeaderTrue.style.display = "none";
+
+    hide() {
+        this.checkBlock.replaceChild(this.undefAnswerBlock, this.defAnswerBlock);
     }
-    //For now this only switches the children
-    //The code here should also check if the answer was correct, and if that is the case, add an additional message to the answer stating: correct or incorrect
-
-    //return (this.answer == input);
-};
-
-Question.prototype.hide = function(){    
-    this.checkBlock.replaceChild(this.undefAnswerBlock, this.defAnswerBlock);
 }

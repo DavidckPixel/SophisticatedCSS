@@ -3,10 +3,10 @@
  */
 class SelectorRenderer
 {
-    /* The internal representation of the menu */
+    /** The internal representation of the menu */
     elements: Array<[HTMLElement, string, number]>;
 
-    /* The currenly selected menu item */
+    /** The currenly selected menu item */
     current?: HTMLElement;
 
     constructor(elements: Array<[HTMLElement, string, number]>) {
