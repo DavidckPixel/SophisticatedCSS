@@ -30,7 +30,13 @@ we give al the elements 19% of the page, because there are 5 elements, and displ
     font-family: 'Lobster', cursive;
 }
 
+.nav__home--small{
+  font-size: 16px;
+}
 
+.nav__home--large{
+  font-size: 24px;
+}
 
 .nav__page{
     width: 66.6667%;
@@ -44,7 +50,15 @@ we give al the elements 19% of the page, because there are 5 elements, and displ
     font-family: 'Quicksand', sans-serif;
     text-align: center; 
     font-size: 20px;
-  }
+}
+
+.nav__page--small{
+  font-size: 16px;
+}
+
+.nav__page--large{
+  font-size: 24px;
+}
 
 .nav{
     margin-top:10px;
