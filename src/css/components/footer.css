@@ -31,11 +31,27 @@
     font-family: 'Quicksand', sans-serif;
 }
 
+.contributor__name--small{
+    font-size: 12px;
+}
+
+.contributor__name--large{
+    font-size: 20px;
+}
+
 .contributor__number{
     margin:0;
     padding:0;
     font-size: 16px;
     font-family: 'Quicksand', sans-serif;
+}
+
+.contributor__number--small{
+    font-size: 12px;
+}
+
+.contributor__number--large{
+    font-size: 20px;
 }
 
 .footer__text {
@@ -54,11 +70,27 @@
     color:black;
 }
 
+.footer__name--small{
+    font-size: 16px;
+}
+
+.footer__name--large{
+    font-size: 24px;
+}
+
 .footer__info{
     margin:0;
     padding:0;
     font-size: 16px;
     font-family: 'Quicksand', sans-serif;
+}
+
+.footer__info--small{
+    font-size:12px;
+}
+
+.footer__info--large{
+    font-size: 20px;
 }
 
 .footer--topmargin{
