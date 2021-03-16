@@ -16,10 +16,10 @@
     text-decoration-line: none;
 }
 
-.one-col__text--small{
+.one-col--small .one-col__text{
     font-size: 16px;
 }
 
-.one-col__text--large{
+.one-col--large .one-col__text{
     font-size: 26px;
 }

@@ -6,7 +6,7 @@
     color: white;
 }
 
-.featureTitle{
+.featureArticle__title{
     margin:0;
     padding:0;
     padding-left: 1%;
@@ -15,11 +15,11 @@
     font-family: 'Fira Code', monospace;    
 }
 
-.featureTitle--small{
+.featureArticle--small .featureArticle__title{
     font-size: 20px;
 }
 
-.featureTitle--large{
+.featureArticle--large .featureArticle__title{
     font-size: 30px;
 }
 
@@ -38,11 +38,11 @@
     font-family: 'Fira Code', monospace;
 }
 
-.featureBlock__name--small{
+.featureBlock--small .featureBlock__name{
     font-size: 16px;
 }
 
-.featureBlock__name--large{
+.featureBlock--large .featureBlock__name{
     font-size: 26px;
 }
 
@@ -53,26 +53,26 @@
     font-family: 'Quicksand', sans-serif;    
 }
 
-.featureBlock__explanation--small{
+.featureBlock--small .featureBlock__explanation{
     font-size: 12px;
 }
 
-.featureBlock__explanation--large{
+.featureBlock--large .featureBlock__explanation{
     font-size: 20px;
 }
 
-.exampleBlock__code{
+.featureBlock__examplecode{
     font-family: 'Fira Code', monospace;
     margin:0;
     padding:0;
     font-size: 16px;
 }
 
-.exampleBlock__code--small{
+.featureBlock--small .featureBlock__examplecode{
     font-size: 12px;
 }
 
-.exampleBlock__code--large{
+.featureBlock--large .featureBlock__examplecode{
     font-size: 20px;
 }
 
@@ -113,11 +113,11 @@
     text-decoration: none;
 }
 
-.threecol__header--small{
+.threecol--small .threecol__header{
     font-size: 16px;
 }
 
-.threecol__header--large{
+.threecol--large .threecol__header{
     font-size: 26px;
 }
 
@@ -129,11 +129,11 @@
     color:white;
 }
 
-.threecol__text--small{
+.threecol--small .threecol__text{
     font-size: 12px;
 }
 
-.threecol__text--large{
+.threecol--large .threecol__text{
     font-size: 20px;
 }
 
@@ -153,7 +153,7 @@
         min-height:0;
     }
 
-    .exampleBlock{
+    .featureBlock__exampleBlock{
         width:100%;        
         display:inline-flex;
         height:auto;

@@ -43,11 +43,11 @@ While the remaining 20% if given to the image */
     
 }
 
-.userReview__quote--small{
+.userReview--small .userReview__quote{
     font-size: 20px;
 }
 
-.userReview__quote--large{
+.userReview--large .userReview__quote{
     font-size: 30px;
 }
 
@@ -61,11 +61,11 @@ While the remaining 20% if given to the image */
     display: block;
 }
 
-.userReview__sender--small{
+.userReview--small .userReview__sender{
     font-size: 12px;
 }
 
-.userReview__sender--large{
+.userReview--large .userReview__sender{
     font-size: 20px;
 }
 

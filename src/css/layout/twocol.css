@@ -15,11 +15,11 @@
     margin:5px;
 }
 
-.two-col__link--small {
+.two-col--small .two-col__link{
     font-size: 8px;
 }
 
-.two-col__link--large {
+.two-col--large .two-col__link{
     font-size: 16px;
 }
 
@@ -34,11 +34,11 @@
     color: white;
 }
 
-.two-col__list--small{
+.two-col--small .two-col__list{
     font-size: 12px;
 }
 
-.two-col__list--large{
+.two-col--large .two-col__list{
     font-size: 20px;
 }
 
@@ -61,11 +61,11 @@ when 2 sections are both defined with the .two-col class, It will but the 2 sect
     color: white;
 }
 
-.two-col__title--small{
+.two-col--small .two-col__title{
     font-size: 16px;
 }
 
-.two-col__title--large{
+.two-col--large .two-col__title{
     font-size: 26px;
 }
 
@@ -77,11 +77,11 @@ when 2 sections are both defined with the .two-col class, It will but the 2 sect
     color:white;
 }
 
-.two-col__text--small {
+.two-col--small .two-col__text{
     font-size: 12px;
 }
 
-.two-col__text--large {
+.two-col--large .two-col__text{
     font-size: 20px;
 }
 

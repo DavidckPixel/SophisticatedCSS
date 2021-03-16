@@ -39,11 +39,11 @@
     text-decoration-line: none;
 }
 
-.blackBlock__text--small{
+.blackBlock--small .blackBlock__text{
     font-size: 16px;
 }
 
-.blackBlock__text--large{
+.blackBlock--large .blackBlock__text{
     font-size: 26px;
 }
 
