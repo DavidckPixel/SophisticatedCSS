@@ -15,14 +15,14 @@
     margin:5px;
 }
 
-/*CSS for the image in the tryOut section*/
-/* .tryOut img{ 
-    display:inline-block;
-    width:100%;
-    object-fit:contain;
-    border-radius: 15px;
-    object-position: center;
-} */
+.two-col__link--small {
+    font-size: 8px;
+}
+
+.two-col__link--large {
+    font-size: 16px;
+}
+
 
 .two-col__list{
     width:100%;
@@ -34,21 +34,14 @@
     color: white;
 }
 
-/* .two-col__item{
-    text-align:left;
-    display:list-item;
-    width:100%;
-    padding:0;
-    padding-top:1px;
-    padding-bottom: 1px;
-    
-} */
+.two-col__list--small{
+    font-size: 12px;
+}
 
-/* .tryOut i{
-    border:1px white solid;
-    padding-left:3px;
-    padding-right:3px;
-} */
+.two-col__list--large{
+    font-size: 20px;
+}
+
 
 /*part of a two-column, give it the width of 50% of the current block, and make it inline with other blocks 
 when 2 sections are both defined with the .two-col class, It will but the 2 sections right down the middle of eachother*/
@@ -68,12 +61,28 @@ when 2 sections are both defined with the .two-col class, It will but the 2 sect
     color: white;
 }
 
+.two-col__title--small{
+    font-size: 16px;
+}
+
+.two-col__title--large{
+    font-size: 26px;
+}
+
 .two-col__text{
     margin:0;
     padding:0;
     font-size: 16px;
     font-family: 'Quicksand', sans-serif;
     color:white;
+}
+
+.two-col__text--small {
+    font-size: 12px;
+}
+
+.two-col__text--large {
+    font-size: 20px;
 }
 
 .two-col__image {    

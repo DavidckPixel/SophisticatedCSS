@@ -12,8 +12,15 @@
     padding-left: 1%;
     padding-right: 1%;
     font-size: 26px;
-    font-family: 'Fira Code', monospace;
-    
+    font-family: 'Fira Code', monospace;    
+}
+
+.featureTitle--small{
+    font-size: 20px;
+}
+
+.featureTitle--large{
+    font-size: 30px;
 }
 
 /*3 column structure, NEEDS TO BE RENAMED, Screen is split into 3 blocks called features*/
@@ -31,11 +38,27 @@
     font-family: 'Fira Code', monospace;
 }
 
+.featureBlock__name--small{
+    font-size: 16px;
+}
+
+.featureBlock__name--large{
+    font-size: 26px;
+}
+
 .featureBlock__explanation{
     margin:0;
     padding:0;
     font-size: 16px;
     font-family: 'Quicksand', sans-serif;    
+}
+
+.featureBlock__explanation--small{
+    font-size: 12px;
+}
+
+.featureBlock__explanation--large{
+    font-size: 20px;
 }
 
 .exampleBlock__code{
@@ -45,20 +68,13 @@
     font-size: 16px;
 }
 
-/* .feature{
-    width:calc(100% /12 * 4 - 2%);    
-    margin-left:1%;
-    margin-right:1%;
-    min-height:150px; 
-    display: inline-block;
-    float:left; 
-} */
+.exampleBlock__code--small{
+    font-size: 12px;
+}
 
-/* .exampleBlock .feature h4{
-    
-    border-radius:15px;
-    padding-left:5px;
-} */
+.exampleBlock__code--large{
+    font-size: 20px;
+}
 
 .threecol {
     float: left;
@@ -97,6 +113,14 @@
     text-decoration: none;
 }
 
+.threecol__header--small{
+    font-size: 16px;
+}
+
+.threecol__header--large{
+    font-size: 26px;
+}
+
 .threecol__text{
     margin:0;
     padding:0;
@@ -105,37 +129,14 @@
     color:white;
 }
 
-
-/* .feature img{
-    display: block;
-    width: calc(100% - 10%);
-    margin-left: 5%;
-    margin-right:5%;
-    margin-bottom: 0;
-    margin-top:5%;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    float: left;
-} */
-
-/* a.feature:hover{
-    transform: scale(1.1);
-    overflow:visible;
+.threecol__text--small{
+    font-size: 12px;
 }
 
-a.feature{
-    margin-bottom:20px;
-} */
+.threecol__text--large{
+    font-size: 20px;
+}
 
-/* .additionalSourceBlock {
-    float: left;
-    padding: 1px;
-    border: 2px solid rgb(0, 0, 0);
-    margin-left: 1%;
-    margin-right:1%;
-    width: calc(100% / 12 * 4 - 2% - 4px - 2px);
-    text-align: center;
-} */
 
 @media (max-width: 600px){
     /* .feature{

@@ -39,6 +39,14 @@
     text-decoration-line: none;
 }
 
+.blackBlock__text--small{
+    font-size: 16px;
+}
+
+.blackBlock__text--large{
+    font-size: 26px;
+}
+
 .blackBlock--label {
     border-radius: 5px;
     display: block;

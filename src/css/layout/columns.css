@@ -15,3 +15,11 @@
     color: white;
     text-decoration-line: none;
 }
+
+.one-col__text--small{
+    font-size: 16px;
+}
+
+.one-col__text--large{
+    font-size: 26px;
+}

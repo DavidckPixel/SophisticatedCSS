@@ -44,6 +44,14 @@ body{
     padding-right: 1%
 }
 
+.container__title--small {
+    font-size: 20px;
+}
+
+.container__title--large {
+    font-size: 30px;
+}
+
 /* .white .container {
     margin: 30px auto;
     padding: 15px 0;
