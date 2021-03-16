@@ -1,7 +1,9 @@
 class Multiplechoice extends Question {
-    constructor(correctanswer, question, answers, explanation){
+    constructor(correctanswer, question, answers, explanation, questionnumber){
         super(correctanswer, question, explanation);
         this.answers = answers;
+        this.questionnumber = questionnumber;
+        this.selectectedid = undefined;
         var questionChoices = document.createElement('div');
         questionChoices.classList.add("answerBlock");
 
@@ -15,6 +17,8 @@ class Multiplechoice extends Question {
             
             
             let thisAnswer = this.answers[x];
+            var thisid = x;
+            
             //var newChoice = new MultipleChoiceChoice(thisAnswer, x, this);
             var questionChoiceBlock = document.createElement('div');
             questionChoiceBlock.classList.add("blackBlock");
@@ -28,7 +32,16 @@ class Multiplechoice extends Question {
 
             questionChoiceBlock.appendChild(questionChoiceBlockText);
 
-            questionChoiceBlock.addEventListener("click", this.select.bind(this, thisAnswer), false);
+            this.checkbox = document.createElement('div');
+            this.checkbox.id = "Q" + this.questionnumber + "checkbox" + x;
+            this.checkbox.classList.add("answerBlock__checkbox");
+            this.checkbox.classList.add("answerBlock__checkbox--deselected")
+
+            
+            
+            questionChoiceBlock.appendChild(this.checkbox);
+
+            questionChoiceBlock.addEventListener("click", this.select.bind(this, thisAnswer, thisid), false);
             //questionChoiceBlock.addEventListener("click", (function(){this.select(thisAnswer).bind(this)}).bind(this), false);
             if(x<2)
             {
@@ -47,34 +60,26 @@ class Multiplechoice extends Question {
     }
 }
 
-Multiplechoice.prototype.select = function(inp){
-    this.selectedAnswer = inp; 
-    
-}
+Multiplechoice.prototype.select = function(inp, id){
+    this.selectedAnswer = inp;
 
+    var idselected ="#Q" + this.questionnumber + "checkbox" + this.selectedid;
 
-//This class is not used at the moment, because of troubles with not being able to change variable of parentQuestion.
-class MultipleChoiceChoice {
-    //This class is meant for all the choices in the multiplechoice questions
+    var checkbox = document.querySelector(idselected)
 
-    constructor(answer, id, parentQuestion){
-
-        //set some base values
-
-        this.id = id;
-        this.answer = answer;
-        this.parentQuestion = parentQuestion;
-
-
-        //Creates the element and fills it with the answer text, an eventlistener is added to see when the user clicks on the elements
-        //It when sets the parentQuestion selectedAnswer variable to the ID of the choice
-
-        var questionChoiceBlock = document.createElement('div');
-        var questionChoiceBlockText = document.createTextNode(this.answer);
-        
-        questionChoiceBlock.appendChild(questionChoiceBlockText);
-        //questionChoiceBlock.innerHTML = "<p>" + answer + "</p>";
-        questionChoiceBlock.addEventListener("click", function(){this.selectedAnswer = this.answer;}, false);
-        this.parentQuestion.questionBlock.appendChild(questionChoiceBlock); 
+    if (checkbox) {
+        checkbox.classList.remove("answerBlock__checkbox--selected");
+        checkbox.classList.add("answerBlock__checkbox--deselected");
     }
+
+    idselected = "#Q" + this.questionnumber +"checkbox" + id;
+
+    checkbox = document.querySelector(idselected);
+    if(checkbox) {
+        checkbox.classList.remove("answerBlock__checkbox--deselected");
+        checkbox.classList.add("answerBlock__checkbox--selected");
+    }
+
+    this.selectedid = id;
 }
+

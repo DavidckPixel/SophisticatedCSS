@@ -19,7 +19,7 @@ function buildQuiz(){
         if (thisQuestion.questionType == "multiplechoice")
         {
             //if it's a multiplechoice question
-            newQuestion = new Multiplechoice(thisQuestion.correctAnswer, thisQuestion.title, thisQuestion.allAnswers, thisQuestion.explanation);
+            newQuestion = new Multiplechoice(thisQuestion.correctAnswer, thisQuestion.title, thisQuestion.allAnswers, thisQuestion.explanation, x);
 
         }
         else if(thisQuestion.questionType == "open")

@@ -60,7 +60,9 @@
 
 .answerBlock__Text{
     font-size: 20px;
+    width: 70%;
     font-family: 'Fira Code', monospace;
+    float:left;
 }
 
 .answerBlock__textInput{
@@ -71,6 +73,21 @@
     margin-bottom: 90px;
     font-size: 20px;
     font-family: 'Fira Code', monospace;
+}
+
+.answerBlock__checkbox{
+    width: 12.5%;
+    height: 30px;
+    border-radius: 50%;
+    float:right;
+}
+
+.answerBlock__checkbox--selected{
+    background-color:blue;
+}
+
+.answerBlock__checkbox--deselected{
+    background-color: lightslategray;
 }
 
 @media (max-width: 600px) {
