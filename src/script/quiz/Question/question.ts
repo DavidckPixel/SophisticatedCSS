@@ -26,6 +26,8 @@ class Question {
 
         this.questionBlock = document.createElement("section");
         this.questionBlock.classList.add("questionBlock");
+        this.questionBlock.id = "question";
+        this.questionBlock.setAttribute("selectorTitle", "Question")
 
         const questionTitleBlock = document.createElement("div");
         questionTitleBlock.classList.add("questionBlock__titleContainer");
