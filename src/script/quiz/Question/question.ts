@@ -59,7 +59,7 @@ class Question {
                     create("h2", {"classList": "questionBlock__title"}, text(this.question)))),    
             this.questionOptionsBlock   
         );
-
+        this.questionBlock.setAttribute("selectorTitle","Question");
 
         //Create Both TRUE and FALSE answerBlock HTMLElements
 
@@ -94,11 +94,13 @@ class Question {
 
     /** Function thats checks the answer and shows the explanation, called for Check Button */
     check() {
-        //Replace the undefAnswerBlock with the defAnswerBlock (show the explenation)
-        this.checkBlock.replaceChild(this.defAnswerBlock, this.undefAnswerBlock); //gives TypeError
+        if(this.selectedAnswer){
+            //Replace the undefAnswerBlock with the defAnswerBlock (show the explenation)
+            this.checkBlock.replaceChild(this.defAnswerBlock, this.undefAnswerBlock); //gives TypeError
 
-        //If the answer is correct, true becomes visable, otherwise, false becomes visable
-        this.selectedAnswer == this.answer ? this.setAnswerBlock("block", "none") : this.setAnswerBlock("none", "block");
+            //If the answer is correct, true becomes visable, otherwise, false becomes visable
+            this.selectedAnswer == this.answer ? this.setAnswerBlock("block", "none") : this.setAnswerBlock("none", "block");
+        }
     }
 
     /** Function that hides the explanation */

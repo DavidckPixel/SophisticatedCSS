@@ -219,4 +219,8 @@
         width: 50%;
         height: 100px;
     }
+
+    .styleModifierElement--invert{
+        border: 3px solid white;
+    }
 }

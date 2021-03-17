@@ -7,7 +7,7 @@
 function buildQuiz() {
     /** base HTML element for the body of the assesment page, id = "totalAssesment" */
     const totalAssessment = create("article", {"id": "totalAssesment", "selectorTitle": "Quiz"});
-
+    totalAssessment.setAttribute("selectorTitle", "Quiz");
     /** The body of HTML page*/
     const body = document.querySelector("body");
     const footer = document.querySelector("footer");
@@ -43,6 +43,8 @@ function buildIntro() {
             create("p", { "classList": "intro__paragraph" }, text("on this page you can test your knowledge about pre processors! all information about the topics in this quiz can be found on the website. After u filled in the answer, it will give a short explanation why the answer was right (or wrong) combined with a link to where this information could be found."))
         )
     )
+
+    assesmentIntro.setAttribute("selectorTitle", "Introduction")
     
     /** main body HTML element of assesment page */
     const totalAssessment = document.querySelector('#totalAssesment');
