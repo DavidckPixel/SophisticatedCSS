@@ -1,6 +1,7 @@
 /// <reference path="./allquestions.ts" />
 /// <reference path="./multiplechoice.ts" />
 /// <reference path="./question.ts" />
+/// <reference path="./open.ts" />
 
 function buildQuiz() {
     /** base HTML element for the body of the assesment page, id = "totalAssesment" */
