@@ -20,8 +20,6 @@ class ColorStyleRenderer
             const [_, currentElement] = this.selector.current;
             currentElement.style.color = style;
         }
-
-        // todo: change visual indicator of current element
     }
  
     /**
@@ -43,9 +41,7 @@ class ColorStyleRenderer
         // Iterate over all elements in the menu
         for (const [title, modifier] of selectors) {
             // Build and append the node
-            let node = document.createElement('p');
-            node.appendChild(document.createTextNode(title));
-            node.classList.add("styleModifierElement__styleSelector")
+            let node = create("button", {"classList": "styleModifierElement__selectorText"}, text(title)) as HTMLButtonElement;
             node.addEventListener("click", (event: MouseEvent) => {
                 // If a page element is selected
                 if (this.selector.current) {
@@ -58,7 +54,7 @@ class ColorStyleRenderer
     }
 
     updateModifier(el: Element, modifier: string|null, allModifs: string[]) {
-        // Remove all current modifier classes detected
+        // Find all modifier classes that are applied by this menu and remove them
         const removal = [...el.classList].filter(cls => allModifs.some(modif => cls.endsWith(modif)));
         for (const cls of removal) {
             el.classList.remove(cls);
@@ -66,6 +62,7 @@ class ColorStyleRenderer
 
         // Add modifier copy to all classes
         if (modifier) {
+            // Select all classes that are not BEM modifiers
             for (const cls of [...el.classList].filter(x => !x.includes("--"))) {
                 el.classList.add(cls + modifier);
             }

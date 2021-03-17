@@ -1,3 +1,5 @@
+/// <reference path="../../nodes.ts" />
+
 /**
  * Component selector menu builder
  */
@@ -48,20 +50,16 @@ class SelectorRenderer
     render(rootElement: Element) {
         // Iterate over all elements in the menu
         for (const [element, title, depth] of this.elements) {
-            // Build and append the node
-            let text = "\u2003".repeat(depth) + title;
-            let node = document.createElement('a');
-            let id = element.getAttribute("id");
-            node.style.display = "block";
-            node.classList.add("styleModifierElement__selectorText")
-            node.appendChild(document.createTextNode(text));
+            // Prepare node values
+            let fullTitle = "\u2003".repeat(depth) + title;
+
+            // Create node
+            let node = create("button", {"classList": "styleModifierElement__selectorText"}, text(fullTitle)) as HTMLButtonElement;
             node.addEventListener("click", (event: MouseEvent) => {
-                event.preventDefault();
                 this.setElement(node, element);
             });
-            if (id) {
-                node.href = "#" + id;
-            }
+
+            // Add node to DOM
             rootElement.appendChild(node);
         }
     }

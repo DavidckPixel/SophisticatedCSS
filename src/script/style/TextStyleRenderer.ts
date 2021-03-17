@@ -20,8 +20,6 @@ class TextStyleRenderer
             const [_, currentElement] = this.selector.current;
             currentElement.style.fontSize = style;
         }
-
-        // todo: change visual indicator of current element
     }
  
     /**
@@ -31,9 +29,9 @@ class TextStyleRenderer
      */
     render(rootElement: Element) {
         const selectors: Array<[string, string|null, string]> = [
-            ["Large", "--large", "25px"],
-            ["Medium", null, "21px"],
-            ["Small", "--small", "16px"],
+            ["Large", "--large", "20px"],
+            ["Medium", null, "16px"],
+            ["Small", "--small", "12px"],
         ]
         rootElement.classList.add("styleModifierElement--thin");
 
@@ -42,10 +40,7 @@ class TextStyleRenderer
         // Iterate over all elements in the menu
         for (const [title, modifier, fontSize] of selectors) {
             // Build and append the node
-            let node = document.createElement('p');
-            node.style.fontSize = fontSize;
-            node.appendChild(document.createTextNode(title));
-            node.classList.add("styleModifierElement__styleSelector")
+            let node = create("button", {"classList": "styleModifierElement__selectorText", "style": "font-size:" + fontSize }, text(title)) as HTMLButtonElement;
             node.addEventListener("click", (event: MouseEvent) => {
                 // If a page element is selected
                 if (this.selector.current) {
@@ -58,7 +53,7 @@ class TextStyleRenderer
     }
     
     updateModifier(el: Element, modifier: string|null, allModifs: string[]) {
-        // Remove all current modifier classes detected
+        // Find all modifier classes that are applied by this menu and remove them
         const removal = [...el.classList].filter(cls => allModifs.some(modif => cls.endsWith(modif)));
         for (const cls of removal) {
             el.classList.remove(cls);
@@ -66,6 +61,7 @@ class TextStyleRenderer
 
         // Add modifier copy to all classes
         if (modifier) {
+            // Select all classes that are not BEM modifiers
             for (const cls of [...el.classList].filter(x => !x.includes("--"))) {
                 el.classList.add(cls + modifier);
             }
