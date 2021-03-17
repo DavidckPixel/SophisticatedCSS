@@ -23,7 +23,7 @@ class Question {
     /** HTMLElement block that contains False */
     defAnswerBlockHeaderFalse: HTMLElement;
 
-    constructor(answer: string, question: string, explanation: string, link?: string) {
+    constructor(answer: string, question: string, explanation: string, link: string) {
 
         //INITIALIZE SOME BASE VALUES
 
@@ -60,6 +60,7 @@ class Question {
 
 
         //Create Both TRUE and FALSE answerBlock HTMLElements
+
         this.defAnswerBlockHeaderTrue = create("h4", {"classList": "checkBlock__true checkBlock__explanation"}, text("True! "));
         this.defAnswerBlockHeaderFalse = create("h4", {"classList": "checkBlock__false checkBlock__explanation"}, text("False! "));
 
@@ -76,8 +77,10 @@ class Question {
             this.defAnswerBlockHeaderFalse,
             create("p", {"classList" : "checkBlock__explanation"}, text(this.explanation)), 
                 createEventObj("click", this.hide.bind(this), false, 
-                    create("input", {"type": "button", "value": "hide"})),
-                create("a", {"href" : link}, text("Link")),
+                    create("input", {"classList": "checkBlock__button", "type": "button", "value": "hide"})),
+                //create("a", {"href" : link, "classList": "checkBlock__button"},undefined, text("Link")),
+                createEventObj("click", function x(){window.location.href = link;}, false, 
+                    create("input", {"classList": "checkBlock__button", "type": "button", "value": "Link"})),
         );
 
         /** Entire Assesment page HTML Element */

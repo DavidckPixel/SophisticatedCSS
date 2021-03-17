@@ -154,6 +154,14 @@
     background-color: white;
 }
 
+.checkBlock__Header--green{
+    color:green;
+}
+
+.checkBlock__Header--red{
+    color:red;
+}
+
 @media (max-width: 600px) {
     .checkBlock{
         float:left;

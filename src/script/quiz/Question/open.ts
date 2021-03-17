@@ -4,8 +4,8 @@ class Open extends Question {
     /** HTML element for typing the answer */
     typebox: HTMLInputElement;
 
-    constructor(correctanswer: string, question: string, explanation: string) {
-        super(correctanswer, question, explanation);
+    constructor(correctanswer: string, question: string, explanation: string, link : string) {
+        super(correctanswer, question, explanation, link);
 
         //Create TypeBox as eventHandler that calls changeAnswer when there is an input given
         this.typebox = (createEventObj("input", this.changeAnswer.bind(this), false, 

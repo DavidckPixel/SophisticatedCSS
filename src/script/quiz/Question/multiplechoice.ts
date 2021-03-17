@@ -6,8 +6,8 @@ class Multiplechoice extends Question {
     questionNumber: number;
     selectedId?: number;
 
-    constructor(correctanswer: string, question: string, possibleAnswers: string[], explanation: string, questionnumber: number) {
-        super(correctanswer, question, explanation);
+    constructor(correctanswer: string, question: string, possibleAnswers: string[], explanation: string, questionnumber: number, link : string) {
+        super(correctanswer, question, explanation, link);
         this.possibleAnswers = possibleAnswers;
         this.questionNumber = questionnumber;
         this.selectedId = undefined;
