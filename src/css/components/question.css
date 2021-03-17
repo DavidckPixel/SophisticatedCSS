@@ -146,7 +146,6 @@
 
 .answerBlock__checkbox--selected{
     background-image: url("../../image/crossmark.png");
-    background-repeat: right top;
     background-size:30px;
 }
 
