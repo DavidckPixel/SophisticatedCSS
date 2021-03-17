@@ -28,7 +28,7 @@
 
 .blackBlock--stacking{
     margin-bottom: 10px;
-    min-height: 110px;
+    min-height: 140px;
 }
 
 .blackBlock--centertext{
@@ -77,5 +77,6 @@ a:link{
 
     .blackBlock--stacking{
         margin: 5px;
+        min-height: 100px;
     }
 }
