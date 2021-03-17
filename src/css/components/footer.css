@@ -6,6 +6,19 @@
     color: black;
 }
 
+.footer--invert{
+    background-color: black;
+    color: white;
+}
+
+.footer--invert .footer__text{
+    color: white;
+}
+
+.footer--invert .footer__name{
+    color: white;
+}
+
 .footer__img {
     float: left;
     width: calc(100% / 12 * 1 - 2%);
