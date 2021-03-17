@@ -25,11 +25,11 @@ function buildQuiz() {
         const thisQuestion = allQuestions[x];    
 
         if (thisQuestion.questionType == "multiplechoice") {
-            allQuestionObjects.push(new Multiplechoice(thisQuestion.correctAnswer, thisQuestion.title, thisQuestion.allAnswers, thisQuestion.explanation, x));
+            allQuestionObjects.push(new Multiplechoice(thisQuestion.correctAnswer, thisQuestion.title, thisQuestion.allAnswers, thisQuestion.explanation, x, thisQuestion.link));
 
         }
         else if (thisQuestion.questionType == "open") {
-            allQuestionObjects.push(new Open(thisQuestion.correctAnswer, thisQuestion.title, thisQuestion.explanation));
+            allQuestionObjects.push(new Open(thisQuestion.correctAnswer, thisQuestion.title, thisQuestion.explanation, thisQuestion.link));
         }
     }
 }
