@@ -35,13 +35,14 @@ class TextStyleRenderer
             ["Medium", "21px"],
             ["Small", "16px"],
         ]
-
+        rootElement.classList.add("styleModifierElement--small");
         // Iterate over all elements in the menu
         for (const [title, fontSize] of selectors) {
             // Build and append the node
-            let node = document.createElement('button');
+            let node = document.createElement('p');
             node.style.fontSize = fontSize;
             node.appendChild(document.createTextNode(title));
+            node.classList.add("styleModifierElement__styleSelector")
             node.addEventListener("click", (event: MouseEvent) => {
                 this.setStyle(fontSize);
             });

@@ -17,7 +17,7 @@ if (footerMenus.length !== 3) {
     for (const menu of footerMenus) {
         // Clone children property (since the property is modified when deleting a child)
         const children = [...menu.children];
-
+        menu.classList.add("styleModifierElement")
         // Delete children
         for (const node of children) {
             menu.removeChild(node);
@@ -27,6 +27,7 @@ if (footerMenus.length !== 3) {
 
     // Menu nodes
     let selectorNode = footerMenus[0];
+    
     let textStyleNode = footerMenus[1];
     let colorStyleNode = footerMenus[2];
 

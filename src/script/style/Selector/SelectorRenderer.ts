@@ -37,6 +37,7 @@ class SelectorRenderer
             let node = document.createElement('a');
             let id = element.getAttribute("id");
             node.style.display = "block";
+            node.classList.add("styleModifierElement__selectorText")
             node.appendChild(document.createTextNode(text));
             node.addEventListener("click", (event: MouseEvent) => {
                 this.setElement(element);
