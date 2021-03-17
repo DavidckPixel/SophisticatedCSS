@@ -45,7 +45,7 @@ class Multiplechoice extends Question {
             create("p", {"classList": "answerBlock__Text"}, text(thisAnswer)),
             create("div", {"classList": "answerBlock__checkbox answerBlock__checkbox--deselected", "id":"Q" + this.questionNumber + "checkbox" + x})        
         )
-        questionChoiceBlock.addEventListener("click", this.select.bind(this, thisAnswer, x), false);
+        createEventObj("click",this.select.bind(this, thisAnswer, x), false, questionChoiceBlock);
         set.appendChild(questionChoiceBlock);
     }
 
