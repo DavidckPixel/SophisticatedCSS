@@ -1,37 +1,32 @@
 /// <reference path="./question.ts" />
 
 class Open extends Question {
+    /** HTML element for typing the answer */
     typebox: HTMLInputElement;
+
     constructor(correctanswer: string, question: string, explanation: string) {
         super(correctanswer, question, explanation);
-        this.typebox = document.createElement("input");
-        this.render();
-        
+
+        //Create TypeBox as eventHandler that calls changeAnswer when there is an input given
+        this.typebox = (createEventObj("input", this.changeAnswer.bind(this), false, 
+        create("input", {"classList": "answerBlock__textInput", "placeholder" : "answer"})) as HTMLInputElement);
+
+        //Call Render function
+        this.render();      
     }
 
+    /** Function Renders the HTMLElements for open questions */
     render() {
-        const answerBlock = document.createElement('div');
-        answerBlock.classList.add("answerBlock");
 
-        const questionAnswerSpace = document.createElement('div');
-        questionAnswerSpace.classList.add("blackBlock");
-        questionAnswerSpace.classList.add("blackBlock--label");
-        questionAnswerSpace.classList.add("one-col");
-
-        answerBlock.appendChild(questionAnswerSpace);
-
+        /** HTML Block for the answer*/
+        const answerBlock = (create("div", {"classList" : "answerBlock"}, undefined, 
+            create("div", {"classList": "blackBlock blackBlock--label one-col"}, undefined, this.typebox)
+            ) as HTMLElement);
         
-        this.typebox.classList.add("answerBlock__textInput")
-        this.typebox.placeholder = "answer";
-        this.typebox.addEventListener('input', this.changeAnswer.bind(this))
-
-        questionAnswerSpace.appendChild(this.typebox);
-        //this.questionBlock.insertBefore(typebox, this.undefAnswerBlock);
-        //this.questionBlock.appendChild(typebox);
         this.questionOptionsBlock.insertBefore(answerBlock, this.checkBlock);
-
     }
 
+    /** Function changes the selected answer to the value of the typebox */
     changeAnswer(){        
         this.selectedAnswer = this.typebox.value;
     }
