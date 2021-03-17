@@ -5,7 +5,7 @@
  * @param props An object containing the properties for the element.
  * @param children The child nodes for the element.
  */
- function create(type: string, props?: any, ...children: Node[]): HTMLElement | HTMLInputElement{
+function create(type: string, props?: any, ...children: Node[]): HTMLElement | HTMLInputElement{
     // Create element
     let el = document.createElement(type);
 

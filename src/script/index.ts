@@ -1,7 +1,7 @@
 /// <reference path="./style/Selector/SelectorBuilder.ts" />
 /// <reference path="./style/Selector/SelectorRenderer.ts" />
-/// <reference path="./style/TextStyleRenderer.ts" />
-/// <reference path="./style/ColorStyleRenderer.ts" />
+/// <reference path="./style/Style/TextStyleRenderer.ts" />
+/// <reference path="./style/Style/ColorStyleRenderer.ts" />
 /// <reference path="./quiz/Question/buildQuiz.ts" />
 
 if (document.querySelector('#quiz')) {
@@ -24,10 +24,8 @@ if (footerMenus.length !== 3) {
         }
     }
 
-
     // Menu nodes
     let selectorNode = footerMenus[0];
-    
     let textStyleNode = footerMenus[1];
     let colorStyleNode = footerMenus[2];
 

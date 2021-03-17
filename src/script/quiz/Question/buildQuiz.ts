@@ -16,8 +16,7 @@ function buildQuiz() {
     buildIntro();
 
     /** Array that holds all the question objects */
-    let allQuestionObjects: Array<Question>;
-    allQuestionObjects = [];
+    let allQuestionObjects: Array<Question> = [];
 
     for (let x = 0; x < allQuestions.length && x < 5; x++) {
         /** Local variable that stores the temporary question information */

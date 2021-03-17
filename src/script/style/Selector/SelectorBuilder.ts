@@ -21,7 +21,7 @@ class SelectorBuilder
         for (const element of rootElement.children) {
             // Type guard for HTMLElement
             if (!(element instanceof HTMLElement)) 
-                throw new Error(`Expected element to be an HTMLElement, was ${element && element.constructor && element.constructor.name || element}`);
+                throw new Error(`Expected element to be an HTMLElement, was ${element?.constructor?.name ?? element}`);
 
             // Detect egligable elements and add them to the elements cache
             let title = element.getAttribute("selectorTitle")
