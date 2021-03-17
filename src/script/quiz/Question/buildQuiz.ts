@@ -79,6 +79,15 @@ function text(content: string): Text {
     return document.createTextNode(content);
 }
 
+/**
+ * Additon to create function by adding eventListener
+ * 
+ * @param eventType Type of event
+ * @param func  Function to be executed when event occurs
+ * @param bool  True/False variable
+ * @param el HTMLElement towhich eventlistener will be added
+ * @returns HTMLElement containing eventlistener
+ */
 function createEventObj(eventType : string, func : any, bool : boolean, el : HTMLElement) : HTMLElement {;
     el.addEventListener(eventType,func, bool);
     return el;
