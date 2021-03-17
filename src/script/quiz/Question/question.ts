@@ -41,8 +41,8 @@ class Question {
 
         //Create HTMLElement for the checkblock, add undefAnswerBlock into it
         //Add checkBLock into new HTMLElement for questionOptionsBlock
-        this.checkBlock = create("div", {"classList": "checkBlock blackBlock"}, undefined ,this.undefAnswerBlock);  
-        this.questionOptionsBlock =  create("div", {"classList": "container"}, undefined ,this.checkBlock);
+        this.checkBlock = create("div", {"classList": "checkBlock blackBlock"}, this.undefAnswerBlock);  
+        this.questionOptionsBlock =  create("div", {"classList": "container"}, this.checkBlock);
 
 
         //Create HTML Element for Entire question 
@@ -51,17 +51,18 @@ class Question {
         //          -TitleBlock text
         //              -Contains question
         //      -QuestionOptionsBlock
-        this.questionBlock = create("section", {"classList": "questionBlock", "selectorTitle": "Question", "id" : "question"}, undefined,
-            create("div", {"classList": "questionBlock__titleContainer" }, undefined, 
-                create("div", {"classList": "container container--close"},undefined,
-                    create("h2", {"classList": "questionBlock__title"}, undefined ,text(this.question)))),    
+        this.questionBlock = create("section", {"classList": "questionBlock", "selectorTitle": "Question", "id" : "question"},
+            create("div", {"classList": "questionBlock__titleContainer" }, 
+                create("div", {"classList": "container container--close"}, 
+                    create("h2", {"classList": "questionBlock__title"}, text(this.question)))),    
             this.questionOptionsBlock   
         );
 
 
         //Create Both TRUE and FALSE answerBlock HTMLElements
-        this.defAnswerBlockHeaderTrue = create("h4", {"classList": "checkBlock__Header--green checkBlock__explanation"},undefined,text("True! "));
-        this.defAnswerBlockHeaderFalse = create("h4", {"classList": "checkBlock__Header--red checkBlock__explanation"},undefined,text("False! "));
+
+        this.defAnswerBlockHeaderTrue = create("h4", {"classList": "checkBlock__true checkBlock__explanation"}, text("True! "));
+        this.defAnswerBlockHeaderFalse = create("h4", {"classList": "checkBlock__false checkBlock__explanation"}, text("False! "));
 
         //Create definition Answer Block for when check button is preprocessed
         //  -defAnswerBlock 
@@ -71,10 +72,10 @@ class Question {
         //          -defAnswerBlockHide (with EventListener when clicked for function hide())
         //          -defAnswerBlockLink
         //              -Linktext
-        this.defAnswerBlock = create("div", null, undefined,
+        this.defAnswerBlock = create("div", null,
             this.defAnswerBlockHeaderTrue, 
             this.defAnswerBlockHeaderFalse,
-            create("p", {"classList" : "checkBlock__explanation"}, undefined, text(this.explanation)), 
+            create("p", {"classList" : "checkBlock__explanation"}, text(this.explanation)), 
                 createEventObj("click", this.hide.bind(this), false, 
                     create("input", {"classList": "checkBlock__button", "type": "button", "value": "hide"})),
                 //create("a", {"href" : link, "classList": "checkBlock__button"},undefined, text("Link")),

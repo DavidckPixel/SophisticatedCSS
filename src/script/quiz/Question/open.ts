@@ -19,8 +19,8 @@ class Open extends Question {
     render() {
 
         /** HTML Block for the answer*/
-        const answerBlock = (create("div", {"classList" : "answerBlock"}, undefined, 
-            create("div", {"classList": "blackBlock blackBlock--label one-col"}, undefined, this.typebox)
+        const answerBlock = (create("div", {"classList" : "answerBlock"}, 
+            create("div", {"classList": "blackBlock blackBlock--label one-col"}, this.typebox)
             ) as HTMLElement);
         
         this.questionOptionsBlock.insertBefore(answerBlock, this.checkBlock);

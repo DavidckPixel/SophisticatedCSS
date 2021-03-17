@@ -15,62 +15,43 @@ class Multiplechoice extends Question {
     }
 
     render() {
-        const questionChoices = document.createElement('div');
-        questionChoices.classList.add("answerBlock");
-
-        const firstDuo = document.createElement('div');
-        firstDuo.classList.add("answerBlock__duo");
-        const secondDuo = document.createElement('div');
-        secondDuo.classList.add("answerBlock__duo");
-
+        
+        const questionChoices = create("div", {"classList": "answerBlock"},
+            create("div", {"classList": "answerBlock__duo", "id": "D" + this.questionNumber + "first"}),
+            create("div", {"classList": "answerBlock__duo", "id": "D" + this.questionNumber + "second"})
+        )
+        this.questionOptionsBlock.insertBefore(questionChoices, this.checkBlock);
 
         for (let x = 0; x < this.possibleAnswers.length && x < 4; x++) {
-
-            const thisAnswer = this.possibleAnswers[x];
-            const thisid = x;
-
-            //const newChoice = new MultipleChoiceChoice(thisAnswer, x, this);
-            const questionChoiceBlock = document.createElement('div');
-            questionChoiceBlock.classList.add("blackBlock");
-            questionChoiceBlock.classList.add("blackBlock--small");
-            questionChoiceBlock.classList.add("blackBlock--stacking");
-            questionChoiceBlock.classList.add("two-col");
-            const questionChoiceBlockText = document.createElement("p");
-            questionChoiceBlockText.classList.add("answerBlock__Text")
-            const questionChoiceBlockTextFill = document.createTextNode(thisAnswer);
-            questionChoiceBlockText.appendChild(questionChoiceBlockTextFill);
-
-            questionChoiceBlock.appendChild(questionChoiceBlockText);
-
-            const checkbox = document.createElement('div');
-            checkbox.id = "Q" + this.questionNumber + "checkbox" + x;
-            checkbox.classList.add("answerBlock__checkbox");
-            checkbox.classList.add("answerBlock__checkbox--deselected")
-
-            questionChoiceBlock.appendChild(checkbox);
-
-            questionChoiceBlock.addEventListener("click", this.select.bind(this, thisAnswer, thisid), false);
-            //questionChoiceBlock.addEventListener("click", (function(){this.select(thisAnswer).bind(this)}).bind(this), false);
+            let inSet;
             if (x < 2) {
-                firstDuo.appendChild(questionChoiceBlock);
+                let idDuo = "#D" + this.questionNumber + "first";
+                inSet = document.querySelector(idDuo);
             }
             else {
-                secondDuo.appendChild(questionChoiceBlock);
-            }
-            //questionChoices.appendChild(questionChoiceBlock);
-            //this.questionBlock.insertBefore(questionChoiceBlock, this.undefAnswerBlock); 
-
-        }
-        questionChoices.appendChild(firstDuo);
-        questionChoices.appendChild(secondDuo);
-        this.questionOptionsBlock.insertBefore(questionChoices, this.checkBlock);
+                let idDuo = "#D" + this.questionNumber + "second";
+                inSet = document.querySelector(idDuo);
+            }            
+            if(inSet)
+            {                
+                this.buildQuestionChoiceBlock(x, inSet)
+            }            
+        }               
+    }
+    
+    buildQuestionChoiceBlock(x: number, set: Element){
+        const thisAnswer = this.possibleAnswers[x];
+        const questionChoiceBlock = create("div", {"classList": "blackBlock blackBlock--small blackBlock--stacking two-col"},
+            create("p", {"classList": "answerBlock__Text"}, text(thisAnswer)),
+            create("div", {"classList": "answerBlock__checkbox answerBlock__checkbox--deselected", "id":"Q" + this.questionNumber + "checkbox" + x})        
+        )
+        questionChoiceBlock.addEventListener("click", this.select.bind(this, thisAnswer, x), false);
+        set.appendChild(questionChoiceBlock);
     }
 
     select(inp: string, id: number) {
         this.selectedAnswer = inp;
-
         let idselected = "#Q" + this.questionNumber + "checkbox" + this.selectedId;
-
         let checkbox = document.querySelector(idselected)
 
         if (checkbox) {
