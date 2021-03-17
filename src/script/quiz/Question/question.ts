@@ -1,15 +1,26 @@
 class Question {
-
+    /** string that holds the correct answer */
     answer: string;
+    /** string that holds the question */
     question: string;
+    /** string that holds the explenation*/
     explanation: string;
+    /** string that holds the selectedAnswer */
     selectedAnswer?: string;
+
+    /** HTMLElement that contains the entire question*/
     questionBlock: HTMLElement;
+    /** HTMLElement that contains the block that holds the answer field */
     questionOptionsBlock: HTMLElement;
-    undefAnswerBlock: HTMLElement;
+    /** HTMLElement that contains the explenation/ check block */
     checkBlock: HTMLElement;
+    /** HTMLElement block with the check button */
+    undefAnswerBlock: HTMLElement;
+    /** HTMLElement block with the explenation */
     defAnswerBlock: HTMLElement;
+    /** HTMLElement block that contains True */
     defAnswerBlockHeaderTrue: HTMLElement;
+    /** HTMLElement block that contains False */
     defAnswerBlockHeaderFalse: HTMLElement;
 
     constructor(answer: string, question: string, explanation: string, link?: string) {
@@ -21,133 +32,82 @@ class Question {
         this.explanation = explanation;
         let selectedAnswer = undefined;
 
-        //Create the element (acticle) that contains all of the parts of the questionBlock
-        //Also create the section that holds the title
-
-        this.questionBlock = document.createElement("section");
-        this.questionBlock.classList.add("questionBlock");
-        this.questionBlock.id = "question";
-        this.questionBlock.setAttribute("selectorTitle", "Question")
-
-        const questionTitleBlock = document.createElement("div");
-        questionTitleBlock.classList.add("questionBlock__titleContainer");
-
-        const questionTextBlock = document.createElement("div");
-        questionTextBlock.classList.add("container");
-        questionTextBlock.classList.add("container--close");
-
-        const questionHeader = document.createElement('h2');
-        questionHeader.classList.add("questionBlock__title")
-
-        const questionText = document.createTextNode(this.question);
-        questionHeader.appendChild(questionText);
-
-        questionTextBlock.appendChild(questionHeader);
-        questionTitleBlock.appendChild(questionTextBlock);
-
-        this.questionBlock.appendChild(questionTitleBlock);
-
-        //We create 2 sections and both make them part of the question class, one element the undefAnswerBlock is for
-        //when the user has not yet checked his answer, so it only contains a check button, that when clicked checks the answer. and switched
-        //the element to the defAnswerBlock
-        this.questionOptionsBlock = document.createElement("div");
-        this.questionOptionsBlock.classList.add("container");
-        this.undefAnswerBlock = document.createElement("div");
-
-        this.undefAnswerBlock.className = "answer";
-        const checkButton = document.createElement("input");
-        checkButton.setAttribute("type", "button");
-        checkButton.setAttribute("value", "Check!");
-        checkButton.classList.add("checkBlock__button");
-        checkButton.classList.add("checkBlock--center");
-
-        this.undefAnswerBlock.appendChild(checkButton);
+        //Create HTMLElement for when answer is still unrevealed, add event listener to it so check() function is called,
+        //Element is of type input
+        this.undefAnswerBlock = createEventObj("click", this.check.bind(this), false,
+            create("input", {"classList": "checkBlock__button checkBlock--center", "type" : "button", "value": "Check!"}
+        )) 
 
 
-        //The DefAnswerBlock contains all the explenation text, it also contains a link and a hide button which switches this block back to the undefAnswerBlock element;
-        this.checkBlock = document.createElement("div")
-        this.checkBlock.classList.add("checkBlock");
-        this.checkBlock.classList.add("blackBlock");
-
-        this.defAnswerBlock = document.createElement("div");
+        //Create HTMLElement for the checkblock, add undefAnswerBlock into it
+        //Add checkBLock into new HTMLElement for questionOptionsBlock
+        this.checkBlock = create("div", {"classList": "checkBlock blackBlock"}, this.undefAnswerBlock);  
+        this.questionOptionsBlock =  create("div", {"classList": "container"}, this.checkBlock);
 
 
-        this.defAnswerBlock.className = "answer";
-        const defAnswerBlockText = document.createElement("p");
-        defAnswerBlockText.classList.add("checkBlock__explanation");
-        const defAnswerBlockTextFill = document.createTextNode(this.explanation);
-        defAnswerBlockText.appendChild(defAnswerBlockTextFill);
-        //defAnswerBlockText.innerHTML = this.explenation;
-
-        const defAnswerBlockHide = document.createElement("input");
-        defAnswerBlockHide.setAttribute("type", "button");
-        defAnswerBlockHide.setAttribute("value", "Hide");
-        defAnswerBlockHide.addEventListener("click", this.hide.bind(this), false);
-
-        const defAnswerBlockLink = document.createElement("a");
-        if (link)
-            defAnswerBlockLink.setAttribute("href", link);
-        const defAnswerBlockLinkfill = document.createTextNode("Link");
-        //defAnswerBlockLink.innerHTML = "Link";
-        defAnswerBlockLink.appendChild(defAnswerBlockLinkfill);
-        this.defAnswerBlockHeaderTrue = document.createElement("h4");
-        this.defAnswerBlockHeaderFalse = document.createElement("h4");
-        const defAnswerBlockHeaderTextTrue = document.createTextNode("True! ");
-        const defAnswerBlockHeaderTextFalse = document.createTextNode("False.. ");
-
-        this.defAnswerBlockHeaderTrue.appendChild(defAnswerBlockHeaderTextTrue);
-        this.defAnswerBlockHeaderTrue.classList.add("checkBlock__explanation");
-        this.defAnswerBlockHeaderFalse.appendChild(defAnswerBlockHeaderTextFalse);
-        this.defAnswerBlockHeaderFalse.classList.add("checkBlock__explanation");
+        //Create HTML Element for Entire question 
+        //  -MainBlock
+        //      -Title Block
+        //          -TitleBlock text
+        //              -Contains question
+        //      -QuestionOptionsBlock
+        this.questionBlock = create("section", {"classList": "questionBlock", "selectorTitle": "Question", "id" : "question"},
+            create("div", {"classList": "questionBlock__titleContainer" },  
+                create("div", {"classList": "container container--close"},
+                    create("h2", {"classList": "questionBlock__title"}, text(this.question)))),    
+            this.questionOptionsBlock   
+        );
 
 
-        this.defAnswerBlockHeaderTrue.style.display = "none";
-        this.defAnswerBlockHeaderFalse.style.display = "none";
+        //Create Both TRUE and FALSE answerBlock HTMLElements
+        this.defAnswerBlockHeaderTrue = create("h4", {"classList": "checkBlock__true checkBlock__explanation"}, text("True! "));
+        this.defAnswerBlockHeaderFalse = create("h4", {"classList": "checkBlock__false checkBlock__explanation"}, text("False! "));
 
-        this.defAnswerBlock.appendChild(this.defAnswerBlockHeaderTrue);
-        this.defAnswerBlock.appendChild(this.defAnswerBlockHeaderFalse);
-        this.defAnswerBlock.appendChild(defAnswerBlockText);
-        this.defAnswerBlock.appendChild(defAnswerBlockHide);
-        this.defAnswerBlock.appendChild(defAnswerBlockLink);
+        //Create definition Answer Block for when check button is preprocessed
+        //  -defAnswerBlock 
+        //      -defAnswerBlockHeaderTrue
+        //      -defAnswerBlockHeaderFalse
+        //      -defAnswerBlockText
+        //          -defAnswerBlockHide (with EventListener when clicked for function hide())
+        //          -defAnswerBlockLink
+        //              -Linktext
+        this.defAnswerBlock = create("div", null, 
+            this.defAnswerBlockHeaderTrue, 
+            this.defAnswerBlockHeaderFalse,
+            create("p", {"classList" : "checkBlock__explanation"}, text(this.explanation)), 
+                createEventObj("click", this.hide.bind(this), false, 
+                    create("input", {"type": "button", "value": "hide"})),
+                create("a", {"href" : link},text("Link")),
+        );
 
-        //We begin by appending the undefAnswerBlock to the questionBlock first.
-        this.checkBlock.appendChild(this.undefAnswerBlock);
-        this.questionOptionsBlock.appendChild(this.checkBlock);
-        this.questionBlock.appendChild(this.questionOptionsBlock);
-        //this.questionBlock.appendChild(this.defAnswerBlock);
-
-        //this.defAnswerBlock.style.display ='none';
-
+        /** Entire Assesment page HTML Element */
         const totalAssessment = document.querySelector("#totalAssesment");
+        this.setAnswerBlock("none", "none");
 
         totalAssessment?.appendChild(this.questionBlock);
-        checkButton.addEventListener("click", this.check.bind(this), false);
     }
 
+    /** Function thats checks the answer and shows the explanation, called for Check Button */
     check() {
-        this.defAnswerBlock.style.display = "block";
+
+        //Replace the undefAnswerBlock with the defAnswerBlock (show the explenation)
         this.checkBlock.replaceChild(this.defAnswerBlock, this.undefAnswerBlock); //gives TypeError
 
-        if (this.selectedAnswer == this.answer) {
-            // console.log("right answer");
-            this.defAnswerBlockHeaderTrue.style.display = "block";
-            this.defAnswerBlockHeaderFalse.style.display = "none";
-
-        }
-        else {
-            // console.log(this.answer);
-            // console.log(this.selectedAnswer);
-            // console.log("wrong answer!")
-            this.defAnswerBlockHeaderFalse.style.display = "block";
-            this.defAnswerBlockHeaderTrue.style.display = "none";
-        }
-        //For now this only switches the children
-        //The code here should also check if the answer was correct, and if that is the case, add an additional message to the answer stating: correct or incorrect
-
-        //return (this.answer == input);
+        //If the answer is correct, true becomes visable, otherwise, false becomes visable
+        this.selectedAnswer == this.answer ? this.setAnswerBlock("block", "none") : this.setAnswerBlock("none", "block");
     }
 
+    /** Function that hides the explanation */
     hide() {
         this.checkBlock.replaceChild(this.undefAnswerBlock, this.defAnswerBlock);
+    }
+
+    /** Set the display property for True/False HTML Element 
+     * @param one display type for True Elements
+     * @param two display type for False Elements
+    */
+    setAnswerBlock(one : string, two : string){
+        this.defAnswerBlockHeaderTrue.style.display = one;
+        this.defAnswerBlockHeaderFalse.style.display = two;
     }
 }
