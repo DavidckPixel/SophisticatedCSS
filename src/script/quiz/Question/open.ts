@@ -1,9 +1,12 @@
 /// <reference path="./question.ts" />
 
 class Open extends Question {
+    typebox: HTMLInputElement;
     constructor(correctanswer: string, question: string, explanation: string) {
         super(correctanswer, question, explanation);
+        this.typebox = document.createElement("input");
         this.render();
+        
     }
 
     render() {
@@ -17,14 +20,19 @@ class Open extends Question {
 
         answerBlock.appendChild(questionAnswerSpace);
 
-        const typebox = document.createElement("input");
-        typebox.classList.add("answerBlock__textInput")
-        typebox.placeholder = "answer";
+        
+        this.typebox.classList.add("answerBlock__textInput")
+        this.typebox.placeholder = "answer";
+        this.typebox.addEventListener('input', this.changeAnswer.bind(this))
 
-        questionAnswerSpace.appendChild(typebox);
+        questionAnswerSpace.appendChild(this.typebox);
         //this.questionBlock.insertBefore(typebox, this.undefAnswerBlock);
         //this.questionBlock.appendChild(typebox);
         this.questionOptionsBlock.insertBefore(answerBlock, this.checkBlock);
 
+    }
+
+    changeAnswer(){        
+        this.selectedAnswer = this.typebox.value;
     }
 }

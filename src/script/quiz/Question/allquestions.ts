@@ -2,23 +2,23 @@ const allQuestions = [
     {
         "questionType": "multiplechoice",
         "title": "Which operator is not included in Sass?",
-        "correctAnswer": "^ operator (exponentiation)",
+        "correctAnswer": "^ operator (exponen\u200btiation)",
         "explanation": "The power operator is not included.",
-        "allAnswers": ["* operator (multiplication)", "+ operator (addition)", "% operator (modulus)", "^ operator (exponentiation)"]
+        "allAnswers": ["* operator (multipli\u200bcation)", "+ operator (addition)", "% operator (modulus)", "^ operator (exponen\u200btiation)"]
     },
     {
         "questionType": "multiplechoice",
         "title": "What is not a function of a pre-processor?",
         "correctAnswer": "Make your site load faster",
         "explanation": "all code written with pre processor will be converted into CSS files and could have been written without pre Processors",
-        "allAnswers": ["Make your code more readable", "Make your site load faster", "You have to write less code", "Add more functionality"]
+        "allAnswers": ["Make your code more readable", "Make your site load faster", "You have to write less code", "Add more function\u200bality"]
     },
     {
         "questionType": "multiplechoice",
         "title": "What is a possible risk of using a preprocessor?",
-        "correctAnswer": "Dependency on one preprocessor language",
+        "correctAnswer": "Depen\u200bdency on one pre-processor language",
         "explanation": "By using a preprocessor, your stylesheets will be written in a non-standard language, unsupported by browsers. This means that you're depending on the continued support for your preprocessor language of choice. In practice, these preprocessors are open source and the lifetime of a project usually is smaller than the lifetime of a preprocessor, but it's a factor to consider.",
-        "allAnswers": ["Less functionality then normal CSS", "Code get’s overcomplicated", "Dependency on one preprocessor language", "Not all browsers will display your site correctly"]
+        "allAnswers": ["Less function\u200bality then normal CSS", "Code get’s over\u200bcompli\u200bcated", "Depen\u200bdency on one pre-processor language", "Not all browsers will display your site correctly"]
     },
     {
         "questionType": "open",

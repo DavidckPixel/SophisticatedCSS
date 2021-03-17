@@ -4,6 +4,10 @@
 /// <reference path="./style/ColorStyleRenderer.ts" />
 /// <reference path="./quiz/Question/buildQuiz.ts" />
 
+if (document.querySelector('#quiz')) {
+    buildQuiz();
+}
+
 // Get the menu nodes
 let footerMenus = document.querySelectorAll("footer .footer__contributor");
 if (footerMenus.length !== 3) {
@@ -37,6 +41,3 @@ if (footerMenus.length !== 3) {
     colorStyle.render(colorStyleNode);
 }
 
-if (document.querySelector('#quiz')) {
-    buildQuiz();
-}

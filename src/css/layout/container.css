@@ -44,6 +44,15 @@ body{
     padding-right: 1%
 }
 
+.container--invert .container__title{
+    color: black;
+    text-shadow:
+		-1px -1px 0 white,
+		1px -1px 0 white,
+		-1px 1px 0 white,
+		1px 1px 0 white;
+}
+
 .container--small .container__title{
     font-size: 20px;
 }
@@ -51,22 +60,6 @@ body{
 .container--large .container__title{
     font-size: 30px;
 }
-
-/* .white .container {
-    margin: 30px auto;
-    padding: 15px 0;
-    
-} */
-
-/* .container, .white {
-    margin-bottom:30px;
-} */
-
-/* @media (min-width: 768px) {
-    .container, .white {
-        margin-bottom: 4rem;        
-    }
-} */
 
 @media (max-width: 600px) {
     .container, .white {

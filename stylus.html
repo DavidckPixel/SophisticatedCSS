@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="src/css/sophisticated.css" />
 </head>
 <body>
-    <header class="nav">
+    <header class="nav" id="nav" selectorTitle="Navigation">
         <div class="container container--centerVertical">
             <div class="nav__home">
                 <a href="index.html">SophisticatedCSS</a>
@@ -26,8 +26,8 @@
             </nav>
         </div>
     </header>
-    <article>
-        <section class="intro container">
+    <article id="stylusTotal" selectorTitle="Stylus">
+        <section class="intro container" id="introduction" selectorTitle="Introduction">
             <img class="intro__img"
                 src="src/image/stylusfinal.png"
                 alt="An image of the Logo of Stylus">
@@ -47,7 +47,7 @@
             </div>
         </section>
 
-        <section class="userReview">
+        <section class="userReview" id="devquote" selectorTitle="Quote">
             <blockquote class="container container--centerVertical">
                 <p class="userReview__quote">
                     Stylus is an innovative stylesheet language that compiles down to CSS. Inspired by SASS, Stylus is built with node.js and capable of running in the browser.”
@@ -55,9 +55,9 @@
                 <cite class="userReview__sender">Stylus Developers</cite>
             </blockquote>
         </section>
-        <section class="featureArticle container">
+        <section class="featureArticle container" id="features" selectorTitle="Features">
             <h2 class="featureArticle__title">Features</h2>
-            <section class="featureBlock">
+            <section class="featureBlock" id="feature1" selectorTitle="Flexible syntax">
                 <div class="threecol threecol--minheight">
                     <h3 class="featureBlock__name">Flexible syntax</h3>
                     <p class="featureBlock__explanation">Semi-colons, colons, and braces are optional</p>
@@ -89,7 +89,7 @@
                     </div>
                 </div>
             </section>
-            <section class="featureBlock">
+            <section class="featureBlock" id="feature2" selectorTitle="Nesting">
                 <div class="threecol threecol--minheight">
                     <h3 class="featureBlock__name">Nesting</h3>
                     <p class="featureBlock__explanation">When writing HTML you've probably noticed that it has a clear nested and visual hierarchy. CSS, on the other hand, doesn't.<br>
@@ -119,7 +119,7 @@
                     </div>
                 </div>
             </section>
-            <section class="featureBlock">
+            <section class="featureBlock" id="featur3" selectorTitle="Mixins">
                 <div class="threecol threecol--minheight">
                     <h3 class="featureBlock__name">Mixins</h3>
                     <p class="featureBlock__explanation">Stylus mixins allow you to define reusable functionality by defining in-language functions which can be called from within blocks</p>
@@ -148,7 +148,7 @@
                     </div>
                 </div>
             </section>
-            <section class="featureBlock">
+            <section class="featureBlock" id="feature4" selectorTitle="Variables">
                 <div class="threecol threecol--minheight">
                     <h3 class="featureBlock__name">Variables</h3>
                     <p class="featureBlock__explanation">Stylus variables behave as you would expect in any other language, and may optionally be prefixed by the “$” character:</p>
@@ -178,7 +178,7 @@
                     </div>
                 </div>
             </section>
-            <section class="featureBlock">
+            <section class="featureBlock" id="feature5" selectorTitle="Functions">
                 <div class="threecol threecol--minheight">
                     <h3 class="featureBlock__name">Functions</h3>
                     <p class="featureBlock__explanation">"Stylus functions may be defined in the same manner as mixins, however their usage differs as they return values.</p>
@@ -203,7 +203,7 @@
                 </div>
             </section>
         </section>
-        <section class="userReview">
+        <section class="userReview" id="quote1" selectorTitle="Quote">
             <blockquote class="container container--centerVertical">
                 <div class="userReview__text">
                     <p class="userReview__quote">“Everything in Stylus is expressive and to make it so, Stylus uses a plethora of operators, keywords, and sugary syntax to make you feel right at home.” 
@@ -235,7 +235,7 @@
                 </tbody>
             </table>
         </section>
-        <nav class="container">
+        <nav class="container" id="alternatives" selectorTitle="Alternatives">
             <h2 class="container__title">Alternatives</h2>
             <div class="threecol threecol--hover">
             <a href="sass.html">
@@ -268,7 +268,7 @@
             </a>
             </div>
         </nav>
-        <section class="container" id="link">
+        <section class="container" id="link" selectorTitle="Try preprocessor">
             <div class="two-col two-col--leftOutline">
                 <h2 class="two-col__title">Try this preprocessor</h2>
                 <p class="two-col__text">Stylus can be used from the command line, or by using third party applications. You can download Stylus from the Github page or by running <i> npm install stylus -g</i> in the command line. Once you have it installed, you use it through the following steps:</p>
@@ -293,8 +293,8 @@
             </div>
         </section>
     </article>
-    <footer class="footer">
-        <div class="container container--centerVertical">        
+    <footer class="footer" id="footer" selectorTitle="Footer">
+        <div class="container container--centerVertical">
             <section class="footer__text">
                 <h2 class="footer__name">SophisticatedCSS</h2>
                 <p class="footer__info">SophisticatedCSS is the first assignment for the course webtechnology at the
@@ -306,8 +306,19 @@
                 </p>
             </section>
             <img class="footer__img"
-            src="src/image/uulogo.png"
-            alt="UU Logo">
+            src="src/image/uulogo.png" alt="UU Logo">
+
+            <section class="footer__contributor">
+            </section>
+            <section class="footer__contributor">
+            </section>
+            <section class="footer__contributor">
+            </section>
+        </div>
+    </footer>
+
+    <section class="footer" id="attribute" selectorTitle="Attribute">
+        <div class="container container--centerVertical">
             <section class="contributor">
                 <h4 class="contributor__name">Laura Holtus</h4>
                 <p class="contributor__number">1810057</p>
@@ -321,7 +332,7 @@
                 <p class="contributor__number">5960134</p>
             </section>
         </div>
-    </footer>
+    </section>
 
     <script src="dist/index.js"></script>
 </body>

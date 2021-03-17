@@ -26,6 +26,14 @@
     color: white;
 }
 
+.intro--invert .intro__text{
+    color:black;
+    text-shadow:
+		-1px -1px 0 white,
+		1px -1px 0 white,
+		-1px 1px 0 white,
+		1px 1px 0 white;
+}
 
 .intro__header{
     margin:0;
@@ -86,6 +94,10 @@
     text-decoration-line: none;
 }
 
+.intro--invert .intro__button{
+    color:black;    
+}
+
 .intro--small .intro__button{
     font-size: 16px;
 }
@@ -110,6 +122,15 @@
     overflow: auto;
     float: right;
     color: white;
+}
+
+.introHome--invert .introHome__text{
+    color: black;
+    text-shadow:
+		-1px -1px 0 white,
+		1px -1px 0 white,
+		-1px 1px 0 white,
+		1px 1px 0 white;
 }
 
 .introHome__header{

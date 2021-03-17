@@ -16,6 +16,15 @@
     text-decoration-line: none;
 }
 
+.one-col--invert .one-col__text{
+    color: black;
+    text-shadow:
+		-1px -1px 0 white,
+		1px -1px 0 white,
+		-1px 1px 0 white,
+		1px 1px 0 white;
+}
+
 .one-col--small .one-col__text{
     font-size: 16px;
 }

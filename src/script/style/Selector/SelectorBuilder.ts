@@ -47,11 +47,10 @@ class SelectorBuilder
                 throw new Error(`Expected element to be an HTMLElement, was ${element && element.constructor && element.constructor.name || element}`);
 
             // Detect egligable elements and add them to the elements cache
-            let id = element.getAttribute("id");
+            let title = element.getAttribute("selectorTitle")
             let childDepth = depth;
-            if (id) {
-                childDepth++;
-                let title = element.getAttribute("selectorTitle") ?? this.getTitle(element) ?? id;
+            if (title) {
+                childDepth++;                
                 this.elements.push([element, title, depth]);
             }
 

@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <header class="nav">
+    <header class="nav" id="nav" selectorTitle="Navigation">
         <div class="container container--centerVertical">
             <div class="nav__home">
                 <a href="index.html">SophisticatedCSS</a>
@@ -28,8 +28,8 @@
             </nav>
         </div>
     </header>
-    <article>
-        <section class="intro container">
+    <article id="postCssTotal" selectorTitle="PostCSS">
+        <section class="intro container" id="introduction" selectorTitle="Introduction">
             <img class="intro__img"
             src="src/image/postcssfinal.png" 
             alt="An image of the Logo of PostCSS">
@@ -56,7 +56,7 @@
             </div>
         </section>
 
-        <section class="userReview">
+        <section class="userReview" id="devquote" selectorTitle="Quote">
             <blockquote class="container container--centerVertical">
                 <p class="userReview__quote">
                     “PostCSS is a tool for transforming styles with JS plugins. These plugins can lint your CSS,
@@ -66,9 +66,9 @@
                 <cite class="userReview__sender">PostCSS Developers</cite>
             </blockquote>
         </section>
-        <section class="featureArticle container">
+        <section class="featureArticle container" id="features" selectorTitle="Features">
             <h2 class="featureArticle__title">Features</h2>
-            <section class="featureBlock">
+            <section class="featureBlock" id="feature1" selectorTitle="Increased readability">
                 <div class="threecol threecol--minheight">
                     <h3 class="featureBlock__name">Increase code readability</h3>
                     <p class="featureBlock__explanation">Automatically add vendor prefixes using the autoprefixer plugin.</p>
@@ -92,7 +92,7 @@
                     </p>
                 </div>
             </section>
-            <section class="featureBlock">
+            <section class="featureBlock" id="feature2" selectorTitle="Ultramodern CSS">
                 <div class="threecol threecol--minheight">
                     <h3 class="featureBlock__name">Use tomorrow’s CSS today!</h3>
                     <p class="featureBlock__explanation">Use modern CSS features that may not be supported yet, the PostCSS Preset Env
@@ -115,7 +115,7 @@
                     </p>
                 </div>
             </section>
-            <section class="featureBlock">
+            <section class="featureBlock" id="feature3" selectorTitle="No global">
                 <div class="threecol threecol--minheight">
                     <h3 class="featureBlock__name">The end of global CSS</h3>
                     <p class="featureBlock__explanation">Don't worry about naming your CSS classes, the CSS Modules plugin allows you to
@@ -139,7 +139,7 @@
                 </div>
             </section>
         </section>
-        <section class="userReview">
+        <section class="userReview" id="quote1" selectorTitle="Quote">
             <blockquote class="container container--centerVertical">
                 <div class="userReview__text">
                     <p class="userReview__quote">“I’m not compelled by PostCSS because I don’t love having to cobble
@@ -191,7 +191,7 @@
                 </tbody>
             </table>
         </section>
-        <nav class="container">
+        <nav class="container" id="alternatives" selectorTitle="Alternatives">
             <h2 class="container__title">Alternatives</h2>
             <div class="threecol threecol--hover">
             <a href="sass.html">
@@ -221,7 +221,7 @@
             </a>
             </div>
         </nav>
-        <section class="container" id="link">
+        <section class="container" id="link" selectorTitle="Try preprocessor">
             <div class="two-col two-col--leftOutline">
                 <h2 class="two-col__title">Try this preprocessor</h2>
                 <p class="two-col__text">To start using PostCSS, choose a build tool that has an extension for PostCSS.
@@ -251,7 +251,7 @@
             </div>
         </section>
     </article>
-    <footer class="footer">
+    <footer class="footer" id="footer" selectorTitle="Footer">
         <div class="container container--centerVertical">
             <section class="footer__text">
                 <h2 class="footer__name">SophisticatedCSS</h2>
@@ -265,6 +265,18 @@
             </section>
             <img class="footer__img"
             src="src/image/uulogo.png" alt="UU Logo">
+
+            <section class="footer__contributor">
+            </section>
+            <section class="footer__contributor">
+            </section>
+            <section class="footer__contributor">
+            </section>
+        </div>
+    </footer>
+
+    <section class="footer" id="attribute" selectorTitle="Attribute">
+        <div class="container container--centerVertical">
             <section class="contributor">
                 <h4 class="contributor__name">Laura Holtus</h4>
                 <p class="contributor__number">1810057</p>
@@ -278,7 +290,7 @@
                 <p class="contributor__number">5960134</p>
             </section>
         </div>
-    </footer>
+    </section>
 
     <script src="dist/index.js"></script>
 </body>

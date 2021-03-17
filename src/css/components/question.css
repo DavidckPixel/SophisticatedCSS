@@ -16,6 +16,14 @@
     float:left;
 }
 
+.questionBlock--invert .questionBlock__titleContainer{
+    background-color: black;
+}
+
+.questionBlock--invert .questionBlock__title{
+    color:white;
+}
+
 .questionBlock--small .questionBlock__title{
     font-size: 16px;
 }
@@ -34,15 +42,19 @@
 
 .checkBlock--center{
     text-align:center;
-    margin-left: 33%;
-    margin-top: 140px;
-    margin-bottom: 140px;
+    margin-left: calc((100% - 80px)/2);
+    margin-top: 175px;
+    margin-bottom: 175px;
 }
 
 .checkBlock__explanation{
     font-size: 16px;
     color: white;
     font-family: 'Quicksand', sans-serif;
+}
+
+.checkBlock--invert .checkBlock__explanation{
+    color: black;
 }
 
 .checkBlock--small .checkBlock__explanation{
@@ -55,10 +67,16 @@
 
 .checkBlock__button{
     width: 30%;
+    min-width:80px;
     background-color: white;
     color:black;
     font-size: 20px;
     font-family: 'Quicksand', sans-serif;
+}
+
+.checkBlock--invert .checkBlock__button{
+    background-color: black;
+    color:white;
 }
 
 .checkBlock--small .checkBlock__button{
@@ -76,6 +94,9 @@
     float:left;
 }
 
+.answerBlock--invert{
+    color: black;
+}
 
 .answerBlock__duo{
     width: 100%;
@@ -101,8 +122,8 @@
     float:left;
     padding: 5px;
     margin-left:10px;
-    margin-top:90px;
-    margin-bottom: 90px;
+    margin-top:118px;
+    margin-bottom: 118px;
     font-size: 20px;
     font-family: 'Fira Code', monospace;
 }
@@ -136,15 +157,15 @@
         min-height:0px;
         margin: 5px;
         height:auto;
-        width: 100%;
+        width: calc(100% - 10px);
         
     }
 
     .checkBlock--center{
         text-align:center;
         margin-left: 33%;
-        margin-top: 140px;
-        margin-bottom: 140px;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 
     .answerBlock{
@@ -154,5 +175,7 @@
     .answerBlock__textInput{
         width: calc(100% - 10px);
         margin-left: 5px;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 }
