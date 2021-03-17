@@ -146,7 +146,6 @@
 
 .answerBlock__checkbox--selected{
     background-image: url("../../image/crossmark.png");
-    background-repeat: right top;
     background-size:30px;
 }
 
@@ -154,11 +153,11 @@
     background-color: white;
 }
 
-.checkBlock__Header--green{
+.checkBlock__Header--true{
     color:green;
 }
 
-.checkBlock__Header--red{
+.checkBlock__Header--false{
     color:red;
 }
 

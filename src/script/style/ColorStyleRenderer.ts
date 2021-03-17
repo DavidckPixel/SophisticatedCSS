@@ -16,8 +16,8 @@ class ColorStyleRenderer
      * @param style The text color that's being set. 
      */
     setStyle(style: string) {
-        const currentElement = this.selector.current;
-        if (currentElement) {
+        if (this.selector.current) {
+            const [_, currentElement] = this.selector.current;
             currentElement.style.color = style;
         }
 
@@ -30,22 +30,40 @@ class ColorStyleRenderer
      * @param rootElement The HTML element that the menu should be added to.
      */
     render(rootElement: Element) {
-        const selectors = [
-            ["Black", "black"],
-            ["White", "white"],
+        const selectors: Array<[string, string|null]> = [
+            ["Default colors", null],
+            ["Inverted colors", "--invert"],
         ]
 
-        
+
         rootElement.classList.add("styleModifierElement--small");
+
+        const allModifs = selectors.map(([_, x]) => x).filter((x): x is string => x !== null);
+
         // Iterate over all elements in the menu
-        for (const [title, fontSize] of selectors) {
+        for (const [title, modifier] of selectors) {
             // Build and append the node
             let node = document.createElement('p');
-            node.style.fontSize = fontSize;
             node.appendChild(document.createTextNode(title));
             node.classList.add("styleModifierElement__styleSelector")
             node.addEventListener("click", (event: MouseEvent) => {
-                this.setStyle(fontSize);
+                // If a page element is selected
+                if (this.selector.current) {
+                    const [_, el] = this.selector.current;
+
+                    // Remove all current modifier classes detected
+                    const removal = [...el.classList].filter(cls => allModifs.some(modif => cls.endsWith(modif)));
+                    for (const cls of removal) {
+                        el.classList.remove(cls);
+                    }
+
+                    // Add modifier copy to all classes
+                    if (modifier) {
+                        for (const cls of [...el.classList].filter(x => !x.includes("--"))) {
+                            el.classList.add(cls + modifier);
+                        }
+                    }
+                }
             });
             rootElement.appendChild(node);
         }

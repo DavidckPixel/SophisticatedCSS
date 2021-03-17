@@ -1,3 +1,5 @@
+/// <reference path="../../nodes.ts" />
+
 class Question {
     /** string that holds the correct answer */
     answer: string;
@@ -61,8 +63,8 @@ class Question {
 
         //Create Both TRUE and FALSE answerBlock HTMLElements
 
-        this.defAnswerBlockHeaderTrue = create("h4", {"classList": "checkBlock__true checkBlock__explanation"}, text("True! "));
-        this.defAnswerBlockHeaderFalse = create("h4", {"classList": "checkBlock__false checkBlock__explanation"}, text("False! "));
+        this.defAnswerBlockHeaderTrue = create("h4", {"classList": "checkBlock__Header--true checkBlock__explanation"}, text("True! "));
+        this.defAnswerBlockHeaderFalse = create("h4", {"classList": "checkBlock__Header--false checkBlock__explanation"}, text("False! "));
 
         //Create definition Answer Block for when check button is preprocessed
         //  -defAnswerBlock 
@@ -92,7 +94,6 @@ class Question {
 
     /** Function thats checks the answer and shows the explanation, called for Check Button */
     check() {
-
         //Replace the undefAnswerBlock with the defAnswerBlock (show the explenation)
         this.checkBlock.replaceChild(this.defAnswerBlock, this.undefAnswerBlock); //gives TypeError
 
@@ -102,7 +103,9 @@ class Question {
 
     /** Function that hides the explanation */
     hide() {
-        this.checkBlock.replaceChild(this.undefAnswerBlock, this.defAnswerBlock);
+        if(this.checkBlock.children[0] == this.defAnswerBlock){
+            this.checkBlock.replaceChild(this.undefAnswerBlock, this.defAnswerBlock);
+        }
     }
 
     /** Set the display property for True/False HTML Element 
