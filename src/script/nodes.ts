@@ -5,7 +5,7 @@
  * @param props An object containing the properties for the element.
  * @param children The child nodes for the element.
  */
-function create(type: string, props?: any, ...children: Node[]): HTMLElement | HTMLInputElement{
+function create(type: string, props?: any, ...children: Node[]): HTMLElement | HTMLInputElement {
     // Create element
     let el = document.createElement(type);
 
@@ -39,7 +39,7 @@ function text(content: string): Text {
  * @param el HTMLElement towhich eventlistener will be added
  * @returns HTMLElement containing eventlistener
  */
-function createEventObj(eventType : string, func : any, bool : boolean, el : HTMLElement) : HTMLElement | HTMLInputElement {
-    el.addEventListener(eventType,func, bool);
+function createEventObj(eventType: string, func: any, bool: boolean, el: HTMLElement): HTMLElement | HTMLInputElement {
+    el.addEventListener(eventType, func, bool);
     return el;
 }

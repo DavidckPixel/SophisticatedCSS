@@ -1,8 +1,7 @@
 /**
  * Base class for style editing menus
  */
-class BaseStyleRenderer
-{
+class BaseStyleRenderer {
     /** The SelectorRenderer associated */
     selector: SelectorRenderer;
 
@@ -10,7 +9,7 @@ class BaseStyleRenderer
         this.selector = selector;
     }
 
-    updateModifier(el: Element, modifier: string|null, allModifs: string[]) {
+    updateModifier(el: Element, modifier: string | null, allModifs: string[]) {
         // Find all modifier classes that are applied by this menu and remove them
         const removal = [...el.classList].filter(cls => allModifs.some(modif => cls.endsWith(modif)));
         for (const cls of removal) {

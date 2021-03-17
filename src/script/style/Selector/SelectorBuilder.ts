@@ -1,8 +1,7 @@
 /**
  * Component selector data builder
  */
-class SelectorBuilder
-{
+class SelectorBuilder {
     /** The cache of the data being built, containing the element, title and element depth */
     elements: Array<[HTMLElement, string, number]>;
 
@@ -20,14 +19,14 @@ class SelectorBuilder
         // Iterate over all children
         for (const element of rootElement.children) {
             // Type guard for HTMLElement
-            if (!(element instanceof HTMLElement)) 
+            if (!(element instanceof HTMLElement))
                 throw new Error(`Expected element to be an HTMLElement, was ${element?.constructor?.name ?? element}`);
 
             // Detect egligable elements and add them to the elements cache
             let title = element.getAttribute("selectorTitle")
             let childDepth = depth;
             if (title) {
-                childDepth++;                
+                childDepth++;
                 this.elements.push([element, title, depth]);
             }
 
