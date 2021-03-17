@@ -30,20 +30,38 @@ class TextStyleRenderer
      * @param rootElement The HTML element that the menu should be added to.
      */
     render(rootElement: Element) {
-        const selectors = [
-            ["Large", "25px"],
-            ["Medium", "21px"],
-            ["Small", "16px"],
+        const selectors: Array<[string, string|null, string]> = [
+            ["Large", "--large", "25px"],
+            ["Medium", null, "21px"],
+            ["Small", "--small", "16px"],
         ]
 
+        const allModifs = selectors.map(([_, x]) => x).filter((x): x is string => x !== null);
+
         // Iterate over all elements in the menu
-        for (const [title, fontSize] of selectors) {
+        for (const [title, modifier, fontSize] of selectors) {
             // Build and append the node
             let node = document.createElement('button');
             node.style.fontSize = fontSize;
             node.appendChild(document.createTextNode(title));
             node.addEventListener("click", (event: MouseEvent) => {
-                this.setStyle(fontSize);
+                // If a page element is selected
+                if (this.selector.current) {
+                    const [_, el] = this.selector.current;
+
+                    // Remove all current modifier classes detected
+                    const removal = [...el.classList].filter(cls => allModifs.some(modif => cls.endsWith(modif)));
+                    for (const cls of removal) {
+                        el.classList.remove(cls);
+                    }
+
+                    // Add modifier copy to all classes
+                    if (modifier) {
+                        for (const cls of [...el.classList].filter(x => !x.includes("--"))) {
+                            el.classList.add(cls + modifier);
+                        }
+                    }
+                }
             });
             rootElement.appendChild(node);
         }
