@@ -1,3 +1,4 @@
+/** array containing all questions in text form */
 const allQuestions = [
     {
         "questionType": "multiplechoice",
