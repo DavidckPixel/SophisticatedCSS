@@ -9,6 +9,11 @@
     padding: 15px;
 }
 
+.blackBlock--invert{
+    background-color: white;
+    background-image:linear-gradient(315deg, white 30%, rgba(168, 166, 166, 0.603) 100%);
+}
+
 .blackBlock--small {
     border-radius: 5px;
     padding-top: 4px;
@@ -37,6 +42,10 @@
     font-family: 'Quicksand', sans-serif;
     color: white;
     text-decoration-line: none;
+}
+
+.blackBlock--invert .blackBlock__text{
+    color: black;
 }
 
 .blackBlock--small .blackBlock__text{

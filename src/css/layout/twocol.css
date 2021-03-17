@@ -34,6 +34,15 @@
     color: white;
 }
 
+.two-col--invert .two-col__list{
+    color: black;
+    text-shadow:
+		-1px -1px 0 white,
+		1px -1px 0 white,
+		-1px 1px 0 white,
+		1px 1px 0 white;
+}
+
 .two-col--small .two-col__list{
     font-size: 12px;
 }
@@ -61,6 +70,15 @@ when 2 sections are both defined with the .two-col class, It will but the 2 sect
     color: white;
 }
 
+.two-col--invert .two-col__title{
+    color: black;
+    text-shadow:
+		-1px -1px 0 white,
+		1px -1px 0 white,
+		-1px 1px 0 white,
+		1px 1px 0 white;
+}
+
 .two-col--small .two-col__title{
     font-size: 16px;
 }
@@ -75,6 +93,15 @@ when 2 sections are both defined with the .two-col class, It will but the 2 sect
     font-size: 16px;
     font-family: 'Quicksand', sans-serif;
     color:white;
+}
+
+.two-col--invert .two-col__text{
+    color: black;
+    text-shadow:
+		-1px -1px 0 white,
+		1px -1px 0 white,
+		-1px 1px 0 white,
+		1px 1px 0 white;
 }
 
 .two-col--small .two-col__text{
