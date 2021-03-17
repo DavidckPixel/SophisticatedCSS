@@ -35,7 +35,7 @@ class TextStyleRenderer
             ["Medium", null, "21px"],
             ["Small", "--small", "16px"],
         ]
-        rootElement.classList.add("styleModifierElement--small");
+        rootElement.classList.add("styleModifierElement--thin");
 
         const allModifs = selectors.map(([_, x]) => x).filter((x): x is string => x !== null);
 

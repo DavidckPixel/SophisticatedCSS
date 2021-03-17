@@ -125,8 +125,36 @@
     white-space: nowrap;
 }
 
-.styleModifierElement--small{
-    width: 13%
+.styleModifierElement--small .styleModifierElement__selectorText{
+    font-size: 12px;
+}
+
+.styleModifierElement--large .styleModifierElement__selectorText{
+    font-size: 20px;
+}
+
+.styleModifierElement--small .styleModifierElement__styleSelector{
+    font-size: 12px;
+}
+
+.styleModifierElement--large .styleModifierElement__styleSelector{
+    font-size: 20px;
+}
+
+.styleModifierElement--invert{
+    color: white;
+}
+
+.styleModifierElement--invert .styleModifierElement__selectorText{
+    color: white;
+}
+
+.styleModifierElement--invert .styleModifierElement__styleSelector{
+    color: white;
+}
+
+.styleModifierElement--thin{
+    width: 14%
 }
 
 
@@ -169,6 +197,7 @@
         margin-top:0;
     }
 
+
     .styleModifierElement{
         float:none;
         display:block;
@@ -182,7 +211,9 @@
         margin-left: 25%;
     }
 
-    .styleModifierElement--small{
+    
+
+    .styleModifierElement--thin{
         width: 50%;
         height: 100px;
     }
