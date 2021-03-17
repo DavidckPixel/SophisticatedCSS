@@ -50,22 +50,30 @@ class TextStyleRenderer
                 // If a page element is selected
                 if (this.selector.current) {
                     const [_, el] = this.selector.current;
-
-                    // Remove all current modifier classes detected
-                    const removal = [...el.classList].filter(cls => allModifs.some(modif => cls.endsWith(modif)));
-                    for (const cls of removal) {
-                        el.classList.remove(cls);
-                    }
-
-                    // Add modifier copy to all classes
-                    if (modifier) {
-                        for (const cls of [...el.classList].filter(x => !x.includes("--"))) {
-                            el.classList.add(cls + modifier);
-                        }
-                    }
+                    this.updateModifier(el, modifier, allModifs);
                 }
             });
             rootElement.appendChild(node);
+        }
+    }
+    
+    updateModifier(el: Element, modifier: string|null, allModifs: string[]) {
+        // Remove all current modifier classes detected
+        const removal = [...el.classList].filter(cls => allModifs.some(modif => cls.endsWith(modif)));
+        for (const cls of removal) {
+            el.classList.remove(cls);
+        }
+
+        // Add modifier copy to all classes
+        if (modifier) {
+            for (const cls of [...el.classList].filter(x => !x.includes("--"))) {
+                el.classList.add(cls + modifier);
+            }
+        }
+
+        // Run recursively
+        for (const node of el.children) {
+            this.updateModifier(node, modifier, allModifs);
         }
     }
 }
