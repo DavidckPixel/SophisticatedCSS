@@ -32,9 +32,7 @@ class Open extends Question {
 
     }
 
-    changeAnswer(){
-        console.log("input is " + this.typebox.value);
+    changeAnswer(){        
         this.selectedAnswer = this.typebox.value;
-        console.log("changed aswer to " + this.selectedAnswer);
     }
 }
