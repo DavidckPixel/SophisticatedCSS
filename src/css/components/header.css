@@ -69,6 +69,11 @@ we give al the elements 19% of the page, because there are 5 elements, and displ
     color: black;
 }
 
+.nav--invert{
+  background-color: black;
+    color: white;
+}
+
 @media (max-width:600px){
   .nav__home{
     width:100%;
@@ -76,8 +81,7 @@ we give al the elements 19% of the page, because there are 5 elements, and displ
     border-right: none;
   }
 
-  .nav__page{
-    color:#000;
+  .nav__page{    
     width:100%;
     display:block;
     border-left:none;

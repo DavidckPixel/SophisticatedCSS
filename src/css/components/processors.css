@@ -77,6 +77,10 @@
     text-align: center;
 }
 
+.allProcessors--invert .allProcessors__titles{
+    color: black;
+}
+
 .allProcessors--small .allProcessors__titles{
     font-size: 16px;
 }
