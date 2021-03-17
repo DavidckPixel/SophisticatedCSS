@@ -154,11 +154,11 @@
     background-color: white;
 }
 
-.checkBlock__Header--green{
+.checkBlock__Header--true{
     color:green;
 }
 
-.checkBlock__Header--red{
+.checkBlock__Header--false{
     color:red;
 }
 

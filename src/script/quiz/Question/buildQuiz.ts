@@ -39,7 +39,7 @@ function buildIntro() {
         create("img", { "classList": "intro__img", "src": "src/image/testimage.png" }),
         create("div", { "classList": "intro__text"},
             create("h1", { "classList": "intro__header" }, text("Test Your knowledge!")),
-            create("p", { "classList": "intro__paragraph" }, text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.."))
+            create("p", { "classList": "intro__paragraph" }, text("on this page you can test your knowledge about pre processors! all information about the topics in this quiz can be found on the website. After u filled in the answer, it will give a short explanation why the answer was right (or wrong) combined with a link to where this information could be found."))
         )
     )
     

@@ -27,7 +27,8 @@ class Open extends Question {
     }
 
     /** Function changes the selected answer to the value of the typebox */
-    changeAnswer(){        
+    changeAnswer(){   
+        this.hide();     
         this.selectedAnswer = this.typebox.value;
     }
 }
