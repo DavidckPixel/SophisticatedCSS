@@ -77,7 +77,6 @@ class Question {
             create("p", { "classList": "checkBlock__explanation" }, text(this.explanation)),
             createEventObj("click", this.hide.bind(this), false,
                 create("input", { "classList": "checkBlock__button", "type": "button", "value": "hide" })),
-            //create("a", {"href" : link, "classList": "checkBlock__button"},undefined, text("Link")),
             createEventObj("click", function x() { window.location.href = link; }, false,
                 create("input", { "classList": "checkBlock__button", "type": "button", "value": "Link" })),
         );
@@ -110,7 +109,7 @@ class Question {
     /** Set the display property for True/False HTML Element 
      * @param one display type for True Elements
      * @param two display type for False Elements
-    */
+     */
     setAnswerBlock(one: string, two: string) {
         this.defAnswerBlockHeaderTrue.style.display = one;
         this.defAnswerBlockHeaderFalse.style.display = two;

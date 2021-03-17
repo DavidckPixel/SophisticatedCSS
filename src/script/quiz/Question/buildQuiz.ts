@@ -8,6 +8,7 @@ function buildQuiz() {
     /** base HTML element for the body of the assesment page, id = "totalAssesment" */
     const totalAssessment = create("article", { "id": "totalAssesment", "selectorTitle": "Quiz" });
     totalAssessment.setAttribute("selectorTitle", "Quiz");
+    
     /** The body of HTML page*/
     const body = document.querySelector("body");
     const footer = document.querySelector("footer");

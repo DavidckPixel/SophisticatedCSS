@@ -1,7 +1,7 @@
 /// <reference path="./BaseStyleRenderer.ts" />
 
 /**
- * TextStyle selector menu builder
+ * ColorStyle selector menu builder
  */
 class ColorStyleRenderer extends BaseStyleRenderer {
     /**
@@ -14,7 +14,6 @@ class ColorStyleRenderer extends BaseStyleRenderer {
             ["Default colors", null],
             ["Inverted colors", "--invert"],
         ]
-
 
         rootElement.classList.add("styleModifierElement--thin");
 
