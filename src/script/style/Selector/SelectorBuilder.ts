@@ -11,29 +11,6 @@ class SelectorBuilder
     }
 
     /**
-     * Tries to retrieve the first text from the children in a HTML element.
-     * 
-     * @param rootElement 
-     */
-    getTitle(rootNode: Node): string | null {
-        for (const node of rootNode.childNodes) {
-            // If node is text node and the text contains non-whitespace, return its value
-            if (node.nodeType === Node.TEXT_NODE && !!node.nodeValue?.trim()) {
-                return node.nodeValue?.trim();
-            }
-
-            // Recursively call
-            if (node instanceof HTMLElement) {
-                const result = this.getTitle(node);
-                if (result)
-                    return result;
-            }
-        }
-
-        return null;
-    }
-
-    /**
      * Find and append DOM elements to the element cache if they have an id assigned.
      * 
      * @param rootElement The HTML element whose children should be searched.
