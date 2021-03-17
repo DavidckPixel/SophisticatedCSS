@@ -33,35 +33,48 @@ function buildQuiz() {
 
 function buildIntro() {
 
-    /**  section HTML element for the introBlock*/
-    const assesmentIntro = document.createElement("section");
-    assesmentIntro.classList.add("intro");
-    assesmentIntro.classList.add("container");
+    /** section HTML element for the introBlock */
+    const assesmentIntro = create("section", { "classList": "intro container" },
+        create("img", { "classList": "intro__img", "src": "src/image/testimage.png" }),
+        create("div", { "classList": "intro__text" },
+            create("h1", { "classList": "intro__header" }, text("Test Your knowledge!")),
+            create("p", { "classList": "intro__paragraph" }, text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.."))
+        )
+    )
 
-    /** img HTML element for intro image */
-    const assesmentIntroImage = document.createElement("img");
-    assesmentIntroImage.classList.add("intro__img");
-    assesmentIntroImage.src = "src/image/testimage.png";
-
-    /** div HTML element for intro text */
-    const assesmentIntroText = document.createElement("div");
-    assesmentIntroText.classList.add("intro__text");
-
-    textTypeBuilder("h1", "intro_header", "Test Your knowledge!", assesmentIntroText);
-    textTypeBuilder("p", "intro_paragraph", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..", assesmentIntroText);
-
-    assesmentIntro.appendChild(assesmentIntroImage);
-    assesmentIntro.appendChild(assesmentIntroText);
-
-    /** main body HTML element of assesment page*/
+    /** main body HTML element of assesment page */
     const totalAssessment = document.querySelector('#totalAssesment');
     totalAssessment?.appendChild(assesmentIntro);
 }
 
-/** Generic function to return text objects*/
-function textTypeBuilder(tagType : string, classList : string, text : string, parentHTML : HTMLElement){
-    var bodyHTML = document.createElement(tagType);
-    bodyHTML.classList.add(classList);
-    bodyHTML.appendChild(document.createTextNode(text));
-    parentHTML.appendChild(bodyHTML);
+/**
+ * Create a HTML element node with properties and children
+ * 
+ * @param type The HTML element type.
+ * @param props An object containing the properties for the element.
+ * @param children The child nodes for the element.
+ */
+function create(type: string, props?: any, ...children: Node[]): HTMLElement {
+    // Create element
+    let el = document.createElement(type);
+
+    // Assign properties
+    Object.assign(el, props);
+
+    // Add children
+    for (const child of children) {
+        el.appendChild(child);
+    }
+
+    // Finally return new element
+    return el;
+}
+
+/**
+ * Shorthand for document.createTextNode
+ * 
+ * @param content The text content for the node.
+ */
+function text(content: string): Text {
+    return document.createTextNode(content);
 }
