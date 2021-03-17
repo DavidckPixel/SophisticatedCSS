@@ -27,7 +27,7 @@ class Multiplechoice extends Question {
         const questionChoices = create("div", {"classList": "answerBlock"},
             create("div", {"classList": "answerBlock__duo", "id": "D" + this.questionNumber + "first"}),
             create("div", {"classList": "answerBlock__duo", "id": "D" + this.questionNumber + "second"})
-        )
+        );
         this.questionOptionsBlock.insertBefore(questionChoices, this.checkBlock);
 
         //For loop to create the 4 elements for all the possible answers
@@ -49,7 +49,7 @@ class Multiplechoice extends Question {
             //If it is in either, create the HTML element
             if(inSet)
             {                
-                this.buildQuestionChoiceBlock(x, inSet)
+                this.buildQuestionChoiceBlock(x, inSet);
             }            
         }               
     }
@@ -65,7 +65,7 @@ class Multiplechoice extends Question {
             create("div", {"classList": "blackBlock blackBlock--small blackBlock--stacking two-col"},
                 create("p", {"classList": "answerBlock__Text"}, text(thisAnswer)),
             create("div", {"classList": "answerBlock__checkbox answerBlock__checkbox--deselected", "id":"Q" + this.questionNumber + "checkbox" + x})        
-        ))
+        ));
         set.appendChild(questionChoiceBlock);
     }
 
@@ -78,7 +78,7 @@ class Multiplechoice extends Question {
         //set the correct variables, and find the old selected HTML-element for the answer
         this.selectedAnswer = inp;
         let idselected = "#Q" + this.questionNumber + "checkbox" + this.selectedId;
-        let checkbox = document.querySelector(idselected)
+        let checkbox = document.querySelector(idselected);
 
         //deselect the old answer(if any)
         if (checkbox) {

@@ -16,10 +16,10 @@ function buildQuiz() {
     buildIntro();
 
     /** Array that holds all the question objects */
-    var allQuestionObjects: Array<Question>
-    allQuestionObjects = []
+    let allQuestionObjects: Array<Question>;
+    allQuestionObjects = [];
 
-    for (var x = 0; x < allQuestions.length && x < 5; x++) {
+    for (let x = 0; x < allQuestions.length && x < 5; x++) {
         /** Local variable that stores the temporary question information */
         const thisQuestion = allQuestions[x];    
 
@@ -42,9 +42,9 @@ function buildIntro() {
             create("h1", { "classList": "intro__header" }, text("Test Your knowledge!")),
             create("p", { "classList": "intro__paragraph" }, text("on this page you can test your knowledge about pre processors! all information about the topics in this quiz can be found on the website. After u filled in the answer, it will give a short explanation why the answer was right (or wrong) combined with a link to where this information could be found."))
         )
-    )
+    );
 
-    assesmentIntro.setAttribute("selectorTitle", "Introduction")
+    assesmentIntro.setAttribute("selectorTitle", "Introduction");
     
     /** main body HTML element of assesment page */
     const totalAssessment = document.querySelector('#totalAssesment');

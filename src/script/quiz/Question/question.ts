@@ -38,7 +38,7 @@ class Question {
         //Element is of type input
         this.undefAnswerBlock = createEventObj("click", this.check.bind(this), false,
             create("input", {"classList": "checkBlock__button checkBlock--center", "type" : "button", "value": "Check!"}
-        )) 
+        ));
 
 
         //Create HTMLElement for the checkblock, add undefAnswerBlock into it

@@ -40,4 +40,4 @@ const allQuestions = [
         "allAnswers": [],
         "link": "sass.html#link"
     }
-]
+];
