@@ -1,3 +1,5 @@
+/// <reference path="../../nodes.ts" />
+
 class Question {
     /** string that holds the correct answer */
     answer: string;

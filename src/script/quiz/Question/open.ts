@@ -1,3 +1,4 @@
+/// <reference path="../../nodes.ts" />
 /// <reference path="./question.ts" />
 
 class Open extends Question {
