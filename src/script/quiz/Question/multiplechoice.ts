@@ -65,8 +65,6 @@ class Multiplechoice extends Question {
                 create("p", {"classList": "answerBlock__Text"}, text(thisAnswer)),
             create("div", {"classList": "answerBlock__checkbox answerBlock__checkbox--deselected", "id":"Q" + this.questionNumber + "checkbox" + x})        
         ))
-
-        //add the childHTML element to the set
         set.appendChild(questionChoiceBlock);
     }
 

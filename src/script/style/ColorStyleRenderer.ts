@@ -16,8 +16,8 @@ class ColorStyleRenderer
      * @param style The text color that's being set. 
      */
     setStyle(style: string) {
-        const currentElement = this.selector.current;
-        if (currentElement) {
+        if (this.selector.current) {
+            const [_, currentElement] = this.selector.current;
             currentElement.style.color = style;
         }
 
