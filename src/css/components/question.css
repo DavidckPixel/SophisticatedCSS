@@ -137,18 +137,21 @@
 }
 
 .answerBlock__checkbox{
-    width: 12.5%;
+    width: 30px;
+    margin-top:1em;
     height: 30px;
     border-radius: 50%;
     float:right;
 }
 
 .answerBlock__checkbox--selected{
-    background-color:blue;
+    background-image: url("../../image/crossmark.png");
+    background-repeat: right top;
+    background-size:30px;
 }
 
 .answerBlock__checkbox--deselected{
-    background-color: lightslategray;
+    background-color: white;
 }
 
 @media (max-width: 600px) {
