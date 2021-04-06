@@ -64,6 +64,18 @@
     padding: 4px;
 }
 
+.whiteBlock{
+    background-color: white;    
+    border:none;
+    padding:15px;
+}
+
+.whiteBlock--centertext{
+    text-align: center;
+    margin:0px;
+}
+
+
 a:link{
     text-decoration:none;
 }
