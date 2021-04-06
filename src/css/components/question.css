@@ -16,6 +16,13 @@
     float:left;
 }
 
+/* .questionBlock__button{
+    width: 8%;
+    height: width;    
+} */
+
+
+
 .questionBlock--invert .questionBlock__titleContainer{
     background-color: black;
 }
@@ -35,7 +42,8 @@
 .checkBlock{
     width: 33%;
     float:left;
-    min-height: 355px;
+    height: 265px;
+    /* min-height: 355px; */
     margin-top: -125px;
 }
 
@@ -43,8 +51,8 @@
 .checkBlock--center{
     text-align:center;
     margin-left: calc((100% - 80px)/2);
-    margin-top: 175px;
-    margin-bottom: 175px;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .checkBlock__explanation{
