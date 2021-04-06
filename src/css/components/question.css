@@ -33,9 +33,7 @@
 }
 
 .checkBlock{
-    width: 33%;
-    float:left;
-    min-height: 355px;
+    max-height: 300px;
     margin-top: -125px;
 }
 
@@ -159,6 +157,19 @@
 
 .checkBlock__Header--false{
     color:red;
+}
+
+.controlBlock{
+    margin-top:20px;
+}
+
+.controlBlock__Entity{
+    height:50px;
+}
+
+.sideBlock{
+    width:33%;
+    float:left;
 }
 
 @media (max-width: 600px) {

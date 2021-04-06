@@ -1,0 +1,30 @@
+.topicBlock{
+    height:500px;
+    margin-bottom:20px;
+}
+
+.topicBlock__Block{
+    height:500px;
+    max-height:500px;
+    overflow:scroll;
+}
+
+.topicBlock__Topics{
+    height:100px;
+    margin:5px;
+}
+
+.topicBlock__QuizesHeader{
+    height:100px;
+    margin:0px;
+}
+
+.topicBlock__QuizChoices{
+    width:80%;
+    float:center;
+}
+
+.topicBlock__Quiz{
+    height:100px;
+    margin:5px;
+}

@@ -126,6 +126,13 @@ when 2 sections are both defined with the .two-col class, It will but the 2 sect
     padding-right: calc(100% /12 * 2);
 }
 
+.two-col--noleftmargin{
+    margin-left:0;
+}
+.two-col--norightmargin{
+    margin-right:0;
+}
+
 @media (max-width:600px){
     .two-col__image{
         display:none;

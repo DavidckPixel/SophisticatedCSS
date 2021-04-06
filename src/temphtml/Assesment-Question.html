@@ -4,10 +4,9 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="src/css/sophisticated.css" />
+        <link rel="stylesheet" href="../css/sophisticated.css" />
     </head>
-
-    <body id="quiz">
+    <body>
         <header class="nav" id="nav" selectorTitle="Navigation">
             <div class="container container--centerVertical">
                 <div class="nav__home">
@@ -24,6 +23,59 @@
                 </nav>
             </div>
         </header>
+
+        <div class="questionBlock" id="question" selectorTitle="Question">
+            <div class="questionBlock__titleContainer">
+                <div class="container container--close">
+                    <h2>This is a test Question!</h2>
+                </div>
+            </div>
+            <div class="container">
+                <div class="answerBlock">
+                    <div class="answerBlock__duo">
+                        <div class="blackBlock blackBlock--small blackBlock--stacking two-col">
+                            <p>Test Answer Test Answer Test Answer1</p>
+                        </div>
+                        <div class="blackBlock blackBlock--small blackBlock--stacking two-col">
+                            <p>Test Answer Test Answer Test Answer1</p>
+                        </div>
+                    </div>
+                    <div class="answerBlock__duo">
+                        <div class="blackBlock blackBlock--small blackBlock--stacking two-col">
+                            <p>Test Answer Test Answer Test Answer1</p>
+                        </div>
+                        <div class="blackBlock blackBlock--small blackBlock--stacking two-col">
+                            <p>Test Answer Test Answer Test Answer1</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sideBlock">
+                    <div class="checkBlock blackBlock">
+                        <input class="checkBlock__button checkBlock--center" type="button" value="Check!">
+                        </input>
+                    </div>
+                    <div class="controlBlock">
+                        <div class="two-col">
+                            <div class="two-col whiteBlock controlBlock__Entity">
+                                <h3 class="whiteBlock--centertext">Info</h3>
+                            </div>
+                            <div class="two-col whiteBlock controlBlock__Entity">
+                                <h3 class="whiteBlock--centertext">Prev</h3>
+                            </div>
+                        </div>
+                        <div class="two-col">
+                            <div class="two-col whiteBlock controlBlock__Entity">
+                                <h3 class="whiteBlock--centertext">Next</h3>
+                            </div>
+                            <div class="two-col whiteBlock controlBlock__Entity">
+                                <h3 class="whiteBlock--centertext">Done</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <footer class="footer" id="footer" selectorTitle="Footer">
             <div class="container container--centerVertical">
                 <section class="footer__text">
@@ -64,7 +116,5 @@
                 </section>
             </div>
         </section>
-        
-        <script src="dist/index.js"></script>
     </body>
 </html>
