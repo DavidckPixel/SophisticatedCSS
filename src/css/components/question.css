@@ -41,7 +41,7 @@
 
 .checkBlock{
     max-height: 300px;
-    width: 33%;
+    width: 100%;
     float:left;
     height: 265px;
     /* min-height: 355px; */
