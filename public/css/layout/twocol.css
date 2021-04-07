@@ -1,0 +1,156 @@
+/* tryOut class, selects 70% of the screen in the middle */
+
+/* .tryOut{    
+    width:calc(100%);
+    height:auto;
+    margin-bottom:10px;
+} */
+
+/* all links in tryout class must be in blocks and 50% of the blocks width; */
+.two-col__link{
+    display:inline-block;
+    font-family: 'Quicksand', sans-serif;
+    width:calc(100% / 12 * 6 - 5%);
+    font-size: 12px;
+    margin:5px;
+}
+
+.two-col--small .two-col__link{
+    font-size: 8px;
+}
+
+.two-col--large .two-col__link{
+    font-size: 16px;
+}
+
+
+.two-col__list{
+    width:100%;
+    list-style-type: disc;
+    margin-top: 1em;
+    list-style-position: inside;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+}
+
+.two-col--invert .two-col__list{
+    color: black;
+    text-shadow:
+		-1px -1px 0 white,
+		1px -1px 0 white,
+		-1px 1px 0 white,
+		1px 1px 0 white;
+}
+
+.two-col--small .two-col__list{
+    font-size: 12px;
+}
+
+.two-col--large .two-col__list{
+    font-size: 20px;
+}
+
+
+/*part of a two-column, give it the width of 50% of the current block, and make it inline with other blocks 
+when 2 sections are both defined with the .two-col class, It will but the 2 sections right down the middle of eachother*/
+
+.two-col{
+    width: calc(100% / 12 * 6 - 2.4%);
+    margin-left: 1%;
+    margin-right: 1%;
+    float:left;
+}
+
+.two-col__title{
+    margin:0;
+    padding:0;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+    color: white;
+}
+
+.two-col--invert .two-col__title{
+    color: black;
+    text-shadow:
+		-1px -1px 0 white,
+		1px -1px 0 white,
+		-1px 1px 0 white,
+		1px 1px 0 white;
+}
+
+.two-col--small .two-col__title{
+    font-size: 16px;
+}
+
+.two-col--large .two-col__title{
+    font-size: 26px;
+}
+
+.two-col__text{
+    margin:0;
+    padding:0;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    color:white;
+}
+
+.two-col--invert .two-col__text{
+    color: black;
+    text-shadow:
+		-1px -1px 0 white,
+		1px -1px 0 white,
+		-1px 1px 0 white,
+		1px 1px 0 white;
+}
+
+.two-col--small .two-col__text{
+    font-size: 12px;
+}
+
+.two-col--large .two-col__text{
+    font-size: 20px;
+}
+
+.two-col__image {    
+    object-fit:contain;    
+    max-height: 200px;
+    border-radius: 15px;
+}
+
+.two-col--leftOutline {
+    padding-left: calc(100% /12 * 2);
+}
+
+.two-col--rightOutline {
+    padding-right: calc(100% /12 * 2);
+}
+
+.two-col--noleftmargin{
+    margin-left:0;
+}
+.two-col--norightmargin{
+    margin-right:0;
+}
+
+@media (max-width:600px){
+    .two-col__image{
+        display:none;
+    }
+
+    .two-col{
+        width: calc(100% - 2%);
+        margin-top:2em;
+    }
+
+    .two-col--leftOutline{        
+        
+        padding-left:0;
+        width: calc(100% - 2%);
+    }
+
+    .two-col--rightOutline{
+        padding-right:0;
+        width: calc(100% - 2%);
+    }
+}

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Information page for pre processor Stylus">
+    <meta name="keyword" content="CSS, Preprocessor, Stylus, tutorial">
+    <title>Sophisticated CSS </title>
+    <link rel="stylesheet" href="css/sophisticated.css" />
+</head>
+<body>
+    <header class="nav" id="nav" selectorTitle="Navigation">
+        <div class="container container--centerVertical">
+            <div class="nav__home">
+                <a href="index.html">SophisticatedCSS</a>
+            </div>
+            <nav class="nav__page">
+                <ul class="nav__ul">
+                    <li class= "nav__li"><a href="sass.html">Sass</a></li>
+                    <li class= "nav__li"><a href="less.html">Less</a></li>
+                    <li class= "nav__li"><a href="stylus.html">Stylus</a></li>
+                    <li class= "nav__li"><a href="postcss.html">PostCSS</a></li>
+                    <li class= "nav__li"><a href="assesment.html">Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <article id="stylusTotal" selectorTitle="Stylus">
+        <section class="intro container" id="introduction" selectorTitle="Introduction">
+            <img class="intro__img"
+                src="image/stylusfinal.png"
+                alt="An image of the Logo of Stylus">
+            <div class="intro__text">
+                <h1 class="intro__header">Expressive, Dynamic, Robust CSS</h1>
+                <p class="intro__paragraph">Stylus was launched in 2010 by former Node JS developer T.J. Holowaychuck, nearly four years after the release of SASS and one year after the release of LESS. Stylus is built with Node JS and heavily influenced by the logical prowess of SASS and the simplicity of LESS. While Stylus is quite popular with Node JS developers, it never managed to take over a part of the market as large as SASS or Less.</p>
+                <a href="https://stylus-lang.com/">
+                    <div class="intro__link blackBlock blackBlock--thin">
+                        <p class="intro__button">Website</p>
+                    </div>
+                </a>
+                <a href="#link">
+                    <div class="intro__link blackBlock blackBlock--thin">
+                        <p class="intro__button">Try it!</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="userReview" id="devquote" selectorTitle="Quote">
+            <blockquote class="container container--centerVertical">
+                <p class="userReview__quote">
+                    Stylus is an innovative stylesheet language that compiles down to CSS. Inspired by SASS, Stylus is built with node.js and capable of running in the browser.”
+                </p>
+                <cite class="userReview__sender">Stylus Developers</cite>
+            </blockquote>
+        </section>
+        <section class="featureArticle container" id="features" selectorTitle="Features">
+            <h2 class="featureArticle__title">Features</h2>
+            <section class="featureBlock" id="feature1" selectorTitle="Flexible syntax">
+                <div class="threecol threecol--minheight">
+                    <h3 class="featureBlock__name">Flexible syntax</h3>
+                    <p class="featureBlock__explanation">Semi-colons, colons, and braces are optional</p>
+                </div>
+                <div class="featureBlock__exampleBlock">
+                    <div class="threecol threecol--minheight blackBlock">
+                        <p class="featureBlock__examplecode">
+                            <strong>// CSS</strong><br>
+                            body { <br>
+                                &emsp;font: 14px/1.5 Helvetica, arial, sans-serif; <br>
+                        } <br>
+                        body button, <br>
+                        body button.button, <br>
+                        body input[type='button'], <br>
+                        body input[type='submit'] { <br>
+                            &emsp;border-radius: 5px; <br>
+                        }</p>
+                    </div>
+                    <div class="threecol threecol--minheight blackBlock">
+                        <p class="featureBlock__examplecode">
+                            <strong>// Stylus</strong><br>
+                            body<br>
+                            &emsp;font 14px/1.5 Helvetica, arial, sans-serif<br>
+                            &emsp;button<br>
+                            &emsp;button.button<br>
+                            &emsp;input[type='button']<br>
+                            &emsp;input[type='submit']<br>
+                            &emsp;border-radius 5px</p>
+                    </div>
+                </div>
+            </section>
+            <section class="featureBlock" id="feature2" selectorTitle="Nesting">
+                <div class="threecol threecol--minheight">
+                    <h3 class="featureBlock__name">Nesting</h3>
+                    <p class="featureBlock__explanation">When writing HTML you've probably noticed that it has a clear nested and visual hierarchy. CSS, on the other hand, doesn't.<br>
+                        <br>
+                        Stylus will let you nest your CSS selectors in a way that follows the same visual hierarchy of your HTML.</p>
+                </div>
+                <div class="featureBlock__exampleBlock">
+                    <div class="threecol threecol--minheight blackBlock">
+                        <p class="featureBlock__examplecode">
+                            <strong>// CSS</strong><br>
+                            body {<br>
+                                &emsp;font: 14px/1.5 Helvetica, arial, sans-serif;<br>
+                        }<br>
+                        body #logo {<br>
+                            &emsp;border-radius: 5px;<br>
+                        }</p>
+                    </div>
+                    <div class="threecol threecol--minheight blackBlock">
+                        <p class="featureBlock__examplecode">
+                            <strong>// Stylus</strong><br>
+                            body {<br>
+                                &emsp;font: 14px/1.5 Helvetica, arial, sans-serif;<br>
+                                &emsp;#logo {<br>
+                                    &emsp;&emsp;border-radius: 5px;<br>
+                                    &emsp;}<br>
+                        }</p>
+                    </div>
+                </div>
+            </section>
+            <section class="featureBlock" id="featur3" selectorTitle="Mixins">
+                <div class="threecol threecol--minheight">
+                    <h3 class="featureBlock__name">Mixins</h3>
+                    <p class="featureBlock__explanation">Stylus mixins allow you to define reusable functionality by defining in-language functions which can be called from within blocks</p>
+                </div>
+                <div class="featureBlock__exampleBlock">
+                    <div class="threecol threecol--minheight blackBlock">
+                        <p class="featureBlock__examplecode">
+                            <strong>// CSS</strong><br>
+                            button {<br>
+                                &emsp;-webkit-border-radius: 5px;<br>
+                                &emsp;-moz-border-radius: 5px;<br>
+                                &emsp;border-radius: 5px;<br>
+                        }</p>
+                    </div>
+                    <div class="threecol threecol--minheight blackBlock">
+                        <p class="featureBlock__examplecode">
+                            <strong>// Stylus</strong><br>
+                            border-radius(val)<br>
+                            &emsp;-webkit-border-radius: val<br>
+                            &emsp;-moz-border-radius: val<br>
+                            &emsp;border-radius: val<br>
+                            <br>
+                        button {<br>
+                            &emsp;border-radius(5px);<br>
+                        }</p>
+                    </div>
+                </div>
+            </section>
+            <section class="featureBlock" id="feature4" selectorTitle="Variables">
+                <div class="threecol threecol--minheight">
+                    <h3 class="featureBlock__name">Variables</h3>
+                    <p class="featureBlock__explanation">Stylus variables behave as you would expect in any other language, and may optionally be prefixed by the “$” character:</p>
+                </div>
+                <div class="featureBlock__exampleBlock">
+                    <div class="threecol threecol--minheight blackBlock">
+                        <p class="featureBlock__examplecode">
+                            <strong>// CSS</strong><br>
+                            #prompt {<br>
+                                &emsp;position: absolute;<br>
+                                &emsp;top: 150px;<br>
+                                &emsp;left: 50%;<br>
+                                &emsp;width: 200px;<br>
+                                &emsp;margin-left: -100px;<br>
+                        }</p>
+                    </div>
+                    <div class="threecol threecol--minheight blackBlock">
+                        <p class="featureBlock__examplecode">
+                            <strong>// Stylus</strong><br>
+                            #prompt<br>
+                            &emsp;position: absolute<br>
+                            &emsp;top: 150px<br>
+                            &emsp;left: 50%<br>
+                            &emsp;width: w = 200px<br>
+                            &emsp;margin-left: -(w / 2)
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="featureBlock" id="feature5" selectorTitle="Functions">
+                <div class="threecol threecol--minheight">
+                    <h3 class="featureBlock__name">Functions</h3>
+                    <p class="featureBlock__explanation">"Stylus functions may be defined in the same manner as mixins, however their usage differs as they return values.</p>
+                </div>
+                <div class="featureBlock__exampleBlock">
+                    <div class="threecol threecol--minheight blackBlock">
+                        <p class="featureBlock__examplecode">
+                            <strong>// CSS</strong><br>body {<br>
+                            &emsp;foo: 6;<br>
+                        }</p>
+                    </div>
+                    <div class="threecol threecol--minheight blackBlock">
+                        <p class="featureBlock__examplecode">
+                            <strong>// Stylus</strong><br>
+                            sum(nums...)<br>
+                            &emsp;n = 0<br>
+                            &emsp;n += num for num in nums<br>
+                            body<br>
+                            &emsp;foo: sum(1, 2, 3)<br>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="userReview" id="quote1" selectorTitle="Quote">
+            <blockquote class="container container--centerVertical">
+                <div class="userReview__text">
+                    <p class="userReview__quote">“Everything in Stylus is expressive and to make it so, Stylus uses a plethora of operators, keywords, and sugary syntax to make you feel right at home.” 
+                    </p>
+                    <cite class="userReview__sender">Manan Tank</cite>
+                </div>
+                <img class="userReview__img"
+                src="image/manantank.jpeg"
+                alt="An image of Manan Tank, who said this about Stylus">
+            </blockquote>
+        </section>
+        <section class="compare container">
+            <table class="blackBlock">
+                <thead>
+                    <tr>
+                        <th>Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Permissive syntax</td>
+                        <td>Permissive syntax ;)</td>
+                    </tr>
+                    <tr>
+                        <td>Powerful built-in functions</td>
+                        <td>Small community</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <nav class="container" id="alternatives" selectorTitle="Alternatives">
+            <h2 class="container__title">Alternatives</h2>
+            <div class="threecol threecol--hover">
+            <a href="sass.html">
+                <img class="threecol__image"
+                src="image/sassfinal.png"
+                alt="A clickable Sass logo">
+                <div class ="blackBlock blackBlock--label">
+                    <p class ="blackBlock__text">Sass</p>
+                </div>
+            </a>
+            </div>
+            <div class="threecol threecol--hover">
+            <a href="less.html">
+                <img class="threecol__image"
+                src="image/lessfinal.png"
+                alt="A clickable Less Logo">
+                <div class ="blackBlock blackBlock--label">
+                    <p class ="blackBlock__text">Less</p>
+                </div>
+            </a>
+            </div>
+            <div class="threecol threecol--hover">
+            <a href="postcss.html">
+                <img class="threecol__image"
+                src="image/postcssfinal.png"
+                alt="A clickable postcss logo">
+                <div class ="blackBlock blackBlock--label">
+                    <p class ="blackBlock__text">PostCSS</p>
+                </div>
+            </a>
+            </div>
+        </nav>
+        <section class="container" id="link" selectorTitle="Try preprocessor">
+            <div class="two-col two-col--leftOutline">
+                <h2 class="two-col__title">Try this preprocessor</h2>
+                <p class="two-col__text">Stylus can be used from the command line, or by using third party applications. You can download Stylus from the Github page or by running <i> npm install stylus -g</i> in the command line. Once you have it installed, you use it through the following steps:</p>
+                <ul class="two-col__list">
+                    <li>Use <i>stylus -w style.styl -o style.css</i> to convert a stylus file to a CSS file</li>
+                    <li>Add the <i>--watch</i> flag to automaticly convert it</li>
+                    <li>Folder paths can also be used to convert entire folders</li>
+                </ul>
+                <div>
+                    <a class= "two-col__link blackBlock blackBlock--thin" 
+                    href="https://stylus-lang.com/">
+                    <p class="two-col__text">Link to site</p></a>
+                    <a class="two-col__link blackBlock blackBlock--thin"
+                    href="https://github.com/stylus/stylus/">
+                    <p class="two-col__text">Github</p></a>
+                </div>
+            </div>
+            <div class="two-col two-col--rightOutline">
+                <img class="two-col__image"
+                src="image/coding.jpg"
+                alt="A picture of a laptop with code on it">
+            </div>
+        </section>
+    </article>
+    <footer class="footer" id="footer" selectorTitle="Footer">
+        <div class="container container--centerVertical">
+            <section class="footer__text">
+                <h2 class="footer__name">SophisticatedCSS</h2>
+                <p class="footer__info">SophisticatedCSS is the first assignment for the course webtechnology at the
+                    University in Utrecht</p>
+                <p class="footer__info footer--topmargin">
+                    <a href="https://github.com/DavidckPixel/SophisticatedCSS">Github</a> |
+                    <a href="https://www.uu.nl">UU</a> |
+                    <a href="http://www.cs.uu.nl/education/vak/INFOB2WT">Webtechnology</a>
+                </p>
+            </section>
+            <img class="footer__img"
+            src="image/uulogo.png" alt="UU Logo">
+
+            <section class="footer__contributor">
+            </section>
+            <section class="footer__contributor">
+            </section>
+            <section class="footer__contributor">
+            </section>
+        </div>
+    </footer>
+
+    <section class="footer" id="attribute" selectorTitle="Attribute">
+        <div class="container container--centerVertical">
+            <section class="contributor">
+                <h4 class="contributor__name">Laura Holtus</h4>
+                <p class="contributor__number">1810057</p>
+            </section>
+            <section class="contributor">
+                <h4 class="contributor__name">David Koymans</h4>
+                <p class="contributor__number">6561829</p>
+            </section>
+            <section class="contributor">
+                <h4 class="contributor__name">Jasper Weyne</h4>
+                <p class="contributor__number">5960134</p>
+            </section>
+        </div>
+    </section>
+
+    <script src="dist/index.js"></script>
+</body>
+
+</html>

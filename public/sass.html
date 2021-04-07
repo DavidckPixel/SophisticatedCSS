@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sophisticated CSS - Sass</title>
+    <link rel="stylesheet" href="css/sophisticated.css" />
+    <meta name="keyword" content="CSS, Preprocessor, sass, tutorial">
+    <meta name="description" content="Information page for pre processor sass">
+</head>
+
+<body>
+    <header class="nav" id="nav" selectorTitle="Navigation">
+        <div class="container container--centerVertical">
+            <div class="nav__home">
+                <a href="index.html">SophisticatedCSS</a>
+            </div>
+            <nav class="nav__page">
+                <ul class="nav__ul">
+                    <li class= "nav__li"><a href="sass.html">Sass</a></li>
+                    <li class= "nav__li"><a href="less.html">Less</a></li>
+                    <li class= "nav__li"><a href="stylus.html">Stylus</a></li>
+                    <li class= "nav__li"><a href="postcss.html">PostCSS</a></li>
+                    <li class= "nav__li"><a href="assesment.html">Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <article id="sassTotal" selectorTitle="Sass">
+        <section class="intro container" id="introduction" selectorTitle="Introduction">
+            <img class="intro__img"
+            src="image/sassfinal.png" 
+            alt="An image of the Logo of Sass">
+            <div class="intro__text">
+                <h1 class="intro__header">Syntatcically Awesome Style Sheet</h1>
+                <p class="intro__paragraph">
+                    Sass is a community driven stylesheet language that’s compiled to CSS. It allows you to use
+                    variables, nested rules, mixins, functions, and more, all with a fully CSS-compatible syntax. Sass
+                    helps keep large stylesheets well-organized and makes it easy to share design within and across
+                    projects
+                </p>
+                <a href="https://sass-lang.com/">
+                    <div class="intro__link blackBlock blackBlock--thin">
+                        <p class="intro__button">Website</p>
+                    </div>
+                </a>
+                <a href="#link">
+                    <div class="intro__link blackBlock blackBlock--thin">
+                        <p class="intro__button">Try it!</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="userReview" id="devquote" selectorTitle="Quote">
+            <blockquote class="container container--centerVertical">
+                <p class="userReview__quote">
+                    "Sass is the most mature, stable, and powerful <br> professional grade CSS extension language in the
+                    world. "
+                </p>
+                <cite class="userReview__sender">Sass Developers</cite>
+            </blockquote>
+        </section>
+        <section class="featureArticle container" id="features" selectorTitle="Features">
+            <h2 class="featureArticle__title">Features</h2>
+            <section class="featureBlock" id="feature1" selectorTitle="Variables">
+                <div class="threecol threecol--minheight">
+                    <h3 class="featureBlock__name">Variables</h3>
+                    <p class="featureBlock__explanation">
+                        Think of variables as a way to store information that you want to reuse throughout your
+                        stylesheet.
+                        You can store things like colors, font stacks, or any CSS value you think you'll want to reuse.
+                        Sass uses the $ symbol to make something a variable. Here's an example:
+                    </p>
+                </div>
+                <div class="featureBlock__exampleBlock">
+                    <div class="threecol threecol--minheight blackBlock">
+                        <p class="featureBlock__examplecode">
+                            <strong>// CSS</strong><br>
+                            body {<br>
+                            &emsp; font: 100% Helvetica, sans-serif;<br>
+                            &emsp; color: #333;<br>
+                            }
+                        </p>
+                    </div>
+                    <div class="threecol threecol--minheight blackBlock">
+                        <p class="featureBlock__examplecode">
+                            <strong>// Sass</strong><br>
+                            $font-stack: Helvetica, sans-serif;<br>
+                            $primary-color: #333;<br>
+                            <br>
+                            body {<br>
+                            &emsp; font: 100% $font-stack;<br>
+                            &emsp; color: $primary-color;<br>
+                            }
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="featureBlock" id="feature2" selectorTitle="Nesting">
+                <div class="threecol threecol--minheight">
+                    <h3 class="featureBlock__name">Nesting</h3>
+                    <p class="featureBlock__explanation">
+                        When writing HTML you've probably noticed that it has a clear nested and visual hierarchy. CSS,
+                        on the other hand, doesn't.<br>
+                        <br>
+                        Sass will let you nest your CSS selectors in a way that follows the same visual hierarchy of
+                        your HTML.
+                    </p>
+                </div>
+                <div class="featureBlock__exampleBlock">
+                    <div class="threecol threecol--minheight blackBlock">
+                        <p class="featureBlock__examplecode">
+                            <strong>// CSS</strong><br>
+                            nav ul { <br>
+                            &emsp; margin: 0; <br>
+                            &emsp; padding: 0; <br>
+                            &emsp; list-style: none; <br>
+                            } <br>
+                            nav li { <br>
+                            &emsp; display: inline-block; <br>
+                            }
+                        </p>
+                    </div>
+                    <div class="threecol threecol--minheight blackBlock">
+                        <p class="featureBlock__examplecode">
+                            <strong>// Sass</strong><br>
+                            nav {<br>
+                            &emsp;ul {<br>
+                            &emsp;&emsp;margin: 0;<br>
+                            &emsp;&emsp;padding: 0;<br>
+                            &emsp;&emsp;list-style: none;<br>
+                            &emsp;}<br>
+                            &emsp;li { display: inline-block; }<br>
+                            }
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="featureBlock" id="feature3" selectorTitle="Operators">
+                <div class="threecol threecol--minheight">
+                    <h3 class="featureBlock__name">Operators</h3>
+                    <p class="featureBlock__explanation">
+                        Doing math in your CSS is very helpful. Sass has a handful of standard math operators like +, -,
+                        *, /, and %.
+                        <br><br>In our example we're going to do some simple math to calculate widths for an aside &
+                        article.
+                    </p>
+                </div>
+                <div class="featureBlock__exampleBlock">
+                    <div class="threecol threecol--minheight blackBlock">
+                        <p class="featureBlock__examplecode">
+                            <strong>// CSS</strong><br>
+                            article[role="main"] {<br>
+                            &emsp;float: left;<br>
+                            &emsp;width: 62.5%;<br>
+                            }
+                        </p>
+                    </div>
+                    <div class="threecol threecol--minheight blackBlock">
+                        <p class="featureBlock__examplecode">
+                            <strong>// Sass</strong><br>
+                            article[role="main"] {<br>
+                            &emsp;float: left;<br>
+                            &emsp;width: 600px / 960px * 100%;<br>
+                            }
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <section class="userReview" id="quote1" selectorTitle="Quote">
+            <blockquote class="container container--centerVertical">
+                <div class="userReview__text">
+                    <p class="userReview__quote">"Embrace Sass once, and you may never want to go back to vanilla CSS again"
+                    </p>
+                    <cite class="userReview__sender">~Marcelo Mazza</cite>
+                </div>
+                <img class="userReview__img"
+                src="image/marcelomazza.jpg" alt="An image of Marcelo Mazza, who said this about Sass">
+            </blockquote>
+        </section>
+        <section class="compare container">
+            <table class="blackBlock">
+                <thead>
+                    <tr>
+                        <th>Pros</th>
+                        <th>Cons</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Many Features</td>
+                        <td>Most applications are paid</td>
+                    </tr>
+                    <tr>
+                        <td>Easy to use</td>
+                        <td>Not as advanced</td>
+                    </tr>
+                    <tr>
+                        <td>Large community</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <nav class="container" id="alternatives" selectorTitle="Alternatives">
+            <h2 class="container__title">Alternatives</h2>
+            <div class="threecol threecol--hover">
+            <a href="less.html">
+                <img class="threecol__image"
+                src="image/lessfinal.png" alt="A clickable Less logo">
+                <div class="blackBlock blackBlock--label">
+                    <p class="blackBlock__text">Less</p>
+                </div>
+            </a>
+            </div>
+            <div class="threecol threecol--hover">
+            <a href="stylus.html">
+                <img class="threecol__image"
+                src="image/stylusfinal.png" alt="A clickable Stylus Logo">
+                <div class="blackBlock blackBlock--label">
+                    <p class="blackBlock__text">Stylus</p>
+                </div>
+            </a>
+            </div>
+            <div class="threecol threecol--hover">
+            <a href="postcss.html">
+                <img class="threecol__image"
+                src="image/postcssfinal.png" alt="A clickable postcss logo">
+                <div class="blackBlock blackBlock--label">
+                    <p class="blackBlock__text">PostCSS</p>
+                </div>
+            </a>
+            </div>
+        </nav>
+        <section class="container" id="link" selectorTitle="Try preprocessor">
+            <div class="two-col two-col--leftOutline">
+                <h2 class="two-col__title">Try this preprocessor</h2>
+                <p class="two-col__text">
+                    Sass can be used from the command line, or by using third party applications. You can download sass
+                    from the Github page or by running <i>npm install -g sass</i> in the commandline. Once u have it
+                    installed, you use it through the following steps:
+                </p>
+                <ul class="two-col__list">
+                    <li>Use <i>sass input.scss output.css</i> to convert a sass to a css file</li>
+                    <li>Add the <i>--watch</i> flag to automaticly convert it</li>
+                    <li>Folder paths can also be used to convert entire folders</li>
+                </ul>
+                <div>
+                    <a class="two-col__link blackBlock blackBlock--thin" href="https://sass-lang.com/">
+                        <p class="two-col__text">Site</p>
+                    </a>
+                    <a class="two-col__link blackBlock blackBlock--thin" href="https://github.com/sass">
+                        <p class="two-col__text">Github</p>
+                    </a>
+                </div>
+            </div>
+            <div class="two-col two-col--rightOutline">
+                <img class="two-col__image"
+                src="image/coding.jpg" alt="A picture of a laptop with code on it">
+            </div>
+        </section>
+    </article>
+    <footer class="footer" id="footer" selectorTitle="Footer">
+        <div class="container container--centerVertical">
+            <section class="footer__text">
+                <h2 class="footer__name">SophisticatedCSS</h2>
+                <p class="footer__info">SophisticatedCSS is the first assignment for the course webtechnology at the
+                    University in Utrecht</p>
+                <p class="footer__info footer--topmargin">
+                    <a href="https://github.com/DavidckPixel/SophisticatedCSS">Github</a> |
+                    <a href="https://www.uu.nl">UU</a> |
+                    <a href="http://www.cs.uu.nl/education/vak/INFOB2WT">Webtechnology</a>
+                </p>
+            </section>
+            <img class="footer__img"
+            src="image/uulogo.png" alt="UU Logo">
+
+            <section class="footer__contributor">
+            </section>
+            <section class="footer__contributor">
+            </section>
+            <section class="footer__contributor">
+            </section>
+        </div>
+    </footer>
+
+    <section class="footer" id="attribute" selectorTitle="Attribute">
+        <div class="container container--centerVertical">
+            <section class="contributor">
+                <h4 class="contributor__name">Laura Holtus</h4>
+                <p class="contributor__number">1810057</p>
+            </section>
+            <section class="contributor">
+                <h4 class="contributor__name">David Koymans</h4>
+                <p class="contributor__number">6561829</p>
+            </section>
+            <section class="contributor">
+                <h4 class="contributor__name">Jasper Weyne</h4>
+                <p class="contributor__number">5960134</p>
+            </section>
+        </div>
+    </section>
+
+    <script src="dist/index.js"></script>
+</body>
+
+</html>

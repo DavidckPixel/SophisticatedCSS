@@ -1,0 +1,46 @@
+table{
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    background-color:white;
+    text-align: left;
+    padding: 10px;
+}
+
+table th:first-child {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+table th:last-child {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+table td{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; 
+    color:white;
+    padding-right:10px;
+    padding-left: 10px;
+    height:35px;
+    border-right: 1px solid white;
+}
+
+table td:last-child {
+    border-right: none;
+}
+
+table th{
+    font-size: 21px;
+    font-family: 'Fira Code', monospace; 
+}
+
+table td{
+    font-size: 16px;
+    font-family: 'Fira Code', monospace; 
+}
