@@ -4,6 +4,12 @@ class QuestionResponse{
     private user: string;
     private answer : string;
 
+    constructor(question : string, user : string, answer : string){
+        this.question = question;
+        this.user = user;
+        this.answer = answer;
+    }
+
     public getQuestion() : string{
         return this.question;
     }

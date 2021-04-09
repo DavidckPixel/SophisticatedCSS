@@ -5,6 +5,13 @@ class QuestionChoice{
     private statement : string;
     private choiceValue : string;
 
+    constructor(id : string, question : string, statement : string, choiceValue : string){
+        this.id = id;
+        this.question = question;
+        this.statement = statement;
+        this.choiceValue = choiceValue;
+    }
+
     public getId() : string{
         return this.id;
     }
