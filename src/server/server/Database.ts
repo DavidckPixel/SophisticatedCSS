@@ -73,7 +73,7 @@ export default class Database {
 
             // Add fields
             for (const field in metadata.fields) {
-                properties.push(`${metadata.fields[field].sqlColumn(field, this.types)}`);
+                properties.push(`${field} ${metadata.fields[field].sqlType(this.types)}`);
                 constraints = [...constraints, ...metadata.fields[field].sqlConstraint(field, metadata.table, this.types)];
             }
 

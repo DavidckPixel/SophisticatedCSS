@@ -1,45 +1,45 @@
 import { Metadata } from './Database';
 
+/** Type information concerning a field */
 export interface Type {
+    /** Whether this field is part of the primary key */
     primary: boolean,
+
+    /** The database column type (expressed as SQL) */
     sqlType: (metadata: Metadata[]) => string,
-    sqlColumn: (field: string, metadata: Metadata[]) => string,
+
+    /** The constraints associated with this field */
     sqlConstraint: (field: string, table: string, metadata: Metadata[]) => string[],
 }
 
-export interface NullableType {
+export interface Nullable {
     nullable: boolean
 }
 
-export type StringOptions = NullableType;
+export type StringOptions = Partial<Nullable>;
 
-export type StringType = Type & StringOptions;
-
-export function String(options: Partial<StringOptions> = {}): StringType {
-    let nullable = options.nullable ?? false;
-    let sqlType = `TEXT ${nullable ? 'DEFAULT NULL' : 'NOT NULL'}`;
-
+/**
+ * Set a field as a string type.
+ */
+export function String(options: StringOptions = {}): Type {
     return {
-        nullable: nullable,
         primary: false,
-        sqlType: (_) => sqlType,
-        sqlColumn: (field, _) => `${field} ${sqlType}`,
+        sqlType: (_) => `TEXT ${options.nullable || false ? 'DEFAULT NULL' : 'NOT NULL'}`,
         sqlConstraint: (_field, _table, _metadata) => [],
     };
 }
 
-export interface ForeignKeyOptions<Entity> extends Partial<NullableType> {
+export interface ForeignKeyOptions<Entity> extends Partial<Nullable> {
     entity: { new(...args: any): Entity }
 }
 
-export interface ForeignKeyType extends Type, NullableType {
-    table: string
-}
+/**
+ * Set a field as a foreign key, directed at another entity.
+ */
+export function Foreign<T>(options: ForeignKeyOptions<T>): Type {
+    const fkTable = options.entity.name; 
 
-export function Foreign<T>(options: ForeignKeyOptions<T>): ForeignKeyType {
-    let nullable = options.nullable ?? false;
-    let fkTable = options.entity.name; 
-
+    // Function to get the metadata for the destination table
     const findForeign = (table: string, metadata: Metadata[]): Metadata => {
         const foreign = metadata.find(x => x.table === table);
         if (!foreign) {
@@ -52,20 +52,12 @@ export function Foreign<T>(options: ForeignKeyOptions<T>): ForeignKeyType {
     }
 
     return {
-        table: fkTable,
-        nullable: nullable,
         primary: false,
         sqlType: (metadata) => {
             const foreign = findForeign(fkTable, metadata);
             const fkField = foreign.pk[0];
             const fkMeta = foreign.fields[fkField];
             return fkMeta.sqlType(metadata);
-        },
-        sqlColumn: (field, metadata) => {
-            const foreign = findForeign(fkTable, metadata);
-            const fkField = foreign.pk[0];
-            const fkMeta = foreign.fields[fkField];
-            return `${field} ${fkMeta.sqlType(metadata)}`;
         },
         sqlConstraint: (field, table, metadata) => {
             const foreign = findForeign(fkTable, metadata);
@@ -75,6 +67,9 @@ export function Foreign<T>(options: ForeignKeyOptions<T>): ForeignKeyType {
     };
 }
 
+/**
+ * Set a field as part of the primary key.
+ */
 export function Primary(type: Type): Type {
     return {
         ...type,
