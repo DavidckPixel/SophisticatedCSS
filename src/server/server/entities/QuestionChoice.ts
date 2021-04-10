@@ -1,4 +1,4 @@
-class QuestionChoice{
+export default class QuestionChoice{
 
     private id : string;
     private question: string;

@@ -1,4 +1,4 @@
-class QuestionResponse{
+export default class QuestionResponse{
 
     private question : string;
     private user: string;

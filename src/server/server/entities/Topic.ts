@@ -1,4 +1,4 @@
-class Topic
+export default class Topic
 {
     private id : string; 
     private title : string;

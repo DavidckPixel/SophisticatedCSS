@@ -1,4 +1,4 @@
-class Question
+export default class Question
 {
     private id : string;
     private quizid : string;

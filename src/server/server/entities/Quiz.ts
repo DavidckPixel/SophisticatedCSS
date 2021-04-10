@@ -1,4 +1,4 @@
-class Quiz
+export default class Quiz
 {
     private id : string;
     private topicid : string;
