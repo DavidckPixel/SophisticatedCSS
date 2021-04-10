@@ -23,7 +23,7 @@ export default class Repository<Entity extends {[key: string]: any}> {
     }
 
     public async findAll(): Promise<Entity[]> {
-        return await this.db.query(`SELECT ${this.fields().join(',')} FROM ${this.metadata.table}`);
+        return await this.query(`SELECT ${this.fields().join(',')} FROM ${this.metadata.table}`)
     }
 
     public async insert(obj: Entity): Promise<void> {
