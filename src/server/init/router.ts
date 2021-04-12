@@ -1,5 +1,6 @@
 import express, { Express } from "express";
 import { Database } from "../database";
+import registerApi from "../views/api";
 
 export default function router(db: Database): Express {
     const app = express();
@@ -11,7 +12,7 @@ export default function router(db: Database): Express {
     } );
 
     // Dynamic content
-    // todo
+    registerApi(app, db);
 
     return app;
 }
