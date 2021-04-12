@@ -12,6 +12,6 @@ export default function register(app: Express, db: Database) {
     app.get('/api/question/:id', asyncHandler(async (req, res) => {
         const repository = db.repository(Question);
         const question = await repository.find(req.params.id);
-        res.send(JSON.stringify(question));
+        res.json(question);
     }));
 }
