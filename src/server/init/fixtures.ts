@@ -1,0 +1,44 @@
+import { Database } from "../database";
+import { Question, Quiz, Topic } from "../entities";
+
+export default async function fixtures(db: Database) {
+    await topicFixture(db);
+    await quizFixture(db);
+    await questionFixture(db);
+}
+
+async function topicFixture(db: Database) {
+    const repository = db.repository(Topic);
+    
+    // Clear database table
+    await repository.query(`DELETE FROM ${repository.table()}`);
+
+    // Load fresh data
+    return Promise.all([
+        repository.insert(new Topic("id1", "TestTopic", "A topic used during testing")),
+    ]);
+}
+
+async function quizFixture(db: Database) {
+    const repository = db.repository(Quiz);
+
+    // Clear database table
+    await repository.query(`DELETE FROM ${repository.table()}`);
+
+    // Load fresh data
+    return Promise.all([
+        repository.insert(new Quiz("id1", "TestQuiz", "id")),
+    ]);
+}
+
+async function questionFixture(db: Database) {
+    const repository = db.repository(Question);
+    
+    // Clear database table
+    await repository.query(`DELETE FROM ${repository.table()}`);
+
+    // Load fresh data
+    return Promise.all([
+        repository.insert(new Question("id1", "id1", "test", "TestQuestion", "A question used during testing", "test")),
+    ]);
+}

@@ -17,6 +17,13 @@ export default class Repository<Entity extends {[key: string]: any}> {
     }
 
     /**
+     * Get the tablename for this type
+     */
+    public table(): string {
+        return this.metadata.table;
+    }
+
+    /**
      * Find any number of entities in the database, specified by a dictionary of entity keys and corresponding values
      * 
      * @param fields A dictionary of entity fields and corresponding required values
@@ -25,7 +32,7 @@ export default class Repository<Entity extends {[key: string]: any}> {
     public async findBy(fields: { [field: string]: string }): Promise<Entity[]> {
         let filter = Object.keys(fields).map(field => field + " = ?").join(" AND ");
         let values = Object.values(fields);
-        return await this.query(`SELECT ${this.fields().join(',')} FROM ${this.metadata.table} WHERE ${filter}`, values);
+        return await this.query(`SELECT ${this.fields().join(',')} FROM ${this.table()} WHERE ${filter}`, values);
     }
     
     /**
@@ -59,7 +66,7 @@ export default class Repository<Entity extends {[key: string]: any}> {
      * @returns A promise, containing an array of all the corresponding entities
      */
     public async findAll(): Promise<Entity[]> {
-        return await this.query(`SELECT ${this.fields().join(',')} FROM ${this.metadata.table}`)
+        return await this.query(`SELECT ${this.fields().join(',')} FROM ${this.table()}`)
     }
 
     /**
@@ -71,7 +78,7 @@ export default class Repository<Entity extends {[key: string]: any}> {
     public async insert(obj: Entity): Promise<void> {
         let data = this.fields().map(field => obj[field]);
         let replace = this.fields().map(_ => "?").join(',');
-        await this.db.query(`INSERT INTO ${this.metadata.table} (${this.fields().join(',')}) VALUES (${replace})`, data);
+        await this.db.query(`INSERT INTO ${this.table()} (${this.fields().join(',')}) VALUES (${replace})`, data);
     }
     
     public async update(obj: Entity): Promise<void> {
