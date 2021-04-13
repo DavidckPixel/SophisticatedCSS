@@ -1,5 +1,4 @@
 import { verbose } from "sqlite3";
-import { existsSync } from "fs";
 import { Database, DataType as Db }  from "../database";
 import { Question, QuestionChoice, QuestionResponse, Quiz, Topic, User } from "../entities";
 
@@ -41,12 +40,5 @@ db.register(User, {
     email: Db.String(),
     password: Db.String(),
 });
-
-// Create database if it does not exist
-(async function() {
-    if (!existsSync(dbFile)) {
-        await db.create();
-    }
-})();
 
 export default db;
