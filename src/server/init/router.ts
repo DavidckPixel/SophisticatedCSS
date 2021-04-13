@@ -1,6 +1,7 @@
 import express, { Express } from "express";
 import { Database } from "../database";
 import registerApi from "../views/api";
+import registerSecurity from "../views/security";
 
 export default function router(db: Database): Express {
     const app = express();
@@ -13,6 +14,7 @@ export default function router(db: Database): Express {
 
     // Dynamic content
     registerApi(app, db);
+    registerSecurity(app, db);
 
     return app;
 }
