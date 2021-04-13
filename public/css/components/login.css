@@ -1,0 +1,27 @@
+.inputSet{
+    text-align: center;
+    color:white;
+    font-family: 'Quicksand', sans-serif;
+    
+}
+
+.inputSet__label{
+    font-size: 12px;
+    width:100%;
+    display: inline-block;
+}
+
+.inputSet__input{
+    width:80%;
+}
+
+.login{
+    text-align: center;
+}
+
+.login__button{
+    margin-top: 20px;
+    width:20%;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+}

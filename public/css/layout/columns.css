@@ -5,6 +5,12 @@
     
 }
 
+.one-col--smaller{
+    width: calc(100% - 24%);
+    margin-left:12%;
+    margin-right:12%;
+}
+
 .one-col__text{
     margin:0;
     padding:0;
