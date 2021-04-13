@@ -1,10 +1,12 @@
 import { Database } from "../database";
-import { Question, Quiz, Topic } from "../entities";
+import { Question, Quiz, Topic, User } from "../entities";
+import * as argon2 from "argon2";
 
 export default async function fixtures(db: Database) {
     await topicFixture(db);
     await quizFixture(db);
     await questionFixture(db);
+    await userFixture(db);
 }
 
 async function topicFixture(db: Database) {
@@ -40,5 +42,17 @@ async function questionFixture(db: Database) {
     // Load fresh data
     return Promise.all([
         repository.insert(new Question("id1", "id1", "test", "TestQuestion", "A question used during testing", "test")),
+    ]);
+}
+
+async function userFixture(db: Database){
+    const repository = db.repository(User);
+    
+    // Clear database table
+    await repository.query(`DELETE FROM ${repository.table()}`);
+
+    // Load fresh data
+    return Promise.all([
+        repository.insert(new User("David", "Davidc.Koymans@outlook.com", await argon2.hash("1234")))
     ]);
 }

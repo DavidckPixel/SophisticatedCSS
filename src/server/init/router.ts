@@ -2,6 +2,7 @@ import express, { Express } from "express";
 import { Database } from "../database";
 import registerApi from "../views/api";
 import registerSecurity from "../views/security";
+import registerProfile from "../views/profile";
 import bodyparser from "body-parser";
 
 export default function router(db: Database): Express {
@@ -17,6 +18,7 @@ export default function router(db: Database): Express {
     // Dynamic content
     registerApi(app, db);
     registerSecurity(app, db);
+    registerProfile(app,db);
 
     return app;
 }

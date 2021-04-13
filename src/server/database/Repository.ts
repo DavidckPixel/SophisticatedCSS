@@ -82,7 +82,15 @@ export default class Repository<Entity extends {[key: string]: any}> {
     }
     
     public async update(obj: Entity): Promise<void> {
-        // todo
+        let data = this.fields().map(field => obj[field]);
+        let replace = this.fields().map(field => field+" = ?").join(',')
+
+        let filter = this.metadata.pk.map(field => field + " = ?").join(" AND ");
+        let values = this.metadata.pk.map(field =>obj[field])
+
+        data.push(...values)
+        
+        await this.db.query(`UPDATE ${this.table()} SET ${replace} WHERE ${filter} `, data);
     }
 
     public async remove(obj: Entity): Promise<void> {
