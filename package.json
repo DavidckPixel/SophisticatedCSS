@@ -5,8 +5,8 @@
   "repository": "https://github.com/DavidckPixel/SophisticatedCSS",
   "scripts": {
     "build_client": "tsc -p ./src/client",
-    "build_server": "tsc -p ./src/server && chmod +x ./dist/server/index.js",
-    "start": "dist/server/index.js"
+    "build_server": "tsc -p ./src/server",
+    "start": "node ./dist/server/index.js"
   },
   "dependencies": {
     "express": "^4.17.1",
