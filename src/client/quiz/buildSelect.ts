@@ -8,16 +8,21 @@ function buildSelectScreen(){
 
     console.log("body located, beginnin creation of buildSelect");
 
-    DynamicloadDoc("/assesment/topics", (objects : any[]) =>  {
-        console.log("Length of topics: " + objects.length);
-        alltopics = new AllTopics(objects);
+    DynamicloadDoc("/assesment/topics/id1", (quizObjs : any[]) =>  {
+        console.log("Length of quizes: " + quizObjs.length);
+        const quizes = quizObjs.map(quiz => new Quiz(quiz.title, quiz.id, quiz.topicid));
+        const allquizes = new QuizOverview(quizes);
+        
+        DynamicloadDoc("/assesment/topics", (topicObjs : any[]) =>  {
+            console.log("Length of topics: " + topicObjs.length);
+            const topics = topicObjs.map(x => new Topic(x.title, x.id, allquizes));
+            console.log(topics);
+            const alltopics = new TopicOverview(topics);
+            
+            alltopics.mountTo(body);
+            allquizes.mountTo(body);
+        });
     });
+    
 
-    DynamicloadDoc("/assesment/topics/id1", (objects : any[]) =>  {
-        console.log("Length of topics: " + objects.length);
-        allquizes = new AllQuizes(objects);
-    });
 }
-
-var alltopics : AllTopics;
-var allquizes : AllQuizes;
