@@ -1,6 +1,6 @@
 import { Database } from "../database";
 import { Question, Quiz, Topic, User, QuestionResponse } from "../entities";
-import * as argon2 from "argon2";
+import { hash } from "argon2";
 
 export default async function fixtures(db: Database) {
     await topicFixture(db);
@@ -66,6 +66,6 @@ async function userFixture(db: Database){
 
     // Load fresh data
     return Promise.all([
-        repository.insert(new User("David", "Davidc.Koymans@outlook.com", await argon2.hash("1234")))
+        repository.insert(new User("David", "Davidc.Koymans@outlook.com", await hash("1234")))
     ]);
 }
