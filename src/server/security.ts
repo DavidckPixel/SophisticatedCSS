@@ -8,7 +8,7 @@ export function isAuthenticated() {
         if (req.isAuthenticated()) {
             next();
         } else {
-            res.sendStatus(401);
+            res.redirect('/login?ref=' + encodeURIComponent(req.originalUrl));
         }
     };
 }
