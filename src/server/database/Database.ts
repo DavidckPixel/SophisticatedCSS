@@ -88,6 +88,24 @@ export default class Database {
         await Promise.all(queries);
     }
 
+    public async fixture<Entity>(...entities: Entity[]) {
+        // Check if data was given
+        if (entities.length === 0) {
+            return Promise.resolve();
+        }
+
+        // Find the repository for this type
+        const repository = this.repository(Object.getPrototypeOf(entities[0]).constructor);
+    
+        // Clear database table
+        await repository.query(`DELETE FROM ${repository.table()}`);
+    
+        // Load fresh data
+        return Promise.all([
+            ...entities.map(obj => repository.insert(obj))
+        ]);
+    }
+
     /**
      * Run a database query, wrapped in a promise.
      * 

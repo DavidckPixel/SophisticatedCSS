@@ -20,8 +20,18 @@ export default function register(app: Express, db: Database) {
         authenticate('local', { failureRedirect: '/login' }),
         asyncHandler(async (req, res) => {
             // If this function gets called, authentication was successful.
-            // `req.user` contains the authenticated user.
-            res.json({ respond: "Login succesfull" })
+            // Check if redirect was necessary
+            if (req.query.ref) {
+                const path = decodeURIComponent(req.query.ref as string);
+                const valid = /^(\/[a-zA-Z0-9]+)+(.html)?$/;
+                if (valid.test(path)) {
+                    res.redirect(path);
+                    return;
+                }
+            }
+
+            // In all other cases, go to profile
+            res.redirect('/profile');
         })
     );
       
