@@ -26,9 +26,6 @@ export default function register(app: Express, db: Database) {
             let user = req.user as User;
             let username = user.getUsername();
             let overallpercentage = await getOverallReport(username);
-            console.log(username);
-            console.log("HALLLOHALLOTESTTEST" + overallpercentage);
-
 
             let html = await renderFile("template/profile.html.ejs", {message: {password:null, email:null}, data:overallpercentage})
             res.send(html);
@@ -42,7 +39,6 @@ export default function register(app: Express, db: Database) {
         isAuthenticated(),
         asyncHandler(async (req, res) => {
             
-
             let user = req.user as User;
             let html = await renderFile("template/profile.html.ejs", {message: {password:null, email:null}, data:50});
 
@@ -72,10 +68,7 @@ export default function register(app: Express, db: Database) {
                     
                 let questionsAnsweredByUser = await answerdata.findBy({user : username});
                 let numberQuestionsAnswered = questionsAnsweredByUser.length;
-                console.log("WAAROM PRINT DIT NIET?!?" + numberofQuestions);
-                console.log(numberQuestionsAnswered);
-                console.log(allquestions);
-    
+
                 let percentage = numberQuestionsAnswered / numberofQuestions * 100;
 
                 return percentage;
