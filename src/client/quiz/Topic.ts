@@ -1,61 +1,30 @@
 /// <reference path="../component/ViewComponent.ts" />
+/// <reference path="./QuizOverview.ts" />
 
 class Topic extends ViewComponent 
 {
-    public id : string;
-    public title : string;
+    quizMgr: QuizOverview;
 
-    constructor(name : string, id : string, appendto? : HTMLElement){
+    constructor(name : string, id : string, quizes: QuizOverview){
         super();
+        this.setState({
+            name: name,
+            id: id,
+        });
 
-        this.id = id;
-        this.title = name;
-
-        console.log("settingState!" + this.title);
-
-        this.setState({name: this.title})
+        this.quizMgr = quizes;
     }
 
     public render(state: any): HTMLElement {
-
-        console.log("HTML ELEMENT CREATED");
-
-        let temp = this.create("div", {onclick: () => 
-            {
-                DynamicloadDoc(`/assesment/topics/${this.id}`, (objects : any[]) => {
-                    console.log(objects);
-                    allquizes.switchState(objects);
+        return this.create("div", {
+            onclick: () => {
+                DynamicloadDoc(`/assesment/topics/${state.id}`, (objects : any[]) => {
+                    const quizes = objects.map(quiz => new Quiz(quiz.title, quiz.id, quiz.topicid));
+                    this.quizMgr.switchState(quizes);
                 });
-            }//ajax zooi
+            }
         },
-            this.create("p", {}, this.title)
+            this.create("p", {}, state.name)
         );
-        return temp;
-    }
-}
-
-class AllTopics extends ViewComponent{
-    constructor(objects : {title: string, id: string, description : string}[]){
-        super();
-
-        const body = document.querySelector("body");
-        if(!body){
-            console.log("Body was not found");
-            return;
-        }
-
-        this.setState({topics: objects.map(topic => {
-            let obj = new Topic(topic.title, topic.id);
-            obj.mountTo(this);
-            return obj
-        })});
-
-        this.mountTo(body);
-    }
-
-    public render(state: any): HTMLElement {
-        return this.create("div", {}, 
-            ...state.topics.map((x : Topic) => x.doRender())
-        )
     }
 }

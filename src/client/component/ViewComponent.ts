@@ -1,9 +1,9 @@
 abstract class ViewComponent {
     private parent: ViewComponent | undefined;
 
-    private location: HTMLElement | undefined;
+    private location: Element | undefined;
 
-    private state: any;
+    protected state: any;
     
     protected abstract render(state: any): HTMLElement;
 
@@ -12,7 +12,7 @@ abstract class ViewComponent {
      * 
      * @param dest The HTML element to mount it to
      */
-    public mountTo(dest: HTMLElement|ViewComponent) {
+    public mountTo(dest: Element|ViewComponent) {
         if (dest instanceof ViewComponent) {
             this.parent = dest;
         } else {
@@ -52,7 +52,11 @@ abstract class ViewComponent {
         this.parent?.setState(this.parent.state);
 
         // If mounted, update
-        this.location?.replaceWith(this.doRender());
+        if (this.location) {
+            const content = this.doRender();
+            this.location.replaceWith(content);
+            this.location = content;
+        }
     }
 
     /**
