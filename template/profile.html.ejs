@@ -30,30 +30,31 @@
         </header>
     </body>
 
-    <article class="editprofile">
-        <section class="editprofile__password">
-            <form method="post" name="password">
-                <input type="password" id="password" name="password">
-                <input type="submit" value="Submit Password">
-                <% if (message.password) { %>
-                    <h2><%= message.password %></h2>
-                <% } %>
-            </form>
-        </section>
-        <section class="editprofile__email">
-            <form method="post" name="email">
-                <input type="email" id="email" name="email">
-                <input type="submit" value="Submit Email">
-                <% if (message.email) { %>
-                    <h2><%= message.email %></h2>
-                <% } %>
-            </form>
+    <article class="container editprofile">
+        <section class="blackBlock">
+            <h1 class="container__title container__title--center">Change Profile</h1>
+            <section class="editprofile__password two-col inputSet">
+                <form method="post" name="password">
+                    <input type="password" id="password" name="password" class="inputSet__input">
+                    <input type="submit" value="Submit Password" class="inputSet__input inputSet__button">
+                    <% if (message.password) { %>
+                        <h2><%= message.password %></h2>
+                    <% } %>
+                </form>
+            </section>
+            <section class="editprofile__email two-col inputSet">
+                <form method="post" name="email">
+                    <input type="mail" id="email" name="email" class="inputSet__input">
+                    <input type="submit" value="Submit Email" class="inputSet__input inputSet__button">
+                    <% if (message.email) { %>
+                        <h2><%= message.email %></h2>
+                    <% } %>
+                </form>
+            </section>
         </section>
     </article>
     <article class="report">
         <progress max="100" value="<%= data%>">
-
-        </progress>
     </article>
 
     <footer class="footer" id="footer" selectorTitle="Footer">
