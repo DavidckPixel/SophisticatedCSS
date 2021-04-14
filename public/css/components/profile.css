@@ -1,0 +1,111 @@
+.inputSet{
+    text-align: center;
+    color:white;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.inputSet--sidebyside{
+    float:left;
+}
+
+.inputSet__label{
+    font-size: 12px;
+    width:80%;
+    display: inline-block;
+}
+
+.inputSet__input{
+    width:80%;
+    margin-top: 10px;
+}
+
+.inputSet__button{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    
+}
+
+.login{
+    text-align: center;
+}
+
+.login__title{
+    margin:0;
+    padding:0;
+    font-size: 26px;
+    font-family: 'Fira Code', monospace;
+    color: white;
+    padding-left: 1%;
+    padding-right: 1%
+}
+
+.login__button{
+    margin-top: 20px;
+    width:20%;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+}
+
+.report{
+    color:white;
+}
+
+.report__title{
+    margin:0;
+    margin-top:30px;
+    
+    padding:0;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+    color: white;
+    padding-left: 6%;
+    padding-right: 1%;
+    
+}
+
+.report__overall{
+    padding-bottom: 10px;
+    float:left;
+    width:100%;
+}
+
+.report__label{
+    margin:0;
+    padding:0;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    padding-left: 6%;
+    padding-right: 1%;
+    width: 80%;
+    text-align: left;
+    
+    
+}
+
+.report__progressBar{
+    
+    padding-right: 4%;
+    padding-left: 1%;
+    width: 80%;
+}
+
+.report__oneProgress{
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top:5px;
+}
+
+.editprofile{
+    color:white;
+}
+
+.editprofile__title{
+    margin:0;
+    padding:0;
+    font-size: 20px;
+    font-family: 'Fira Code', monospace;
+    color: white;
+    padding-left: 6%;
+    padding-right: 1%
+}

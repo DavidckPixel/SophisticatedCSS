@@ -32,15 +32,15 @@
 
     <article class="container editprofile blackBlock">
         <section>
-            <h1 class="container__title container__title--center">Change Profile</h1>            
-            <form method="post" name="password" class="inputSet editprofile__password two-col">
+            <h1 class="editprofile__title">Change Profile</h1>            
+            <form method="post" name="password" class="inputSet editprofile__password two-col inputSet--sidebyside">
                 <input type="password" id="password" name="password" class="inputSet__input">
                 <input type="submit" value="Submit Password" class="inputSet__input inputSet__button">
                 <% if (message.password) { %>
                     <h2><%= message.password %></h2>
                 <% } %>
             </form>
-            <form method="post" name="email" class="editprofile__email two-col inputSet">
+            <form method="post" name="email" class="editprofile__email two-col inputSet inputSet--sidebyside">
                 <input type="mail" id="email" name="email" class="inputSet__input">
                 <input type="submit" value="Submit Email" class="inputSet__input inputSet__button">
                 <% if (message.email) { %>
@@ -49,10 +49,46 @@
             </form>
         </section>
     </article>
-    <article class="container report blackBlock">
+    <article class="container report">
+        
         <section class="report__overall">
-            <h2>Overall report</h2>
-            <progress max="100" value="<%= data%>">
+            <h2 class="report__title">Overall report</h2>
+            <div class="blackBlock blackBlock--label report__oneProgress">
+                <div class="two-col">
+                    <h3 class="report__label ">All sessions</h3>
+                </div>
+                <div class="two-col">
+                    <progress max="100" value="<%= data%>" class= "report__progressBar">
+                </div>
+            </div>
+            <div class="blackBlock blackBlock--label report__oneProgress">
+                <div class="two-col">
+                    <h3 class="report__label ">Current session</h3>
+                </div>
+                <div class="two-col">
+                    <progress max="100" value="<%= data%>" class= "report__progressBar">
+                </div>
+            </div>            
+        </section>
+        
+        <section class="report__overall">
+            <h2 class="report__title">Quizes report</h2>
+            <div class="report__oneProgress blackBlock blackBlock--label">
+                <div class="two-col">
+                    <h3 class="report__label ">Quiz 1</h3>
+                </div>
+                <div class="two-col">
+                    <progress max="100" value="<%= data%>" class= "report__progressBar">
+                </div>
+            </div>
+            <div class="report__oneProgress blackBlock blackBlock--label">
+                <div class="two-col">
+                    <h3 class="report__label ">Quiz 2</h3>
+                </div>
+                <div class="two-col">
+                    <progress max="100" value="<%= data%>" class= "report__progressBar">
+                </div>
+            </div>            
         </section>
     </article>
 
