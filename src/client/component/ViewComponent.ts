@@ -5,7 +5,7 @@ abstract class ViewComponent {
 
     private state: any;
     
-    public abstract render(state: any): HTMLElement;
+    protected abstract render(state: any): HTMLElement;
 
     /**
      * Mount the object to the DOM
@@ -16,8 +16,17 @@ abstract class ViewComponent {
         if (dest instanceof ViewComponent) {
             this.parent = dest;
         } else {
-            this.location = dest.appendChild(this.render(this.state));
+            this.location = dest.appendChild(this.doRender());
         }
+    }
+
+    /**
+     * Execute a render cycle
+     * 
+     * @returns Rendered HTML nodes
+     */
+    public doRender(): HTMLElement {
+        return this.render(this.state);
     }
     
     /**
@@ -43,7 +52,7 @@ abstract class ViewComponent {
         this.parent?.setState(this.parent.state);
 
         // If mounted, update
-        this.location?.replaceWith(this.render(this.state));
+        this.location?.replaceWith(this.doRender());
     }
 
     /**
