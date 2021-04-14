@@ -2,16 +2,28 @@ import asyncHandler from "express-async-handler";
 import { Express } from "express";
 import { Database } from "../database";
 import * as argon2 from "argon2";
-import { User } from "../entities"
+import { Question, QuestionResponse, User } from "../entities"
 import ejs from "ejs";
-import { error } from "node:console";
+import { Console, error } from "node:console";
 
 export default function register(app: Express, db: Database) {
     /**
      * profile page
      */
     app.get('/profile',asyncHandler(async (req, res) => {
-        let html = await ejs.renderFile("template/profile.html.ejs", {message: {password:null, email:null}, data:50})
+        
+        let answerdata = db.repository(QuestionResponse);
+        let questions = db.repository(Question);
+        
+        let allquestions = await questions.findAll();
+        let numberofQuestions = allquestions.length;
+             
+        let questionsAnsweredByUser = await answerdata.findBy({user : "David"});
+        let numberQuestionsAnswered = questionsAnsweredByUser.length;
+
+        let percentage = numberQuestionsAnswered / numberofQuestions * 100;
+
+        let html = await ejs.renderFile("template/profile.html.ejs", {message: {password:null, email:null}, data:percentage})
         res.send(html);
     }));
 

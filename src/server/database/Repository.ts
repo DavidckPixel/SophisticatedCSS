@@ -97,6 +97,7 @@ export default class Repository<Entity extends {[key: string]: any}> {
         // todo
     }
 
+
     /**
      * Execute a raw sql query for the entity
      * 
