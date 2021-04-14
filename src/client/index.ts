@@ -3,6 +3,9 @@
 /// <reference path="./style/Style/TextStyleRenderer.ts" />
 /// <reference path="./style/Style/ColorStyleRenderer.ts" />
 /// <reference path="./quiz/Question/buildQuiz.ts" />
+/// <reference path="./ajax.ts"/>
+/// <reference path="./quiz/Quiz.ts" />
+/// <reference path="./quiz/Topic.ts" />
 
 if (document.querySelector('#quiz')) {
     buildQuiz();
