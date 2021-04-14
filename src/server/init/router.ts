@@ -3,7 +3,7 @@ import { Database } from "../database";
 import registerApi from "../views/api";
 import registerSecurity from "../views/security";
 import registerProfile from "../views/profile";
-import bodyparser from "body-parser";
+import middleware from "./middleware";
 
 export default function router(db: Database): Express {
     const app = express();
@@ -13,7 +13,9 @@ export default function router(db: Database): Express {
     app.get( "/dist/index.js", ( req, res ) => {
         res.sendFile( "dist/index.js", { root: '.' } );
     } );
-    app.use(bodyparser());
+
+    // Load middleware
+    middleware(app, db);
 
     // Dynamic content
     registerApi(app, db);
