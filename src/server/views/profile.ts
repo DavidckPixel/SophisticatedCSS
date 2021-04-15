@@ -3,7 +3,7 @@ import { Express } from "express";
 import { hash } from "argon2";
 import { renderFile } from "ejs";
 import { Database } from "../database";
-import { Question, QuestionResponse, User } from "../entities"
+import { Question, QuestionResponse, User, Quiz } from "../entities"
 import { isAuthenticated } from "../security";
 
 export default function register(app: Express, db: Database) {
@@ -12,22 +12,15 @@ export default function register(app: Express, db: Database) {
      */
     app.get('/profile', 
         isAuthenticated(),
-        asyncHandler(async (req, res) => {
-            // let answerdata = db.repository(QuestionResponse);
-            // let questions = db.repository(Question);
-            
-            // let allquestions = await questions.findAll();
-            // let numberofQuestions = allquestions.length;
-                
-            // let questionsAnsweredByUser = await answerdata.findBy({user : "David"});
-            // let numberQuestionsAnswered = questionsAnsweredByUser.length;
-
-            // let percentage = numberQuestionsAnswered / numberofQuestions * 100;
+        asyncHandler(async (req, res) => {            
             let user = req.user as User;
+            let quizes = db.repository(Quiz)
             let username = user.getUsername();
             let overallpercentage = await getOverallReport(username);
 
-            let html = await renderFile("template/profile.html.ejs", {message: {password:null, email:null}, data:overallpercentage})
+            var allquizforreport = await quizes.findAll();
+
+            let html = await renderFile("template/profile.html.ejs", {message: {password:null, email:null}, data:overallpercentage, allquizes:allquizforreport})
             res.send(html);
         })
     );
@@ -73,4 +66,38 @@ export default function register(app: Express, db: Database) {
 
                 return percentage;
     }
+
+    async function getQuizReport(username : string, thisquiz: string) {
+        let answerdata = db.repository(QuestionResponse);
+        let questions = db.repository(Question);
+        
+        
+        let questionsOfQuiz = await questions.findBy({quizid: thisquiz});
+        let questionidArray: (() => string)[] = [];
+        questionsOfQuiz.forEach(element => {
+            questionidArray.push(element.getId);
+        })
+        let numberofQuestions = questionsOfQuiz.length;
+            
+        
+        let questionsAnsweredByUser = await answerdata.findBy({user : username});        
+        let questionsAnsweredByUserThisQuiz = [];
+
+        questionsAnsweredByUser.forEach(element1 => {
+            let answeredid = element1.getQuestion;
+            questionidArray.forEach(element2 => {
+                if (answeredid == element2){
+                    questionsAnsweredByUserThisQuiz.push(answeredid);
+                }
+            })
+        })
+        let numberQuestionsAnsweredThisQuiz = questionsAnsweredByUserThisQuiz.length;
+
+        let percentage = numberQuestionsAnsweredThisQuiz / numberofQuestions * 100;
+
+        return percentage;
+}
+
+    
+
 }

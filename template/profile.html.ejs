@@ -81,14 +81,17 @@
                     <progress max="100" value="<%= data%>" class= "report__progressBar">
                 </div>
             </div>
-            <div class="report__oneProgress blackBlock blackBlock--label">
-                <div class="two-col">
-                    <h3 class="report__label ">Quiz 2</h3>
+            <% allquizes.forEach(function(element){ %>
+                <div class="report__oneProgress blackBlock blackBlock--label">
+                    <div class="two-col">
+                        <h3 class="report__label "><%=element.getTitle() %></h3>
+                    </div>
+                    <div class="two-col">
+                        <progress max="100" value="<%= data%>" class= "report__progressBar">
+                    </div>
                 </div>
-                <div class="two-col">
-                    <progress max="100" value="<%= data%>" class= "report__progressBar">
-                </div>
-            </div>            
+            <%})%>
+                     
         </section>
     </article>
 
