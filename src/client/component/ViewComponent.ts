@@ -1,7 +1,10 @@
+
 abstract class ViewComponent {
     private parent: ViewComponent | undefined;
 
     private location: Element | undefined;
+
+    public allmounted: ViewComponent[] | undefined;
 
     protected state: any;
     
@@ -15,6 +18,10 @@ abstract class ViewComponent {
     public mountTo(dest: Element|ViewComponent) {
         if (dest instanceof ViewComponent) {
             this.parent = dest;
+            if(!dest.allmounted){
+                dest.allmounted = [];
+            }
+            dest.allmounted.push(this);
         } else {
             this.location = dest.appendChild(this.doRender());
         }
@@ -38,12 +45,24 @@ abstract class ViewComponent {
         delete this.parent;
     }
 
+    public unmountAll(){
+        if(this.allmounted){
+            this.allmounted.forEach(x => {
+                if(x instanceof ViewComponent){
+                    x.unmount();
+                }
+            });
+        }
+
+        this.allmounted = [];
+    }
+
     /**
      * Update the state of the component and re-render it
      * 
      * @param state 
      */
-    protected setState(state: any): void
+    public setState(state: any): void
     {
         // Update the state
         this.state = state;

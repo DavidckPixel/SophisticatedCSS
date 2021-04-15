@@ -2,9 +2,23 @@
 /// <reference path="./Quiz.ts" />
 
 class QuizOverview extends ViewComponent {
-    constructor(quizes : Quiz[]){
+
+    public selected? : Quiz;
+    public pageMgr : QuizPageController;
+
+    constructor(quizes : Quiz[], pageMgr : QuizPageController){
         super();
+
+        this.pageMgr = pageMgr;
         this.switchState(quizes);
+    }
+
+    public setSelected(selected? : Quiz){
+        this.selected = selected;
+
+        if(selected){
+            console.log("Selected Quiz " + selected.id);
+        }
     }
 
     public switchState(quizes : Quiz[]){
@@ -19,11 +33,24 @@ class QuizOverview extends ViewComponent {
         this.setState({
             quizes: quizes,
         });
+
+        this.selected = undefined;
     }
 
     protected render(state: any): HTMLElement {
         return this.create("div", {}, 
-            ...state.quizes.map((x : Quiz) => x.doRender())
+            this.create("div", {"classList" : "quiz__controlblock"}, 
+                this.create("input", {"type":"button", "value" : "Start!", onclick: () => 
+                {
+                    if(this.selected){
+                        this.pageMgr.selectedQuiz(this.selected.id);
+                    }
+                }
+            }),
+                this.create("input", {"type":"button", "value" : "Idk!"})
+            ),
+            this.create("div", {"classList" : "quiz__quizblock"},
+            ...state.quizes.map((x : Quiz) => x.doRender()))
         );
     }
 }

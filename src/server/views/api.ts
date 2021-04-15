@@ -28,4 +28,22 @@ export default function register(app: Express, db: Database) {
 
         res.json(quizes);
     }));
+
+    app.get('/assesment/:quizid/:id', asyncHandler(async (req, res) => {
+        console.log("YOUR VARIABLES ARE: " + req.params.quizid +  " " +req.params.id);
+
+        const questionRepository = db.repository(Question);
+        const question = await questionRepository.findBy({quizid: req.params.quizid, id: req.params.id});
+
+        res.json(question[0]);
+    }));
+
+    app.get("/MutlipleChoice/:id", asyncHandler(async (req, res) => {
+        const questionChoiceRepository = db.repository(QuestionChoice);
+        const choices = await questionChoiceRepository.findBy({question: req.params.id});
+
+        console.log("UR CHOICES: " + choices)
+
+        res.json(choices);
+    }));
 }

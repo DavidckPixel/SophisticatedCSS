@@ -1,5 +1,5 @@
 import { Database } from "../database";
-import { Question, Quiz, Topic, User, QuestionResponse } from "../entities";
+import { Question, Quiz, Topic, User, QuestionResponse, QuestionChoice } from "../entities";
 import { hash } from "argon2";
 
 export default async function fixtures(db: Database) {
@@ -14,8 +14,12 @@ export default async function fixtures(db: Database) {
         new Quiz("id4", "TestQuiz4", "id2"),
     );
     await db.fixture(
-        new Question("id1", "id1", "test", "TestQuestion", "A question used during testing", "test"),
-        new Question("id2", "id1", "test", "TestQuestion", "A question used during testing", "test")
+        new Question("id1", "id1", "multi", "TestQuestion", "A question used during testing", "test"),
+        new Question("id2", "id1", "multi", "TestQuestion", "A question used during testing", "test")
+    );
+    await db.fixture(
+        new QuestionChoice("id1", "id1", "testQuestionChoice", "test"),
+        new QuestionChoice("id2", "id1", "testQuestionChoice2", "test"),
     );
     await db.fixture(new User("David", "Davidc.Koymans@outlook.com", await hash("1234")));
     await db.fixture(new QuestionResponse("id1", "David", "test"));

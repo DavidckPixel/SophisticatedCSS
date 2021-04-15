@@ -1,4 +1,4 @@
-function buildSelectScreen(){
+/*function buildSelectScreen(){
     const body = document.querySelector("body");
 
     if(!body){
@@ -6,12 +6,11 @@ function buildSelectScreen(){
         return;
     }
 
-    console.log("body located, beginnin creation of buildSelect");
-
     DynamicloadDoc("/assesment/topics/id1", (quizObjs : any[]) =>  {
         console.log("Length of quizes: " + quizObjs.length);
         const quizes = quizObjs.map(quiz => new Quiz(quiz.title, quiz.id, quiz.topicid));
         const allquizes = new QuizOverview(quizes);
+        quizes.forEach(x => x.setQuizMgr(allquizes));
         
         DynamicloadDoc("/assesment/topics", (topicObjs : any[]) =>  {
             console.log("Length of topics: " + topicObjs.length);
@@ -23,6 +22,8 @@ function buildSelectScreen(){
             allquizes.mountTo(body);
         });
     });
-    
+} */
 
+function buildQuizPage(){
+    const controller = new QuizPageController();
 }

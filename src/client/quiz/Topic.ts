@@ -20,6 +20,7 @@ class Topic extends ViewComponent
             onclick: () => {
                 DynamicloadDoc(`/assesment/topics/${state.id}`, (objects : any[]) => {
                     const quizes = objects.map(quiz => new Quiz(quiz.title, quiz.id, quiz.topicid));
+                    quizes.forEach(x => x.setQuizMgr(this.quizMgr));
                     this.quizMgr.switchState(quizes);
                 });
             }
