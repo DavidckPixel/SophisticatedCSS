@@ -2,7 +2,7 @@ import express, { Express } from "express";
 import { Database } from "../database";
 import registerApi from "../views/api";
 import registerSecurity from "../views/security";
-import registerProfile from "../views/profile";
+import registerUser from "../views/user";
 import registerAssesment from "../views/quiz";
 import middleware from "./middleware";
 
@@ -21,7 +21,7 @@ export default function router(db: Database): Express {
     // Dynamic content
     registerApi(app, db);
     registerSecurity(app, db);
-    registerProfile(app,db);
+    registerUser(app,db);
     registerAssesment(app,db);
 
     return app;
