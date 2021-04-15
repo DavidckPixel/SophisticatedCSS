@@ -73,21 +73,14 @@
         
         <section class="report__overall">
             <h2 class="report__title">Quizes report</h2>
-            <div class="report__oneProgress blackBlock blackBlock--label">
-                <div class="two-col">
-                    <h3 class="report__label ">Quiz 1</h3>
-                </div>
-                <div class="two-col">
-                    <progress max="100" value="<%= data%>" class= "report__progressBar">
-                </div>
-            </div>
-            <% allquizes.forEach(function(element){ %>
+            
+            <% allquizes.forEach(function(element, index){ %>
                 <div class="report__oneProgress blackBlock blackBlock--label">
                     <div class="two-col">
                         <h3 class="report__label "><%=element.getTitle() %></h3>
                     </div>
                     <div class="two-col">
-                        <progress max="100" value="<%= data%>" class= "report__progressBar">
+                        <progress max="100" value="<%= allscores[index] %>" class= "report__progressBar">
                     </div>
                 </div>
             <%})%>
