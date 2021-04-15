@@ -1,5 +1,6 @@
 import asyncHandler from "express-async-handler";
 import { Express } from "express";
+import { body, validationResult } from "express-validator";
 import { hash } from "argon2";
 import { renderFile } from "ejs";
 import { Database } from "../database";
@@ -7,6 +8,42 @@ import { Question, QuestionResponse, User } from "../entities"
 import { isAuthenticated } from "../security";
 
 export default function register(app: Express, db: Database) {
+    /**
+     * Register a new user
+     */
+    app.get('/register', asyncHandler(async (req, res) => {
+        let html = await renderFile("template/register.html.ejs", { message: null })
+        res.send(html);
+    }));
+    
+    /**
+     * Register a new user
+     */
+    app.post('/register',
+        body('username').not().isEmpty().trim().escape().custom(async username => {
+            const repo = db.repository(User);
+            const user = await repo.find(username);
+            if (user) {
+                return Promise.reject('Username already exists');
+            }
+        }),
+        body('email').isEmail().normalizeEmail(),
+        body('password').not().isEmpty().custom((password, { req }) => password === req.body.confPassword).withMessage("Passwords don't match"),
+        asyncHandler(async (req, res) => {
+            // Validate input
+            const errors = validationResult(req).formatWith(({ msg, param }) => `${param}: ${msg}`);
+            if (!errors.isEmpty()) {
+                let html = await renderFile("template/register.html.ejs", { message: errors.array().join(', ') })
+                return res.send(html);
+            }
+
+            // Valid input, handle
+            const repo = db.repository(User);
+            await repo.insert(new User(req.body.username, req.body.email, await hash(req.body.password)));
+            res.redirect('/login');
+        })
+    );
+
     /**
      * profile page
      */
