@@ -101,6 +101,7 @@ class QuestionElement extends ViewComponent{
             ...state.input.map((x : any) => x.doRender())), 
             this.create("div", {"classList": "checkBlock"},
                 checkbox,
+                this.create("div", {"classList": "blackBlock blackBlock--label blackBlock--centertext checkBlock__navigate"},
                 this.create("input", { "classList": "checkBlock__button two-col", "type": "button", "value": "Back",
                     onclick : () =>{
                         this.quizMgr.previousQuestion();
@@ -110,7 +111,7 @@ class QuestionElement extends ViewComponent{
                     onclick : () =>{
                         this.quizMgr.nextQuestion();
                     } 
-                })
+                }))
         ),
     ));
     }

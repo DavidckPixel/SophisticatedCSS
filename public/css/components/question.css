@@ -3,10 +3,13 @@
 }
 
 .questionBlock__titleContainer{
-    width:100%;
+    width:96%;
     background-color: white;
     min-height: 115px;
+    margin: 2%;
     margin-bottom: 10px;
+    border-radius: 15px;
+    
 }
 .questionBlock__title{
     color: black;
@@ -96,11 +99,17 @@
     font-size: 26px;
 }
 
+.checkBlock__navigate{
+    padding-left:18%;
+    padding-right:18%;
+}
 .answerBlock{
     color:white;
     width: 66%;
     height:auto;
     float:left;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .answerBlock--invert{
@@ -131,8 +140,8 @@
     float:left;
     padding: 5px;
     margin-left:10px;
-    margin-top:118px;
-    margin-bottom: 118px;
+    margin-top:65px;
+    margin-bottom: 65px;
     font-size: 20px;
     font-family: 'Fira Code', monospace;
 }

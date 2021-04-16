@@ -3,7 +3,6 @@ import { Database } from "../database";
 import registerApi from "../views/api";
 import registerSecurity from "../views/security";
 import registerUser from "../views/user";
-import registerAssesment from "../views/quiz";
 import middleware from "./middleware";
 
 export default function router(db: Database): Express {
@@ -22,7 +21,6 @@ export default function router(db: Database): Express {
     registerApi(app, db);
     registerSecurity(app, db);
     registerUser(app,db);
-    registerAssesment(app,db);
 
     return app;
 }

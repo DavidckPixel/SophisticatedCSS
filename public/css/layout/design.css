@@ -7,6 +7,8 @@
     box-shadow: 0 0 8px 1px rgb(36, 34, 34);
     background-image:linear-gradient(315deg, black 30%, rgba(97, 90, 90, 0.507) 100%);
     padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .blackBlock--invert{
