@@ -13,16 +13,18 @@ class QuestionMulti extends ViewComponent{
         this.statement = statement;
         this.question = question;
         this.value = choicevalue;
+        this.setState({selectclass: "answerBlock__checkbox--deselected"})
     }
     
     protected render(state: any): HTMLElement {
-        return this.create("div", { "classList": "blackBlock blackBlock--small blackBlock--stacking two-col", onclick : () =>{
-            this.question.setAnswer(this.value);
-        }
-        },
-            this.create("p", { "classList": "answerBlock__Text" }, this.statement),
-                this.create("div", { "classList": "answerBlock__checkbox answerBlock__checkbox--deselected"})
+        return this.create("div", {},
+            this.create("div", { "classList": "blackBlock blackBlock--small two-col", onclick : () =>{
+                this.question.setAnswer(this.value, this);
+            }
+            },
+                this.create("p", { "classList": "answerBlock__Text" }, this.statement),
+                    this.create("div", { "classList": `answerBlock__checkbox ${state.selectclass}`})
+            )
         );
     }
-
 }

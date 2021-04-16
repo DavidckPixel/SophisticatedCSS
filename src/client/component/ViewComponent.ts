@@ -35,6 +35,10 @@ abstract class ViewComponent {
     public doRender(): HTMLElement {
         return this.render(this.state);
     }
+
+    public executeStateFunction(func : Function){
+        this.state.input.forEach((x : any) => func(x));
+    }
     
     /**
      * Unmount the mounted object
