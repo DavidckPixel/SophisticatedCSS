@@ -1,7 +1,7 @@
 import asyncHandler from "express-async-handler";
 import { Express, Request, Response, NextFunction } from "express";
 import { Database } from "../database";
-import { Topic, Quiz, Question, QuestionChoice, QuestionResponse } from "../entities";
+import { Topic, Quiz, Question, QuestionChoice, QuestionResponse, User } from "../entities";
 
 export default function register(app: Express, db: Database) {
     /**
@@ -64,7 +64,7 @@ export default function register(app: Express, db: Database) {
         res.json(choices);
     }));
 
-    app.post('/assesment/:id', asyncHandler(async (req, res) => {
+    app.post('/assesment/:id', authenticated("Replying whether or not filled in answer is correct") ,asyncHandler(async (req, res) => {
         const questionRepository = db.repository(Question);
         const question = await questionRepository.find(req.params.id);
 
@@ -73,18 +73,36 @@ export default function register(app: Express, db: Database) {
             return;
         }
 
-    
-        console.log("Explenation for this question: " + question.getExplanation());
 
-        req.on('data', chunk => {
+        req.on('data', async(chunk) => {
             let data = JSON.parse(chunk);
+            let answer;
 
             if(data.value == question.getCorrect()){
-                res.json({answer: true,  explanation: question.getExplanation()});
-                //Add to database that its correct
+                answer = true;
             }
-            else{ res.json({answer: false, explanation: question.getExplanation()} )};
-        } );}));
+            else{ answer = false};
+
+            if(req.user){
+                let user : User = req.user as User;
+                const questionReponse = db.repository(QuestionResponse);
+
+                let bool = await questionReponse.findBy({question: question.getId(), user: user.getUsername()})
+
+                if(bool.length <= 0){
+                    await questionReponse.insert(new QuestionResponse(question.getId(), user.getUsername(), answer.toString()));
+                }
+                else
+                {
+                    bool[0].setAnswer(answer.toString());
+                    await questionReponse.update(bool[0])
+                }
+            }
+
+            res.json({answer: answer, explanation: question.getExplanation()})
+            } 
+        );
+    }));
 }
 
 function authenticated(description : string) {

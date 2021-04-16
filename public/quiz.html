@@ -11,7 +11,7 @@
         content="This is the assesment page for the Sophisticated CSS site, it lets the user test themselves on their knowledge of preprocessors">
     </head>
 
-    <body id="quiz2">
+    <body id="quiz2" onload="buildQuizPage()">
         <header class="nav" id="nav" selectorTitle="Navigation">
             <div class="container container--centerVertical">
                 <div class="nav__home">
@@ -23,15 +23,13 @@
                         <li class= "nav__li"><a href="less.html">Less</a></li>
                         <li class= "nav__li"><a href="stylus.html">Stylus</a></li>
                         <li class= "nav__li"><a href="postcss.html">PostCSS</a></li>
-                        <li class= "nav__li"><a href="assesment.html">Quiz</a></li>
+                        <li class= "nav__li"><a href="quiz.html">Quiz</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
 
-        <acticle id="quizbody">
-            <button onclick="buildQuizPage()" type="button">Click to spam console!</button>
-        </acticle>
+        <article id="quizSection"></article>
 
         <footer class="footer" id="footer" selectorTitle="Footer">
             <div class="container container--centerVertical">
