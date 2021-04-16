@@ -12,7 +12,7 @@ export default function middleware(app: Express, db: Database): Express {
     app.use(morgan('combined'));
     app.use(express.json())
     app.use(express.urlencoded());
-    app.use(session({ secret: 'ThisIsNotSoSecret', resave: false, saveUninitialized: false }));
+    app.use(session({ secret: 'ThisIsNotSoSecret', resave: false, saveUninitialized: false, cookie: { maxAge: 7 * 24 * 60 * 60 * 1000 } }));
     app.use(passport.initialize());
     app.use(passport.session());
 

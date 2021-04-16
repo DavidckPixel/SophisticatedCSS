@@ -1,3 +1,5 @@
+import { verify } from "argon2";
+
 export default class User {
     private username : string;
     private email : string;
@@ -25,8 +27,8 @@ export default class User {
         this.email = email;
     }
 
-    public getPassword() : string{
-        return this.password;
+    public async verifyPassword(rawpass : string) : Promise<boolean> {
+        return await verify(this.password, rawpass);
     }
 
     public setPassword(password : string){

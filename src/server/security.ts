@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from "express";
-import { verify } from "argon2";
 import { Database } from "./database";
 import { User } from "./entities";
 
@@ -20,7 +19,7 @@ export function verifyCredentials(db: Database) {
         if (!user) {
             return done(null, false, { message: 'Incorrect username.' });
         }
-        if (!await verify(user.getPassword(), password)) {
+        if (!await user.verifyPassword(password)) {
             return done(null, false, { message: 'Incorrect password.' });
         }
         return done(null, user);
