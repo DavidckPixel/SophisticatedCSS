@@ -10,12 +10,13 @@
   },
   "dependencies": {
     "argon2": "^0.27.2",
-    "common-password-checker": "^0.1.0",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
+    "express-flash": "^0.0.2",
     "express-session": "^1.17.1",
     "express-validator": "^6.10.0",
+    "fxa-common-password-list": "^0.0.4",
     "helmet": "^4.4.1",
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
@@ -27,6 +28,7 @@
   "devDependencies": {
     "@types/ejs": "^3.0.6",
     "@types/express": "^4.17.11",
+    "@types/express-flash": "^0.0.2",
     "@types/express-session": "^1.17.3",
     "@types/morgan": "^1.9.2",
     "@types/node": "^14.14.37",

@@ -1,9 +1,8 @@
-import commonPassword from "common-password-checker";
+import commonPassword from "fxa-common-password-list";
 import asyncHandler from "express-async-handler";
-import { Express } from "express";
+import { Express, Response } from "express";
 import { body, validationResult } from "express-validator";
 import { hash } from "argon2";
-import { renderFile } from "ejs";
 import { Database } from "../database";
 import { Question, QuestionResponse, User, Quiz } from "../entities"
 import { isAuthenticated } from "../security";
@@ -12,10 +11,9 @@ export default function register(app: Express, db: Database) {
     /**
      * Register a new user
      */
-    app.get('/register', asyncHandler(async (req, res) => {
-        let html = await renderFile("template/register.html.ejs", { message: null })
-        res.send(html);
-    }));
+    app.get('/register', (req, res) => {
+        res.render("register.html.ejs", { message: null });
+    });
     
     /**
      * Register a new user
@@ -35,15 +33,15 @@ export default function register(app: Express, db: Database) {
             .isEmail()
             .normalizeEmail(),
         body('password')
-            .isStrongPassword()
-            .custom(password => !commonPassword(password)).withMessage("Password is too common")
+            .isLength({ min: 8 }).withMessage("Password must be at least 8 characters")
+            .isStrongPassword().withMessage("Password must be combination of upper/lowercase letters, digits and symbols")
+            .custom(password => !commonPassword.test(password)).withMessage("Password is too common")
             .custom((password, { req }) => password === req.body.confPassword).withMessage("Passwords don't match"),
         asyncHandler(async (req, res) => {
             // Validate input
             const errors = validationResult(req).formatWith(({ msg, param }) => `${param}: ${msg}`);
             if (!errors.isEmpty()) {
-                let html = await renderFile("template/register.html.ejs", { message: errors.array().join(', ') })
-                return res.send(html);
+                return res.render("register.html.ejs", { message: errors.array().join(', ') })
             }
 
             // Valid input, handle
@@ -63,8 +61,7 @@ export default function register(app: Express, db: Database) {
             
             let username = user.getUsername();
             
-            let html = await getTemplate(username, null, null);
-            res.send(html);
+            await renderProfile(res, username, null, null);
         })
     );
 
@@ -77,20 +74,21 @@ export default function register(app: Express, db: Database) {
             
             let user = req.user as User;
             let username = user.getUsername();
-            let html = await getTemplate(username, null, null);
+            let passwd = null;
+            let email = null; 
             
 
             if(req.body.name="password"){
                 user.setPassword(await hash(req.body.password));
-                html = await getTemplate(username, "success", null);
+                passwd = "success";
             }
             else if(req.body.name="email"){
                 user.setEmail(req.body.email);
-                html = await getTemplate(username, null, "success");
+                email = "success";
             }
 
             await db.repository(User).update(user);
-            res.send(html);  
+            await renderProfile(res, username, passwd, email);
         })
     );
 
@@ -153,15 +151,14 @@ export default function register(app: Express, db: Database) {
         return data;
     }
 
-    async function getTemplate(username:string, password:any, email:any){
+    async function renderProfile(res: Response, username:string, password:any, email:any){
         let quizes = db.repository(Quiz)
         let overallpercentage = await getOverallReport(username);
         var allquizforreport = await quizes.findAll();
 
         let allquizscores = await fillQuizScores(username, allquizforreport);
 
-        let html = await renderFile("template/profile.html.ejs", {message: {password, email}, data:overallpercentage, allquizes:allquizforreport, allscores:allquizscores});
-        return html;
+        res.render("profile.html.ejs", {message: {password, email}, data:overallpercentage, allquizes:allquizforreport, allscores:allquizscores});
     }
 
 }

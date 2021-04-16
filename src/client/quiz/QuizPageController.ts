@@ -15,7 +15,7 @@ class QuizPageController {
         this.currentQuizQuestions = [];
         this.quizCounter = 0;
 
-        this.body = document.querySelector("body");
+        this.body = document.getElementById("quizSection")
         if(!this.body){
             console.log("Body was not found");
             return;

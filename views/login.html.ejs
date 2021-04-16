@@ -40,8 +40,10 @@
                     <input type="password" id="password" name="password" class="inputSet__input"a><br>
                 </div>
                 <input type="submit" value="Login" class="login__button">
-                <% if (message) { %>
-                    <h2><%= message %></h2>
+                <% if (messages.error) { %>
+                    <% messages.error.forEach((element) => { %>
+                    <%= element %>
+                    <% }) %>
                 <% } %>
             </form>
             <a href="/register">Register a new account</a>    
