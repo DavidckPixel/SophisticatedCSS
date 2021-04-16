@@ -40,13 +40,15 @@
                     <input type="password" id="password" name="password" class="inputSet__input"a><br>
                 </div>
                 <input type="submit" value="Login" class="login__button">
+                <p class="login__text--white">
                 <% if (messages.error) { %>
                     <% messages.error.forEach((element) => { %>
                     <%= element %>
                     <% }) %>
                 <% } %>
+                </p>
             </form>
-            <a href="/register">Register a new account</a>    
+            <a href="/register" class="login__textsmall--white">Register a new account</a>    
             
         </article>
 
