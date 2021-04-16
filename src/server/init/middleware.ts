@@ -1,5 +1,6 @@
 import express, { Express } from "express";
 import session from "express-session";
+import flash from "express-flash";
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import morgan from "morgan";
@@ -14,6 +15,7 @@ export default function middleware(app: Express, db: Database): Express {
     app.use(express.json())
     app.use(express.urlencoded());
     app.use(session({ secret: 'ThisIsNotSoSecret', resave: false, saveUninitialized: false, cookie: { maxAge: 7 * 24 * 60 * 60 * 1000 } }));
+    app.use(flash());
     app.use(passport.initialize());
     app.use(passport.session());
 

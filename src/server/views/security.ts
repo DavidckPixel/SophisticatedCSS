@@ -8,14 +8,14 @@ export default function register(app: Express, db: Database) {
      * Login form
      */
     app.get('/login', (req, res) => {
-        res.render('login.html.ejs', {message: null });
+        res.render('login.html.ejs');
     });
 
     /**
      * Login form, user posted their login to the server
      */
     app.post('/login',
-        authenticate('local', { failureRedirect: '/login' }),
+        authenticate('local', { failureRedirect: '/login', failureFlash: true }),
         asyncHandler(async (req, res) => {
             // If this function gets called, authentication was successful.
             // Check if redirect was necessary
