@@ -33,7 +33,8 @@ export default function register(app: Express, db: Database) {
             .isEmail()
             .normalizeEmail(),
         body('password')
-            .isStrongPassword()
+            .isLength({ min: 8 }).withMessage("Password must be at least 8 characters")
+            .isStrongPassword().withMessage("Password must be combination of upper/lowercase letters, digits and symbols")
             .custom(password => !commonPassword.test(password)).withMessage("Password is too common")
             .custom((password, { req }) => password === req.body.confPassword).withMessage("Passwords don't match"),
         asyncHandler(async (req, res) => {
