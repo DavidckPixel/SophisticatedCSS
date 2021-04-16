@@ -8,6 +8,7 @@ import { Database } from "../database";
 import { verifyCredentials, serialize, deserialize } from "../security"; 
 
 export default function middleware(app: Express, db: Database): Express {
+    app.set("view engine", "ejs");
     app.use(helmet());
     app.use(morgan('combined'));
     app.use(express.json())

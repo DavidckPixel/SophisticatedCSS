@@ -16,11 +16,8 @@ export function verifyCredentials(db: Database) {
     return async (username: string, password: string, done: any) => {
         const repository = db.repository(User);
         const user = await repository.find(username).catch((err) => done(err));
-        if (!user) {
-            return done(null, false, { message: 'Incorrect username.' });
-        }
-        if (!await user.verifyPassword(password)) {
-            return done(null, false, { message: 'Incorrect password.' });
+        if (!user || !await user.verifyPassword(password)) {
+            return done(null, false, { message: 'Invalid credentials.' });
         }
         return done(null, user);
     };

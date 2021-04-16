@@ -1,17 +1,15 @@
 import asyncHandler from "express-async-handler";
 import { Express } from "express";
 import { authenticate } from "passport";
-import { renderFile } from "ejs";
 import { Database } from "../database";
 
 export default function register(app: Express, db: Database) {
     /**
      * Login form
      */
-    app.get('/login', asyncHandler(async (req, res) => {
-        let html = await renderFile("template/login.html.ejs", {message: null})
-        res.send(html);
-    }));
+    app.get('/login', (req, res) => {
+        res.render('login.html.ejs', {message: null });
+    });
 
     /**
      * Login form, user posted their login to the server
