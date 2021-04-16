@@ -1,4 +1,4 @@
-import commonPassword from "common-password-checker";
+import commonPassword from "fxa-common-password-list";
 import asyncHandler from "express-async-handler";
 import { Express, Response } from "express";
 import { body, validationResult } from "express-validator";
@@ -12,7 +12,7 @@ export default function register(app: Express, db: Database) {
      * Register a new user
      */
     app.get('/register', (req, res) => {
-        res.render("template/register.html.ejs", { message: null });
+        res.render("register.html.ejs", { message: null });
     });
     
     /**
@@ -34,7 +34,7 @@ export default function register(app: Express, db: Database) {
             .normalizeEmail(),
         body('password')
             .isStrongPassword()
-            .custom(password => !commonPassword(password)).withMessage("Password is too common")
+            .custom(password => !commonPassword.test(password)).withMessage("Password is too common")
             .custom((password, { req }) => password === req.body.confPassword).withMessage("Passwords don't match"),
         asyncHandler(async (req, res) => {
             // Validate input

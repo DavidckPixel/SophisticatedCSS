@@ -1,3 +1,3 @@
-declare module "common-password-checker" {
-    export default function commonPassword(password: string): boolean;
+declare module "fxa-common-password-list" {
+    export function test(password: string): boolean;
 }
