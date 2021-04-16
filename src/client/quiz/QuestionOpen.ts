@@ -3,12 +3,23 @@
 
 class QuestionOpen extends ViewComponent{
     
-    constructor(){
+    private question : QuestionElement;
+    private inputBlock : HTMLInputElement;
+
+    constructor(question : QuestionElement){
         super();
+
+        this.question = question;
+
+        this.inputBlock = this.create("input", { "classList": "answerBlock__textInput", "placeholder": "answer"}) as HTMLInputElement;
+        this.inputBlock.addEventListener("input",() =>{
+            this.question.setAnswer(this.inputBlock.value);
+        })
     }
     
     protected render(state: any): HTMLElement {
-        throw new Error("Method not implemented.");
+        return this.create("div", {},
+        this.create("div", { "classList": "blackBlock blackBlock--label one-col" },
+            this.inputBlock))
     }
-
 }

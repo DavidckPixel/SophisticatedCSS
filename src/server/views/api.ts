@@ -29,23 +29,58 @@ export default function register(app: Express, db: Database) {
         res.json(quizes);
     }));
 
-    app.get('/assesment/:quizid/:id', asyncHandler(async (req, res) => {
-        console.log("YOUR VARIABLES ARE: " + req.params.quizid +  " " +req.params.id);
-
+    app.get('/assesment/quizAmount/:quizid',asyncHandler(async (req, res) => { 
         const questionRepository = db.repository(Question);
-        const question = await questionRepository.findBy({quizid: req.params.quizid, id: req.params.id});
+        const questions = await questionRepository.findBy({quizid: req.params.quizid});
 
-        res.json(question[0]);
+        let array : string[] = [];
+
+        questions.forEach(question => {
+            array.push(question.getId());
+        });
+
+        res.json(array);
+    }));
+
+    app.get('/assesment/:quizid/:id', asyncHandler(async (req, res) => {
+        const questionRepository = db.repository(Question);
+        const questions = await questionRepository.findBy({quizid: req.params.quizid, id: req.params.id});
+        let question = questions[0];
+        
+        const replybody = 
+        {id : question.getId(), 
+        quizid : question.getQuizId(),
+        type: question.getType(),
+        title: question.getTitle(),
+        statement: question.getStatement() };
+
+        res.json(replybody);
     }));
 
     app.get("/MutlipleChoice/:id", asyncHandler(async (req, res) => {
         const questionChoiceRepository = db.repository(QuestionChoice);
         const choices = await questionChoiceRepository.findBy({question: req.params.id});
 
-        console.log("UR CHOICES: " + choices)
-
         res.json(choices);
     }));
+
+    app.post('/assesment/:id', asyncHandler(async (req, res) => {
+        const questionRepository = db.repository(Question);
+        const question = await questionRepository.find(req.params.id);
+
+        if(question == null){
+            res.status(500).send;
+            return;
+        }
+        req.on('data', chunk => {
+            let data = JSON.parse(chunk);
+
+            if(data.value == question.getCorrect()){
+                res.json({answer: true});
+                //Add to database that its correct
+            }
+            else{ res.json({answer: false})};
+        } );}));
 }
 
 function authenticated(description : string) {

@@ -3,13 +3,17 @@ class QuizPageController {
     private bodyElement : QuizBody;
     private currentQuestion : string;
     private currentQuiz : string;
+    private quizCounter : number;
     private body : HTMLElement | null;
+    private currentQuizQuestions : string[];
 
     constructor(){
         this.bodyElement = new QuizBody();
 
         this.currentQuestion = "";
         this.currentQuiz = "";
+        this.currentQuizQuestions = [];
+        this.quizCounter = 0;
 
         this.body = document.querySelector("body");
         if(!this.body){
@@ -20,7 +24,7 @@ class QuizPageController {
         this.buildSelectScreen();
     }
 
-    private buildSelectScreen(){   
+    private async buildSelectScreen(){   
         DynamicloadDoc("/assesment/topics/id1", (quizObjs : any[]) =>  {
             console.log("Length of quizes: " + quizObjs.length);
             const quizes = quizObjs.map(quiz => new Quiz(quiz.title, quiz.id, quiz.topicid));
@@ -43,11 +47,10 @@ class QuizPageController {
         });
     }
 
-    private buildQuestionScreen()
+    private async buildQuestionScreen()
     {
         DynamicloadDoc(`/assesment/${this.currentQuiz}/${this.currentQuestion}`, (Objs : any) =>  {
-            console.log(Objs);
-            const questionElement = new QuestionElement(Objs.id, Objs.quizid, Objs.type, Objs.title, Objs.statement);
+            const questionElement = new QuestionElement(Objs.id, Objs.quizid, Objs.type, Objs.title, Objs.statement, this);
             questionElement.mountTo(this.bodyElement);
 
             this.bodyElement.doRender();
@@ -56,18 +59,68 @@ class QuizPageController {
     });
     }
 
+    private async getQuizQuestions(){
+        DynamicloadDoc(`/assesment/quizAmount/${this.currentQuiz}`, (Objs : any) =>  {
+            console.log(Objs);
+            this.currentQuizQuestions = Objs;
+        });
+    }
+
+
     public selectedQuiz(quizid : string){
         this.currentQuiz = quizid;
-        this.currentQuestion = "id1";
+        this.quizCounter = 0;
+        
+        DynamicloadDoc(`/assesment/quizAmount/${this.currentQuiz}`, (Objs : any) =>  {
+            this.currentQuizQuestions = Objs;
 
-        this.bodyElement.unmountAll();
-        this.buildQuestionScreen();
+            if(this.currentQuizQuestions == [])
+            { 
+                console.log("quiz holds no questions");
+                return;
+            }
+    
+            this.switchQuestion();
+        });
     }
 
     public switchQuestion(){
-        this.currentQuestion = "id1";
+        this.currentQuestion = this.currentQuizQuestions[this.quizCounter];
 
         this.bodyElement.unmountAll();
         this.buildQuestionScreen();
+
+        this.bodyElement.doRender();
+    }
+
+    public nextQuestion(){
+        if(this.quizCounter + 1 >= this.currentQuizQuestions.length){
+            this.returnTopicSelect();
+        }
+        else{ 
+            this.quizCounter++;
+            this.switchQuestion();
+        }
+    }
+
+    public previousQuestion(){
+        if(this.quizCounter - 1 < 0){
+            this.returnTopicSelect();
+        }
+        else{ 
+            this.quizCounter--;
+            this.switchQuestion();
+        }
+    }
+
+    public async returnTopicSelect(){
+        this.currentQuiz = "";
+        this.currentQuestion="";
+
+        this.bodyElement.unmountAll();
+        this.bodyElement.unmount();
+        await this.buildSelectScreen();
+
+        this.bodyElement.doRender();
     }
 }
