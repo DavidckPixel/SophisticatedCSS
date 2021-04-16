@@ -1,0 +1,61 @@
+.allTopics{
+
+}
+
+.quiz{
+
+}
+
+.quiz__title{
+    margin:0;
+    padding:0;
+    margin-left: 2%;
+    font-size: 26px;
+    font-family: 'Fira Code', monospace;
+    color: white;
+    text-decoration-line: none;
+}
+
+.quiz__controlblock{
+    
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.quiz__controlbutton{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width:40%;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    margin-left: 4%;
+    margin-right:4%;
+}
+
+.allTopics__title{
+    margin:0;
+    padding:0;
+    margin-left: 2%;
+    font-size: 26px;
+    font-family: 'Fira Code', monospace;
+    color: white;
+    text-decoration-line: none;
+}
+
+
+.topic{
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+.topic__text{
+    margin:0;
+    padding:0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    text-decoration-line: none;
+}

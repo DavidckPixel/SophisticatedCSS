@@ -38,16 +38,17 @@ class QuizOverview extends ViewComponent {
     }
 
     protected render(state: any): HTMLElement {
-        return this.create("div", {}, 
-            this.create("div", {"classList" : "quiz__controlblock"}, 
-                this.create("input", {"type":"button", "value" : "Start!", onclick: () => 
+        return this.create("section", {"classList":"quiz two-col"}, 
+            this.create("h2", {"classList" : "quiz__title"}, "Quizes"),
+            this.create("div", {"classList" : "quiz__controlblock blackBlock blackBlock--label"}, 
+                this.create("input", {"type":"button", "value" : "Start!","classList" : "quiz__controlbutton", onclick: () => 
                 {
                     if(this.selected){
                         this.pageMgr.selectedQuiz(this.selected.id);
                     }
                 }
             }),
-                this.create("input", {"type":"button", "value" : "Idk!"})
+                this.create("input", {"type":"button", "value" : "Topic info", "classList" : "quiz__controlbutton"})
             ),
             this.create("div", {"classList" : "quiz__quizblock"},
             ...state.quizes.map((x : Quiz) => x.doRender()))

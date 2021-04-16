@@ -16,7 +16,7 @@ class Topic extends ViewComponent
     }
 
     public render(state: any): HTMLElement {
-        return this.create("div", {
+        return this.create("div", { "classList": "blackBlock blackBlock--label topic",
             onclick: () => {
                 DynamicloadDoc(`/assesment/topics/${state.id}`, (objects : any[]) => {
                     const quizes = objects.map(quiz => new Quiz(quiz.title, quiz.id, quiz.topicid));
@@ -25,7 +25,7 @@ class Topic extends ViewComponent
                 });
             }
         },
-            this.create("p", {}, state.name)
+            this.create("p", {"classList" : "topic__text"}, state.name)
         );
     }
 }

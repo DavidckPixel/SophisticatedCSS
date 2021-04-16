@@ -20,13 +20,14 @@ class Quiz extends ViewComponent
     }
 
     public render(state: any): HTMLElement {
-        return this.create("div", {onclick : () => 
+        return this.create("div", {"classList": "blackBlock blackBlock--label topic", onclick : () => 
             {
                 if(this.quizMgr){
                     this.quizMgr.setSelected(this);
                 }
             }
-        }, state.title);
+        }, this.create("p", {"classList" : "topic__text"}, state.title)
+        );
     }
     
 }

@@ -15,8 +15,10 @@ class TopicOverview extends ViewComponent{
     }
 
     public render(state: any): HTMLElement {
-        return this.create("div", {}, 
+        return this.create("section", {"classList" : "allTopics"},                    
+                    this.create("div", {"classList" : "two-col"},
+                    this.create("h2", {"classList" : "allTopics__title"}, "Topics"),
             ...state.topics.map((x : Topic) => x.doRender())
-        )
+        ))
     }
 }
