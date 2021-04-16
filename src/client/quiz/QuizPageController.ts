@@ -24,6 +24,8 @@ class QuizPageController {
         this.buildSelectScreen();
     }
 
+    
+
     private async buildSelectScreen(){   
         DynamicloadDoc("/assesment/topics/id1", (quizObjs : any[]) =>  {
             console.log("Length of quizes: " + quizObjs.length);
@@ -36,7 +38,7 @@ class QuizPageController {
                 const topics = topicObjs.map(x => new Topic(x.title, x.id, allquizes));
                 console.log(topics);
                 const alltopics = new TopicOverview(topics);
-
+                topics.forEach(element => element.giveOverview(alltopics));
                 alltopics.mountTo(this.bodyElement);
                 allquizes.mountTo(this.bodyElement);
 

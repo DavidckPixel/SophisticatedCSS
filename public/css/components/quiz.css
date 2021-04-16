@@ -3,7 +3,7 @@
 }
 
 .quiz{
-
+    
 }
 
 .quiz__title{
@@ -20,12 +20,13 @@
     
     margin-top: 5px;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .quiz__controlbutton{
     margin-top: 10px;
     margin-bottom: 10px;
-    width:40%;
+    width:80%;
     font-family: 'Quicksand', sans-serif;
     font-size: 16px;
     margin-left: 4%;
@@ -46,16 +47,72 @@
 .topic{
     margin-top: 5px;
     margin-bottom: 5px;
-
+    min-height: 50px;
 }
 
 .topic__text{
     margin:0;
     padding:0;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 80%;
+    float: left;
     font-size: 20px;
     font-family: 'Quicksand', sans-serif;
     color: white;
     text-decoration-line: none;
 }
+
+.topic__checkbox{
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    float: right;
+}
+
+.topic__checkbox--selected{
+    background-image: url("../../image/arrow.png");
+    background-size:30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 30px;
+    height: 22px;
+    border-radius: 0;
+}
+
+.topic__checkbox--deselected{
+    background-color: white;
+}
+
+.oneQuiz{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    min-height: 50px;
+}
+
+.oneQuiz__text{
+    margin:0;
+    padding:0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 80%;
+    float: left;
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    text-decoration-line: none;
+}
+
+.oneQuiz__startButton{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width:15%;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    margin-left: 1%;
+    margin-right:4%;
+    float: right;
+}
+
