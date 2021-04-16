@@ -1,3 +1,4 @@
+import commonPassword from "common-password-checker";
 import asyncHandler from "express-async-handler";
 import { Express } from "express";
 import { body, validationResult } from "express-validator";
@@ -20,15 +21,23 @@ export default function register(app: Express, db: Database) {
      * Register a new user
      */
     app.post('/register',
-        body('username').not().isEmpty().trim().escape().custom(async username => {
-            const repo = db.repository(User);
-            const user = await repo.find(username);
-            if (user) {
-                return Promise.reject('Username already exists');
-            }
-        }),
-        body('email').isEmail().normalizeEmail(),
-        body('password').not().isEmpty().custom((password, { req }) => password === req.body.confPassword).withMessage("Passwords don't match"),
+        body('username')
+            .not().isEmpty()
+            .trim().escape()
+            .custom(async username => {
+                const repo = db.repository(User);
+                const user = await repo.find(username);
+                if (user) {
+                    return Promise.reject();
+                }
+            }).withMessage('Username already exists'),
+        body('email')
+            .isEmail()
+            .normalizeEmail(),
+        body('password')
+            .isStrongPassword()
+            .custom(password => !commonPassword(password)).withMessage("Password is too common")
+            .custom((password, { req }) => password === req.body.confPassword).withMessage("Passwords don't match"),
         asyncHandler(async (req, res) => {
             // Validate input
             const errors = validationResult(req).formatWith(({ msg, param }) => `${param}: ${msg}`);
