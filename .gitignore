@@ -11,4 +11,4 @@ dist/**/*
 
 # ignore yarn.lock
 yarn.lock
-quiz.db
+*.db
