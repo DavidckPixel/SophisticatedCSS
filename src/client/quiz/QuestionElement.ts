@@ -8,6 +8,7 @@ class QuestionElement extends ViewComponent{
     private id :string;
     private quizMgr : QuizPageController;
     private type : string;
+    private explenation : string = "";
 
     constructor(id : string, quizid : string, type : string, title : string, statement : string, quizMgr : QuizPageController)
     {
@@ -22,7 +23,7 @@ class QuestionElement extends ViewComponent{
         if(type == "multi"){
             DynamicloadDoc(`/MutlipleChoice/${this.id}`, (objects : any[]) => {
                 const choices = objects.map(choice => new QuestionMulti(choice.id, choice.questionid, choice.statement, choice.choiceValue, this));
-                this.setState({input : choices});
+                this.setState({input : choices, showanswer: false});
                 choices.forEach(x => x.mountTo(this));
             })
         }
@@ -30,7 +31,7 @@ class QuestionElement extends ViewComponent{
             DynamicloadDoc(`/MutlipleChoice/${this.id}`, (objects : any[]) => { //Doe er niks mee maar moet??
                 const opens : QuestionOpen[] = [];
                 opens.push(new QuestionOpen(this));
-                this.setState({input : opens});
+                this.setState({input : opens, showanswer: false});
                 opens.forEach(x => x.mountTo(this));
             })
         }
@@ -52,19 +53,44 @@ class QuestionElement extends ViewComponent{
     public checkAnswer(){
         console.log("sending asnwer: " + this.selectedAnswer)
         PostDynamicloadDoc(`/assesment/${this.id}`,this.selectedAnswer, (Objs : any) =>{
-            console.log(Objs.answer);
             if(Objs.answer){
-                console.log("you answered correctly");
+                this.explenation += "Correct! | ";
             }
             else{ 
-                console.log("you answered incorrectly!");
+                this.explenation += "Wrong! | "; 
             }
+
+            this.explenation += Objs.explanation;
+            this.setState({
+                ...this.state,
+                showanswer: true,
+            });
         })
     }
 
     protected render(state: any): HTMLElement {
 
         if(!state){return this.create("div");}
+
+        let checkbox : HTMLElement;
+
+        if(state.showanswer){
+            let stringArray : string[] = this.explenation.split("|");
+
+            let bool = stringArray[0][0] == "C" ? true : false;
+
+            checkbox = this.create("div", { "classList": `blackBlock checkBlock__Header--${bool}` }, this.create("h3", {}, stringArray[0]),
+            this.create("p", { "classList": "checkBlock__explanation" }, stringArray[1],));
+        }
+        else{
+            checkbox = this.create("div", { "classList": "blackBlock" },
+                this.create("input", { "classList": "checkBlock__button checkBlock--center", "type": "button", "value": "Check!",
+                    onclick : () =>{
+                        this.checkAnswer();
+                        } 
+                })
+            );
+        }
 
         return this.create("section", { "classList": "questionBlock", "selectorTitle": "Question", "id": "question" },
         this.create("div", { "classList": "questionBlock__titleContainer" },
@@ -74,12 +100,7 @@ class QuestionElement extends ViewComponent{
             this.create("div", {"classList": "answerBlock"},
             ...state.input.map((x : any) => x.doRender())), 
             this.create("div", {"classList": "checkBlock"},
-                this.create("div", { "classList": "blackBlock" },
-                    this.create("input", { "classList": "checkBlock__button checkBlock--center", "type": "button", "value": "Check!",
-                                onclick : () =>{
-                                    this.checkAnswer();
-                                } 
-                        })),
+                checkbox,
                 this.create("input", { "classList": "checkBlock__button two-col", "type": "button", "value": "Back",
                     onclick : () =>{
                         this.quizMgr.previousQuestion();

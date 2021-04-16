@@ -72,14 +72,18 @@ export default function register(app: Express, db: Database) {
             res.status(500).send;
             return;
         }
+
+    
+        console.log("Explenation for this question: " + question.getExplanation());
+
         req.on('data', chunk => {
             let data = JSON.parse(chunk);
 
             if(data.value == question.getCorrect()){
-                res.json({answer: true});
+                res.json({answer: true,  explanation: question.getExplanation()});
                 //Add to database that its correct
             }
-            else{ res.json({answer: false})};
+            else{ res.json({answer: false, explanation: question.getExplanation()} )};
         } );}));
 }
 

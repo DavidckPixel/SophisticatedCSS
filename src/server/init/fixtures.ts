@@ -53,10 +53,10 @@ export default async function fixtures(db: Database) {
         new Question(question11, quiz3, "multi", "Sass disadvantages", "What is a disadvantage of Sass?", "Q11O1", "Well, it's true, and it can be very problematic"),
         new Question(uuidv4(), quiz3, "open", "Sass command line", "Using the command line, what must the programmer type to convert the file layout.scss to a css file called “generated”?", "sass layout.scss generated.css", "As Sass converts scss files into css files, this can be done through a variety of methods, the simplest one being the command line. The command begins with Sass, stating that it is a sass command, followed by the name of the file the user wants to convert, and lastly the name of the file that needs to be generated. so: sass layout.scss generated.css"),
 
-        new Question(question13, quiz3, "multi", "Less meaning", "What does LESS stand for?", "Q13O4", "There isn't really much explanation nessecary for this, isn't it? You shoul've paid attention"),
-        new Question(question14, quiz3, "multi", "Less advantages", "What is an advantage of LESS?", "Q14O2", "It's based on Sass, but adds a couple of features"),
-        new Question(question15, quiz3, "multi", "Less disadvantages", "What is a disadvantage of LESS?", "Q1503", "It's all in the table, but key is that it just makes things more complex"),
-        new Question(uuidv4(), quiz3, "open", "Less variable", "What symbol is used to define a variable in the pre-processor Less?", "@", "When defining a variable in less, the programmer does this with the @ symbol followed by the name of the variable, for Sass this is $")
+        new Question(question13, quiz4, "multi", "Less meaning", "What does LESS stand for?", "Q13O4", "There isn't really much explanation nessecary for this, isn't it? You shoul've paid attention"),
+        new Question(question14, quiz4, "multi", "Less advantages", "What is an advantage of LESS?", "Q14O2", "It's based on Sass, but adds a couple of features"),
+        new Question(question15, quiz4, "multi", "Less disadvantages", "What is a disadvantage of LESS?", "Q1503", "It's all in the table, but key is that it just makes things more complex"),
+        new Question(uuidv4(), quiz4, "open", "Less variable", "What symbol is used to define a variable in the pre-processor Less?", "@", "When defining a variable in less, the programmer does this with the @ symbol followed by the name of the variable, for Sass this is $")
     );
     await db.fixture(
         new QuestionChoice(uuidv4(), question1, "...not very usefull", "Q1O1"),
