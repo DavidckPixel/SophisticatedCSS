@@ -100,6 +100,8 @@ export default function register(app: Express, db: Database) {
 
                 let percentage = numberQuestionsAnswered / numberofQuestions * 100;
 
+                //console.log("AnsweredQuestions : " + numberQuestionsAnswered + " / Questions : " + numberofQuestions + " Gives percentage = " + percentage);
+
                 return percentage;
     }
 
