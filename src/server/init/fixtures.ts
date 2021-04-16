@@ -29,8 +29,8 @@ export default async function fixtures(db: Database) {
     const question15 = uuidv4();
 
     await db.fixture(
-        new Topic(topic1, "Preprocessors in general", "A topic used during testing"),
-        new Topic(topic2, "Different Preprocessors", "A topic used during testing"),
+        new Topic(topic1, "Preprocessors in general", "/index.html"),
+        new Topic(topic2, "Different Preprocessors", "/sass.html"),
     );
     await db.fixture(
         new Quiz(quiz1, "History and working of preprocessors", topic1),
@@ -39,24 +39,24 @@ export default async function fixtures(db: Database) {
         new Quiz(quiz4, "LESS", topic2),
     );
     await db.fixture(
-        new Question(question1, quiz1, "multi", "Pre-processor identity", "Pre-processors are...", "Q1O2"),
-        new Question(question3, quiz1, "multi", "Pre-processor history", "In which year was the pre-processor that is considered to be the pioneer of CSS pre-processors introduced?", "Q3O3"),
-        new Question(uuidv4(), quiz1, "open", "Pre-processor pioneer", "Which pre-processor is considered to be the pioneer of CSS pre-processors?", "SASS"),
+        new Question(question1, quiz1, "multi", "Pre-processor identity", "Pre-processors are...", "Q1O2", "Preprocessors are scripting languages that extend the default capabilities of CSS"),
+        new Question(question3, quiz1, "multi", "Pre-processor history", "In which year was the pre-processor that is considered to be the pioneer of CSS pre-processors introduced?", "Q3O3", "The pioneer was first introduced in 2006, followed by it's main rival in 2009"),
+        new Question(uuidv4(), quiz1, "open", "Pre-processor pioneer", "Which pre-processor is considered to be the pioneer of CSS pre-processors?", "SASS", "Sass was considered the pioneer of pre-processors, Less was introduced only three years later"),
 
-        new Question(question5, quiz2, "multi", "Pre-processor functions", "What is not a function of a pre-processor?", "Q5O1"),
-        new Question(question6, quiz2, "multi", "Pre-processor risks", "What is a possible risk of using a preprocessor?", "Q6O4"),
-        new Question(question7, quiz2, "multi", "Vendor lock-in", "What is 'vendor lock-in'?", "Q7O3"),
-        new Question(uuidv4(), quiz2, "open", "Pre-processor advantage", "Most preprocessors will add __A__ that don't exist in pure CSS. What does A stand for?", "functions"),
+        new Question(question5, quiz2, "multi", "Pre-processor functions", "What is not a function of a pre-processor?", "Q5O1", "all code written with pre processor will be converted into CSS files and could have been written without pre-processors"),
+        new Question(question6, quiz2, "multi", "Pre-processor risks", "What is a possible risk of using a preprocessor?", "Q6O4", "By using a preprocessor, your stylesheets will be written in a non-standard language, unsupported by browsers. This means that you're depending on the continued support for your preprocessor language of choice."),
+        new Question(question7, quiz2, "multi", "Vendor lock-in", "What is 'vendor lock-in'?", "Q7O3", "Vendor lock-in means that you can't change the vendor anymore, when you've started with a pre-processor, you can't quit halfway through a project"),
+        new Question(uuidv4(), quiz2, "open", "Pre-processor advantage", "Most preprocessors will add __A__ that don't exist in pure CSS. What does A stand for?", "functions", "The reason we're using CSS preprocessors is to add extra functionalities that CSS wouldn't otherwise have."),
 
-        new Question(question9, quiz3, "multi", "Sass operators", "Which operator is not included in Sass?", "Q9O4"),
-        new Question(question10, quiz3, "multi", "Sass advantages", "What is an advantage of Sass?", "Q10O2"),
-        new Question(question11, quiz3, "multi", "Sass disadvantages", "What is a disadvantage of Sass?", "Q11O1"),
-        new Question(uuidv4(), quiz3, "open", "Sass command line", "Using the command line, what must the programmer type to convert the file layout.scss to a css file called “generated”?", "sass layout.scss generated.css"),
+        new Question(question9, quiz3, "multi", "Sass operators", "Which operator is not included in Sass?", "Q9O4", "The power operator is not included."),
+        new Question(question10, quiz3, "multi", "Sass advantages", "What is an advantage of Sass?", "Q10O2", "Sass is a community driven stylesheet language that’s compiled to CSS. It was the first and is still the most popular"),
+        new Question(question11, quiz3, "multi", "Sass disadvantages", "What is a disadvantage of Sass?", "Q11O1", "Well, it's true, and it can be very problematic"),
+        new Question(uuidv4(), quiz3, "open", "Sass command line", "Using the command line, what must the programmer type to convert the file layout.scss to a css file called “generated”?", "sass layout.scss generated.css", "As Sass converts scss files into css files, this can be done through a variety of methods, the simplest one being the command line. The command begins with Sass, stating that it is a sass command, followed by the name of the file the user wants to convert, and lastly the name of the file that needs to be generated. so: sass layout.scss generated.css"),
 
-        new Question(question13, quiz3, "multi", "Less meaning", "What does LESS stand for?", "Q13O4"),
-        new Question(question14, quiz3, "multi", "Less advantages", "What is an advantage of LESS?", "Q14O2"),
-        new Question(question15, quiz3, "multi", "Less disadvantages", "What is a disadvantage of LESS?", "Q1503"),
-        new Question(uuidv4(), quiz3, "open", "Less variable", "What symbol is used to define a variable in the pre-processor Less?", "@")
+        new Question(question13, quiz3, "multi", "Less meaning", "What does LESS stand for?", "Q13O4", "There isn't really much explanation nessecary for this, isn't it? You shoul've paid attention"),
+        new Question(question14, quiz3, "multi", "Less advantages", "What is an advantage of LESS?", "Q14O2", "It's based on Sass, but adds a couple of features"),
+        new Question(question15, quiz3, "multi", "Less disadvantages", "What is a disadvantage of LESS?", "Q1503", "It's all in the table, but key is that it just makes things more complex"),
+        new Question(uuidv4(), quiz3, "open", "Less variable", "What symbol is used to define a variable in the pre-processor Less?", "@", "When defining a variable in less, the programmer does this with the @ symbol followed by the name of the variable, for Sass this is $")
     );
     await db.fixture(
         new QuestionChoice(uuidv4(), question1, "...not very usefull", "Q1O1"),

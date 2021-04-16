@@ -6,8 +6,9 @@ export default class Question
     private title : string;
     private statement : string;
     private correct : string;
+    private explanation : string;
 
-    constructor(id : string, quizid : string, type : string, title : string, statement : string, correct : string)
+    constructor(id : string, quizid : string, type : string, title : string, statement : string, correct : string, explanation : string)
     {
         this.id = id;
         this.quizid = quizid;
@@ -15,6 +16,7 @@ export default class Question
         this.title = title;
         this.statement = statement;
         this.correct = correct;
+        this.explanation = explanation;
     }
 
     public getId() : string{
@@ -63,5 +65,13 @@ export default class Question
 
     public setCorrect(correct : string){
         this.correct = correct;
+    }
+
+    public getExplanation() : string{
+        return this.explanation;
+    }
+    
+    public setExplanation(explanation : string){
+        this.explanation = explanation;
     }
 }

@@ -13,6 +13,7 @@ db.register(Question, {
     title: Db.String(),
     statement: Db.String(),
     correct: Db.String(),
+    explanation: Db.String(),
 })
 db.register(QuestionChoice, {
     id: Db.Primary(Db.String()),
