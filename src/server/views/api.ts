@@ -1,5 +1,5 @@
 import asyncHandler from "express-async-handler";
-import { Express } from "express";
+import { Express, Request, Response, NextFunction } from "express";
 import { Database } from "../database";
 import { Topic, Quiz, Question, QuestionChoice, QuestionResponse } from "../entities";
 
@@ -46,4 +46,14 @@ export default function register(app: Express, db: Database) {
 
         res.json(choices);
     }));
+}
+
+function authenticated(description : string) {
+    return (req: Request, res: Response, next: NextFunction) => {
+        if (req.isAuthenticated()) {
+            next();
+        } else {
+            res.status(401).setHeader("WWW-Authenticate", `Basic realm="${description}"`)
+        }
+    };
 }
