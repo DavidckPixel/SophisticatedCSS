@@ -23,6 +23,7 @@ export default function register(app: Express, db: Database) {
 
     /**
      * Set the latest page viewed by the user
+     * @param location The question ID of the latest opened question
      * @returns A JSON representation of the corresponding question
      */
     app.post('/api/session/current',
