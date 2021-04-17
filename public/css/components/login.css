@@ -5,3 +5,10 @@
 .login__textsmall--white{
     color:white;
 }
+
+.loginoutbox{
+    width:30%;
+    float: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

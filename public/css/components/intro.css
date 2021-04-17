@@ -4,6 +4,7 @@
 .intro{
     margin-top:50px;
     height:auto;
+    display: block;
 }
 
 /* .intro .introBlock{

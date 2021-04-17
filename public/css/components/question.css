@@ -195,7 +195,7 @@
 @media (max-width: 600px) {
     .checkBlock{
         float:left;
-        min-height:0px;
+        min-height:0;
         margin: 5px;
         height:auto;
         width: calc(100% - 10px);

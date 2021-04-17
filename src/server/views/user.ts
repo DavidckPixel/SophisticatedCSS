@@ -77,7 +77,7 @@ export default function register(app: Express, db: Database) {
             let passwd = null;
             let email = null; 
             
-
+            
             if(req.body.name="password"){
                 user.setPassword(await hash(req.body.password));
                 passwd = "success";
@@ -85,6 +85,9 @@ export default function register(app: Express, db: Database) {
             else if(req.body.name="email"){
                 user.setEmail(req.body.email);
                 email = "success";
+            }
+            else if(req.body.name="login"){
+                // Logout something
             }
 
             await db.repository(User).update(user);
