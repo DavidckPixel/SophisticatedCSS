@@ -27,6 +27,12 @@ export default async function fixtures(db: Database) {
     const question13 = uuidv4();
     const question14 = uuidv4();
     const question15 = uuidv4();
+    
+    const user1 = "David";
+    const user2 = "Laura";
+    const user3 = "Jasper";
+    const user4 = "Pietje";
+    const user5 = "Jantje";
 
     await db.fixture(
         new Topic(topic1, "Preprocessors in general", "/index.html"),
@@ -114,5 +120,23 @@ export default async function fixtures(db: Database) {
         new QuestionChoice(uuidv4(), question15, "It uses scripts", "Q1503"),
         new QuestionChoice(uuidv4(), question15, "It isn't backwards compatible", "Q1504"),
     );
-    await db.fixture(new User("David", "Davidc.Koymans@outlook.com", await hash("1234")));
+    await db.fixture(
+        new User(user1, `${user1}@emailaddress.com`, await hash("MoeilijkP@SSW0RD")),
+        new User(user2, `${user2}@emailaddress.com`, await hash("MoeilijkP@SSW0RD")),
+        new User(user3, `${user3}@emailaddress.com`, await hash("MoeilijkP@SSW0RD")),
+        new User(user4, `${user4}@emailaddress.com`, await hash("MoeilijkP@SSW0RD")),
+        new User(user5, `${user5}@emailaddress.com`, await hash("MoeilijkP@SSW0RD")),
+    );
+    
+    await db.fixture(
+        new QuestionResponse(question1, user1, "Q1O1"),
+
+        new QuestionResponse(question5, user2, "Q5O1"),
+
+        new QuestionResponse(question9, user3, "Q9O1"),
+
+        new QuestionResponse(question13, user4, "Q13O1"),
+        
+        new QuestionResponse(question1, user5, "Q1O1"),
+    );
 }
