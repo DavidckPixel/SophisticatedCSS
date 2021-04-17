@@ -9,8 +9,24 @@
 /// <reference path="./quiz/QuizPageController.ts" />
 
 if (document.querySelector('#quiz2')) {
-    const controller = new QuizPageController();
+    //const controller = new QuizPageController(await AsyncDynamicloadDoc("/api/session/", "GET"));
 }
+
+(async () =>{
+    if(document.querySelector("#quiz2")){
+        console.log("Loading Quiz page!!");
+        let obj : any = await AsyncDynamicloadDoc("/api/session/", "GET")
+        let quizs : any;
+        if(obj){
+        quizs= await AsyncDynamicloadDoc(`/assesment/quizAmount/${obj.lastQuiz}`, "GET")
+        }
+        else{
+            quizs = null;
+        }
+        console.log("obj " + obj);
+        const controller = new QuizPageController(obj, quizs);
+    };
+})();
 
 // Get the menu nodes
 let footerMenus = document.querySelectorAll("footer .footer__contributor");
@@ -44,4 +60,5 @@ if (footerMenus.length !== 3) {
     textStyle.render(textStyleNode);
     colorStyle.render(colorStyleNode);
 }
+
 

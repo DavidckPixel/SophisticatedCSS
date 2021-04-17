@@ -3,16 +3,18 @@ import { Session } from "express-session";
 export interface QuizSessionData
 {
     lastQuestion : string | null;
+    lastQuiz : string | null;
     questionValid : number;
     questionTotal : number;
 }
 
 export default class QuizSession
 {
-    public static create(lastQuestion : string | null = null): QuizSessionData
+    public static create(): QuizSessionData
     {
         return {
-            lastQuestion: lastQuestion,
+            lastQuiz: null,
+            lastQuestion: null,
             questionValid: 0,
             questionTotal: 0,
         };
