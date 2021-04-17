@@ -6,9 +6,10 @@
 /// <reference path="./ajax.ts"/>
 /// <reference path="./quiz/Quiz.ts" />
 /// <reference path="./quiz/Topic.ts" />
+/// <reference path="./quiz/QuizPageController.ts" />
 
-if (document.querySelector('#quiz')) {
-    buildQuiz();
+if (document.querySelector('#quiz2')) {
+    const controller = new QuizPageController();
 }
 
 // Get the menu nodes

@@ -12,3 +12,9 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.loginoutbox__text{
+    margin-left: 20px;
+    margin-right: 20px;
+    color:white;
+}

@@ -6,8 +6,9 @@ class Topic extends ViewComponent
     quizMgr: QuizOverview;
     private thistopicoverview? : TopicOverview;
     private selected : boolean;
+    public descriptor : string;
 
-    constructor(name : string, id : string, quizes: QuizOverview, thistopicoverview?: TopicOverview){
+    constructor(name : string, id : string, quizes: QuizOverview, descriptor : string, thistopicoverview?: TopicOverview){
         super();
         this.setState({
             name: name,
@@ -18,7 +19,8 @@ class Topic extends ViewComponent
 
         this.quizMgr = quizes;
         this.selected = false;
-        
+
+        this.descriptor = descriptor;
     }
 
     public giveOverview(thistopicoverview : TopicOverview){

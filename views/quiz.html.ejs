@@ -9,9 +9,10 @@
         <link rel="stylesheet" href="css/sophisticated.css" />
         <meta name="description"
         content="This is the assesment page for the Sophisticated CSS site, it lets the user test themselves on their knowledge of preprocessors">
+
     </head>
 
-    <body id="quiz2" onload="buildQuizPage()">
+    <body id="quiz2">
         <header class="nav" id="nav" selectorTitle="Navigation">
             <div class="container container--centerVertical">
                 <div class="nav__home">
@@ -28,6 +29,17 @@
                 </nav>
             </div>
         </header>
+
+        <article class="container">
+            <section class="blackBlock blackBlock--label loginoutbox inputSet">
+            <% if (login) { %>
+                <a class="inputSet__button loginoutbox__text" href="/logout">Logout</a>
+                <a class="inputSet__button loginoutbox__text" href="/profile">Profile</a>
+            <%} else {%>
+                <a class="inputSet__button loginoutbox__text" href="/login">Login</a>
+            <% } %>
+            </section>
+        </article>
 
         <article id="quizSection" class="container"></article>
 

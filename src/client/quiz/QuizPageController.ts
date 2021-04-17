@@ -1,3 +1,5 @@
+/// <reference path="./QuizBody.ts" />
+
 class QuizPageController {
 
     private bodyElement : QuizBody;
@@ -6,6 +8,7 @@ class QuizPageController {
     private quizCounter : number;
     private body : HTMLElement | null;
     private currentQuizQuestions : string[];
+    public topicinfo : string = "";
 
     constructor(){
         this.bodyElement = new QuizBody();
@@ -35,9 +38,9 @@ class QuizPageController {
             
             DynamicloadDoc("/assesment/topics", (topicObjs : any[]) =>  {
                 console.log("Length of topics: " + topicObjs.length);
-                const topics = topicObjs.map(x => new Topic(x.title, x.id, allquizes));
+                const topics = topicObjs.map(x => new Topic(x.title, x.id, allquizes, x.descriptor));
                 console.log(topics);
-                const alltopics = new TopicOverview(topics);
+                const alltopics = new TopicOverview(topics, this);
                 topics.forEach(element => element.giveOverview(alltopics));
                 alltopics.mountTo(this.bodyElement);
                 allquizes.mountTo(this.bodyElement);
@@ -116,6 +119,7 @@ class QuizPageController {
     }
 
     public async returnTopicSelect(){
+        this.topicinfo = "";
         this.currentQuiz = "";
         this.currentQuestion="";
 
@@ -124,5 +128,9 @@ class QuizPageController {
         await this.buildSelectScreen();
 
         this.bodyElement.doRender();
+    }
+
+    public setTopicInfo(topic : string){
+        this.topicinfo = topic;
     }
 }

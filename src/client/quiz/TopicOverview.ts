@@ -3,9 +3,12 @@
 
 class TopicOverview extends ViewComponent{
     private alltopics : Topic[];
+    private quizMgr : QuizPageController;
 
-    constructor(topics : Topic[]){
+    constructor(topics : Topic[], quizMgr : QuizPageController){
         super();
+
+        this.quizMgr = quizMgr;
         
         for (const topic of topics) {
             topic.mountTo(this);
@@ -20,25 +23,9 @@ class TopicOverview extends ViewComponent{
     }
 
     public render(state: any): HTMLElement {
-        let loginout : HTMLElement;
-        if(this){ /// should be if authenticated
-            loginout = create("div", {"classList" : "container"},create("div", {"classList": "blackBlock blackBlock--label loginoutbox inputSet"}, 
-            create( "input", {"type": "button", "value": "logout", "classList": "inputSet__button", 
-            onclick : () =>{
-                //logout
-                }  })))
-        }
-        else{
-            loginout = create("div", {"classList" : "container"},create("div", {"classList": "blackBlock blackBlock--label loginoutbox inputSet"}, 
-            create( "input", {"type": "button", "value": "log in!", "classList": "inputSet__button", 
-            onclick : () =>{
-                //redirect to login page
-                }  })))
-        }
+        let loginout : HTMLElement;  
 
-        
-
-        return create("section", {}, loginout, create("section", { "classList": "intro", "id": "introduction", "selectorTitle": "Introduction" },
+        return create("section", {}, create("section", { "classList": "intro", "id": "introduction", "selectorTitle": "Introduction" },
         create("img", { "classList": "intro__img", "src": "image/testimage.png" }),
         create("div", { "classList": "intro__text" },
             create("h1", { "classList": "intro__header" }, text("Test Your knowledge!")),
@@ -55,6 +42,7 @@ class TopicOverview extends ViewComponent{
         
         if(obj){
             this.alltopics.forEach(element => element.setUnSelected());
+            this.quizMgr.setTopicInfo(obj.descriptor)
             obj.setSelected();
         }
     }
