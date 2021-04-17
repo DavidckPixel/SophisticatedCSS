@@ -1,9 +1,57 @@
 import asyncHandler from "express-async-handler";
 import { Express, Request, Response, NextFunction } from "express";
+import { Session } from "express-session";
+import { body, validationResult } from "express-validator";
 import { Database } from "../database";
 import { Topic, Quiz, Question, QuestionChoice, QuestionResponse, User } from "../entities";
+import QuizSession, { QuizSessionData } from "../session";
 
 export default function register(app: Express, db: Database) {
+    /**
+     * Return information about the current user session
+     * @returns A JSON representation of the current session
+     */
+    app.get('/api/session/',
+        authenticated("Information about logged in user session"),
+        (req, res) => {
+            let session = req.session as SessionWithQuiz;
+            session.quiz ||= QuizSession.create();
+            req.session = session;
+            res.json(session.quiz);
+        }
+    );
+
+    /**
+     * Set the latest page viewed by the user
+     * @returns A JSON representation of the corresponding question
+     */
+    app.post('/api/session/current',
+        authenticated("Information about logged in user session"),
+        body('location')
+            .not().isEmpty()
+            .custom(async question => {
+                const repo = db.repository(Question);
+                const result = await repo.find(question);
+                if (!result) {
+                    return Promise.reject();
+                }
+            }).withMessage('Location is not a question id'),
+        asyncHandler(async (req, res) => {
+            // Validate input
+            const errors = validationResult(req).formatWith(({ msg, param }) => `${param}: ${msg}`);
+            if (!errors.isEmpty()) {
+                return res.status(400).json({ errors: errors.array() })
+            }
+
+            // Valid input
+            let session = req.session as SessionWithQuiz;
+            session.quiz ||= QuizSession.create();
+            session.quiz.lastQuestion = req.body.location;
+            req.session = session;
+            res.json({ "status": "success" });
+        })
+    );
+
     /**
      * Load a question from the database
      * @param id The question id
@@ -74,6 +122,9 @@ export default function register(app: Express, db: Database) {
                 let bool = await questionReponse.findOneBy({question: question.getId(), user: user.getUsername()})
 
                 if(!bool){
+                    let session = req.session as SessionWithQuiz;
+                    session.quiz = QuizSession.addAnswer(session.quiz || QuizSession.create(), answer);
+                    req.session = session;
                     await questionReponse.insert(new QuestionResponse(question.getId(), user.getUsername(), answer.toString()));
                 } else {
                     bool.setAnswer(answer.toString());
@@ -95,3 +146,7 @@ function authenticated(description : string) {
         }
     };
 }
+
+type SessionWithQuiz = Session & {
+    quiz: QuizSessionData | undefined
+};
