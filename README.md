@@ -1,7 +1,10 @@
 # SophisticatedCSS
 Repository for Sophisticated CSS website - Assignment for the course webtechnology at the University in Utrecht
 
-// todo: brief explanation
+Sophisticated CSS is a website onwhich information can be found regarding the topic of preprocessors. It is a social website and allows the user to create and login with their own accounts.
+On the site there are multiple pages with information about: Preprocessors in general, Sass, Less, postcss, stylus. The user can easily read about these topics, look at advanteges and disadvanteges and compare.
+If the user wants he or she can also test her own knowledge with the quiz. The quiz is about topics to which the answer can be found on the site. The site also tracks the users progress regarding the quiz, more information
+about how the user is doing and how many quizes it has completed can be found on the users profile page.
 
 # Details
 
@@ -10,7 +13,7 @@ Repository for Sophisticated CSS website - Assignment for the course webtechnolo
     * Jasper Weyne:  5960134
     * David Koymans: 6561829
     * Laura Holtus:  1810057
-* URL to the website: todo
+* URL to the website: webtech.science.uu.nl/group24/
 
 ## Logins:
 
@@ -123,7 +126,25 @@ Primary key: (username)
      └─ css/                        # Css files
  └─ src/                            # Original typescript source code files
      └─ client/                     # Client side typescript source, compiled to ./dist/index.js (single file)
-         └─ todo...                 # todo...
+         └─ component/		    # Folder holding all components
+     	     └─ViewComponent.ts     # class that is used for rendering and creating all HTMLElements. many classes inherit from it
+	 └─ quiz/		    # All code regarding quiz
+             ├─ Question/	    # Folder containing old code	
+             ├─ buildSelect.ts	    # Old function to build quizpage
+             ├─ QuestionElement.ts  # ViewComponent class that stores question objects
+             ├─ QuestionMulti.ts    # ViewComponent class that extends questionElement for Multiplechoice questions
+             ├─ QuestionOpen.ts	    # ViewComponent class that extends questionElement for Open questions
+             ├─ Quiz.ts             # ViewComponent class that stores quiz objects
+             ├─ QuizBody.ts         # ViewComponent class that is the body of quiz
+             ├─ QuizOverview.ts     # ViewComponent class that stores all the Quizes objects
+             ├─ QuizPageController. # ViewComponent class that is the main body of the quizpage, this is the manager of the quiz
+             ├─ Topic.ts            # ViewComponent class that stores topic objects
+	     └─ TopicOverview.ts    # ViewComponent class that stores all the Topic objects
+         ├─ style/		    # Folder containing old code
+         ├─ ajax.ts		    # File containing all dynamic functions used for ajax calls
+         ├─ index.ts		    # Index page for all client sides ts files, also creates the QuizPageController if its the correct page
+         ├─ nodes.ts		    # Old code
+	 └─ tsconfig.json	    # Config file for configurations about the TS to JS conversion
      └─ server/                     # Server side typescript source, compiled to ./dist/server/* (mirrored file structure)
          └─ database/               # Database abstraction utility code
              ├─ index.ts            # Gathers all other file exports in this folder
