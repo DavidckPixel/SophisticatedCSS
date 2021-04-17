@@ -22,12 +22,12 @@ export default function register(app: Express, db: Database) {
 
     /**
      * Set the latest page viewed by the user
-     * @param location The question ID of the latest opened question
+     * @param Value The question ID of the latest opened question
      * @returns A JSON representation of the corresponding question
      */
     app.post('/api/session/current',
         authenticated("Information about logged in user session"),
-        body('location')
+        body('value')
             .not().isEmpty()
             .custom(async question => {
                 const repo = db.repository(Question);
@@ -35,7 +35,7 @@ export default function register(app: Express, db: Database) {
                 if (!result) {
                     return Promise.reject();
                 }
-            }).withMessage('Location is not a question id'),
+            }).withMessage(' Value is not a valid questionid'), 
         asyncHandler(async (req, res) => {
             // Validate input
             const errors = validationResult(req).formatWith(({ msg, param }) => `${param}: ${msg}`);
@@ -43,10 +43,16 @@ export default function register(app: Express, db: Database) {
                 return res.status(400).json({ errors: errors.array() })
             }
 
+            const questionRepository = db.repository(Question);
+            const question = await questionRepository.find(req.body.value);
+
+            if(!question){ throw new Error("No quiz in database");}
+
             // Valid input
             let session = req.session as SessionWithQuiz;
             session.quiz ||= QuizSession.create();
-            session.quiz.lastQuestion = req.body.location;
+            session.quiz.lastQuestion = req.body.value;
+            session.quiz.lastQuiz = question.getQuizId();
             req.session = session;
             res.json({ "status": "success" });
         })

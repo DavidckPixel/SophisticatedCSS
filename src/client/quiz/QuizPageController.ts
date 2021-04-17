@@ -10,7 +10,7 @@ class QuizPageController {
     private currentQuizQuestions : string[];
     public topicinfo : string = "";
 
-    constructor(){
+    constructor(obj : any, currentQuizQuestions? : any[]){
         this.bodyElement = new QuizBody();
 
         this.currentQuestion = "";
@@ -24,10 +24,51 @@ class QuizPageController {
             return;
         }
 
-        this.buildSelectScreen();
-    }
+        console.log("obj : " + obj);
 
-    
+        this.bodyElement.mountTo(this.body);
+
+        if(obj){
+            console.log("Seeing if there is an old session");
+
+            console.log(obj.lastQuestion + " LALA " + obj.lastQuiz)
+
+            if(obj.lastQuestion && obj.lastQuiz){
+
+                console.log("old session found");
+                this.currentQuiz = obj.lastQuiz;
+                this.currentQuestion = obj.lastQuestion;
+
+                if(currentQuizQuestions){
+                    this.currentQuizQuestions = currentQuizQuestions
+                }
+                else{
+                    this.currentQuizQuestions = [];
+                }
+                console.log(this.currentQuizQuestions);
+                console.log(this.currentQuestion);
+                this.quizCounter = this.currentQuizQuestions.findIndex(x => x == this.currentQuestion);
+
+                if(this.quizCounter == -1){
+                    console.log("you should not come here");
+                    this.buildSelectScreen();
+                }
+                else{
+                    console.log("Building old question!")
+                    this.switchQuestion();
+                    }
+            }
+            else{
+                console.log("No old session available in questions");
+                this.buildSelectScreen();
+            }
+        }
+        else
+        {   
+            console.log("Noone was logged in!")
+            this.buildSelectScreen();
+        }
+    }
 
     private async buildSelectScreen(){   
         DynamicloadDoc("/assesment/topics/id1", (quizObjs : any[]) =>  {
@@ -64,11 +105,9 @@ class QuizPageController {
     });
     }
 
-    private async getQuizQuestions(){
-        DynamicloadDoc(`/assesment/quizAmount/${this.currentQuiz}`, (Objs : any) =>  {
-            console.log(Objs);
-            this.currentQuizQuestions = Objs;
-        });
+    async getQuizQuestions(){
+        let objs : any = await AsyncDynamicloadDoc(`/assesment/quizAmount/${this.currentQuiz}`, "GET");
+        this.currentQuizQuestions = objs;
     }
 
 
@@ -91,6 +130,9 @@ class QuizPageController {
 
     public switchQuestion(){
         this.currentQuestion = this.currentQuizQuestions[this.quizCounter];
+
+        console.log("current question ID: " + this.currentQuestion);
+        PostDynamicloadDoc("/api/session/current", this.currentQuestion, (Objs : any) => {});
 
         this.bodyElement.unmountAll();
         this.buildQuestionScreen();

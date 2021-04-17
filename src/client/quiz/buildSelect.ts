@@ -25,5 +25,5 @@
 } */
 
 function buildQuizPage(){
-    const controller = new QuizPageController();
+    const controller = new QuizPageController(null);
 }
