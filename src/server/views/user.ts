@@ -116,20 +116,25 @@ export default function register(app: Express, db: Database) {
      * Report update methods
      */
      async function getOverallReport(username : string) {
-                let answerdata = db.repository(QuestionResponse);
-                let questions = db.repository(Question);
-                
-                let allquestions = await questions.findAll();
-                let numberofQuestions = allquestions.length;
-                    
-                let questionsAnsweredByUser = await answerdata.findBy({user : username});
-                let numberQuestionsAnswered = questionsAnsweredByUser.length;
+        let answerdata = db.repository(QuestionResponse);
+        let questions = db.repository(Question);
 
-                let percentage = numberQuestionsAnswered / numberofQuestions * 100;
+        let questionsAnsweredByUser = await answerdata.findBy({user : username});
+        let numberQuestionsAnswered = questionsAnsweredByUser.length;
+        let numberQuestionsValid = 0;
 
-                //console.log("AnsweredQuestions : " + numberQuestionsAnswered + " / Questions : " + numberofQuestions + " Gives percentage = " + percentage);
+        for (const response of questionsAnsweredByUser) {
+            const question = await questions.find(response.getQuestion());
+            if (question && response.getAnswer() === question.getCorrect()) {
+                numberQuestionsValid++;
+            }
+        }
 
-                return percentage;
+        let percentage = numberQuestionsValid / numberQuestionsAnswered * 100;
+
+        //console.log("AnsweredQuestions : " + numberQuestionsAnswered + " / Questions : " + numberofQuestions + " Gives percentage = " + percentage);
+
+        return percentage;
     }
 
     async function getQuizReport(username : string, thisquiz: string) {
