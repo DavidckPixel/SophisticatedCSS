@@ -38,6 +38,7 @@ export default function register(app: Express, db: Database) {
      */
     app.get('/logout', (req, res) => {
         req.logout();
+        req.session.destroy(() => {});
         res.redirect('/login');
     });
 }
