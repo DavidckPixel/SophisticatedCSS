@@ -33,20 +33,42 @@
             <input type="submit" value="log out!" class="inputSet__button">
         </form>
     </section>
+    
+    <section class="compare container">
+        <table class="blackBlock">
+            <thead>
+                <tr>
+                    <th>Profile</th>
+                    <th>Information</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Username</td>
+                    <td><%= username %></td>
+                </tr>
+                <tr>
+                    <td>E-mail address</td>
+                    <td><%= email %></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
     <article class="container editprofile blackBlock">
         
         <section>
             <h1 class="editprofile__title">Change Profile</h1>            
             <form method="post" name="password" class="inputSet editprofile__password two-col inputSet--sidebyside">
                 <input type="password" id="password" name="password" class="inputSet__input">
-                <input type="submit" value="Submit Password" class="inputSet__input inputSet__button">
+                <input type="submit" value="Change Password" class="inputSet__input inputSet__button">
                 <% if (message.password) { %>
                     <h2><%= message.password %></h2>
                 <% } %>
             </form>
             <form method="post" name="email" class="editprofile__email two-col inputSet inputSet--sidebyside">
                 <input type="mail" id="email" name="email" class="inputSet__input">
-                <input type="submit" value="Submit Email" class="inputSet__input inputSet__button">
+                <input type="submit" value="Change Email" class="inputSet__input inputSet__button">
                 <% if (message.email) { %>
                     <h2><%= message.email %></h2>
                 <% } %>

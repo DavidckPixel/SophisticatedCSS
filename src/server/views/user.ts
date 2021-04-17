@@ -58,10 +58,7 @@ export default function register(app: Express, db: Database) {
         isAuthenticated(),
         asyncHandler(async (req, res) => {            
             let user = req.user as User;
-            
-            let username = user.getUsername();
-            
-            await renderProfile(res, username, null, null);
+            await renderProfile(res, user, null, null);
         })
     );
 
@@ -70,28 +67,45 @@ export default function register(app: Express, db: Database) {
      */
     app.post('/profile',
         isAuthenticated(),
+        body('email')
+            .if(body('email').exists())
+            .isEmail()
+            .normalizeEmail(),
+        body('password')
+            .if(body('password').exists())
+            .isLength({ min: 8 }).withMessage("Password must be at least 8 characters")
+            .isStrongPassword().withMessage("Password must be combination of upper/lowercase letters, digits and symbols")
+            .custom(password => !commonPassword.test(password)).withMessage("Password is too common"),
         asyncHandler(async (req, res) => {
-            
             let user = req.user as User;
-            let username = user.getUsername();
             let passwd = null;
-            let email = null; 
-            
-            
-            if(req.body.name="password"){
+            let email = null;
+
+            // Validate input
+            const errors = validationResult(req);
+            if (!errors.isEmpty()) {
+                let firstErr = errors.mapped();
+                if (firstErr['password']) {
+                    passwd = firstErr['password'].msg;
+                }
+                if (firstErr['email']) {
+                    email = firstErr['email'].msg;
+                }
+                return await renderProfile(res, user, passwd, email);
+            }
+
+            // Valid input, handle
+            if(req.body.password){
                 user.setPassword(await hash(req.body.password));
                 passwd = "success";
             }
-            else if(req.body.name="email"){
+            else if(req.body.email){
                 user.setEmail(req.body.email);
                 email = "success";
             }
-            else if(req.body.name="login"){
-                // Logout something
-            }
 
             await db.repository(User).update(user);
-            await renderProfile(res, username, passwd, email);
+            await renderProfile(res, user, passwd, email);
         })
     );
 
@@ -154,14 +168,21 @@ export default function register(app: Express, db: Database) {
         return data;
     }
 
-    async function renderProfile(res: Response, username:string, password:any, email:any){
+    async function renderProfile(res: Response, user: User, password:any, email:any){
         let quizes = db.repository(Quiz)
-        let overallpercentage = await getOverallReport(username);
+        let overallpercentage = await getOverallReport(user.getUsername());
         var allquizforreport = await quizes.findAll();
 
-        let allquizscores = await fillQuizScores(username, allquizforreport);
+        let allquizscores = await fillQuizScores(user.getUsername(), allquizforreport);
 
-        res.render("profile.html.ejs", {message: {password, email}, data:overallpercentage, allquizes:allquizforreport, allscores:allquizscores});
+        res.render("profile.html.ejs", {
+            message: {password, email},
+            username: user.getUsername(),
+            email: user.getEmail(),
+            data: overallpercentage,
+            allquizes:allquizforreport,
+            allscores:allquizscores
+        });
     }
 
 }
