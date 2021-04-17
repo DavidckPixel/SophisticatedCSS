@@ -6,6 +6,7 @@ import { hash } from "argon2";
 import { Database } from "../database";
 import { Question, QuestionResponse, User, Quiz } from "../entities"
 import { isAuthenticated } from "../security";
+import QuizSession, { SessionWithQuiz } from "../session";
 
 export default function register(app: Express, db: Database) {
     /**
@@ -58,7 +59,8 @@ export default function register(app: Express, db: Database) {
         isAuthenticated(),
         asyncHandler(async (req, res) => {            
             let user = req.user as User;
-            await renderProfile(res, user, null, null);
+            let session = req.session as SessionWithQuiz;
+            await renderProfile(res, user, null, null, session);
         })
     );
 
@@ -78,6 +80,7 @@ export default function register(app: Express, db: Database) {
             .custom(password => !commonPassword.test(password)).withMessage("Password is too common"),
         asyncHandler(async (req, res) => {
             let user = req.user as User;
+            let session = req.session as SessionWithQuiz;
             let passwd = null;
             let email = null;
 
@@ -91,7 +94,7 @@ export default function register(app: Express, db: Database) {
                 if (firstErr['email']) {
                     email = firstErr['email'].msg;
                 }
-                return await renderProfile(res, user, passwd, email);
+                return await renderProfile(res, user, passwd, email, session);
             }
 
             // Valid input, handle
@@ -105,7 +108,7 @@ export default function register(app: Express, db: Database) {
             }
 
             await db.repository(User).update(user);
-            await renderProfile(res, user, passwd, email);
+            await renderProfile(res, user, passwd, email, session);
         })
     );
 
@@ -168,9 +171,10 @@ export default function register(app: Express, db: Database) {
         return data;
     }
 
-    async function renderProfile(res: Response, user: User, password:any, email:any){
+    async function renderProfile(res: Response, user: User, password:any, email:any, session: SessionWithQuiz){
         let quizes = db.repository(Quiz)
         let overallpercentage = await getOverallReport(user.getUsername());
+        let sessionpercentage = session.quiz ? session.quiz.questionValid / session.quiz.questionTotal * 100 : 0;
         var allquizforreport = await quizes.findAll();
 
         let allquizscores = await fillQuizScores(user.getUsername(), allquizforreport);
@@ -180,6 +184,7 @@ export default function register(app: Express, db: Database) {
             username: user.getUsername(),
             email: user.getEmail(),
             data: overallpercentage,
+            sessiondata: sessionpercentage,
             allquizes:allquizforreport,
             allscores:allquizscores
         });

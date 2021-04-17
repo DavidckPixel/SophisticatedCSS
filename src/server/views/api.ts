@@ -1,10 +1,9 @@
 import asyncHandler from "express-async-handler";
 import { Express, Request, Response, NextFunction } from "express";
-import { Session } from "express-session";
 import { body, validationResult } from "express-validator";
 import { Database } from "../database";
 import { Topic, Quiz, Question, QuestionChoice, QuestionResponse, User } from "../entities";
-import QuizSession, { QuizSessionData } from "../session";
+import QuizSession, { SessionWithQuiz } from "../session";
 
 export default function register(app: Express, db: Database) {
     /**
@@ -147,7 +146,3 @@ function authenticated(description : string) {
         }
     };
 }
-
-type SessionWithQuiz = Session & {
-    quiz: QuizSessionData | undefined
-};

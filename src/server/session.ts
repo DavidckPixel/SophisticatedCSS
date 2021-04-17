@@ -1,3 +1,5 @@
+import { Session } from "express-session";
+
 export interface QuizSessionData
 {
     lastQuestion : string | null;
@@ -25,3 +27,7 @@ export default class QuizSession
         return session;
     }
 }
+
+export type SessionWithQuiz = Session & {
+    quiz: QuizSessionData | undefined
+};
