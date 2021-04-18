@@ -7,7 +7,7 @@ async function DynamicloadDoc(url : string, func : Function) {
         func(obj);
     }
   };
-  xhttp.open("GET", url, true);
+  xhttp.open("GET","/group24" + url, true);
   xhttp.send();
 }
 
@@ -20,7 +20,7 @@ async function PostDynamicloadDoc(url : string, body : string, func : Function, 
         func(obj,param);
     }
   };
-  xhttp.open("POST", url, true);
+  xhttp.open("POST","/group24" + url, true);
   xhttp.setRequestHeader("Content-Type", "application/json");
   xhttp.send(JSON.stringify({value : body}));
 }
@@ -38,7 +38,7 @@ async function AsyncDynamicloadDoc(url : string, method : string, body: string |
           }
         }
       };
-      xhttp.open(method, url, true);
+      xhttp.open(method,"/group24" + url, true);
       xhttp.setRequestHeader("Content-Type", "application/json");
       xhttp.send(body);
     }),

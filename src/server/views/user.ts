@@ -48,7 +48,7 @@ export default function register(app: Express, db: Database) {
             // Valid input, handle
             const repo = db.repository(User);
             await repo.insert(new User(req.body.username, req.body.email, await hash(req.body.password)));
-            res.redirect('/login');
+            res.redirect('/group24/login');
         })
     );
 

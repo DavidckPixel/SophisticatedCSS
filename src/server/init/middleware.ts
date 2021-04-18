@@ -14,7 +14,7 @@ export default function middleware(app: Express, db: Database): Express {
     const accessLogStream = fs.createWriteStream(path.join(__dirname, '/../../../access.log'), { flags: 'a' })
 
     app.set("view engine", "ejs");
-    app.use(helmet());
+    // app.use(helmet());
     app.use(morgan('combined', { stream: accessLogStream }));
     app.use(express.json())
     app.use(express.urlencoded());

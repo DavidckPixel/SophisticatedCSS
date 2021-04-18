@@ -29,7 +29,7 @@ export default function register(app: Express, db: Database) {
             }
 
             // In all other cases, go to profile
-            res.redirect('/profile');
+            res.redirect('/group24/profile');
         })
     );
       
@@ -39,6 +39,6 @@ export default function register(app: Express, db: Database) {
     app.get('/logout', (req, res) => {
         req.logout();
         req.session.destroy(() => {});
-        res.redirect('/login');
+        res.redirect('/group24/login');
     });
 }

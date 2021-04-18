@@ -35,8 +35,8 @@ export default async function fixtures(db: Database) {
     const user5 = "Jantje";
 
     await db.fixture(
-        new Topic(topic1, "Preprocessors in general", "/index.html"),
-        new Topic(topic2, "Different Preprocessors", "/sass.html"),
+        new Topic(topic1, "Preprocessors in general", "/group24/index.html"),
+        new Topic(topic2, "Different Preprocessors", "/group24/sass.html"),
     );
     await db.fixture(
         new Quiz(quiz1, "History and working of preprocessors", topic1),
